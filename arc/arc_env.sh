@@ -35,7 +35,7 @@ EOF
 # or different file would silently change the dataset under every result already
 # in results/ (CLAUDE.md: the cache is immutable input).
 if ! sha256sum --quiet -c arc/data.sha256; then
-  echo "[arc_env] FATAL: data/interim/pooled does not match arc/data.sha256. Run arc/push_data.sh from the Mac." >&2
+  echo "[arc_env] FATAL: data/interim does not match arc/data.sha256. Run arc/push_data.sh from the Mac." >&2
   exit 4
 fi
 

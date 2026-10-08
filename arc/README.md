@@ -19,7 +19,7 @@ arc/setup_env.sh          # conda env pinned to arc/requirements.lock.txt, then 
 On the Mac (`data/interim` is gitignored, so git does not carry it):
 
 ```bash
-arc/push_data.sh          # rsync + sha256 check against arc/data.sha256
+arc/push_data.sh          # rsync every slate in arc/data.sha256, then check it on arrival
 ```
 
 ## Each run
@@ -32,6 +32,7 @@ arc/submit.sh --dry-run arc/fit_dev.slurm                                       
 arc/submit.sh --time 01:00:00 arc/fit_dev.slurm --bootstrap 50 --cluster-bootstrap 20   # smoke run first
 arc/submit.sh arc/fit_dev.slurm                                                 # the real step-8 run
 arc/submit.sh --time 04:00:00 arc/pipeline.slurm                               # steps 3-8 in order, after any change to the fit
+arc/submit.sh --time 04:00:00 arc/providers.slurm                              # pooling check: recovery, power, fit-dev per provider
 squeue -u $USER ; tail -f logs/slurm/sm-fit-dev-<jobid>.out
 ```
 

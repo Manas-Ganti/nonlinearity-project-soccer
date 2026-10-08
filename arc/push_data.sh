@@ -17,6 +17,9 @@ cd "$REPO_ROOT"
 
 shasum -a 256 -c arc/data.sha256   # never ship something other than what was recorded
 
-ssh "${ARC_USER}@${ARC_HOST}" "mkdir -p '${ARC_REPO}/data/interim/pooled'"
-rsync -av data/interim/pooled/ "${ARC_USER}@${ARC_HOST}:${ARC_REPO}/data/interim/pooled/"
+# Every slate directory named in the checksum file, and only the files it names.
+FILES=$(awk '{print $2}' arc/data.sha256)
+DIRS=$(dirname $FILES | sort -u)
+ssh "${ARC_USER}@${ARC_HOST}" "cd '${ARC_REPO}' && mkdir -p $(echo $DIRS)"
+rsync -avR $FILES "${ARC_USER}@${ARC_HOST}:${ARC_REPO}/"
 ssh "${ARC_USER}@${ARC_HOST}" "cd '${ARC_REPO}' && sha256sum -c arc/data.sha256"
