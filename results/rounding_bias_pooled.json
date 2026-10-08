@@ -1,10 +1,10 @@
 {
   "name": "rounding_bias_pooled",
-  "written_at_utc": "2026-09-17T13:30:45+00:00",
+  "written_at_utc": "2026-10-08T17:54:58+00:00",
   "python": "3.12.7",
-  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "platform": "Linux-5.14.0-687.26.1.el9_8.x86_64-x86_64-with-glibc2.34",
   "numpy": "2.5.3",
-  "git_rev": null,
+  "git_rev": "76364fd",
   "inputs": {},
   "payload": {
     "source": "pooled",
@@ -27,14 +27,14 @@
       2018
     ],
     "second_resolution": {
-      "eta_self": 2.448851260506592e-07,
-      "eta_cross": 2.114948797690729e-09,
-      "beta": 0.13308677231684568,
-      "tau_minutes": 7.513894751457755,
-      "spectral_radius": 2.4700007484834996e-07,
-      "loglik": -285212.10415833426,
+      "eta_self": 3.2367441718259167e-09,
+      "eta_cross": 5.829182613269548e-12,
+      "beta": 0.12844439622676218,
+      "tau_minutes": 7.785470050671186,
+      "spectral_radius": 3.242573354439186e-09,
+      "loglik": -285212.16323867865,
       "converged": true,
-      "n_iter": 203,
+      "n_iter": 220,
       "n_events": 93424,
       "n_matches": 4053,
       "mu_fit": "joint MLE (mu and the kernel fitted together)",
@@ -61,54 +61,54 @@
         "collapses_at_half_boundaries": 173,
         "guard_enforced": true
       },
-      "eta_self_mean": 1.3272730710175057e-08,
-      "eta_self_sd": 7.466137369056447e-09,
-      "eta_cross_mean": 3.029887330786904e-09,
-      "tau_mean": 7.7572176142976925,
+      "eta_self_mean": 1.40118852119088e-08,
+      "eta_self_sd": 6.7033400427422625e-09,
+      "eta_cross_mean": 3.1867318551468795e-09,
+      "tau_mean": 7.749811714294472,
       "jitter_draws": [
         {
           "draw": 0,
           "seed": 20260910,
-          "eta_self": 1.4518330117839365e-08,
-          "eta_cross": 3.3292281650666944e-09,
-          "tau": 7.742281292892177,
+          "eta_self": 2.0879045558925376e-08,
+          "eta_cross": 4.9347520809726245e-09,
+          "tau": 7.723244078933149,
           "n_events": 89833
         },
         {
           "draw": 1,
           "seed": 20260911,
-          "eta_self": 2.1178376382016856e-08,
-          "eta_cross": 4.996956208421176e-09,
-          "tau": 7.7241985974884875,
+          "eta_self": 1.8842935510326033e-08,
+          "eta_cross": 4.374605421299021e-09,
+          "tau": 7.731600277429968,
           "n_events": 89833
         },
         {
           "draw": 2,
           "seed": 20260912,
-          "eta_self": 1.788998242610868e-08,
-          "eta_cross": 4.0667382524318095e-09,
-          "tau": 7.732145817140571,
+          "eta_self": 5.882138322010279e-09,
+          "eta_cross": 1.1944133585236943e-09,
+          "tau": 7.788260635307782,
           "n_events": 89833
         },
         {
           "draw": 3,
           "seed": 20260913,
-          "eta_self": 1.1015431202927773e-08,
-          "eta_cross": 2.435630610244465e-09,
-          "tau": 7.753719411202176,
+          "eta_self": 7.93915817756501e-09,
+          "eta_cross": 1.6920843914049668e-09,
+          "tau": 7.7709709103640305,
           "n_events": 89833
         },
         {
           "draw": 4,
           "seed": 20260914,
-          "eta_self": 1.7615334219826152e-09,
-          "eta_cross": 3.2088341777037614e-10,
-          "tau": 7.833742952765048,
+          "eta_self": 1.6516148490717303e-08,
+          "eta_cross": 3.7378040235340905e-09,
+          "tau": 7.734982669437428,
           "n_events": 89833
         }
       ]
     },
-    "rounding_bias_eta_self": -2.3161239534048416e-07,
+    "rounding_bias_eta_self": 1.0775141040082884e-08,
     "extra_events_removed_by_rounding": 4738
   }
 }

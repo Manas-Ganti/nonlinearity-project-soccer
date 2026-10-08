@@ -112,3 +112,10 @@
 2026-10-08T16:44:48+00:00	source=x split=holdout final_run=False caller=test touches_holdout=True matches=10
 2026-10-08T16:44:48+00:00	source=x split=dev final_run=False caller=test touches_holdout=False matches=10
 2026-10-08T16:44:48+00:00	source=x split=all final_run=True caller=pytest-marker touches_holdout=True matches=10
+2026-10-08T17:00:55+00:00	source=pooled split=dev final_run=False caller=fit-null touches_holdout=False matches=4053
+2026-10-08T17:01:19+00:00	source=pooled split=dev final_run=False caller=estimator-comparison touches_holdout=False matches=4053
+2026-10-08T17:24:15+00:00	source=pooled split=dev final_run=False caller=recovery touches_holdout=False matches=4053
+2026-10-08T17:26:18+00:00	source=pooled split=dev final_run=False caller=power touches_holdout=False matches=4053
+2026-10-08T17:39:16+00:00	source=pooled split=dev final_run=False caller=tau-profile touches_holdout=False matches=4053
+2026-10-08T17:51:09+00:00	source=pooled split=dev final_run=False caller=rounding-bias touches_holdout=False matches=4053
+2026-10-08T17:55:00+00:00	source=pooled split=dev final_run=False caller=fit-dev touches_holdout=False matches=4053

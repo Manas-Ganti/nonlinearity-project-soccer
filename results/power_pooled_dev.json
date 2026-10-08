@@ -1,10 +1,10 @@
 {
   "name": "power_pooled_dev",
-  "written_at_utc": "2026-09-17T13:17:29+00:00",
+  "written_at_utc": "2026-10-08T17:39:12+00:00",
   "python": "3.12.7",
-  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "platform": "Linux-5.14.0-687.26.1.el9_8.x86_64-x86_64-with-glibc2.34",
   "numpy": "2.5.3",
-  "git_rev": null,
+  "git_rev": "76364fd",
   "inputs": {},
   "payload": {
     "raw": {
@@ -71,7 +71,7 @@
       "jitter_seed": 20260910,
       "remaining_exact_ties": 0
     },
-    "critical_value": 4.888283617705578e-05,
+    "critical_value": 4.6111786639788525e-05,
     "alpha": 0.05,
     "target_power": 0.8,
     "detection_floor": 0.02,
@@ -81,71 +81,78 @@
         "eta_star": 0.0,
         "n_replicates": 200,
         "power": 0.05,
-        "mean_eta_hat": 1.7793867403086397e-05,
-        "median_eta_hat": 1.2029445976568944e-05,
-        "sd_eta_hat": 1.7593332216234996e-05,
-        "bias": 1.7793867403086397e-05,
-        "mean_n_events": 98033.92
+        "mean_eta_hat": 1.794912147077147e-05,
+        "median_eta_hat": 1.403959027511799e-05,
+        "sd_eta_hat": 1.6629958257248033e-05,
+        "bias": 1.794912147077147e-05,
+        "mean_n_events": 98012.645,
+        "frac_converged": 1.0
       },
       {
         "eta_star": 0.02,
         "n_replicates": 30,
         "power": 1.0,
-        "mean_eta_hat": 0.006843134046292069,
-        "median_eta_hat": 0.006628018120215871,
-        "sd_eta_hat": 0.002990891650995062,
-        "bias": -0.013156865953707932,
-        "mean_n_events": 100087.33333333333
+        "mean_eta_hat": 0.007944883712616965,
+        "median_eta_hat": 0.00796956336329159,
+        "sd_eta_hat": 0.003976799419920564,
+        "bias": -0.012055116287383035,
+        "mean_n_events": 100053.9,
+        "frac_converged": 1.0
       },
       {
         "eta_star": 0.05,
         "n_replicates": 30,
         "power": 1.0,
-        "mean_eta_hat": 0.033831444593685894,
-        "median_eta_hat": 0.03349434355406618,
-        "sd_eta_hat": 0.0033392441534917027,
-        "bias": -0.01616855540631411,
-        "mean_n_events": 103221.33333333333
+        "mean_eta_hat": 0.03401973103067472,
+        "median_eta_hat": 0.034209206247497875,
+        "sd_eta_hat": 0.0037893189102571377,
+        "bias": -0.015980268969325286,
+        "mean_n_events": 103200.1,
+        "frac_converged": 1.0
       },
       {
         "eta_star": 0.1,
         "n_replicates": 30,
         "power": 1.0,
-        "mean_eta_hat": 0.07957667021324492,
-        "median_eta_hat": 0.07972172459012508,
-        "sd_eta_hat": 0.003799965976231696,
-        "bias": -0.02042332978675508,
-        "mean_n_events": 108861.26666666666
+        "mean_eta_hat": 0.07984952217477406,
+        "median_eta_hat": 0.08031209086293131,
+        "sd_eta_hat": 0.00364971859342454,
+        "bias": -0.020150477825225943,
+        "mean_n_events": 108836.3,
+        "frac_converged": 1.0
       },
       {
         "eta_star": 0.15,
         "n_replicates": 30,
         "power": 1.0,
-        "mean_eta_hat": 0.12744898308902142,
-        "median_eta_hat": 0.12784360725268767,
-        "sd_eta_hat": 0.0037762184822318664,
-        "bias": -0.022551016910978577,
-        "mean_n_events": 115168.1
+        "mean_eta_hat": 0.1292289801813823,
+        "median_eta_hat": 0.1285539333031384,
+        "sd_eta_hat": 0.003701555244114135,
+        "bias": -0.020771019818617703,
+        "mean_n_events": 115103.8,
+        "frac_converged": 1.0
       },
       {
         "eta_star": 0.2,
         "n_replicates": 30,
         "power": 1.0,
-        "mean_eta_hat": 0.17723412220127396,
-        "median_eta_hat": 0.17720341763213546,
-        "sd_eta_hat": 0.0031560414073934706,
-        "bias": -0.022765877798726047,
-        "mean_n_events": 122204.63333333333
+        "mean_eta_hat": 0.17805714503906203,
+        "median_eta_hat": 0.17867813504207128,
+        "sd_eta_hat": 0.0043416917442156274,
+        "bias": -0.02194285496093798,
+        "mean_n_events": 122176.73333333334,
+        "frac_converged": 1.0
       },
       {
         "eta_star": 0.3,
         "n_replicates": 30,
         "power": 1.0,
-        "mean_eta_hat": 0.27817172579705335,
-        "median_eta_hat": 0.2772949899108692,
-        "sd_eta_hat": 0.004119111522866988,
-        "bias": -0.02182827420294664,
-        "mean_n_events": 139384.93333333332
+        "mean_eta_hat": 0.27802486616552546,
+        "median_eta_hat": 0.27921234095783837,
+        "sd_eta_hat": 0.003931118411091291,
+        "bias": -0.021975133834474525,
+        "mean_n_events": 139328.83333333334,
+        "frac_converged": 1.0
       }
     ],
     "config": {

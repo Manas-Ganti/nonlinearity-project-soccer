@@ -1,10 +1,10 @@
 {
   "name": "fit_pooled_dev",
-  "written_at_utc": "2026-10-08T07:31:34+00:00",
+  "written_at_utc": "2026-10-08T18:27:33+00:00",
   "python": "3.12.7",
   "platform": "Linux-5.14.0-687.26.1.el9_8.x86_64-x86_64-with-glibc2.34",
   "numpy": "2.5.3",
-  "git_rev": "d1e5280",
+  "git_rev": "76364fd",
   "inputs": {},
   "payload": {
     "raw": {
@@ -102,6 +102,7 @@
         "dropped_terms": [],
         "n_team_effects": 535,
         "loglik": -285212.16323867865,
+        "ridge_penalty": 40.519177960232085,
         "converged": true,
         "n_iter": 220,
         "team_ridge": 1.0,
@@ -169,7 +170,7 @@
         "uniformity_ks_stat": 0.01161860614830737,
         "uniformity_ks_pvalue": 0.3515782841909
       },
-      "loglik_poisson": -285253.2272949775,
+      "loglik_poisson": -285212.16603324097,
       "loglik_hawkes": -285212.16323867865,
       "note": "each model is rescaled by its own fitted compensator"
     },
@@ -228,20 +229,20 @@
         "loglik": -285242.6134504928
       },
       "minute_spline_df_9": {
-        "eta_self": 5.446445582389778e-17,
-        "eta_cross": 1.5118188082049948e-22,
-        "tau_minutes": 7.993961289391758,
-        "tau_at_boundary": false,
-        "delta_eta_self": -3.236744117361461e-09,
-        "loglik": -285195.53867826995
+        "eta_self": 1.8927418630475671e-53,
+        "eta_cross": 0.0,
+        "tau_minutes": 7.999999999742878,
+        "tau_at_boundary": true,
+        "delta_eta_self": -3.2367441718259167e-09,
+        "loglik": -285184.3369279995
       },
       "minute_spline_df_12": {
-        "eta_self": 4.543335946908598e-24,
-        "eta_cross": 3.82462682347275e-32,
-        "tau_minutes": 7.999756095080597,
-        "tau_at_boundary": true,
-        "delta_eta_self": -3.236744171825912e-09,
-        "loglik": -285193.5306930849
+        "eta_self": 7.434848085114244e-06,
+        "eta_cross": 2.37386491010608e-07,
+        "tau_minutes": 7.0975264008856165,
+        "tau_at_boundary": false,
+        "delta_eta_self": 7.4316113409424175e-06,
+        "loglik": -285162.26167048776
       }
     },
     "asymmetry_check": {
@@ -257,18 +258,20 @@
     },
     "parametric_bootstrap": {
       "eta_self_observed": 3.2367441718259167e-09,
-      "p_value": 0.5768463073852296,
+      "p_value": 0.5369261477045908,
       "n_replicates": 500,
       "seed": 5694,
-      "null_median": 9.856966958164e-09,
-      "null_q90": 1.395871842967532e-06,
-      "null_q95": 2.2852120015973653e-06,
-      "null_q99": 6.088515498658081e-06
+      "null_median": 6.5805688974455416e-09,
+      "null_q90": 1.0590251219014947e-06,
+      "null_q95": 2.1730381461741134e-06,
+      "null_q99": 5.4806225510174055e-06,
+      "n_unconverged": 0
     },
     "cluster_bootstrap_ci95": [
       1.7464985911735553e-09,
       2.8020424211885432e-06
     ],
+    "cluster_bootstrap_n_unconverged": 0,
     "detection_floor": 0.02,
     "detection_floor_interpolated": 0.015789473684210527,
     "detection_floor_source": "power_pooled_dev.json",

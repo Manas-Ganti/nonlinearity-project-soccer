@@ -1,0 +1,1146 @@
+[arc_env] job=1048269 node=owl046 cpus=96 python=/home/manasganti/miniconda3/envs/soccer-momentum/bin/python (Python 3.12.7) commit=76364fd
+[pipeline] === fit-null (17:00:46 UTC, workers=95)
+/home/manasganti/miniconda3/envs/soccer-momentum/bin/python -m src.cli.main -v fit-null --source pooled
+13:00:56 INFO  Slate(matches=4053, events=98848, goals=11207, cards=871) -> Slate(matches=4053, events=94571, goals=11207, cards=871)
+
+=== null model ===
+{
+  "raw": {
+    "matches": 4053,
+    "events": 98848,
+    "events_per_match_mean": 24.38884776708611,
+    "seasons": [
+      2004,
+      2005,
+      2006,
+      2007,
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018
+    ],
+    "leagues": [
+      "1. Bundesliga",
+      "FA Women's Super League",
+      "FIFA World Cup",
+      "La Liga",
+      "Ligue 1",
+      "NWSL",
+      "Premier League",
+      "Serie A",
+      "UEFA Euro"
+    ],
+    "situations": {
+      "open": 92761,
+      "setpiece": 4940,
+      "penalty": 1147
+    },
+    "goals": 10845,
+    "red_cards_known": true,
+    "mean_xg": 0.1062982590558817,
+    "strata": {
+      "matches_by_source": {
+        "statsbomb": 2112,
+        "wyscout": 1941
+      },
+      "matches_by_gender": {
+        "female": 143,
+        "male": 3910
+      },
+      "one_club_matches": 452
+    }
+  },
+  "prepared": {
+    "threshold_seconds": 4.0,
+    "n_before": 98848,
+    "n_after": 94571,
+    "removed_fraction": 0.04326845257364842,
+    "max_run_length": 4,
+    "collapsed_events": 4016,
+    "collapses_at_half_boundaries": 84,
+    "guard_enforced": true,
+    "jitter_seed": 20260910,
+    "remaining_exact_ties": 0
+  },
+  "background": {
+    "theta0": -2.5650445271823905,
+    "theta_home": 0.23527155684117695,
+    "f_minute": [
+      0.6864976957186917,
+      -5.203973765790431,
+      7.594653893142276,
+      -4.14794422753085,
+      1.999264850235985,
+      -0.8664716317532392
+    ],
+    "g_score": {
+      "-2": 0.16706865989857805,
+      "-1": 0.1018854610742433,
+      "0": 0.0,
+      "1": -0.22693649422297735,
+      "2": -0.2992856453604172
+    },
+    "h_red": {
+      "-1": -0.4944505266241985,
+      "0": 0.0,
+      "1": 0.36492788266345233
+    },
+    "theta_source": {
+      "statsbomb": 0.0,
+      "wyscout": -0.050274591332527034
+    },
+    "dropped_terms": [],
+    "n_team_effects": 535,
+    "loglik": -285212.16603324097,
+    "ridge_penalty": 41.061261736572426,
+    "converged": true,
+    "n_iter": 400,
+    "team_ridge": 1.0,
+    "minute_df": 6,
+    "include_score": true,
+    "include_red": true
+  },
+  "time_rescaling": {
+    "n": 93424,
+    "ks_stat": 0.036177609222868945,
+    "ks_stat_subsample": 0.036177609222868945,
+    "ks_pvalue_subsample": 1.129929019375005e-106,
+    "n_subsample": 93424,
+    "mean_tau": 0.9135193155725864,
+    "var_tau": 0.8073055913363437,
+    "n_processes": 6390,
+    "frac_reject_05": 0.059154929577464786,
+    "uniformity_ks_stat": 0.011254158729126384,
+    "uniformity_ks_pvalue": 0.39037725329541684
+  },
+  "n_background_params": 1085
+}
+[pipeline] === fit-null done in 0 min
+[pipeline] === estimator-comparison (17:01:17 UTC, workers=95)
+/home/manasganti/miniconda3/envs/soccer-momentum/bin/python -m src.cli.main -v estimator-comparison --source pooled
+13:01:20 INFO  Slate(matches=4053, events=98848, goals=11207, cards=871) -> Slate(matches=4053, events=94571, goals=11207, cards=871)
+
+=== estimator comparison ===
+{
+  "raw": {
+    "matches": 4053,
+    "events": 98848,
+    "events_per_match_mean": 24.38884776708611,
+    "seasons": [
+      2004,
+      2005,
+      2006,
+      2007,
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018
+    ],
+    "leagues": [
+      "1. Bundesliga",
+      "FA Women's Super League",
+      "FIFA World Cup",
+      "La Liga",
+      "Ligue 1",
+      "NWSL",
+      "Premier League",
+      "Serie A",
+      "UEFA Euro"
+    ],
+    "situations": {
+      "open": 92761,
+      "setpiece": 4940,
+      "penalty": 1147
+    },
+    "goals": 10845,
+    "red_cards_known": true,
+    "mean_xg": 0.1062982590558817,
+    "strata": {
+      "matches_by_source": {
+        "statsbomb": 2112,
+        "wyscout": 1941
+      },
+      "matches_by_gender": {
+        "female": 143,
+        "male": 3910
+      },
+      "one_club_matches": 452
+    }
+  },
+  "prepared": {
+    "threshold_seconds": 4.0,
+    "n_before": 98848,
+    "n_after": 94571,
+    "removed_fraction": 0.04326845257364842,
+    "max_run_length": 4,
+    "collapsed_events": 4016,
+    "collapses_at_half_boundaries": 84,
+    "guard_enforced": true,
+    "jitter_seed": 20260910,
+    "remaining_exact_ties": 0
+  },
+  "summary": [
+    {
+      "method": "em",
+      "eta_star": 0.0,
+      "mean_eta_hat": 2.66260080454743e-13,
+      "mean_tau": 4.414662867389473,
+      "mean_loglik": -294813.4149108698,
+      "bias": 2.66260080454743e-13
+    },
+    {
+      "method": "em",
+      "eta_star": 0.1,
+      "mean_eta_hat": 0.06730607785017771,
+      "mean_tau": 3.000000000815302,
+      "mean_loglik": -315998.3032014422,
+      "bias": -0.032693922149822294
+    },
+    {
+      "method": "em",
+      "eta_star": 0.3,
+      "mean_eta_hat": 0.266073763449133,
+      "mean_tau": 4.437202665515026,
+      "mean_loglik": -365310.78172057425,
+      "bias": -0.03392623655086696
+    },
+    {
+      "method": "joint",
+      "eta_star": 0.0,
+      "mean_eta_hat": 1.5354524800024583e-05,
+      "mean_tau": 4.659565808756194,
+      "mean_loglik": -294810.78590177634,
+      "bias": 1.5354524800024583e-05
+    },
+    {
+      "method": "joint",
+      "eta_star": 0.1,
+      "mean_eta_hat": 0.07846011150166089,
+      "mean_tau": 4.01019236021117,
+      "mean_loglik": -315987.613203119,
+      "bias": -0.021539888498339113
+    },
+    {
+      "method": "joint",
+      "eta_star": 0.3,
+      "mean_eta_hat": 0.2780485933907178,
+      "mean_tau": 4.651361879439638,
+      "mean_loglik": -365297.00720993505,
+      "bias": -0.021951406609282187
+    },
+    {
+      "method": "two_stage",
+      "eta_star": 0.0,
+      "mean_eta_hat": 8.451382479958107e-15,
+      "mean_tau": 3.0,
+      "mean_loglik": -294863.99364249536,
+      "bias": 8.451382479958107e-15
+    },
+    {
+      "method": "two_stage",
+      "eta_star": 0.1,
+      "mean_eta_hat": 0.03475582250766594,
+      "mean_tau": 3.000000000012882,
+      "mean_loglik": -316231.3106603681,
+      "bias": -0.06524417749233406
+    },
+    {
+      "method": "two_stage",
+      "eta_star": 0.3,
+      "mean_eta_hat": 0.11657683972146311,
+      "mean_tau": 3.0000000000000515,
+      "mean_loglik": -367471.25866235234,
+      "bias": -0.1834231602785369
+    }
+  ]
+}
+[pipeline] === estimator-comparison done in 22 min
+[pipeline] === recovery (17:24:12 UTC, workers=95)
+/home/manasganti/miniconda3/envs/soccer-momentum/bin/python -m src.cli.main -v recovery --source pooled --replicates 10
+13:24:16 INFO  Slate(matches=4053, events=98848, goals=11207, cards=871) -> Slate(matches=4053, events=94571, goals=11207, cards=871)
+13:26:13 INFO    recovery 5/10 (10 workers)
+13:26:16 INFO    recovery 10/10 (10 workers)
+
+=== recovery test ===
+{
+  "raw": {
+    "matches": 4053,
+    "events": 98848,
+    "events_per_match_mean": 24.38884776708611,
+    "seasons": [
+      2004,
+      2005,
+      2006,
+      2007,
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018
+    ],
+    "leagues": [
+      "1. Bundesliga",
+      "FA Women's Super League",
+      "FIFA World Cup",
+      "La Liga",
+      "Ligue 1",
+      "NWSL",
+      "Premier League",
+      "Serie A",
+      "UEFA Euro"
+    ],
+    "situations": {
+      "open": 92761,
+      "setpiece": 4940,
+      "penalty": 1147
+    },
+    "goals": 10845,
+    "red_cards_known": true,
+    "mean_xg": 0.1062982590558817,
+    "strata": {
+      "matches_by_source": {
+        "statsbomb": 2112,
+        "wyscout": 1941
+      },
+      "matches_by_gender": {
+        "female": 143,
+        "male": 3910
+      },
+      "one_club_matches": 452
+    }
+  },
+  "prepared": {
+    "threshold_seconds": 4.0,
+    "n_before": 98848,
+    "n_after": 94571,
+    "removed_fraction": 0.04326845257364842,
+    "max_run_length": 4,
+    "collapsed_events": 4016,
+    "collapses_at_half_boundaries": 84,
+    "guard_enforced": true,
+    "jitter_seed": 20260910,
+    "remaining_exact_ties": 0
+  },
+  "results": {
+    "joint": {
+      "eta_planted": 0.3,
+      "eta_cross_planted": 0.05,
+      "beta_planted": 0.2,
+      "tau_planted_minutes": 5.0,
+      "n_replicates": 10,
+      "mean_eta_hat_self": 0.27859132856814134,
+      "sd_eta_hat_self": 0.00541727226245661,
+      "bias": -0.02140867143185865,
+      "mean_tau_hat": 4.649055089966218,
+      "n_unconverged": 0,
+      "tolerance": 0.08,
+      "passed": true
+    }
+  }
+}
+[pipeline] === recovery done in 2 min
+[pipeline] === power (17:26:17 UTC, workers=95)
+/home/manasganti/miniconda3/envs/soccer-momentum/bin/python -m src.cli.main -v power --source pooled --replicates 30
+13:26:19 INFO  Slate(matches=4053, events=98848, goals=11207, cards=871) -> Slate(matches=4053, events=94571, goals=11207, cards=871)
+13:26:37 INFO  simulating with a continuous clock
+13:32:32 INFO    power sweep 10/380 (95 workers)
+13:32:32 INFO    power sweep 20/380 (95 workers)
+13:32:32 INFO    power sweep 30/380 (95 workers)
+13:33:32 INFO    power sweep 40/380 (95 workers)
+13:33:32 INFO    power sweep 50/380 (95 workers)
+13:33:32 INFO    power sweep 60/380 (95 workers)
+13:33:32 INFO    power sweep 70/380 (95 workers)
+13:33:32 INFO    power sweep 80/380 (95 workers)
+13:33:32 INFO    power sweep 90/380 (95 workers)
+13:33:32 INFO    power sweep 100/380 (95 workers)
+13:34:23 INFO    power sweep 110/380 (95 workers)
+13:34:23 INFO    power sweep 120/380 (95 workers)
+13:35:37 INFO    power sweep 130/380 (95 workers)
+13:35:37 INFO    power sweep 140/380 (95 workers)
+13:35:37 INFO    power sweep 150/380 (95 workers)
+13:36:23 INFO    power sweep 160/380 (95 workers)
+13:36:23 INFO    power sweep 170/380 (95 workers)
+13:37:26 INFO    power sweep 180/380 (95 workers)
+13:37:26 INFO    power sweep 190/380 (95 workers)
+13:37:26 INFO    power sweep 200/380 (95 workers)
+13:37:26 INFO    power sweep 210/380 (95 workers)
+13:37:26 INFO    power sweep 220/380 (95 workers)
+13:37:26 INFO    power sweep 230/380 (95 workers)
+13:37:36 INFO    power sweep 240/380 (95 workers)
+13:37:36 INFO    power sweep 250/380 (95 workers)
+13:37:37 INFO    power sweep 260/380 (95 workers)
+13:37:52 INFO    power sweep 270/380 (95 workers)
+13:38:00 INFO    power sweep 280/380 (95 workers)
+13:38:01 INFO    power sweep 290/380 (95 workers)
+13:38:16 INFO    power sweep 300/380 (95 workers)
+13:38:17 INFO    power sweep 310/380 (95 workers)
+13:38:25 INFO    power sweep 320/380 (95 workers)
+13:38:32 INFO    power sweep 330/380 (95 workers)
+13:38:36 INFO    power sweep 340/380 (95 workers)
+13:38:36 INFO    power sweep 350/380 (95 workers)
+13:38:52 INFO    power sweep 360/380 (95 workers)
+13:39:01 INFO    power sweep 370/380 (95 workers)
+13:39:12 INFO    power sweep 380/380 (95 workers)
+
+=== detection floor ===
+{
+  "raw": {
+    "matches": 4053,
+    "events": 98848,
+    "events_per_match_mean": 24.38884776708611,
+    "seasons": [
+      2004,
+      2005,
+      2006,
+      2007,
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018
+    ],
+    "leagues": [
+      "1. Bundesliga",
+      "FA Women's Super League",
+      "FIFA World Cup",
+      "La Liga",
+      "Ligue 1",
+      "NWSL",
+      "Premier League",
+      "Serie A",
+      "UEFA Euro"
+    ],
+    "situations": {
+      "open": 92761,
+      "setpiece": 4940,
+      "penalty": 1147
+    },
+    "goals": 10845,
+    "red_cards_known": true,
+    "mean_xg": 0.1062982590558817,
+    "strata": {
+      "matches_by_source": {
+        "statsbomb": 2112,
+        "wyscout": 1941
+      },
+      "matches_by_gender": {
+        "female": 143,
+        "male": 3910
+      },
+      "one_club_matches": 452
+    }
+  },
+  "prepared": {
+    "threshold_seconds": 4.0,
+    "n_before": 98848,
+    "n_after": 94571,
+    "removed_fraction": 0.04326845257364842,
+    "max_run_length": 4,
+    "collapsed_events": 4016,
+    "collapses_at_half_boundaries": 84,
+    "guard_enforced": true,
+    "jitter_seed": 20260910,
+    "remaining_exact_ties": 0
+  },
+  "critical_value": 4.6111786639788525e-05,
+  "alpha": 0.05,
+  "target_power": 0.8,
+  "detection_floor": 0.02,
+  "detection_floor_interpolated": 0.015789473684210527,
+  "curve": [
+    {
+      "eta_star": 0.0,
+      "n_replicates": 200,
+      "power": 0.05,
+      "mean_eta_hat": 1.794912147077147e-05,
+      "median_eta_hat": 1.403959027511799e-05,
+      "sd_eta_hat": 1.6629958257248033e-05,
+      "bias": 1.794912147077147e-05,
+      "mean_n_events": 98012.645,
+      "frac_converged": 1.0
+    },
+    {
+      "eta_star": 0.02,
+      "n_replicates": 30,
+      "power": 1.0,
+      "mean_eta_hat": 0.007944883712616965,
+      "median_eta_hat": 0.00796956336329159,
+      "sd_eta_hat": 0.003976799419920564,
+      "bias": -0.012055116287383035,
+      "mean_n_events": 100053.9,
+      "frac_converged": 1.0
+    },
+    {
+      "eta_star": 0.05,
+      "n_replicates": 30,
+      "power": 1.0,
+      "mean_eta_hat": 0.03401973103067472,
+      "median_eta_hat": 0.034209206247497875,
+      "sd_eta_hat": 0.0037893189102571377,
+      "bias": -0.015980268969325286,
+      "mean_n_events": 103200.1,
+      "frac_converged": 1.0
+    },
+    {
+      "eta_star": 0.1,
+      "n_replicates": 30,
+      "power": 1.0,
+      "mean_eta_hat": 0.07984952217477406,
+      "median_eta_hat": 0.08031209086293131,
+      "sd_eta_hat": 0.00364971859342454,
+      "bias": -0.020150477825225943,
+      "mean_n_events": 108836.3,
+      "frac_converged": 1.0
+    },
+    {
+      "eta_star": 0.15,
+      "n_replicates": 30,
+      "power": 1.0,
+      "mean_eta_hat": 0.1292289801813823,
+      "median_eta_hat": 0.1285539333031384,
+      "sd_eta_hat": 0.003701555244114135,
+      "bias": -0.020771019818617703,
+      "mean_n_events": 115103.8,
+      "frac_converged": 1.0
+    },
+    {
+      "eta_star": 0.2,
+      "n_replicates": 30,
+      "power": 1.0,
+      "mean_eta_hat": 0.17805714503906203,
+      "median_eta_hat": 0.17867813504207128,
+      "sd_eta_hat": 0.0043416917442156274,
+      "bias": -0.02194285496093798,
+      "mean_n_events": 122176.73333333334,
+      "frac_converged": 1.0
+    },
+    {
+      "eta_star": 0.3,
+      "n_replicates": 30,
+      "power": 1.0,
+      "mean_eta_hat": 0.27802486616552546,
+      "median_eta_hat": 0.27921234095783837,
+      "sd_eta_hat": 0.003931118411091291,
+      "bias": -0.021975133834474525,
+      "mean_n_events": 139328.83333333334,
+      "frac_converged": 1.0
+    }
+  ],
+  "config": {
+    "eta_grid": [
+      0.0,
+      0.02,
+      0.05,
+      0.1,
+      0.15,
+      0.2,
+      0.3
+    ],
+    "replicates": 30,
+    "null_replicates": 200,
+    "alpha": 0.05,
+    "target_power": 0.8,
+    "seed": 5694
+  },
+  "minute_clock": false,
+  "clock_note": "simulated slates kept their continuous clock, matching the source"
+}
+[pipeline] === power done in 12 min
+[pipeline] === tau-profile (17:39:13 UTC, workers=95)
+/home/manasganti/miniconda3/envs/soccer-momentum/bin/python -m src.cli.main -v tau-profile --source pooled
+13:39:17 INFO  Slate(matches=4053, events=98848, goals=11207, cards=871) -> Slate(matches=4053, events=94571, goals=11207, cards=871)
+
+=== tau profile ===
+{
+  "raw": {
+    "matches": 4053,
+    "events": 98848,
+    "events_per_match_mean": 24.38884776708611,
+    "seasons": [
+      2004,
+      2005,
+      2006,
+      2007,
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018
+    ],
+    "leagues": [
+      "1. Bundesliga",
+      "FA Women's Super League",
+      "FIFA World Cup",
+      "La Liga",
+      "Ligue 1",
+      "NWSL",
+      "Premier League",
+      "Serie A",
+      "UEFA Euro"
+    ],
+    "situations": {
+      "open": 92761,
+      "setpiece": 4940,
+      "penalty": 1147
+    },
+    "goals": 10845,
+    "red_cards_known": true,
+    "mean_xg": 0.1062982590558817,
+    "strata": {
+      "matches_by_source": {
+        "statsbomb": 2112,
+        "wyscout": 1941
+      },
+      "matches_by_gender": {
+        "female": 143,
+        "male": 3910
+      },
+      "one_club_matches": 452
+    }
+  },
+  "prepared": {
+    "threshold_seconds": 4.0,
+    "n_before": 98848,
+    "n_after": 94571,
+    "removed_fraction": 0.04326845257364842,
+    "max_run_length": 4,
+    "collapsed_events": 4016,
+    "collapses_at_half_boundaries": 84,
+    "guard_enforced": true,
+    "jitter_seed": 20260910,
+    "remaining_exact_ties": 0
+  },
+  "profile": [
+    {
+      "tau_minutes": 2.0,
+      "eta_self": 7.628038152253856e-09,
+      "eta_cross": 7.772288791967699e-11,
+      "loglik": -285212.2682600258,
+      "delta_loglik_vs_best": -12.110243773960974
+    },
+    {
+      "tau_minutes": 3.0,
+      "eta_self": 1.553684357777366e-08,
+      "eta_cross": 1.0323954447515596e-10,
+      "loglik": -285212.2363025071,
+      "delta_loglik_vs_best": -12.078286255244166
+    },
+    {
+      "tau_minutes": 4.0,
+      "eta_self": 3.1418608854825246e-08,
+      "eta_cross": 1.7869956043076769e-10,
+      "loglik": -285212.1611278254,
+      "delta_loglik_vs_best": -12.003111573518254
+    },
+    {
+      "tau_minutes": 5.0,
+      "eta_self": 2.880080076344288e-09,
+      "eta_cross": 5.072141316031335e-12,
+      "loglik": -285212.20197920897,
+      "delta_loglik_vs_best": -12.043962957104668
+    },
+    {
+      "tau_minutes": 6.0,
+      "eta_self": 1.7104417766817282e-06,
+      "eta_cross": 2.5597620708661374e-08,
+      "loglik": -285212.2672395028,
+      "delta_loglik_vs_best": -12.109223250939976
+    },
+    {
+      "tau_minutes": 8.0,
+      "eta_self": 1.074189983232585e-06,
+      "eta_cross": 7.95431616865576e-09,
+      "loglik": -285212.1512337053,
+      "delta_loglik_vs_best": -11.993217453418765
+    },
+    {
+      "tau_minutes": 10.0,
+      "eta_self": 6.760531131379896e-06,
+      "eta_cross": 7.811709204279563e-08,
+      "loglik": -285212.1897843539,
+      "delta_loglik_vs_best": -12.031768102024216
+    },
+    {
+      "tau_minutes": 14.0,
+      "eta_self": 0.022446805415953314,
+      "eta_cross": 2.086811726872316e-06,
+      "loglik": -285206.01840104174,
+      "delta_loglik_vs_best": -5.860384789877571
+    },
+    {
+      "tau_minutes": 20.0,
+      "eta_self": 0.03358889837119361,
+      "eta_cross": 5.0715853301858905e-06,
+      "loglik": -285202.8911083063,
+      "delta_loglik_vs_best": -2.733092054433655
+    },
+    {
+      "tau_minutes": 30.0,
+      "eta_self": 0.047158480659065596,
+      "eta_cross": 2.7554320635930237e-06,
+      "loglik": -285200.679439269,
+      "delta_loglik_vs_best": -0.5214230171404779
+    },
+    {
+      "tau_minutes": 45.0,
+      "eta_self": 0.06208115976622638,
+      "eta_cross": 9.462929658995068e-06,
+      "loglik": -285200.15801625187,
+      "delta_loglik_vs_best": 0.0
+    }
+  ],
+  "best_tau": 45.0,
+  "loglik_range": 12.110243773960974,
+  "eta_at_tau_5": 2.880080076344288e-09,
+  "note": "A log-likelihood range of only a few units across a wide tau band means the timescale is not identified: eta_self and tau trade off almost freely, and eta_self must be reported with the band it was fitted in."
+}
+[pipeline] === tau-profile done in 11 min
+[pipeline] === rounding-bias (17:51:08 UTC, workers=95)
+/home/manasganti/miniconda3/envs/soccer-momentum/bin/python -m src.cli.main -v rounding-bias --source pooled
+
+=== rounding bias (pooled) ===
+{
+  "source": "pooled",
+  "matches": 4053,
+  "seasons": [
+    2004,
+    2005,
+    2006,
+    2007,
+    2008,
+    2009,
+    2010,
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018
+  ],
+  "second_resolution": {
+    "eta_self": 3.2367441718259167e-09,
+    "eta_cross": 5.829182613269548e-12,
+    "beta": 0.12844439622676218,
+    "tau_minutes": 7.785470050671186,
+    "spectral_radius": 3.242573354439186e-09,
+    "loglik": -285212.16323867865,
+    "converged": true,
+    "n_iter": 220,
+    "n_events": 93424,
+    "n_matches": 4053,
+    "mu_fit": "joint MLE (mu and the kernel fitted together)",
+    "tau_at_boundary": false,
+    "dedup": {
+      "threshold_seconds": 4.0,
+      "n_before": 98848,
+      "n_after": 94571,
+      "removed_fraction": 0.04326845257364842,
+      "max_run_length": 4,
+      "collapsed_events": 4016,
+      "collapses_at_half_boundaries": 84,
+      "guard_enforced": true
+    }
+  },
+  "minute_resolution": {
+    "dedup": {
+      "threshold_seconds": 4.0,
+      "n_before": 98848,
+      "n_after": 89833,
+      "removed_fraction": 0.09120063127225642,
+      "max_run_length": 6,
+      "collapsed_events": 8254,
+      "collapses_at_half_boundaries": 173,
+      "guard_enforced": true
+    },
+    "eta_self_mean": 1.40118852119088e-08,
+    "eta_self_sd": 6.7033400427422625e-09,
+    "eta_cross_mean": 3.1867318551468795e-09,
+    "tau_mean": 7.749811714294472,
+    "jitter_draws": [
+      {
+        "draw": 0,
+        "seed": 20260910,
+        "eta_self": 2.0879045558925376e-08,
+        "eta_cross": 4.9347520809726245e-09,
+        "tau": 7.723244078933149,
+        "n_events": 89833
+      },
+      {
+        "draw": 1,
+        "seed": 20260911,
+        "eta_self": 1.8842935510326033e-08,
+        "eta_cross": 4.374605421299021e-09,
+        "tau": 7.731600277429968,
+        "n_events": 89833
+      },
+      {
+        "draw": 2,
+        "seed": 20260912,
+        "eta_self": 5.882138322010279e-09,
+        "eta_cross": 1.1944133585236943e-09,
+        "tau": 7.788260635307782,
+        "n_events": 89833
+      },
+      {
+        "draw": 3,
+        "seed": 20260913,
+        "eta_self": 7.93915817756501e-09,
+        "eta_cross": 1.6920843914049668e-09,
+        "tau": 7.7709709103640305,
+        "n_events": 89833
+      },
+      {
+        "draw": 4,
+        "seed": 20260914,
+        "eta_self": 1.6516148490717303e-08,
+        "eta_cross": 3.7378040235340905e-09,
+        "tau": 7.734982669437428,
+        "n_events": 89833
+      }
+    ]
+  },
+  "rounding_bias_eta_self": 1.0775141040082884e-08,
+  "extra_events_removed_by_rounding": 4738
+}
+[pipeline] === rounding-bias done in 3 min
+[pipeline] === fit-dev (17:54:58 UTC, workers=95)
+/home/manasganti/miniconda3/envs/soccer-momentum/bin/python -m src.cli.main -v fit --source pooled --split dev \
+	--bootstrap 500 --cluster-bootstrap 200
+13:55:00 INFO  Slate(matches=4053, events=98848, goals=11207, cards=871) -> Slate(matches=4053, events=94571, goals=11207, cards=871)
+14:16:24 INFO    null bootstrap 25/500 (95 workers)
+14:16:24 INFO    null bootstrap 50/500 (95 workers)
+14:16:37 INFO    null bootstrap 75/500 (95 workers)
+14:16:37 INFO    null bootstrap 100/500 (95 workers)
+14:17:19 INFO    null bootstrap 125/500 (95 workers)
+14:19:06 INFO    null bootstrap 150/500 (95 workers)
+14:19:48 INFO    null bootstrap 175/500 (95 workers)
+14:20:34 INFO    null bootstrap 200/500 (95 workers)
+14:21:02 INFO    null bootstrap 225/500 (95 workers)
+14:21:45 INFO    null bootstrap 250/500 (95 workers)
+14:22:42 INFO    null bootstrap 275/500 (95 workers)
+14:22:55 INFO    null bootstrap 300/500 (95 workers)
+14:23:41 INFO    null bootstrap 325/500 (95 workers)
+14:23:59 INFO    null bootstrap 350/500 (95 workers)
+14:24:00 INFO    null bootstrap 375/500 (95 workers)
+14:24:13 INFO    null bootstrap 400/500 (95 workers)
+14:24:24 INFO    null bootstrap 425/500 (95 workers)
+14:24:29 INFO    null bootstrap 450/500 (95 workers)
+14:24:37 INFO    null bootstrap 475/500 (95 workers)
+14:24:39 INFO    null bootstrap 500/500 (95 workers)
+14:26:08 INFO    cluster bootstrap 25/200 (95 workers)
+14:26:08 INFO    cluster bootstrap 50/200 (95 workers)
+14:26:09 INFO    cluster bootstrap 75/200 (95 workers)
+14:26:45 INFO    cluster bootstrap 100/200 (95 workers)
+14:27:00 INFO    cluster bootstrap 125/200 (95 workers)
+14:27:00 INFO    cluster bootstrap 150/200 (95 workers)
+14:27:01 INFO    cluster bootstrap 175/200 (95 workers)
+14:27:33 INFO    cluster bootstrap 200/200 (95 workers)
+
+=== fit (dev) ===
+{
+  "raw": {
+    "matches": 4053,
+    "events": 98848,
+    "events_per_match_mean": 24.38884776708611,
+    "seasons": [
+      2004,
+      2005,
+      2006,
+      2007,
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018
+    ],
+    "leagues": [
+      "1. Bundesliga",
+      "FA Women's Super League",
+      "FIFA World Cup",
+      "La Liga",
+      "Ligue 1",
+      "NWSL",
+      "Premier League",
+      "Serie A",
+      "UEFA Euro"
+    ],
+    "situations": {
+      "open": 92761,
+      "setpiece": 4940,
+      "penalty": 1147
+    },
+    "goals": 10845,
+    "red_cards_known": true,
+    "mean_xg": 0.1062982590558817,
+    "strata": {
+      "matches_by_source": {
+        "statsbomb": 2112,
+        "wyscout": 1941
+      },
+      "matches_by_gender": {
+        "female": 143,
+        "male": 3910
+      },
+      "one_club_matches": 452
+    }
+  },
+  "prepared": {
+    "threshold_seconds": 4.0,
+    "n_before": 98848,
+    "n_after": 94571,
+    "removed_fraction": 0.04326845257364842,
+    "max_run_length": 4,
+    "collapsed_events": 4016,
+    "collapses_at_half_boundaries": 84,
+    "guard_enforced": true,
+    "jitter_seed": 20260910,
+    "remaining_exact_ties": 0
+  },
+  "headline": {
+    "background": {
+      "theta0": -2.5660946604496457,
+      "theta_home": 0.2353534978026372,
+      "f_minute": [
+        0.6914554551019112,
+        -5.268150392820048,
+        7.704268234244414,
+        -4.218135178574537,
+        2.025926436558039,
+        -0.8770638580062221
+      ],
+      "g_score": {
+        "-2": 0.1679152932235341,
+        "-1": 0.1022689349381536,
+        "0": 0.0,
+        "1": -0.22666042842714185,
+        "2": -0.2991292350753148
+      },
+      "h_red": {
+        "-1": -0.4957770665498805,
+        "0": 0.0,
+        "1": 0.3641217765250835
+      },
+      "theta_source": {
+        "statsbomb": 0.0,
+        "wyscout": -0.05019042235911739
+      },
+      "dropped_terms": [],
+      "n_team_effects": 535,
+      "loglik": -285212.16323867865,
+      "ridge_penalty": 40.519177960232085,
+      "converged": true,
+      "n_iter": 220,
+      "team_ridge": 1.0,
+      "minute_df": 6,
+      "include_score": true,
+      "include_red": true
+    },
+    "hawkes": {
+      "eta_self": 3.2367441718259167e-09,
+      "eta_cross": 5.829182613269548e-12,
+      "beta": 0.12844439622676218,
+      "tau_minutes": 7.785470050671186,
+      "spectral_radius": 3.242573354439186e-09,
+      "loglik": -285212.16323867865,
+      "converged": true,
+      "n_iter": 220,
+      "n_events": 93424,
+      "n_matches": 4053,
+      "mu_fit": "joint MLE (mu and the kernel fitted together)",
+      "tau_at_boundary": false
+    },
+    "em_trace": [
+      {
+        "iter": 220,
+        "loglik": -285212.16323867865,
+        "eta_self": 3.2367441718259167e-09,
+        "eta_cross": 5.829182613269548e-12,
+        "tau": 7.785470050671186
+      }
+    ]
+  },
+  "across_jitter_draws": {
+    "eta_self_mean": 3.236744171825917e-09,
+    "eta_self_sd": 4.624080198346215e-25,
+    "eta_self_min": 3.2367441718259167e-09,
+    "eta_self_max": 3.2367441718259167e-09,
+    "eta_cross_mean": 5.829182613269548e-12,
+    "tau_mean": 7.785470050671185,
+    "n_draws": 5
+  },
+  "goodness_of_fit": {
+    "poisson": {
+      "n": 93424,
+      "ks_stat": 0.036177609222868945,
+      "ks_stat_subsample": 0.036177609222868945,
+      "ks_pvalue_subsample": 1.129929019375005e-106,
+      "n_subsample": 93424,
+      "mean_tau": 0.9135193155725864,
+      "var_tau": 0.8073055913363437,
+      "n_processes": 6390,
+      "frac_reject_05": 0.059154929577464786,
+      "uniformity_ks_stat": 0.011254158729126384,
+      "uniformity_ks_pvalue": 0.39037725329541684
+    },
+    "hawkes": {
+      "n": 93424,
+      "ks_stat": 0.036121099951883506,
+      "ks_stat_subsample": 0.036121099951883506,
+      "ks_pvalue_subsample": 2.4254350102925526e-106,
+      "n_subsample": 93424,
+      "mean_tau": 0.9135070091728087,
+      "var_tau": 0.8073226872505186,
+      "n_processes": 6390,
+      "frac_reject_05": 0.059154929577464786,
+      "uniformity_ks_stat": 0.01161860614830737,
+      "uniformity_ks_pvalue": 0.3515782841909
+    },
+    "loglik_poisson": -285212.16603324097,
+    "loglik_hawkes": -285212.16323867865,
+    "note": "each model is rescaled by its own fitted compensator"
+  },
+  "sensitivities": {
+    "headline": {
+      "eta_self": 3.2367441718259167e-09,
+      "eta_cross": 5.829182613269548e-12,
+      "tau_minutes": 7.785470050671186
+    },
+    "kernel_box_1_to_20_min": {
+      "eta_self": 6.3291287396969e-05,
+      "eta_cross": 3.6093104978047213e-06,
+      "tau_minutes": 18.746969749462618,
+      "tau_at_boundary": false,
+      "delta_eta_self": 6.328805065279718e-05,
+      "loglik": -285212.1685069372
+    },
+    "no_score_state": {
+      "eta_self": 2.7673787116163907e-08,
+      "eta_cross": 8.73926997416908e-11,
+      "tau_minutes": 7.6884461977899505,
+      "tau_at_boundary": false,
+      "delta_eta_self": 2.443704294433799e-08,
+      "loglik": -285965.7470143368
+    },
+    "no_red_cards": {
+      "eta_self": 2.125383934949017e-05,
+      "eta_cross": 6.491104830925411e-07,
+      "tau_minutes": 6.974011152634729,
+      "tau_at_boundary": false,
+      "delta_eta_self": 2.1250602605318345e-05,
+      "loglik": -285676.34372594085
+    },
+    "penalties_kept": {
+      "eta_self": 7.145425527674222e-07,
+      "eta_cross": 9.808193274023948e-09,
+      "tau_minutes": 7.415420112979358,
+      "tau_at_boundary": false,
+      "delta_eta_self": 7.113058085955963e-07,
+      "loglik": -287502.8874138642
+    },
+    "minute_spline_df_3": {
+      "eta_self": 2.7909149619683973e-07,
+      "eta_cross": 2.4025509602021053e-09,
+      "tau_minutes": 7.5152860774569445,
+      "tau_at_boundary": false,
+      "delta_eta_self": 2.758547520250138e-07,
+      "loglik": -285255.04053414054
+    },
+    "minute_spline_df_5": {
+      "eta_self": 3.126259219624757e-07,
+      "eta_cross": 2.913567069162754e-09,
+      "tau_minutes": 7.496079622162334,
+      "tau_at_boundary": false,
+      "delta_eta_self": 3.0938917779064975e-07,
+      "loglik": -285242.6134504928
+    },
+    "minute_spline_df_9": {
+      "eta_self": 1.8927418630475671e-53,
+      "eta_cross": 0.0,
+      "tau_minutes": 7.999999999742878,
+      "tau_at_boundary": true,
+      "delta_eta_self": -3.2367441718259167e-09,
+      "loglik": -285184.3369279995
+    },
+    "minute_spline_df_12": {
+      "eta_self": 7.434848085114244e-06,
+      "eta_cross": 2.37386491010608e-07,
+      "tau_minutes": 7.0975264008856165,
+      "tau_at_boundary": false,
+      "delta_eta_self": 7.4316113409424175e-06,
+      "loglik": -285162.26167048776
+    }
+  },
+  "asymmetry_check": {
+    "eta_HH": 1.467111028277774e-17,
+    "eta_HA": 2.9634541590489077e-17,
+    "eta_AH": 7.059185693358176e-20,
+    "eta_AA": 1.4887712269492957e-17,
+    "spectral_radius": 1.6229820330647322e-17,
+    "tau_minutes": 5.480310398613143,
+    "loglik": -285212.16323955805,
+    "converged": true,
+    "note": "robustness check on the H/A symmetry reduction; mu is held fixed, so this inherits the two-stage bias and is not a headline estimate"
+  },
+  "parametric_bootstrap": {
+    "eta_self_observed": 3.2367441718259167e-09,
+    "p_value": 0.5369261477045908,
+    "n_replicates": 500,
+    "seed": 5694,
+    "null_median": 6.5805688974455416e-09,
+    "null_q90": 1.0590251219014947e-06,
+    "null_q95": 2.1730381461741134e-06,
+    "null_q99": 5.4806225510174055e-06,
+    "n_unconverged": 0
+  },
+  "cluster_bootstrap_ci95": [
+    1.7464985911735553e-09,
+    2.8020424211885432e-06
+  ],
+  "cluster_bootstrap_n_unconverged": 0,
+  "detection_floor": 0.02,
+  "detection_floor_interpolated": 0.015789473684210527,
+  "detection_floor_source": "power_pooled_dev.json",
+  "verdict": "eta_self = 0.000 sits below the measured detection floor of 0.020: the honest statement is an upper bound, not an estimate."
+}
+[pipeline] === fit-dev done in 32 min
+[pipeline] all steps done
