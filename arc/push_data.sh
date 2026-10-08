@@ -11,7 +11,7 @@ set -euo pipefail
 
 ARC_HOST="${ARC_HOST:-owl1.arc.vt.edu}"
 ARC_USER="${ARC_USER:-$USER}"
-ARC_REPO="${ARC_REPO:-/home/$ARC_USER/soccer-momentum}"
+ARC_REPO="${ARC_REPO:-/home/$ARC_USER/ondemand/data/nonlinearity-project-soccer}"
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$REPO_ROOT"
 

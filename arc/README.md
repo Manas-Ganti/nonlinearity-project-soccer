@@ -9,7 +9,8 @@ node runs `fit-dev` in ~3–4 h instead of ~15 h on the Mac. No GPU is involved.
 On ARC (OWL login node, `owl1.arc.vt.edu`):
 
 ```bash
-git clone <repo> ~/soccer-momentum && cd ~/soccer-momentum
+cd /home/manasganti/ondemand/data
+git clone git@github.com:Manas-Ganti/nonlinearity-project-soccer.git && cd nonlinearity-project-soccer
 mkdir -p ~/.config/soccer-momentum
 printf 'SM_ACCOUNT=<slurm account>\nSM_MAIL_USER=<pid>@vt.edu\n' > ~/.config/soccer-momentum/arc.env
 arc/setup_env.sh          # conda env pinned to arc/requirements.lock.txt, then ruff + pytest
