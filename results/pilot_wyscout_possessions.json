@@ -1,0 +1,167 @@
+{
+  "name": "pilot_wyscout_possessions",
+  "written_at_utc": "2026-10-08T20:38:07+00:00",
+  "python": "3.12.7",
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "numpy": "2.5.3",
+  "git_rev": "6c659bd",
+  "inputs": {},
+  "payload": {
+    "note": "Feasibility only. No momentum statistic is computed: nothing here measures whether one dangerous possession predicts another.",
+    "definitions": {
+      "onball_events": [
+        "Free Kick",
+        "Others on the ball",
+        "Pass",
+        "Shot"
+      ],
+      "strict_possession": "a new possession whenever the team of consecutive on-ball events changes, or the period does",
+      "tolerant_possession": "as strict, but one opponent on-ball event that is not an accurate pass, between two runs of the same team, is a touch and does not end the possession; a shot is never a touch",
+      "final_third": "an own on-ball event starting at x >= 66.7, or an accurate pass/free kick ending there",
+      "box": "an own on-ball event starting in the box (x >= 84.0, 19.0 <= y <= 81.0), or an accurate pass/free kick ending there",
+      "event_time": "the first moment the possession met the definition"
+    },
+    "quality": {
+      "events": 3251147,
+      "onball": 2159023,
+      "onball_missing_end": 2,
+      "nonmonotone_matches": 0,
+      "matches": 1941,
+      "frac_onball_missing_end": 9.263449254593397e-07,
+      "clock_shot_count_mismatch_matches": 0,
+      "clock_max_abs_diff_min": 0.0662301666666707
+    },
+    "shots_per_team_match": {
+      "raw_incl_penalties": {
+        "mean": 11.821907216494845,
+        "sd": 4.978373903704226,
+        "p10": 6.0,
+        "p50": 11.0,
+        "p90": 18.0
+      },
+      "n_team_matches": 3880
+    },
+    "strict": {
+      "possessions_per_match": 307.80473982483255,
+      "possession_duration_s": {
+        "mean": 10.242067841939647,
+        "sd": 17.747548372431734,
+        "p10": 0.0,
+        "p50": 2.8445470000002615,
+        "p90": 30.980073999999878
+      },
+      "events_per_possession_mean": 3.613736067848469,
+      "frac_possessions_with_shot": 0.07364645350481798,
+      "n_shots_in_possessions": 45869,
+      "final_third": {
+        "n_events": 268737,
+        "per_team_match": {
+          "mean": 69.22642967542504,
+          "sd": 15.153189834251842,
+          "p10": 50.0,
+          "p50": 69.0,
+          "p90": 89.0
+        },
+        "per_team_match_after_collapse": 53.664348274085526,
+        "ratio_to_raw_shots": 5.855775079915611,
+        "frac_shots_inside": 0.9942880812749352,
+        "excess_dies_at_s": 20.0,
+        "excess_mass_below_threshold": 0.0670839816461543,
+        "removed_fraction_if_collapsed": 0.2247997112418461,
+        "passes_15pct_guard": false,
+        "n_gaps": 260933,
+        "gap_quantiles_s": {
+          "0.05": 6.240499800000123,
+          "0.25": 21.835793,
+          "0.5": 53.19694000000027,
+          "0.75": 109.3092859999999
+        }
+      },
+      "box": {
+        "n_events": 71310,
+        "per_team_match": {
+          "mean": 18.369397217928903,
+          "sd": 7.4167766745755666,
+          "p10": 10.0,
+          "p50": 18.0,
+          "p90": 28.0
+        },
+        "per_team_match_after_collapse": 17.36733642452344,
+        "ratio_to_raw_shots": 1.5538437987652696,
+        "frac_shots_inside": 0.6626261745405394,
+        "excess_dies_at_s": 8.0,
+        "excess_mass_below_threshold": 0.027092840223299282,
+        "removed_fraction_if_collapsed": 0.05455055391950638,
+        "passes_15pct_guard": true,
+        "n_gaps": 63523,
+        "gap_quantiles_s": {
+          "0.05": 6.410521999999503,
+          "0.25": 57.63326750000026,
+          "0.5": 163.19162199999994,
+          "0.75": 348.84438250000005
+        }
+      }
+    },
+    "tolerant": {
+      "possessions_per_match": 145.4214322514168,
+      "possession_duration_s": {
+        "mean": 28.768144840567132,
+        "sd": 38.23045303859744,
+        "p10": 1.4736078000000248,
+        "p50": 14.066802999999624,
+        "p90": 75.18808780000008
+      },
+      "events_per_possession_mean": 6.9286658187576835,
+      "frac_possessions_with_shot": 0.13972784247315448,
+      "n_shots_in_possessions": 45869,
+      "final_third": {
+        "n_events": 162308,
+        "per_team_match": {
+          "mean": 41.81040700669758,
+          "sd": 7.830997340031793,
+          "p10": 32.0,
+          "p50": 42.0,
+          "p90": 52.0
+        },
+        "per_team_match_after_collapse": 41.81040700669758,
+        "ratio_to_raw_shots": 3.536688813490301,
+        "frac_shots_inside": 0.9957487627809631,
+        "excess_dies_at_s": 0.0,
+        "excess_mass_below_threshold": 0.0,
+        "removed_fraction_if_collapsed": 0.0,
+        "passes_15pct_guard": true,
+        "n_gaps": 154504,
+        "gap_quantiles_s": {
+          "0.05": 18.31962105000088,
+          "0.25": 57.934683249999836,
+          "0.5": 106.58488650000038,
+          "0.75": 177.61337374999954
+        }
+      },
+      "box": {
+        "n_events": 54525,
+        "per_team_match": {
+          "mean": 14.045595054095827,
+          "sd": 5.179910096710548,
+          "p10": 8.0,
+          "p50": 14.0,
+          "p90": 21.0
+        },
+        "per_team_match_after_collapse": 14.045595054095827,
+        "ratio_to_raw_shots": 1.1880989079747064,
+        "frac_shots_inside": 0.7480215396019098,
+        "excess_dies_at_s": 0.0,
+        "excess_mass_below_threshold": 0.0,
+        "removed_fraction_if_collapsed": 0.0,
+        "passes_15pct_guard": true,
+        "n_gaps": 46743,
+        "gap_quantiles_s": {
+          "0.05": 44.40306529999995,
+          "0.25": 132.78084750000005,
+          "0.5": 247.84282599999997,
+          "0.75": 445.3810379999999
+        }
+      }
+    }
+  }
+}
