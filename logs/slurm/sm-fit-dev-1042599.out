@@ -1,0 +1,4 @@
+[arc_env] job=1042599 node=owl058 cpus=96 python=/home/manasganti/miniconda3/envs/soccer-momentum/bin/python (Python 3.12.7) commit=d1e5280
+[fit_dev] workers=95  /home/manasganti/miniconda3/envs/soccer-momentum/bin/python -m src.cli.main -v fit --source pooled --split dev --bootstrap 50 --cluster-bootstrap 20
+03:07:12 INFO  Slate(matches=4053, events=98848, goals=11207, cards=871) -> Slate(matches=4053, events=94571, goals=11207, cards=871)
+[2026-10-08T03:10:06.942] error: *** JOB 1042599 ON owl058 CANCELLED AT 2026-10-08T03:10:06 DUE to SIGNAL Terminated ***

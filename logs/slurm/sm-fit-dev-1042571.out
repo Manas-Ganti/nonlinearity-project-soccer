@@ -1,0 +1,1 @@
+[arc_env] FATAL: '/home/manasganti/miniconda3/envs/soccer-momentum/bin/python -V' printed '/home/manasganti/ondemand/data/nonlinearity-project-soccer/arc/arc_env.sh: line 20: /home/manasganti/miniconda3/envs/soccer-momentum/bin/python: No such file or directory'. Run arc/setup_env.sh on a login node.
