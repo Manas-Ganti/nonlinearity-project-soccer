@@ -4,7 +4,7 @@ CLI = $(PY) -m src.cli.main
 .PHONY: help venv test lint fmt check clean \
         ingest-understat ingest-statsbomb build-understat build-statsbomb build-synthetic \
         calibrate-dedup fit-null recovery power rounding-bias fit-dev fit-holdout \
-        estimator-comparison tau-profile cross-source secondary report demo pipeline
+        estimator-comparison tau-profile cross-source secondary report notebook demo pipeline
 
 help:  ## list targets
 	@grep -E '^[a-z-]+:.*?## ' $(MAKEFILE_LIST) | sed 's/:.*## /\t/'
@@ -89,6 +89,9 @@ fit-holdout:  ## step 9: run once, report, stop.
 
 report:  ## assemble results/ into docs/RESULTS.md
 	$(PY) -m src.cli.report
+
+notebook:  ## open the results notebook (needs: pip install -e ".[viz]")
+	.venv/bin/jupyter lab notebooks/results.ipynb
 
 pipeline: calibrate-dedup fit-null estimator-comparison recovery power tau-profile rounding-bias fit-dev report  ## everything but the holdout
 

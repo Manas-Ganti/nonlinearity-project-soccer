@@ -119,3 +119,17 @@
 2026-10-08T17:39:16+00:00	source=pooled split=dev final_run=False caller=tau-profile touches_holdout=False matches=4053
 2026-10-08T17:51:09+00:00	source=pooled split=dev final_run=False caller=rounding-bias touches_holdout=False matches=4053
 2026-10-08T17:55:00+00:00	source=pooled split=dev final_run=False caller=fit-dev touches_holdout=False matches=4053
+2026-10-08T17:11:39+00:00	source=pooled split=dev final_run=False caller=notebook touches_holdout=False matches=4053
+2026-10-08T17:11:58+00:00	source=pooled split=dev final_run=False caller=notebook touches_holdout=False matches=4053
+2026-10-08T17:12:53+00:00	source=pooled split=dev final_run=False caller=notebook touches_holdout=False matches=4053
+2026-10-08T17:13:13+00:00	source=pooled split=dev final_run=False caller=notebook touches_holdout=False matches=4053
+2026-10-08T17:14:43+00:00	source=x split=all final_run=False caller=test touches_holdout=True matches=20
+2026-10-08T17:14:43+00:00	source=x split=holdout final_run=False caller=test touches_holdout=True matches=10
+2026-10-08T17:14:43+00:00	source=x split=dev final_run=False caller=test touches_holdout=False matches=10
+2026-10-08T17:14:43+00:00	source=x split=all final_run=True caller=pytest-marker touches_holdout=True matches=10
+2026-10-08T17:14:51+00:00	source=pooled split=dev final_run=False caller=notebook touches_holdout=False matches=4053
+2026-10-08T18:49:29+00:00	source=pooled split=dev final_run=False caller=notebook touches_holdout=False matches=4053
+2026-10-08T18:50:50+00:00	source=x split=all final_run=False caller=test touches_holdout=True matches=20
+2026-10-08T18:50:50+00:00	source=x split=holdout final_run=False caller=test touches_holdout=True matches=10
+2026-10-08T18:50:50+00:00	source=x split=dev final_run=False caller=test touches_holdout=False matches=10
+2026-10-08T18:50:50+00:00	source=x split=all final_run=True caller=pytest-marker touches_holdout=True matches=10

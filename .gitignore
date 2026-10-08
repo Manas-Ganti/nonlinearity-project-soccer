@@ -15,3 +15,7 @@ data/interim/**
 
 # results/ IS tracked: the manifests are the record, and the record is the
 # deliverable. So are logs/, which is how the holdout split is auditable.
+
+# Jupyter
+.ipynb_checkpoints/
+*.egg-info/

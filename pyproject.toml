@@ -13,6 +13,8 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["pytest>=7.4", "ruff>=0.5"]
+# The results notebook (notebooks/results.ipynb). Not needed to run the pipeline.
+viz = ["matplotlib>=3.8", "jupyterlab>=4", "nbclient>=0.10", "ipykernel>=6"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
@@ -35,3 +37,5 @@ ignore = ["E501"]
 [tool.ruff.lint.per-file-ignores]
 "tests/*" = ["E402"]
 "src/models/joint.py" = ["SLF001"]
+# Chart labels use real typography (×, −, –) on purpose.
+"notebooks/*.ipynb" = ["RUF001"]
