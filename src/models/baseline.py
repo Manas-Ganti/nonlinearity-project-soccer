@@ -209,10 +209,14 @@ def counts(design: BackgroundDesign, events: pd.DataFrame) -> np.ndarray:
 class BackgroundFit:
     params: np.ndarray
     design: BackgroundDesign
+    # The point-process log-likelihood of the data, *without* the team ridge, so it
+    # is on the same scale as the Hawkes loglik it is compared with in gof.compare.
+    # The ridge is what the optimiser minimised alongside it; it is reported apart.
     loglik: float
     converged: bool
     n_iter: int
     message: str
+    ridge_penalty: float = 0.0
 
     def unpack(self) -> dict:
         return _unpack(self.params, self.design)
@@ -256,6 +260,7 @@ class BackgroundFit:
             "dropped_terms": list(self.design.dropped_terms),
             "n_team_effects": int(d["a"].size),
             "loglik": float(self.loglik),
+            "ridge_penalty": float(self.ridge_penalty),
             "converged": bool(self.converged),
             "n_iter": int(self.n_iter),
             "team_ridge": float(self.design.cfg.team_ridge),
@@ -392,14 +397,22 @@ def fit(
         method="L-BFGS-B",
         options={"maxiter": cfg.maxiter, "ftol": cfg.tol, "gtol": 1e-7, "maxcor": 20},
     )
+    pen = _ridge_penalty(res.x, design)
     return BackgroundFit(
         params=res.x,
         design=design,
-        loglik=float(-res.fun),
+        loglik=float(-res.fun + pen),
         converged=bool(res.success),
         n_iter=int(res.nit),
         message=str(res.message),
+        ridge_penalty=pen,
     )
+
+
+def _ridge_penalty(p: np.ndarray, design: BackgroundDesign) -> float:
+    """0.5 * ridge * (|a|^2 + |d|^2): the part of the objective that is not likelihood."""
+    u = _unpack(p, design)
+    return 0.5 * design.cfg.team_ridge * (float(u["a"] @ u["a"]) + float(u["d"] @ u["d"]))
 
 
 def _segment_sum(values: np.ndarray, design: BackgroundDesign) -> np.ndarray:

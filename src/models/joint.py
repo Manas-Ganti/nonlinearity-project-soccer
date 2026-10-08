@@ -99,7 +99,10 @@ def fit(
     *,
     theta_init: np.ndarray,
     z_init: np.ndarray | None = None,
-    maxiter: int = 400,
+    # 400 was too few: on the pooled slate 200/500 null-bootstrap replicates (job
+    # 1042610) stopped at the cap. Rerun with room, they converge by ~460 iterations
+    # and eta moves by < 1e-7. The cap is a guard against a runaway, not a budget.
+    maxiter: int = 3000,
 ) -> JointFit:
     if z_init is None:
         z_init = hawkes.natural_to_unconstrained(
@@ -129,6 +132,7 @@ def fit(
         converged=bool(res.success),
         n_iter=int(res.nit),
         message=str(res.message),
+        ridge_penalty=baseline._ridge_penalty(theta, design),
     )
     hk = hawkes.HawkesFit(
         eta_self=eta_self,

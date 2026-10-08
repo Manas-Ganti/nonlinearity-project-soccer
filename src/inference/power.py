@@ -101,8 +101,11 @@ def run_sweep(
             "eta_hat_cross": res.hawkes_fit.eta_cross,
             "beta_hat": res.hawkes_fit.beta,
             "tau_hat": res.hawkes_fit.tau_minutes,
+            # With the joint fit these are one optimiser's flag; kept as two columns
+            # because the two-stage estimator sets them separately.
             "mu_converged": res.background.converged,
             "hawkes_converged": res.hawkes_fit.converged,
+            "n_iter": res.hawkes_fit.n_iter,
         }
 
     rows = pmap(one, cells, workers=workers, label="power sweep" if progress else "", every=10)
@@ -128,6 +131,9 @@ def summarise(sweep: pd.DataFrame, cfg: PowerConfig) -> dict:
                 "sd_eta_hat": float(hat.std(ddof=1)) if hat.size > 1 else np.nan,
                 "bias": float(hat.mean() - eta_star),
                 "mean_n_events": float(g["n_events"].mean()),
+                "frac_converged": float(g["hawkes_converged"].astype(bool).mean())
+                if "hawkes_converged" in g
+                else None,
             }
         )
     curve = pd.DataFrame(rows)
@@ -188,6 +194,8 @@ def recovery_check(
             "eta_hat_cross": res.hawkes_fit.eta_cross,
             "beta_hat": res.hawkes_fit.beta,
             "tau_hat": res.hawkes_fit.tau_minutes,
+            "fit_converged": res.hawkes_fit.converged,
+            "n_iter": res.hawkes_fit.n_iter,
         }
 
     detail = pd.DataFrame(pmap(one, range(n_replicates), workers=workers, label="recovery", every=5))
@@ -202,6 +210,7 @@ def recovery_check(
         "sd_eta_hat_self": float(detail["eta_hat_self"].std(ddof=1)) if n_replicates > 1 else np.nan,
         "bias": mean_hat - eta_plant,
         "mean_tau_hat": float(detail["tau_hat"].mean()),
+        "n_unconverged": int((~detail["fit_converged"].astype(bool)).sum()),
         "tolerance": tolerance,
         "passed": bool(abs(mean_hat - eta_plant) <= tolerance),
         "detail": detail,

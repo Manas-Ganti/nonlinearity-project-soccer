@@ -443,6 +443,7 @@ def cmd_fit(args) -> None:
         cb.to_csv(RESULTS / f"cluster_bootstrap_{_tag(args)}.csv", index=False)
         lo, hi = bootstrap.percentile_ci(cb["eta_self"].to_numpy())
         payload["cluster_bootstrap_ci95"] = [lo, hi]
+        payload["cluster_bootstrap_n_unconverged"] = int((~cb["fit_converged"].astype(bool)).sum())
 
     # The floor must be the one measured on this same slate. Anything else is a number
     # from another dataset wearing this one's clothes.

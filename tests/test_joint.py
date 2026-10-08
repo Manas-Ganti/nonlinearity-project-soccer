@@ -100,3 +100,25 @@ def test_all_three_estimators_agree_when_there_is_no_excitation():
             ("joint", "two_stage", "em")}
     for m, f in fits.items():
         assert f.eta_self < 0.05, f"{m} manufactured excitation from a Poisson process"
+
+
+def test_background_loglik_is_on_the_hawkes_scale(setup):
+    """gof.compare sets the background fit's loglik beside the Hawkes one. At eta = 0
+    with the same mu they are the same likelihood, so they must report the same number;
+    the ridge, which only the optimiser sees, is carried separately. (Reporting the
+    penalised value once put the Poisson null 41 units 'behind' an eta ~ 0 Hawkes fit.)"""
+    pipe, bg, data = setup
+    log_rate, _rate, int_mu = joint._mu_pieces(bg.params, pipe.design)
+    data.update_mu(log_rate[data.design_rows], int_mu)
+    ll0 = hawkes.loglik(data, hawkes.branching_matrix(0.0, 0.0), 1 / 5.0)
+    assert bg.loglik == pytest.approx(ll0, rel=1e-10)
+    assert bg.ridge_penalty > 0
+    nll, _ = baseline._objective(bg.params, pipe.design, baseline.counts(pipe.design, pipe_events(pipe)))
+    assert -nll == pytest.approx(bg.loglik - bg.ridge_penalty, rel=1e-10)
+
+
+def pipe_events(pipe):
+    from src.inference.pipeline import _modelled
+
+    return _modelled(pipe.slate.events, pipe.cfg)
+

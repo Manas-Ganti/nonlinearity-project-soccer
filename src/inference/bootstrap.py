@@ -49,6 +49,9 @@ class BootstrapResult:
             "null_q90": float(q[1]),
             "null_q95": float(q[2]),
             "null_q99": float(q[3]),
+            "n_unconverged": int((~self.detail["fit_converged"].astype(bool)).sum())
+            if "fit_converged" in self.detail
+            else None,
         }
 
 
@@ -80,7 +83,9 @@ def parametric_bootstrap_null(
             "eta_self": res.hawkes_fit.eta_self,
             "eta_cross": res.hawkes_fit.eta_cross,
             "beta": res.hawkes_fit.beta,
-            "mu_converged": res.background.converged,
+            # The joint optimiser's flag (mu and the kernel together), not mu alone.
+            "fit_converged": res.hawkes_fit.converged,
+            "n_iter": res.hawkes_fit.n_iter,
         }
 
     rows = pmap(
@@ -124,6 +129,8 @@ def cluster_bootstrap(
             "eta_self": res.hawkes_fit.eta_self,
             "eta_cross": res.hawkes_fit.eta_cross,
             "beta": res.hawkes_fit.beta,
+            "fit_converged": res.hawkes_fit.converged,
+            "n_iter": res.hawkes_fit.n_iter,
         }
 
     rows = pmap(one, list(enumerate(draws)), workers=workers, label="cluster bootstrap", every=progress_every)
