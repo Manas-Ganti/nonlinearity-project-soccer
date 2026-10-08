@@ -1,0 +1,50 @@
+{
+  "name": "build_possessions_wyscout",
+  "written_at_utc": "2026-10-08T21:47:43+00:00",
+  "python": "3.12.7",
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "numpy": "2.5.3",
+  "git_rev": "3dc94d3",
+  "inputs": {},
+  "payload": {
+    "matches": 1941,
+    "seasons": [
+      2016,
+      2017,
+      2018
+    ],
+    "strict": {
+      "possessions_per_match": 307.80473982483255,
+      "dangerous_final_third_per_team_match": 69.22642967542504,
+      "dangerous_box_per_team_match": 18.369397217928903,
+      "frac_with_shot": 0.07364645350481798,
+      "shots_in_table": 45869,
+      "own_time_over_match_T_min": 0.9864987203529032,
+      "start_types": {
+        "open": 460395,
+        "throw_in": 66216,
+        "goal_kick": 30975,
+        "free_kick": 26139,
+        "corner": 13568,
+        "penalty": 156
+      }
+    },
+    "tolerant": {
+      "possessions_per_match": 145.4214322514168,
+      "dangerous_final_third_per_team_match": 41.81040700669758,
+      "dangerous_box_per_team_match": 14.045595054095827,
+      "frac_with_shot": 0.13972784247315448,
+      "shots_in_table": 45869,
+      "own_time_over_match_T_min": 0.9864987203529032,
+      "start_types": {
+        "open": 221645,
+        "throw_in": 27107,
+        "goal_kick": 17915,
+        "free_kick": 15106,
+        "corner": 467,
+        "penalty": 23
+      }
+    },
+    "shots_in_slate": 45869
+  }
+}

@@ -139,3 +139,17 @@
 2026-10-08T20:37:10+00:00	source=wyscout split=dev final_run=False caller=pilot-possessions touches_holdout=False matches=1941
 2026-10-08T21:13:10+00:00	source=wyscout split=dev final_run=False caller=fit-dev touches_holdout=False matches=1941
 2026-10-08T21:13:10+00:00	source=statsbomb split=dev final_run=False caller=fit-dev touches_holdout=False matches=2112
+2026-10-08T21:36:43+00:00	source=wyscout split=dev final_run=False caller=build-possessions touches_holdout=False matches=1941
+2026-10-08T21:39:01+00:00	source=wyscout split=dev final_run=False caller=build-possessions touches_holdout=False matches=1941
+2026-10-08T21:41:14+00:00	source=x split=all final_run=False caller=test touches_holdout=True matches=20
+2026-10-08T21:41:14+00:00	source=x split=holdout final_run=False caller=test touches_holdout=True matches=10
+2026-10-08T21:41:15+00:00	source=x split=dev final_run=False caller=test touches_holdout=False matches=10
+2026-10-08T21:41:15+00:00	source=x split=all final_run=True caller=pytest-marker touches_holdout=True matches=10
+2026-10-08T21:46:42+00:00	source=wyscout split=dev final_run=False caller=build-possessions touches_holdout=False matches=1941
+2026-10-08T21:48:46+00:00	source=wyscout_possessions split=dev final_run=False caller=possession-model-dev touches_holdout=False matches=1941
+2026-10-08T21:50:58+00:00	source=wyscout_possessions split=dev final_run=False caller=poss-recovery touches_holdout=False matches=1941
+2026-10-08T21:51:57+00:00	source=wyscout_possessions split=dev final_run=False caller=poss-power touches_holdout=False matches=1941
+2026-10-08T22:02:49+00:00	source=x split=all final_run=False caller=test touches_holdout=True matches=20
+2026-10-08T22:02:49+00:00	source=x split=holdout final_run=False caller=test touches_holdout=True matches=10
+2026-10-08T22:02:49+00:00	source=x split=dev final_run=False caller=test touches_holdout=False matches=10
+2026-10-08T22:02:49+00:00	source=x split=all final_run=True caller=pytest-marker touches_holdout=True matches=10

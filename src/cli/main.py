@@ -96,6 +96,101 @@ def cmd_ingest_wyscout(args) -> None:
     _print("wyscout extraction", {"path": str(path)})
 
 
+def cmd_build_possessions(args) -> None:
+    """Wyscout event streams -> the possession table (docs/spec_possessions.md section 2)."""
+    from src.ingest import possessions
+
+    table, summary = possessions.build()
+    possessions.save(table)
+    write_manifest("build_possessions_wyscout", summary)
+    _print("possession table (wyscout)", summary)
+
+
+def _poss_table(caller: str, rule: str = "tolerant"):
+    from src.ingest import possessions
+
+    return possessions.load(split="dev", rule=rule, caller=caller)
+
+
+def cmd_poss_recovery(args) -> None:
+    """Model A, gate 2: plant rho_self = 0.30 and get it back. A failed gate exits 2."""
+    from src.inference import possession
+    from src.models import possession_logit as pl
+
+    design = pl.build_design(_poss_table("poss-recovery"), CONFIG.background)
+    out = possession.recovery(
+        design, tau=args.tau, n_replicates=args.replicates, seed=args.seed, workers=args.workers
+    )
+    out.pop("detail").to_csv(RESULTS / "poss_recovery_detail_wyscout_dev.csv", index=False)
+    write_manifest("poss_recovery_wyscout_dev", out)
+    _print("possession model A: recovery", out)
+    if not out["passed"]:
+        log.error("recovery gate FAILED: nothing downstream of it means anything")
+        sys.exit(2)
+
+
+def cmd_poss_power(args) -> None:
+    """Model A, gate 3: the detection floor in rho (log-odds)."""
+    from src.inference import possession
+    from src.models import possession_logit as pl
+
+    design = pl.build_design(_poss_table("poss-power"), CONFIG.background)
+    out = possession.power(
+        design,
+        tau=args.tau,
+        replicates=args.replicates,
+        null_replicates=args.null_replicates,
+        seed=args.seed,
+        workers=args.workers,
+    )
+    out.pop("sweep").to_csv(RESULTS / "poss_power_sweep_wyscout_dev.csv", index=False)
+    write_manifest("poss_power_wyscout_dev", out)
+    _print("possession model A: detection floor", out)
+
+
+def cmd_poss_fit(args) -> None:
+    """Model A, gate 4: the development fit against its own floor."""
+    from src.inference import possession
+    from src.runlog import read_manifest
+
+    table = _poss_table("poss-fit")
+    strict = _poss_table("poss-fit-strict", rule="strict")
+    out = possession.fit_dev(
+        table,
+        tau=args.tau,
+        bootstrap=args.bootstrap,
+        cluster_bootstrap=args.cluster_bootstrap,
+        seed=args.seed,
+        workers=args.workers,
+        sensitivity_tables={"strict_possession_rule": strict},
+    )
+    for key, name in (("_null_detail", "poss_bootstrap_null"), ("_cluster_detail", "poss_cluster_bootstrap")):
+        if key in out:
+            out.pop(key).to_csv(RESULTS / f"{name}_wyscout_dev.csv", index=False)
+    try:
+        pw = read_manifest("poss_power_wyscout_dev")["payload"]
+        out["detection_floor"] = pw["detection_floor"]
+        out["detection_floor_interpolated"] = pw["detection_floor_interpolated"]
+        rho = out["headline"]["rho_self"]
+        floor = pw["detection_floor"]
+        if floor is None:
+            out["verdict"] = "no planted rho on the grid reached 80% power; the floor is above the grid"
+        elif rho < floor:
+            out["verdict"] = (
+                f"rho_self = {rho:.4f} sits below the detection floor of {floor}: an upper bound, not an estimate."
+            )
+        else:
+            out["verdict"] = (
+                f"rho_self = {rho:.4f} is at or above the detection floor of {floor}; read it with the p-value and CI."
+            )
+    except FileNotFoundError:
+        out["verdict"] = (
+            "no detection floor measured (run poss-power first), so rho_self cannot be interpreted"
+        )
+    write_manifest("poss_fit_wyscout_dev", out)
+    _print("possession model A: development fit (exploratory)", out)
+
+
 def cmd_build(args) -> None:
     """Raw pulls -> the canonical event table, with game state reconstructed."""
     extra: dict = {}
@@ -717,6 +812,28 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--n-matches", type=int, default=500, help="synthetic only")
     p.add_argument("--seed", type=int, default=0)
     p.set_defaults(func=cmd_build)
+
+    p = sub.add_parser("build-possessions", help="richer events: Wyscout possession table")
+    p.set_defaults(func=cmd_build_possessions)
+
+    for name, fn, helptext in (
+        ("poss-recovery", cmd_poss_recovery, "possessions model A, gate 2: plant rho = 0.30. A GATE."),
+        ("poss-power", cmd_poss_power, "possessions model A, gate 3: detection floor"),
+        ("poss-fit", cmd_poss_fit, "possessions model A, gate 4: development fit (exploratory)"),
+    ):
+        p = sub.add_parser(name, help=helptext)
+        p.add_argument("--tau", type=float, default=5.0)
+        p.add_argument("--seed", type=int, default=5694)
+        p.add_argument("--workers", type=int, default=None)
+        if name == "poss-recovery":
+            p.add_argument("--replicates", type=int, default=10)
+        if name == "poss-power":
+            p.add_argument("--replicates", type=int, default=30)
+            p.add_argument("--null-replicates", type=int, default=200)
+        if name == "poss-fit":
+            p.add_argument("--bootstrap", type=int, default=500)
+            p.add_argument("--cluster-bootstrap", type=int, default=200)
+        p.set_defaults(func=fn)
 
     p = sub.add_parser("calibrate-dedup", help="step 2: threshold from a provider's second-clock gaps")
     p.add_argument("--source", default="statsbomb", choices=["statsbomb", "wyscout"])

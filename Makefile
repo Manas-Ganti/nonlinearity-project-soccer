@@ -4,7 +4,8 @@ CLI = $(PY) -m src.cli.main
 .PHONY: help venv test lint fmt check clean \
         ingest-understat ingest-statsbomb build-understat build-statsbomb build-synthetic \
         calibrate-dedup fit-null recovery power rounding-bias fit-dev fit-holdout \
-        estimator-comparison tau-profile cross-source secondary report notebook demo pipeline
+        estimator-comparison tau-profile cross-source secondary report notebook demo pipeline \
+        build-possessions poss-recovery poss-power poss-fit
 
 help:  ## list targets
 	@grep -E '^[a-z-]+:.*?## ' $(MAKEFILE_LIST) | sed 's/:.*## /\t/'
@@ -42,6 +43,18 @@ ingest-wyscout:  ## step 1: extract the figshare release already in data/raw/wys
 
 build-wyscout:
 	$(CLI) -v build --source wyscout
+
+build-possessions:  ## richer events: Wyscout possession table (docs/spec_possessions.md)
+	$(CLI) -v build-possessions
+
+poss-recovery:  ## possessions model A, gate 2 (A GATE: exits 2 on failure)
+	$(CLI) -v poss-recovery
+
+poss-power:  ## possessions model A, gate 3: detection floor
+	$(CLI) -v poss-power
+
+poss-fit:  ## possessions model A, gate 4: development fit (exploratory)
+	$(CLI) -v poss-fit
 
 build-pooled: build-statsbomb build-wyscout  ## step 1: the pooled second-resolution slate (the headline)
 	$(CLI) -v build --source pooled

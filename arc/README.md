@@ -33,6 +33,7 @@ arc/submit.sh --time 01:00:00 arc/fit_dev.slurm --bootstrap 50 --cluster-bootstr
 arc/submit.sh arc/fit_dev.slurm                                                 # the real step-8 run
 arc/submit.sh --time 04:00:00 arc/pipeline.slurm                               # steps 3-8 in order, after any change to the fit
 arc/submit.sh --time 04:00:00 arc/providers.slurm                              # pooling check: recovery, power, fit-dev per provider
+arc/submit.sh --time 01:00:00 arc/possessions.slurm                            # possessions model A: recovery, power, fit
 squeue -u $USER ; tail -f logs/slurm/sm-fit-dev-<jobid>.out
 ```
 
