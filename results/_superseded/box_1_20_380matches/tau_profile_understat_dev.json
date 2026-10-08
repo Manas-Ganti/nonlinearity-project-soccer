@@ -1,0 +1,124 @@
+{
+  "name": "tau_profile_understat_dev",
+  "written_at_utc": "2026-09-10T14:58:44+00:00",
+  "python": "3.12.7",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "numpy": "2.5.3",
+  "git_rev": null,
+  "inputs": {},
+  "payload": {
+    "raw": {
+      "matches": 380,
+      "events": 9781,
+      "events_per_match_mean": 25.739473684210527,
+      "seasons": [
+        2015
+      ],
+      "leagues": [
+        "ENG-Premier League"
+      ],
+      "situations": {
+        "open": 7215,
+        "setpiece": 2475,
+        "penalty": 91
+      },
+      "goals": 988,
+      "red_cards_known": false,
+      "mean_xg": 0.10113545665963067
+    },
+    "prepared": {
+      "threshold_seconds": 4.0,
+      "n_before": 9781,
+      "n_after": 8760,
+      "removed_fraction": 0.10438605459564465,
+      "max_run_length": 5,
+      "collapsed_events": 927,
+      "collapses_at_half_boundaries": 26,
+      "jitter_seed": 20260910,
+      "remaining_exact_ties": 0
+    },
+    "profile": [
+      {
+        "tau_minutes": 2.0,
+        "eta_self": 1.0846217963026207e-24,
+        "eta_cross": 1.3981978442838342e-26,
+        "loglik": -26745.8041824424,
+        "delta_loglik_vs_best": -0.003332953252538573
+      },
+      {
+        "tau_minutes": 3.0,
+        "eta_self": 4.903460342755539e-24,
+        "eta_cross": 1.2309947259942229e-26,
+        "loglik": -26745.804491645773,
+        "delta_loglik_vs_best": -0.003642156625573989
+      },
+      {
+        "tau_minutes": 4.0,
+        "eta_self": 4.067573302010792e-23,
+        "eta_cross": 2.705068957118637e-26,
+        "loglik": -26745.804675342886,
+        "delta_loglik_vs_best": -0.0038258537388173863
+      },
+      {
+        "tau_minutes": 5.0,
+        "eta_self": 2.176473256995947e-19,
+        "eta_cross": 1.9018366687905684e-22,
+        "loglik": -26745.80464784737,
+        "delta_loglik_vs_best": -0.00379835822241148
+      },
+      {
+        "tau_minutes": 6.0,
+        "eta_self": 2.0529172139275088e-16,
+        "eta_cross": 2.694971125815461e-19,
+        "loglik": -26745.804653496696,
+        "delta_loglik_vs_best": -0.0038040075487515423
+      },
+      {
+        "tau_minutes": 8.0,
+        "eta_self": 1.0666573555867077e-13,
+        "eta_cross": 1.7104359889969834e-16,
+        "loglik": -26745.804465835896,
+        "delta_loglik_vs_best": -0.0036163467484584544
+      },
+      {
+        "tau_minutes": 10.0,
+        "eta_self": 3.0455846781355423e-12,
+        "eta_cross": 4.843645107760974e-15,
+        "loglik": -26745.804365876164,
+        "delta_loglik_vs_best": -0.0035163870161341038
+      },
+      {
+        "tau_minutes": 14.0,
+        "eta_self": 7.459033499795701e-10,
+        "eta_cross": 1.7904261548825554e-12,
+        "loglik": -26745.804075724183,
+        "delta_loglik_vs_best": -0.0032262350359815173
+      },
+      {
+        "tau_minutes": 20.0,
+        "eta_self": 4.0903811078786726e-08,
+        "eta_cross": 1.1929369416434392e-10,
+        "loglik": -26745.80382654748,
+        "delta_loglik_vs_best": -0.0029770583314530086
+      },
+      {
+        "tau_minutes": 30.0,
+        "eta_self": 2.155309327955114e-06,
+        "eta_cross": 9.813039242395163e-09,
+        "loglik": -26745.803612835458,
+        "delta_loglik_vs_best": -0.0027633463105303235
+      },
+      {
+        "tau_minutes": 45.0,
+        "eta_self": 9.411961910125187e-05,
+        "eta_cross": 1.2007350752800796e-06,
+        "loglik": -26745.800849489147,
+        "delta_loglik_vs_best": 0.0
+      }
+    ],
+    "best_tau": 45.0,
+    "loglik_range": 0.0038258537388173863,
+    "eta_at_tau_5": 2.176473256995947e-19,
+    "note": "A log-likelihood range of only a few units across a wide tau band means the timescale is not identified: eta_self and tau trade off almost freely, and eta_self must be reported with the band it was fitted in."
+  }
+}

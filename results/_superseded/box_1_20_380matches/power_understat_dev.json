@@ -1,0 +1,136 @@
+{
+  "name": "power_understat_dev",
+  "written_at_utc": "2026-09-10T15:59:16+00:00",
+  "python": "3.12.7",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "numpy": "2.5.3",
+  "git_rev": null,
+  "inputs": {},
+  "payload": {
+    "raw": {
+      "matches": 380,
+      "events": 9781,
+      "events_per_match_mean": 25.739473684210527,
+      "seasons": [
+        2015
+      ],
+      "leagues": [
+        "ENG-Premier League"
+      ],
+      "situations": {
+        "open": 7215,
+        "setpiece": 2475,
+        "penalty": 91
+      },
+      "goals": 988,
+      "red_cards_known": false,
+      "mean_xg": 0.10113545665963067
+    },
+    "prepared": {
+      "threshold_seconds": 4.0,
+      "n_before": 9781,
+      "n_after": 8760,
+      "removed_fraction": 0.10438605459564465,
+      "max_run_length": 5,
+      "collapsed_events": 927,
+      "collapses_at_half_boundaries": 26,
+      "jitter_seed": 20260910,
+      "remaining_exact_ties": 0
+    },
+    "critical_value": 1.336515612845522e-05,
+    "alpha": 0.05,
+    "target_power": 0.8,
+    "detection_floor": 0.2,
+    "detection_floor_interpolated": 0.16666666666666669,
+    "curve": [
+      {
+        "eta_star": 0.0,
+        "n_replicates": 200,
+        "power": 0.05,
+        "mean_eta_hat": 2.3762585869307807e-06,
+        "median_eta_hat": 2.578389272849933e-09,
+        "sd_eta_hat": 7.097948179472725e-06,
+        "bias": 2.3762585869307807e-06,
+        "mean_n_events": 8524.38
+      },
+      {
+        "eta_star": 0.02,
+        "n_replicates": 30,
+        "power": 0.06666666666666667,
+        "mean_eta_hat": 1.8584989805663995e-06,
+        "median_eta_hat": 4.574517289464023e-08,
+        "sd_eta_hat": 4.950142370521318e-06,
+        "bias": -0.019998141501019435,
+        "mean_n_events": 8647.266666666666
+      },
+      {
+        "eta_star": 0.05,
+        "n_replicates": 30,
+        "power": 0.06666666666666667,
+        "mean_eta_hat": 1.6259283228366265e-06,
+        "median_eta_hat": 1.7602437958594254e-10,
+        "sd_eta_hat": 4.411259665631466e-06,
+        "bias": -0.04999837407167717,
+        "mean_n_events": 8878.633333333333
+      },
+      {
+        "eta_star": 0.1,
+        "n_replicates": 30,
+        "power": 0.03333333333333333,
+        "mean_eta_hat": 5.971679622360446e-06,
+        "median_eta_hat": 5.809211742388912e-11,
+        "sd_eta_hat": 3.0028583035474596e-05,
+        "bias": -0.09999402832037764,
+        "mean_n_events": 9288.033333333333
+      },
+      {
+        "eta_star": 0.15,
+        "n_replicates": 30,
+        "power": 0.7,
+        "mean_eta_hat": 0.02979803645549857,
+        "median_eta_hat": 0.03030841239763274,
+        "sd_eta_hat": 0.027008185341088037,
+        "bias": -0.12020196354450143,
+        "mean_n_events": 9785.766666666666
+      },
+      {
+        "eta_star": 0.2,
+        "n_replicates": 30,
+        "power": 1.0,
+        "mean_eta_hat": 0.09459874318913905,
+        "median_eta_hat": 0.09614933496632941,
+        "sd_eta_hat": 0.029371854985824942,
+        "bias": -0.10540125681086096,
+        "mean_n_events": 10248.733333333334
+      },
+      {
+        "eta_star": 0.3,
+        "n_replicates": 30,
+        "power": 1.0,
+        "mean_eta_hat": 0.20957215930816014,
+        "median_eta_hat": 0.20526345988164002,
+        "sd_eta_hat": 0.025642631774442304,
+        "bias": -0.09042784069183984,
+        "mean_n_events": 11464.966666666667
+      }
+    ],
+    "config": {
+      "eta_grid": [
+        0.0,
+        0.02,
+        0.05,
+        0.1,
+        0.15,
+        0.2,
+        0.3
+      ],
+      "replicates": 30,
+      "null_replicates": 200,
+      "alpha": 0.05,
+      "target_power": 0.8,
+      "seed": 5694
+    },
+    "minute_clock": true,
+    "clock_note": "each simulated slate was rounded to integer minutes and re-de-duplicated before fitting, so this floor is for a dataset with Understat's clock"
+  }
+}

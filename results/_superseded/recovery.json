@@ -1,0 +1,55 @@
+{
+  "name": "recovery",
+  "written_at_utc": "2026-09-10T06:27:51+00:00",
+  "python": "3.12.7",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "numpy": "2.5.3",
+  "git_rev": null,
+  "inputs": {},
+  "payload": {
+    "raw": {
+      "matches": 120,
+      "events": 3983,
+      "events_per_match_mean": 33.19166666666667,
+      "seasons": [
+        2014,
+        2015
+      ],
+      "leagues": [
+        "SYN"
+      ],
+      "situations": {
+        "open": 3983
+      },
+      "goals": 450,
+      "red_cards_known": true,
+      "mean_xg": 0.12011956664409816
+    },
+    "prepared": {
+      "threshold_seconds": 4.0,
+      "n_before": 3983,
+      "n_after": 3930,
+      "removed_fraction": 0.013306552849610798,
+      "max_run_length": 2,
+      "collapsed_events": 53,
+      "collapses_at_half_boundaries": 3,
+      "jitter_seed": 20260910,
+      "remaining_exact_ties": 0
+    },
+    "results": {
+      "joint": {
+        "eta_planted": 0.3,
+        "eta_cross_planted": 0.05,
+        "beta_planted": 0.2,
+        "tau_planted_minutes": 5.0,
+        "n_replicates": 3,
+        "mean_eta_hat_self": 0.252704761383763,
+        "sd_eta_hat_self": 0.017091051130217843,
+        "bias": -0.04729523861623697,
+        "mean_tau_hat": 4.375501487131156,
+        "tolerance": 0.08,
+        "passed": true
+      }
+    }
+  }
+}

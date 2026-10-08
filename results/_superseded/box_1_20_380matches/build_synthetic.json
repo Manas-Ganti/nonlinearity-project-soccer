@@ -1,0 +1,28 @@
+{
+  "name": "build_synthetic",
+  "written_at_utc": "2026-09-10T06:27:29+00:00",
+  "python": "3.12.7",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "numpy": "2.5.3",
+  "git_rev": null,
+  "inputs": {},
+  "payload": {
+    "source": "synthetic",
+    "matches": 120,
+    "events": 3983,
+    "events_per_match_mean": 33.19166666666667,
+    "seasons": [
+      2014,
+      2015
+    ],
+    "leagues": [
+      "SYN"
+    ],
+    "situations": {
+      "open": 3983
+    },
+    "goals": 450,
+    "red_cards_known": true,
+    "mean_xg": 0.12011956664409816
+  }
+}

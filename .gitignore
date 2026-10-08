@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.DS_Store
+
+# Raw pulls are reproducible inputs, not source. Keep the layout, not the bytes.
+# The Understat pull is hours of somebody else's bandwidth: never delete it, never
+# commit it.
+data/raw/**
+!data/raw/**/.gitkeep
+data/interim/**
+!data/interim/**/.gitkeep
+
+# results/ IS tracked: the manifests are the record, and the record is the
+# deliverable. So are logs/, which is how the holdout split is auditable.

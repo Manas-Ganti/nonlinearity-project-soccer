@@ -1,0 +1,3 @@
+cda9971b9198ca9378b72d7c4ba86ac7a0a0f89ac08a39aea51e498317780925  data/interim/pooled/cards.parquet
+ec7a7a77dcdf2b23826a20c2adcbecf0bd0dc5e426bcff963ac8df3e2b11e11d  data/interim/pooled/events.parquet
+890de57ef8bd962d7c558cbfaffee777b30ff2db3177c861f817168c201b3b7f  data/interim/pooled/goals.parquet

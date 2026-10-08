@@ -1,0 +1,81 @@
+{
+  "name": "cross_source",
+  "written_at_utc": "2026-09-10T06:14:30+00:00",
+  "python": "3.12.7",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "numpy": "2.5.3",
+  "git_rev": null,
+  "inputs": {},
+  "payload": {
+    "aligned_fixtures": 367,
+    "shots": {
+      "understat": 9425,
+      "statsbomb": 9552,
+      "ratio": 0.9867043551088778,
+      "per_match_correlation": 0.9847294947663958,
+      "mean_absolute_difference": 0.6730245231607629
+    },
+    "xg_totals": {
+      "understat": 957.351373843383,
+      "statsbomb": 939.9053179221,
+      "per_match_correlation": 0.8811049863579536,
+      "note": "reported for the quality regression and the marked extension; xG is not an input to the unmarked branching-ratio fit"
+    },
+    "fits": {
+      "understat": {
+        "eta_self": 1.8656913917238952e-215,
+        "eta_cross": 0.0,
+        "beta": 0.05,
+        "tau_minutes": 20.0,
+        "spectral_radius": 1.8656913917238952e-215,
+        "loglik": -25776.111760248466,
+        "converged": true,
+        "n_iter": 101,
+        "n_events": 8346,
+        "n_matches": 367,
+        "mu_fit": "joint MLE (mu and the kernel fitted together)",
+        "tau_at_boundary": true,
+        "dedup": {
+          "threshold_seconds": 4.0,
+          "n_before": 9425,
+          "n_after": 8437,
+          "removed_fraction": 0.10482758620689658,
+          "max_run_length": 5,
+          "collapsed_events": 898,
+          "collapses_at_half_boundaries": 26,
+          "jitter_seed": 20260910,
+          "remaining_exact_ties": 0
+        },
+        "red_cards_known": false
+      },
+      "statsbomb": {
+        "eta_self": 0.09212042033374225,
+        "eta_cross": 7.557655147861439e-12,
+        "beta": 0.050215014823930884,
+        "tau_minutes": 19.91436233776499,
+        "spectral_radius": 0.0921204203412999,
+        "loglik": -27094.856771768576,
+        "converged": true,
+        "n_iter": 147,
+        "n_events": 8965,
+        "n_matches": 367,
+        "mu_fit": "joint MLE (mu and the kernel fitted together)",
+        "tau_at_boundary": false,
+        "dedup": {
+          "threshold_seconds": 4.0,
+          "n_before": 9552,
+          "n_after": 9056,
+          "removed_fraction": 0.051926298157453976,
+          "max_run_length": 4,
+          "collapsed_events": 471,
+          "collapses_at_half_boundaries": 17,
+          "jitter_seed": 20260910,
+          "remaining_exact_ties": 0
+        },
+        "red_cards_known": true
+      }
+    },
+    "eta_self_difference": -0.09212042033374225,
+    "note": "The two feeds differ in clock resolution as well as in shot detection, so this difference is not attributable to either alone. Step 7 separates the resolution component by rounding one source's own clock."
+  }
+}

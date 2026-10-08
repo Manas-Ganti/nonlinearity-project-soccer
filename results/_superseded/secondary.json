@@ -1,0 +1,141 @@
+{
+  "name": "secondary",
+  "written_at_utc": "2026-09-10T06:18:25+00:00",
+  "python": "3.12.7",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "numpy": "2.5.3",
+  "git_rev": null,
+  "inputs": {},
+  "payload": {
+    "raw": {
+      "matches": 380,
+      "events": 9908,
+      "events_per_match_mean": 26.073684210526316,
+      "seasons": [
+        2015
+      ],
+      "leagues": [
+        "Premier League"
+      ],
+      "situations": {
+        "open": 9415,
+        "setpiece": 402,
+        "penalty": 91
+      },
+      "goals": 988,
+      "red_cards_known": true,
+      "mean_xg": 0.09804009836178845
+    },
+    "prepared": {
+      "threshold_seconds": 4.0,
+      "n_before": 9908,
+      "n_after": 9399,
+      "removed_fraction": 0.05137262817924915,
+      "max_run_length": 4,
+      "collapsed_events": 482,
+      "collapses_at_half_boundaries": 18,
+      "jitter_seed": 20260910,
+      "remaining_exact_ties": 0
+    },
+    "fit": {
+      "eta_self": 0.09501353726489256,
+      "eta_cross": 2.1097243344512815e-17,
+      "beta": 0.05000199365596957,
+      "tau_minutes": 19.999202569408215,
+      "spectral_radius": 0.09501353726489259,
+      "loglik": -28109.705882791968,
+      "converged": true,
+      "n_iter": 132,
+      "n_events": 9308,
+      "n_matches": 380,
+      "mu_fit": "joint MLE (mu and the kernel fitted together)",
+      "tau_at_boundary": true
+    },
+    "quality_regression": {
+      "coefficients": {
+        "intercept": 0.0965333206276909,
+        "excitation": -0.05339146417694135,
+        "home": -0.005594468370555869,
+        "score_-2": -0.005400502412599519,
+        "score_-1": -0.0036102850070413414,
+        "score_+1": 0.011179642479022027,
+        "score_+2": 0.029435122342568062,
+        "red_-1": -0.018003201658266736,
+        "red_+1": -0.005675943753637119
+      },
+      "std_errors": {
+        "intercept": 0.0027536232500543563,
+        "excitation": 0.1888859571809693,
+        "home": 0.0026327287369026023,
+        "score_-2": 0.004632319100882616,
+        "score_-1": 0.0036028366376710925,
+        "score_+1": 0.003750308376039701,
+        "score_+2": 0.004833588552937026,
+        "red_-1": 0.010444856749833855,
+        "red_+1": 0.006692415403741309
+      },
+      "psi1": -0.05339146417694135,
+      "psi1_se": 0.1888859571809693,
+      "psi1_t": -0.28266507989150114,
+      "n": 9308,
+      "mean_excitation": 0.010545953643050167,
+      "note": "OLS with heteroskedasticity ignored and events inside a match treated as independent, so the standard error is optimistic. Use the cluster bootstrap before reporting psi1 as significant."
+    },
+    "marked_excitation": {
+      "mean_xg": 0.095524711126381,
+      "corr_xg_excitation": 0.004674957458884006,
+      "excitation_is_degenerate": false,
+      "weights_at_mean": {
+        "0.0": 1.0,
+        "0.5": 1.0,
+        "1.0": 1.0
+      },
+      "note": "A diagnostic, not the marked fit. The marked kernel needs w(x) folded into the O(n) recursion, which is a change to models/hawkes.py, not a wrapper around it."
+    },
+    "state_dependent_eta": {
+      "behind": {
+        "n_matches": 195,
+        "n_events": 4823,
+        "eta_self": 3.238740178599882e-36,
+        "eta_cross": 3.1642370470129895e-50,
+        "beta": 0.05,
+        "tau_minutes": 20.0,
+        "spectral_radius": 3.2387401785999133e-36,
+        "loglik": -14484.58396924762,
+        "converged": true,
+        "n_iter": 94,
+        "mu_fit": "joint MLE (mu and the kernel fitted together)",
+        "tau_at_boundary": true
+      },
+      "level": {
+        "n_matches": 56,
+        "n_events": 1330,
+        "eta_self": 0.02881339425360491,
+        "eta_cross": 1.3209292594548112e-06,
+        "beta": 0.45728388634767897,
+        "tau_minutes": 2.1868253613460737,
+        "spectral_radius": 0.028814715182864364,
+        "loglik": -4029.215351850605,
+        "converged": true,
+        "n_iter": 312,
+        "mu_fit": "joint MLE (mu and the kernel fitted together)",
+        "tau_at_boundary": false
+      },
+      "ahead": {
+        "n_matches": 129,
+        "n_events": 3155,
+        "eta_self": 1.1453823663297698e-41,
+        "eta_cross": 5.831440281258482e-53,
+        "beta": 0.05,
+        "tau_minutes": 20.0,
+        "spectral_radius": 1.1453823663356013e-41,
+        "loglik": -9437.632593491251,
+        "converged": true,
+        "n_iter": 152,
+        "mu_fit": "joint MLE (mu and the kernel fitted together)",
+        "tau_at_boundary": true
+      },
+      "note": "Split by the sign of each match's mean score differential from the shooting team's view, so a match contributes to exactly one arm. The arms are much smaller than the full slate, so each carries its own, much higher, detection floor -- which this function does not compute. Do not read a difference between arms as real without running the floor for each."
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "dedup_calibration_statsbomb",
+  "written_at_utc": "2026-09-17T04:02:58+00:00",
+  "python": "3.12.7",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "numpy": "2.5.3",
+  "git_rev": null,
+  "inputs": {},
+  "payload": {
+    "threshold_seconds": 4.0,
+    "ratio_tol": 1.25,
+    "bin_seconds": 2.0,
+    "consecutive_bins": 3,
+    "excess_mass_below_threshold": 0.041652469510092265,
+    "n_gaps": 38980,
+    "source": "statsbomb",
+    "matches": 1836,
+    "seasons": [
+      2014,
+      2015,
+      2016,
+      2017,
+      2018
+    ],
+    "frac_gaps_under_5s": 0.062211390456644436,
+    "frac_gaps_under_60s": 0.1896870189840944,
+    "configured_threshold_seconds": 4.0,
+    "applied_with_configured_threshold": {
+      "threshold_seconds": 4.0,
+      "n_before": 46256,
+      "n_after": 43998,
+      "removed_fraction": 0.04881528882739539,
+      "max_run_length": 4,
+      "collapsed_events": 2117,
+      "collapses_at_half_boundaries": 44,
+      "guard_enforced": true
+    },
+    "note": "Understat records integer minutes, so any threshold below 60 s reduces there to 'collapse same-team shots recorded in the same minute'. That rule is necessarily more aggressive than the calibrated one: the fraction of genuine gaps under 60 s is reported above, and step 7 measures what the over-collapsing costs."
+  }
+}

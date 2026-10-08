@@ -1,0 +1,115 @@
+{
+  "name": "estimator_comparison",
+  "written_at_utc": "2026-09-10T06:02:49+00:00",
+  "python": "3.12.7",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "numpy": "2.5.3",
+  "git_rev": null,
+  "inputs": {},
+  "payload": {
+    "raw": {
+      "matches": 380,
+      "events": 9908,
+      "events_per_match_mean": 26.073684210526316,
+      "seasons": [
+        2015
+      ],
+      "leagues": [
+        "Premier League"
+      ],
+      "situations": {
+        "open": 9415,
+        "setpiece": 402,
+        "penalty": 91
+      },
+      "goals": 988,
+      "red_cards_known": true,
+      "mean_xg": 0.09804009836178845
+    },
+    "prepared": {
+      "threshold_seconds": 4.0,
+      "n_before": 9908,
+      "n_after": 9399,
+      "removed_fraction": 0.05137262817924915,
+      "max_run_length": 4,
+      "collapsed_events": 482,
+      "collapses_at_half_boundaries": 18,
+      "jitter_seed": 20260910,
+      "remaining_exact_ties": 0
+    },
+    "summary": [
+      {
+        "method": "em",
+        "eta_star": 0.0,
+        "mean_eta_hat": 8.830561630224117e-14,
+        "mean_tau": 5.160203671972728,
+        "mean_loglik": -29055.053564693422,
+        "bias": 8.830561630224117e-14
+      },
+      {
+        "method": "em",
+        "eta_star": 0.1,
+        "mean_eta_hat": 0.08548434439077542,
+        "mean_tau": 4.579943959922276,
+        "mean_loglik": -31353.15505156755,
+        "bias": -0.01451565560922459
+      },
+      {
+        "method": "em",
+        "eta_star": 0.3,
+        "mean_eta_hat": 0.2721142761717185,
+        "mean_tau": 4.688857266420425,
+        "mean_loglik": -35825.626479916726,
+        "bias": -0.027885723828281472
+      },
+      {
+        "method": "joint",
+        "eta_star": 0.0,
+        "mean_eta_hat": 2.225936568988936e-10,
+        "mean_tau": 5.529292096325274,
+        "mean_loglik": -29055.003271429065,
+        "bias": 2.225936568988936e-10
+      },
+      {
+        "method": "joint",
+        "eta_star": 0.1,
+        "mean_eta_hat": 0.09141830424470482,
+        "mean_tau": 4.8987487512329935,
+        "mean_loglik": -31352.744980417712,
+        "bias": -0.008581695755295188
+      },
+      {
+        "method": "joint",
+        "eta_star": 0.3,
+        "mean_eta_hat": 0.28827414981079824,
+        "mean_tau": 4.990231790372057,
+        "mean_loglik": -35823.86813208634,
+        "bias": -0.011725850189201747
+      },
+      {
+        "method": "two_stage",
+        "eta_star": 0.0,
+        "mean_eta_hat": 3.140495729026865e-14,
+        "mean_tau": 1.7737642318059188,
+        "mean_loglik": -29062.639376209896,
+        "bias": 3.140495729026865e-14
+      },
+      {
+        "method": "two_stage",
+        "eta_star": 0.1,
+        "mean_eta_hat": 0.032160417754871926,
+        "mean_tau": 2.107377353444196,
+        "mean_loglik": -31382.30713020021,
+        "bias": -0.06783958224512808
+      },
+      {
+        "method": "two_stage",
+        "eta_star": 0.3,
+        "mean_eta_hat": 0.10156534311282536,
+        "mean_tau": 1.8997146240617546,
+        "mean_loglik": -36042.3669250297,
+        "bias": -0.19843465688717463
+      }
+    ]
+  }
+}

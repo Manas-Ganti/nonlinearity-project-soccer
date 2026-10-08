@@ -1,0 +1,90 @@
+{
+  "name": "recovery_pooled_dev",
+  "written_at_utc": "2026-09-17T04:58:29+00:00",
+  "python": "3.12.7",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "numpy": "2.5.3",
+  "git_rev": null,
+  "inputs": {},
+  "payload": {
+    "raw": {
+      "matches": 4053,
+      "events": 98848,
+      "events_per_match_mean": 24.38884776708611,
+      "seasons": [
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018
+      ],
+      "leagues": [
+        "1. Bundesliga",
+        "FA Women's Super League",
+        "FIFA World Cup",
+        "La Liga",
+        "Ligue 1",
+        "NWSL",
+        "Premier League",
+        "Serie A",
+        "UEFA Euro"
+      ],
+      "situations": {
+        "open": 92761,
+        "setpiece": 4940,
+        "penalty": 1147
+      },
+      "goals": 10845,
+      "red_cards_known": true,
+      "mean_xg": 0.1062982590558817,
+      "strata": {
+        "matches_by_source": {
+          "statsbomb": 2112,
+          "wyscout": 1941
+        },
+        "matches_by_gender": {
+          "female": 143,
+          "male": 3910
+        },
+        "one_club_matches": 452
+      }
+    },
+    "prepared": {
+      "threshold_seconds": 4.0,
+      "n_before": 98848,
+      "n_after": 94571,
+      "removed_fraction": 0.04326845257364842,
+      "max_run_length": 4,
+      "collapsed_events": 4016,
+      "collapses_at_half_boundaries": 84,
+      "guard_enforced": true,
+      "jitter_seed": 20260910,
+      "remaining_exact_ties": 0
+    },
+    "results": {
+      "joint": {
+        "eta_planted": 0.3,
+        "eta_cross_planted": 0.05,
+        "beta_planted": 0.2,
+        "tau_planted_minutes": 5.0,
+        "n_replicates": 10,
+        "mean_eta_hat_self": 0.27757534898883124,
+        "sd_eta_hat_self": 0.005042906388605193,
+        "bias": -0.02242465101116875,
+        "mean_tau_hat": 4.627961423497615,
+        "tolerance": 0.08,
+        "passed": true
+      }
+    }
+  }
+}

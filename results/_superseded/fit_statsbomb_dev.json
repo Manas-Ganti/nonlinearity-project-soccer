@@ -1,0 +1,226 @@
+{
+  "name": "fit_statsbomb_dev",
+  "written_at_utc": "2026-09-10T06:33:26+00:00",
+  "python": "3.12.7",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "numpy": "2.5.3",
+  "git_rev": null,
+  "inputs": {},
+  "payload": {
+    "raw": {
+      "matches": 380,
+      "events": 9908,
+      "events_per_match_mean": 26.073684210526316,
+      "seasons": [
+        2015
+      ],
+      "leagues": [
+        "Premier League"
+      ],
+      "situations": {
+        "open": 9415,
+        "setpiece": 402,
+        "penalty": 91
+      },
+      "goals": 988,
+      "red_cards_known": true,
+      "mean_xg": 0.09804009836178845
+    },
+    "prepared": {
+      "threshold_seconds": 4.0,
+      "n_before": 9908,
+      "n_after": 9399,
+      "removed_fraction": 0.05137262817924915,
+      "max_run_length": 4,
+      "collapsed_events": 482,
+      "collapses_at_half_boundaries": 18,
+      "jitter_seed": 20260910,
+      "remaining_exact_ties": 0
+    },
+    "headline": {
+      "background": {
+        "theta0": -2.6776421822331518,
+        "theta_home": 0.25941140255469736,
+        "f_minute": [
+          0.9008982919779892,
+          -7.252252919528372,
+          9.485736177591152,
+          -2.8830056048463075,
+          -0.39606787383524633,
+          0.29275552101780905
+        ],
+        "g_score": {
+          "-2": 0.1328896651940403,
+          "-1": 0.07731842740107207,
+          "0": 0.0,
+          "1": -0.1966669483606778,
+          "2": -0.2749374979671819
+        },
+        "h_red": {
+          "-1": -0.6332951562412066,
+          "0": 0.0,
+          "1": 0.4107966960570769
+        },
+        "dropped_terms": [],
+        "n_team_effects": 20,
+        "loglik": -28109.705882791968,
+        "converged": true,
+        "n_iter": 132,
+        "team_ridge": 1.0,
+        "minute_df": 6,
+        "include_score": true,
+        "include_red": true
+      },
+      "hawkes": {
+        "eta_self": 0.09501353726489256,
+        "eta_cross": 2.1097243344512815e-17,
+        "beta": 0.05000199365596957,
+        "tau_minutes": 19.999202569408215,
+        "spectral_radius": 0.09501353726489259,
+        "loglik": -28109.705882791968,
+        "converged": true,
+        "n_iter": 132,
+        "n_events": 9308,
+        "n_matches": 380,
+        "mu_fit": "joint MLE (mu and the kernel fitted together)",
+        "tau_at_boundary": true
+      },
+      "em_trace": [
+        {
+          "iter": 132,
+          "loglik": -28109.705882791968,
+          "eta_self": 0.09501353726489256,
+          "eta_cross": 2.1097243344512815e-17,
+          "tau": 19.999202569408215
+        }
+      ]
+    },
+    "across_jitter_draws": {
+      "eta_self_mean": 0.09501353726489256,
+      "eta_self_sd": 0.0,
+      "eta_self_min": 0.09501353726489256,
+      "eta_self_max": 0.09501353726489256,
+      "eta_cross_mean": 2.1097243344512815e-17,
+      "tau_mean": 19.999202569408215,
+      "n_draws": 5
+    },
+    "goodness_of_fit": {
+      "poisson": {
+        "n": 9308,
+        "ks_stat": 0.06542134084885276,
+        "ks_stat_subsample": 0.06542134084885276,
+        "ks_pvalue_subsample": 4.4385262109322744e-35,
+        "n_subsample": 9308,
+        "mean_tau": 0.851026407982017,
+        "var_tau": 0.7479257851017342,
+        "n_processes": 639,
+        "frac_reject_05": 0.08294209702660407,
+        "uniformity_ks_stat": 0.07832492326589535,
+        "uniformity_ks_pvalue": 0.0007410699603699973
+      },
+      "hawkes": {
+        "n": 9308,
+        "ks_stat": 0.03307956462332062,
+        "ks_stat_subsample": 0.03307956462332062,
+        "ks_pvalue_subsample": 2.7709308792207854e-09,
+        "n_subsample": 9308,
+        "mean_tau": 0.9175458476871728,
+        "var_tau": 0.8289271699847175,
+        "n_processes": 639,
+        "frac_reject_05": 0.04381846635367762,
+        "uniformity_ks_stat": 0.025379862968203493,
+        "uniformity_ks_pvalue": 0.795088795462199
+      },
+      "loglik_poisson": null,
+      "loglik_hawkes": -28109.705882791968
+    },
+    "sensitivities": {
+      "headline": {
+        "eta_self": 0.09501353726489256,
+        "eta_cross": 2.1097243344512815e-17,
+        "tau_minutes": 19.999202569408215
+      },
+      "kernel_box_3_to_8_min": {
+        "eta_self": 0.05496275530463603,
+        "eta_cross": 0.0,
+        "tau_minutes": 7.999190030929704,
+        "tau_at_boundary": true,
+        "delta_eta_self": -0.040050781960256535,
+        "loglik": -28110.59015384585
+      },
+      "no_score_state": {
+        "eta_self": 0.0869301336471323,
+        "eta_cross": 1.2527043279094112e-11,
+        "tau_minutes": 19.950493425065382,
+        "tau_at_boundary": false,
+        "delta_eta_self": -0.008083403617760263,
+        "loglik": -28159.73556071744
+      },
+      "no_red_cards": {
+        "eta_self": 0.12686450603076194,
+        "eta_cross": 0.0,
+        "tau_minutes": 19.999991801097785,
+        "tau_at_boundary": true,
+        "delta_eta_self": 0.031850968765869375,
+        "loglik": -28158.252024507372
+      },
+      "penalties_kept": {
+        "eta_self": 0.09149555365250972,
+        "eta_cross": 4.9571269514133886e-15,
+        "tau_minutes": 19.99626867492155,
+        "tau_at_boundary": false,
+        "delta_eta_self": -0.003517983612382841,
+        "loglik": -28288.67501254978
+      },
+      "minute_spline_df_3": {
+        "eta_self": 0.10065012706288916,
+        "eta_cross": 0.0,
+        "tau_minutes": 19.999406559456183,
+        "tau_at_boundary": true,
+        "delta_eta_self": 0.005636589797996597,
+        "loglik": -28120.48747699246
+      },
+      "minute_spline_df_5": {
+        "eta_self": 0.09518037087872365,
+        "eta_cross": 0.0,
+        "tau_minutes": 20.0,
+        "tau_at_boundary": true,
+        "delta_eta_self": 0.0001668336138310883,
+        "loglik": -28109.191394893427
+      },
+      "minute_spline_df_9": {
+        "eta_self": 0.093851748294916,
+        "eta_cross": 0.0,
+        "tau_minutes": 20.0,
+        "tau_at_boundary": true,
+        "delta_eta_self": -0.0011617889699765682,
+        "loglik": -28103.552913879073
+      },
+      "minute_spline_df_12": {
+        "eta_self": 0.09407736875230789,
+        "eta_cross": 0.0,
+        "tau_minutes": 19.99999999999994,
+        "tau_at_boundary": true,
+        "delta_eta_self": -0.0009361685125846703,
+        "loglik": -28105.704010441706
+      }
+    },
+    "parametric_bootstrap": {
+      "eta_self_observed": 0.09501353726489256,
+      "p_value": 0.004975124378109453,
+      "n_replicates": 200,
+      "seed": 5694,
+      "null_median": 5.713059987728292e-10,
+      "null_q90": 0.006181291653316762,
+      "null_q95": 0.010201125720037122,
+      "null_q99": 0.020217214288221347
+    },
+    "cluster_bootstrap_ci95": [
+      1.4785006483360324e-35,
+      0.11303519690069318
+    ],
+    "detection_floor": 0.1,
+    "detection_floor_interpolated": 0.07857142857142858,
+    "verdict": "eta_self = 0.095 sits below the measured detection floor of 0.100: the honest statement is an upper bound, not an estimate. Caveats: the kernel timescale is pinned to the edge of its box at 20.0 min, so the data did not choose it and eta_self is conditional on the box."
+  }
+}

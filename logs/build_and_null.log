@@ -1,0 +1,255 @@
+
+=== build understat ===
+{
+  "source": "understat",
+  "matches": 3346,
+  "events": 82736,
+  "events_per_match_mean": 24.726838015540945,
+  "seasons": [
+    2015,
+    2017
+  ],
+  "leagues": [
+    "ENG-Premier League",
+    "ESP-La Liga",
+    "FRA-Ligue 1",
+    "GER-Bundesliga",
+    "ITA-Serie A"
+  ],
+  "situations": {
+    "open": 60846,
+    "setpiece": 20951,
+    "penalty": 939
+  },
+  "goals": 8649,
+  "red_cards_known": false,
+  "mean_xg": 0.10648712191635372,
+  "strata": {
+    "matches_by_source": {
+      "understat": 3346
+    },
+    "matches_by_gender": {
+      "male": 3346
+    },
+    "one_club_matches": 0
+  }
+}
+00:09:41 INFO  Slate(matches=4053, events=98848, goals=11207, cards=871) -> Slate(matches=4053, events=94571, goals=11207, cards=871)
+
+=== null model ===
+{
+  "raw": {
+    "matches": 4053,
+    "events": 98848,
+    "events_per_match_mean": 24.38884776708611,
+    "seasons": [
+      2004,
+      2005,
+      2006,
+      2007,
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018
+    ],
+    "leagues": [
+      "1. Bundesliga",
+      "FA Women's Super League",
+      "FIFA World Cup",
+      "La Liga",
+      "Ligue 1",
+      "NWSL",
+      "Premier League",
+      "Serie A",
+      "UEFA Euro"
+    ],
+    "situations": {
+      "open": 92761,
+      "setpiece": 4940,
+      "penalty": 1147
+    },
+    "goals": 10845,
+    "red_cards_known": true,
+    "mean_xg": 0.1062982590558817,
+    "strata": {
+      "matches_by_source": {
+        "statsbomb": 2112,
+        "wyscout": 1941
+      },
+      "matches_by_gender": {
+        "female": 143,
+        "male": 3910
+      },
+      "one_club_matches": 452
+    }
+  },
+  "prepared": {
+    "threshold_seconds": 4.0,
+    "n_before": 98848,
+    "n_after": 94571,
+    "removed_fraction": 0.04326845257364842,
+    "max_run_length": 4,
+    "collapsed_events": 4016,
+    "collapses_at_half_boundaries": 84,
+    "guard_enforced": true,
+    "jitter_seed": 20260910,
+    "remaining_exact_ties": 0
+  },
+  "background": {
+    "theta0": -2.566871065594148,
+    "theta_home": 0.23478074436435328,
+    "f_minute": [
+      0.6943798968193974,
+      -5.3025407535525915,
+      7.763015492099332,
+      -4.254131249204162,
+      2.036215162476895,
+      -0.8798175324204804
+    ],
+    "g_score": {
+      "-2": 0.16739199793160092,
+      "-1": 0.10191769718115867,
+      "0": 0.0,
+      "1": -0.22648708391354944,
+      "2": -0.29917749659956816
+    },
+    "h_red": {
+      "-1": -0.49658145550748095,
+      "0": 0.0,
+      "1": 0.3630610523667843
+    },
+    "theta_source": {
+      "statsbomb": 0.0,
+      "wyscout": -0.049597429973030856
+    },
+    "dropped_terms": [],
+    "n_team_effects": 535,
+    "loglik": -285253.21124319104,
+    "converged": true,
+    "n_iter": 390,
+    "team_ridge": 1.0,
+    "minute_df": 6,
+    "include_score": true,
+    "include_red": true
+  },
+  "time_rescaling": {
+    "n": 93424,
+    "ks_stat": 0.03604789395515584,
+    "ks_stat_subsample": 0.03604789395515584,
+    "ks_pvalue_subsample": 6.5129025495203e-106,
+    "n_subsample": 93424,
+    "mean_tau": 0.913750000105786,
+    "var_tau": 0.807777241409753,
+    "n_processes": 6390,
+    "frac_reject_05": 0.058998435054773084,
+    "uniformity_ks_stat": 0.011129947012869373,
+    "uniformity_ks_pvalue": 0.4041824025336267
+  },
+  "n_background_params": 1085
+}
+00:10:16 INFO  Slate(matches=3346, events=82736, goals=8955, cards=none) -> Slate(matches=3346, events=74777, goals=8955, cards=none)
+
+=== null model ===
+{
+  "raw": {
+    "matches": 3346,
+    "events": 82736,
+    "events_per_match_mean": 24.726838015540945,
+    "seasons": [
+      2015,
+      2017
+    ],
+    "leagues": [
+      "ENG-Premier League",
+      "ESP-La Liga",
+      "FRA-Ligue 1",
+      "GER-Bundesliga",
+      "ITA-Serie A"
+    ],
+    "situations": {
+      "open": 60846,
+      "setpiece": 20951,
+      "penalty": 939
+    },
+    "goals": 8649,
+    "red_cards_known": false,
+    "mean_xg": 0.10648712191635372,
+    "strata": {
+      "matches_by_source": {
+        "understat": 3346
+      },
+      "matches_by_gender": {
+        "male": 3346
+      },
+      "one_club_matches": 0
+    }
+  },
+  "prepared": {
+    "threshold_seconds": 4.0,
+    "n_before": 82736,
+    "n_after": 74777,
+    "removed_fraction": 0.09619754399535874,
+    "max_run_length": 5,
+    "collapsed_events": 7224,
+    "collapses_at_half_boundaries": 197,
+    "guard_enforced": true,
+    "jitter_seed": 20260910,
+    "remaining_exact_ties": 0
+  },
+  "background": {
+    "theta0": -2.653743705751623,
+    "theta_home": 0.2360322736053426,
+    "f_minute": [
+      0.7741582412391218,
+      -6.475521604570126,
+      10.45671853589097,
+      -6.875895172733105,
+      2.9963862173163336,
+      -0.9513384988538964
+    ],
+    "g_score": {
+      "-2": 0.12284492996411271,
+      "-1": 0.09424550541261711,
+      "0": 0.0,
+      "1": -0.20226070145508684,
+      "2": -0.26845988418537264
+    },
+    "h_red": null,
+    "theta_source": {
+      "understat": 0.0
+    },
+    "dropped_terms": [
+      "h_red (no dismissal data: red_diff is identically 0)"
+    ],
+    "n_team_effects": 178,
+    "loglik": -229861.76226737583,
+    "converged": true,
+    "n_iter": 127,
+    "team_ridge": 1.0,
+    "minute_df": 6,
+    "include_score": true,
+    "include_red": false
+  },
+  "time_rescaling": {
+    "n": 73838,
+    "ks_stat": 0.04649549170875786,
+    "ks_stat_subsample": 0.04649549170875786,
+    "ks_pvalue_subsample": 3.7372633958213966e-139,
+    "n_subsample": 73838,
+    "mean_tau": 0.9105705351012736,
+    "var_tau": 0.7429345160789803,
+    "n_processes": 5249,
+    "frac_reject_05": 0.05791579348447323,
+    "uniformity_ks_stat": 0.014486178192927635,
+    "uniformity_ks_pvalue": 0.2185309181317746
+  },
+  "n_background_params": 368
+}
+exit 0

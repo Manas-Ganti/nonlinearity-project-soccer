@@ -1,0 +1,37 @@
+[project]
+name = "soccer-momentum"
+version = "0.1.0"
+description = "Is soccer momentum real, or just game state? A Hawkes test with a measured detection floor."
+requires-python = ">=3.11"
+dependencies = [
+    "numpy>=1.26",
+    "scipy>=1.11",
+    "pandas>=2.1",
+    "pyarrow>=14",
+    "soccerdata>=1.9.1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.4", "ruff>=0.5"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+filterwarnings = ["error", "ignore::DeprecationWarning"]
+markers = ["slow: full-scale runs, not part of the fast suite"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py311"
+exclude = [".venv"]
+# ruff format will happily reformat python fences inside markdown; these files are
+# specification, not source.
+extend-exclude = ["*.md"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
+ignore = ["E501"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["E402"]
+"src/models/joint.py" = ["SLF001"]

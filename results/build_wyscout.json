@@ -1,0 +1,49 @@
+{
+  "name": "build_wyscout",
+  "written_at_utc": "2026-09-17T03:59:06+00:00",
+  "python": "3.12.7",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "numpy": "2.5.3",
+  "git_rev": null,
+  "inputs": {},
+  "payload": {
+    "source": "wyscout",
+    "matches": 1941,
+    "events": 45869,
+    "events_per_match_mean": 23.63163317877383,
+    "seasons": [
+      2016,
+      2017,
+      2018
+    ],
+    "leagues": [
+      "1. Bundesliga",
+      "FIFA World Cup",
+      "La Liga",
+      "Ligue 1",
+      "Premier League",
+      "Serie A",
+      "UEFA Euro"
+    ],
+    "situations": {
+      "open": 43078,
+      "setpiece": 2209,
+      "penalty": 582
+    },
+    "goals": 5052,
+    "red_cards_known": true,
+    "mean_xg": 0.11056091300519943,
+    "location_xg_model": {
+      "coef": {
+        "intercept": 3.0273634945928207,
+        "log_dist": -1.9842511342666733,
+        "angle": 0.494104556866902,
+        "header": -0.9691589606305759,
+        "setpiece": 0.6972862567382275
+      },
+      "n_shots": 45287,
+      "goal_rate": 0.10221476361869852,
+      "converged": true
+    }
+  }
+}

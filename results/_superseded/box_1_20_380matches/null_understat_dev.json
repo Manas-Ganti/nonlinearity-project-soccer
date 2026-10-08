@@ -1,0 +1,104 @@
+{
+  "name": "null_understat_dev",
+  "written_at_utc": "2026-09-17T04:10:28+00:00",
+  "python": "3.12.7",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "numpy": "2.5.3",
+  "git_rev": null,
+  "inputs": {},
+  "payload": {
+    "raw": {
+      "matches": 3346,
+      "events": 82736,
+      "events_per_match_mean": 24.726838015540945,
+      "seasons": [
+        2015,
+        2017
+      ],
+      "leagues": [
+        "ENG-Premier League",
+        "ESP-La Liga",
+        "FRA-Ligue 1",
+        "GER-Bundesliga",
+        "ITA-Serie A"
+      ],
+      "situations": {
+        "open": 60846,
+        "setpiece": 20951,
+        "penalty": 939
+      },
+      "goals": 8649,
+      "red_cards_known": false,
+      "mean_xg": 0.10648712191635372,
+      "strata": {
+        "matches_by_source": {
+          "understat": 3346
+        },
+        "matches_by_gender": {
+          "male": 3346
+        },
+        "one_club_matches": 0
+      }
+    },
+    "prepared": {
+      "threshold_seconds": 4.0,
+      "n_before": 82736,
+      "n_after": 74777,
+      "removed_fraction": 0.09619754399535874,
+      "max_run_length": 5,
+      "collapsed_events": 7224,
+      "collapses_at_half_boundaries": 197,
+      "guard_enforced": true,
+      "jitter_seed": 20260910,
+      "remaining_exact_ties": 0
+    },
+    "background": {
+      "theta0": -2.653743705751623,
+      "theta_home": 0.2360322736053426,
+      "f_minute": [
+        0.7741582412391218,
+        -6.475521604570126,
+        10.45671853589097,
+        -6.875895172733105,
+        2.9963862173163336,
+        -0.9513384988538964
+      ],
+      "g_score": {
+        "-2": 0.12284492996411271,
+        "-1": 0.09424550541261711,
+        "0": 0.0,
+        "1": -0.20226070145508684,
+        "2": -0.26845988418537264
+      },
+      "h_red": null,
+      "theta_source": {
+        "understat": 0.0
+      },
+      "dropped_terms": [
+        "h_red (no dismissal data: red_diff is identically 0)"
+      ],
+      "n_team_effects": 178,
+      "loglik": -229861.76226737583,
+      "converged": true,
+      "n_iter": 127,
+      "team_ridge": 1.0,
+      "minute_df": 6,
+      "include_score": true,
+      "include_red": false
+    },
+    "time_rescaling": {
+      "n": 73838,
+      "ks_stat": 0.04649549170875786,
+      "ks_stat_subsample": 0.04649549170875786,
+      "ks_pvalue_subsample": 3.7372633958213966e-139,
+      "n_subsample": 73838,
+      "mean_tau": 0.9105705351012736,
+      "var_tau": 0.7429345160789803,
+      "n_processes": 5249,
+      "frac_reject_05": 0.05791579348447323,
+      "uniformity_ks_stat": 0.014486178192927635,
+      "uniformity_ks_pvalue": 0.2185309181317746
+    },
+    "n_background_params": 368
+  }
+}

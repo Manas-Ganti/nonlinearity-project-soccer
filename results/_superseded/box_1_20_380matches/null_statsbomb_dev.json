@@ -1,0 +1,87 @@
+{
+  "name": "null_statsbomb_dev",
+  "written_at_utc": "2026-09-10T05:59:46+00:00",
+  "python": "3.12.7",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "numpy": "2.5.3",
+  "git_rev": null,
+  "inputs": {},
+  "payload": {
+    "raw": {
+      "matches": 380,
+      "events": 9908,
+      "events_per_match_mean": 26.073684210526316,
+      "seasons": [
+        2015
+      ],
+      "leagues": [
+        "Premier League"
+      ],
+      "situations": {
+        "open": 9415,
+        "setpiece": 402,
+        "penalty": 91
+      },
+      "goals": 988,
+      "red_cards_known": true,
+      "mean_xg": 0.09804009836178845
+    },
+    "prepared": {
+      "threshold_seconds": 4.0,
+      "n_before": 9908,
+      "n_after": 9399,
+      "removed_fraction": 0.05137262817924915,
+      "max_run_length": 4,
+      "collapsed_events": 482,
+      "collapses_at_half_boundaries": 18,
+      "jitter_seed": 20260910,
+      "remaining_exact_ties": 0
+    },
+    "background": {
+      "theta0": -2.6645752829157363,
+      "theta_home": 0.2560595329145722,
+      "f_minute": [
+        0.9708916761616019,
+        -7.33959661037313,
+        9.4270759216395,
+        -2.7792292912563332,
+        -0.38437656751102217,
+        0.27176199664459433
+      ],
+      "g_score": {
+        "-2": 0.12098710833642917,
+        "-1": 0.07528732145357418,
+        "0": 0.0,
+        "1": -0.17605830571661715,
+        "2": -0.24345969543432924
+      },
+      "h_red": {
+        "-1": -0.600654093960864,
+        "0": 0.0,
+        "1": 0.39838557694033716
+      },
+      "n_team_effects": 20,
+      "loglik": -28117.93706058228,
+      "converged": true,
+      "n_iter": 130,
+      "team_ridge": 1.0,
+      "minute_df": 6,
+      "include_score": true,
+      "include_red": true
+    },
+    "time_rescaling": {
+      "n": 9308,
+      "ks_stat": 0.03782013286436092,
+      "ks_stat_subsample": 0.03782013286436092,
+      "ks_pvalue_subsample": 5.2776566236030644e-12,
+      "n_subsample": 9308,
+      "mean_tau": 0.9171533402303159,
+      "var_tau": 0.8706167988087012,
+      "n_processes": 639,
+      "frac_reject_05": 0.054773082942097026,
+      "uniformity_ks_stat": 0.03868885063253957,
+      "uniformity_ks_pvalue": 0.2869256769531411
+    },
+    "n_background_params": 54
+  }
+}

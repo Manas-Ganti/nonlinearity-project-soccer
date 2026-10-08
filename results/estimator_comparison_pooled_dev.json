@@ -1,0 +1,149 @@
+{
+  "name": "estimator_comparison_pooled_dev",
+  "written_at_utc": "2026-09-17T13:53:42+00:00",
+  "python": "3.12.7",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "numpy": "2.5.3",
+  "git_rev": null,
+  "inputs": {},
+  "payload": {
+    "raw": {
+      "matches": 4053,
+      "events": 98848,
+      "events_per_match_mean": 24.38884776708611,
+      "seasons": [
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018
+      ],
+      "leagues": [
+        "1. Bundesliga",
+        "FA Women's Super League",
+        "FIFA World Cup",
+        "La Liga",
+        "Ligue 1",
+        "NWSL",
+        "Premier League",
+        "Serie A",
+        "UEFA Euro"
+      ],
+      "situations": {
+        "open": 92761,
+        "setpiece": 4940,
+        "penalty": 1147
+      },
+      "goals": 10845,
+      "red_cards_known": true,
+      "mean_xg": 0.1062982590558817,
+      "strata": {
+        "matches_by_source": {
+          "statsbomb": 2112,
+          "wyscout": 1941
+        },
+        "matches_by_gender": {
+          "female": 143,
+          "male": 3910
+        },
+        "one_club_matches": 452
+      }
+    },
+    "prepared": {
+      "threshold_seconds": 4.0,
+      "n_before": 98848,
+      "n_after": 94571,
+      "removed_fraction": 0.04326845257364842,
+      "max_run_length": 4,
+      "collapsed_events": 4016,
+      "collapses_at_half_boundaries": 84,
+      "guard_enforced": true,
+      "jitter_seed": 20260910,
+      "remaining_exact_ties": 0
+    },
+    "summary": [
+      {
+        "method": "em",
+        "eta_star": 0.0,
+        "mean_eta_hat": 1.398146312899337e-13,
+        "mean_tau": 4.657244775250658,
+        "mean_loglik": -294791.9384115355,
+        "bias": 1.398146312899337e-13
+      },
+      {
+        "method": "em",
+        "eta_star": 0.1,
+        "mean_eta_hat": 0.06838130410793047,
+        "mean_tau": 3.0000000008610823,
+        "mean_loglik": -315855.97942436003,
+        "bias": -0.03161869589206953
+      },
+      {
+        "method": "em",
+        "eta_star": 0.3,
+        "mean_eta_hat": 0.2521455193071331,
+        "mean_tau": 3.968009508834984,
+        "mean_loglik": -365449.5927075143,
+        "bias": -0.04785448069286691
+      },
+      {
+        "method": "joint",
+        "eta_star": 0.0,
+        "mean_eta_hat": 2.3635805688124835e-05,
+        "mean_tau": 4.93381586605535,
+        "mean_loglik": -294789.5934373878,
+        "bias": 2.3635805688124835e-05
+      },
+      {
+        "method": "joint",
+        "eta_star": 0.1,
+        "mean_eta_hat": 0.08108223473051113,
+        "mean_tau": 4.138663618296466,
+        "mean_loglik": -315841.4386449183,
+        "bias": -0.01891776526948888
+      },
+      {
+        "method": "joint",
+        "eta_star": 0.3,
+        "mean_eta_hat": 0.2771173396941383,
+        "mean_tau": 4.662757527537297,
+        "mean_loglik": -365382.84334286675,
+        "bias": -0.02288266030586167
+      },
+      {
+        "method": "two_stage",
+        "eta_star": 0.0,
+        "mean_eta_hat": 1.42632233246028e-14,
+        "mean_tau": 3.0,
+        "mean_loglik": -294844.3793477163,
+        "bias": 1.42632233246028e-14
+      },
+      {
+        "method": "two_stage",
+        "eta_star": 0.1,
+        "mean_eta_hat": 0.0350284443452983,
+        "mean_tau": 3.000000000010727,
+        "mean_loglik": -316102.4717094231,
+        "bias": -0.0649715556547017
+      },
+      {
+        "method": "two_stage",
+        "eta_star": 0.3,
+        "mean_eta_hat": 0.11596280095313216,
+        "mean_tau": 3.0,
+        "mean_loglik": -367586.51617126557,
+        "bias": -0.18403719904686783
+      }
+    ]
+  }
+}

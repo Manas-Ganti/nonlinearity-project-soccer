@@ -1,0 +1,92 @@
+22:44:32 INFO  pulling 3 leagues x 1 seasons
+[09/16/26 22:44:33] INFO     No custom team name replacements      _config.py:91
+                             found. You can configure these in                  
+                             /Users/manasganti/soccerdata/config/t              
+                             eamname_replacements.json.                         
+                    INFO     No custom league dict found. You can _config.py:189
+                             configure additional leagues in                    
+                             /Users/manasganti/soccerdata/config/               
+                             league_dict.json.                                  
+                    INFO     Saving cached data to                _common.py:250
+                             /Users/manasganti/soccerdata/data/Un               
+                             derstat                                            
+[2026-09-16 22:44:33] INFO     TLSLibrary:_load_library:397 - Successfully loaded TLS library: /Users/manasganti/Fall-2026/nonlinearity/soccer/.venv/lib/python3.12/site-packages/tls_requests/bin/tls-client-darwin-arm64-1.13.1.dylib
+                    INFO     Successfully loaded TLS library:   libraries.py:397
+                             /Users/manasganti/Fall-2026/nonlin                 
+                             earity/soccer/.venv/lib/python3.12                 
+                             /site-packages/tls_requests/bin/tl                 
+                             s-client-darwin-arm64-1.13.1.dylib                 
+[09/16/26 22:48:21] INFO     wrote ESP-La-Liga_2015.parquet      understat.py:88
+                             (9082 shots)                                       
+                    INFO     Saving cached data to                _common.py:250
+                             /Users/manasganti/soccerdata/data/Un               
+                             derstat                                            
+[09/16/26 22:51:55] INFO     wrote ITA-Serie-A_2015.parquet      understat.py:88
+                             (9849 shots)                                       
+                    INFO     Saving cached data to                _common.py:250
+                             /Users/manasganti/soccerdata/data/Un               
+                             derstat                                            
+[09/16/26 22:55:37] INFO     wrote FRA-Ligue-1_2015.parquet      understat.py:88
+                             (8808 shots)                                       
+
+=== understat pull ===
+{
+  "files": [
+    "/Users/manasganti/Fall-2026/nonlinearity/soccer/data/raw/understat/ESP-La-Liga_2015.parquet",
+    "/Users/manasganti/Fall-2026/nonlinearity/soccer/data/raw/understat/ITA-Serie-A_2015.parquet",
+    "/Users/manasganti/Fall-2026/nonlinearity/soccer/data/raw/understat/FRA-Ligue-1_2015.parquet"
+  ]
+}
+22:55:38 INFO  pulling 5 leagues x 1 seasons
+[09/16/26 22:55:39] INFO     No custom team name replacements      _config.py:91
+                             found. You can configure these in                  
+                             /Users/manasganti/soccerdata/config/t              
+                             eamname_replacements.json.                         
+                    INFO     No custom league dict found. You can _config.py:189
+                             configure additional leagues in                    
+                             /Users/manasganti/soccerdata/config/               
+                             league_dict.json.                                  
+                    INFO     Saving cached data to                _common.py:250
+                             /Users/manasganti/soccerdata/data/Un               
+                             derstat                                            
+[2026-09-16 22:55:39] INFO     TLSLibrary:_load_library:397 - Successfully loaded TLS library: /Users/manasganti/Fall-2026/nonlinearity/soccer/.venv/lib/python3.12/site-packages/tls_requests/bin/tls-client-darwin-arm64-1.13.1.dylib
+                    INFO     Successfully loaded TLS library:   libraries.py:397
+                             /Users/manasganti/Fall-2026/nonlin                 
+                             earity/soccer/.venv/lib/python3.12                 
+                             /site-packages/tls_requests/bin/tl                 
+                             s-client-darwin-arm64-1.13.1.dylib                 
+[09/16/26 22:59:01] INFO     wrote                               understat.py:88
+                             ENG-Premier-League_2017.parquet                    
+                             (9287 shots)                                       
+                    INFO     Saving cached data to                _common.py:250
+                             /Users/manasganti/soccerdata/data/Un               
+                             derstat                                            
+[09/16/26 23:02:32] INFO     wrote ESP-La-Liga_2017.parquet      understat.py:88
+                             (9174 shots)                                       
+                    INFO     Saving cached data to                _common.py:250
+                             /Users/manasganti/soccerdata/data/Un               
+                             derstat                                            
+[09/16/26 23:05:59] INFO     wrote ITA-Serie-A_2017.parquet      understat.py:88
+                             (9794 shots)                                       
+                    INFO     Saving cached data to                _common.py:250
+                             /Users/manasganti/soccerdata/data/Un               
+                             derstat                                            
+[09/16/26 23:08:46] INFO     wrote GER-Bundesliga_2017.parquet   understat.py:88
+                             (7737 shots)                                       
+                    INFO     Saving cached data to                _common.py:250
+                             /Users/manasganti/soccerdata/data/Un               
+                             derstat                                            
+[09/16/26 23:12:13] INFO     wrote FRA-Ligue-1_2017.parquet      understat.py:88
+                             (9467 shots)                                       
+
+=== understat pull ===
+{
+  "files": [
+    "/Users/manasganti/Fall-2026/nonlinearity/soccer/data/raw/understat/ENG-Premier-League_2017.parquet",
+    "/Users/manasganti/Fall-2026/nonlinearity/soccer/data/raw/understat/ESP-La-Liga_2017.parquet",
+    "/Users/manasganti/Fall-2026/nonlinearity/soccer/data/raw/understat/ITA-Serie-A_2017.parquet",
+    "/Users/manasganti/Fall-2026/nonlinearity/soccer/data/raw/understat/GER-Bundesliga_2017.parquet",
+    "/Users/manasganti/Fall-2026/nonlinearity/soccer/data/raw/understat/FRA-Ligue-1_2017.parquet"
+  ]
+}
+understat exit 0

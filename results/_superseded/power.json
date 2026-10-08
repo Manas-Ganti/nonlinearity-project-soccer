@@ -1,0 +1,89 @@
+{
+  "name": "power",
+  "written_at_utc": "2026-09-10T06:29:39+00:00",
+  "python": "3.12.7",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "numpy": "2.5.3",
+  "git_rev": null,
+  "inputs": {},
+  "payload": {
+    "raw": {
+      "matches": 120,
+      "events": 3983,
+      "events_per_match_mean": 33.19166666666667,
+      "seasons": [
+        2014,
+        2015
+      ],
+      "leagues": [
+        "SYN"
+      ],
+      "situations": {
+        "open": 3983
+      },
+      "goals": 450,
+      "red_cards_known": true,
+      "mean_xg": 0.12011956664409816
+    },
+    "prepared": {
+      "threshold_seconds": 4.0,
+      "n_before": 3983,
+      "n_after": 3930,
+      "removed_fraction": 0.013306552849610798,
+      "max_run_length": 2,
+      "collapsed_events": 53,
+      "collapses_at_half_boundaries": 3,
+      "jitter_seed": 20260910,
+      "remaining_exact_ties": 0
+    },
+    "critical_value": 0.002439129566159424,
+    "alpha": 0.05,
+    "target_power": 0.8,
+    "detection_floor": 0.1,
+    "detection_floor_interpolated": 0.07857142857142858,
+    "curve": [
+      {
+        "eta_star": 0.0,
+        "n_replicates": 15,
+        "power": 0.06666666666666667,
+        "mean_eta_hat": 0.0005344083141885763,
+        "median_eta_hat": 2.423189193086085e-08,
+        "sd_eta_hat": 0.002042315866637775,
+        "bias": 0.0005344083141885763,
+        "mean_n_events": 4110.6
+      },
+      {
+        "eta_star": 0.1,
+        "n_replicates": 4,
+        "power": 1.0,
+        "mean_eta_hat": 0.047301510105277,
+        "median_eta_hat": 0.044052362449516644,
+        "sd_eta_hat": 0.014612093493523062,
+        "bias": -0.052698489894723005,
+        "mean_n_events": 4571.0
+      },
+      {
+        "eta_star": 0.3,
+        "n_replicates": 4,
+        "power": 1.0,
+        "mean_eta_hat": 0.2389882069688727,
+        "median_eta_hat": 0.23803694889184124,
+        "sd_eta_hat": 0.011567019135131336,
+        "bias": -0.061011793031127276,
+        "mean_n_events": 5773.5
+      }
+    ],
+    "config": {
+      "eta_grid": [
+        0.0,
+        0.1,
+        0.3
+      ],
+      "replicates": 4,
+      "null_replicates": 15,
+      "alpha": 0.05,
+      "target_power": 0.8,
+      "seed": 5694
+    }
+  }
+}

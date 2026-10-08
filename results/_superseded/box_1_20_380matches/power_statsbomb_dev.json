@@ -1,0 +1,136 @@
+{
+  "name": "power_statsbomb_dev",
+  "written_at_utc": "2026-09-10T15:26:28+00:00",
+  "python": "3.12.7",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "numpy": "2.5.3",
+  "git_rev": null,
+  "inputs": {},
+  "payload": {
+    "raw": {
+      "matches": 380,
+      "events": 9908,
+      "events_per_match_mean": 26.073684210526316,
+      "seasons": [
+        2015
+      ],
+      "leagues": [
+        "Premier League"
+      ],
+      "situations": {
+        "open": 9415,
+        "setpiece": 402,
+        "penalty": 91
+      },
+      "goals": 988,
+      "red_cards_known": true,
+      "mean_xg": 0.09804009836178845
+    },
+    "prepared": {
+      "threshold_seconds": 4.0,
+      "n_before": 9908,
+      "n_after": 9399,
+      "removed_fraction": 0.05137262817924915,
+      "max_run_length": 4,
+      "collapsed_events": 482,
+      "collapses_at_half_boundaries": 18,
+      "jitter_seed": 20260910,
+      "remaining_exact_ties": 0
+    },
+    "critical_value": 0.013448845669942332,
+    "alpha": 0.05,
+    "target_power": 0.8,
+    "detection_floor": 0.05,
+    "detection_floor_interpolated": 0.037142857142857144,
+    "curve": [
+      {
+        "eta_star": 0.0,
+        "n_replicates": 200,
+        "power": 0.05,
+        "mean_eta_hat": 0.001997735160475975,
+        "median_eta_hat": 6.084315606170162e-09,
+        "sd_eta_hat": 0.00483053403572359,
+        "bias": 0.001997735160475975,
+        "mean_n_events": 9774.43
+      },
+      {
+        "eta_star": 0.02,
+        "n_replicates": 30,
+        "power": 0.5333333333333333,
+        "mean_eta_hat": 0.013108332455432043,
+        "median_eta_hat": 0.016457041623044424,
+        "sd_eta_hat": 0.012652076199502637,
+        "bias": -0.006891667544567957,
+        "mean_n_events": 9962.566666666668
+      },
+      {
+        "eta_star": 0.05,
+        "n_replicates": 30,
+        "power": 1.0,
+        "mean_eta_hat": 0.0377243411302798,
+        "median_eta_hat": 0.04029387670019389,
+        "sd_eta_hat": 0.012312360804406286,
+        "bias": -0.0122756588697202,
+        "mean_n_events": 10267.7
+      },
+      {
+        "eta_star": 0.1,
+        "n_replicates": 30,
+        "power": 1.0,
+        "mean_eta_hat": 0.09014106665340972,
+        "median_eta_hat": 0.08939593754662226,
+        "sd_eta_hat": 0.01503855301383961,
+        "bias": -0.009858933346590285,
+        "mean_n_events": 10820.166666666666
+      },
+      {
+        "eta_star": 0.15,
+        "n_replicates": 30,
+        "power": 1.0,
+        "mean_eta_hat": 0.13745866611216045,
+        "median_eta_hat": 0.1399843325845391,
+        "sd_eta_hat": 0.014955500178610685,
+        "bias": -0.01254133388783954,
+        "mean_n_events": 11501.3
+      },
+      {
+        "eta_star": 0.2,
+        "n_replicates": 30,
+        "power": 1.0,
+        "mean_eta_hat": 0.1917803505100841,
+        "median_eta_hat": 0.19261971371595504,
+        "sd_eta_hat": 0.014829155765573768,
+        "bias": -0.008219649489915909,
+        "mean_n_events": 12162.733333333334
+      },
+      {
+        "eta_star": 0.3,
+        "n_replicates": 30,
+        "power": 1.0,
+        "mean_eta_hat": 0.29282670547539075,
+        "median_eta_hat": 0.294319268825674,
+        "sd_eta_hat": 0.013831271220098152,
+        "bias": -0.007173294524609242,
+        "mean_n_events": 13892.266666666666
+      }
+    ],
+    "config": {
+      "eta_grid": [
+        0.0,
+        0.02,
+        0.05,
+        0.1,
+        0.15,
+        0.2,
+        0.3
+      ],
+      "replicates": 30,
+      "null_replicates": 200,
+      "alpha": 0.05,
+      "target_power": 0.8,
+      "seed": 5694
+    },
+    "minute_clock": false,
+    "clock_note": "simulated slates kept their continuous clock, matching the source"
+  }
+}

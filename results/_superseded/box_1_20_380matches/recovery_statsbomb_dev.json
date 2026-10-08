@@ -1,0 +1,56 @@
+{
+  "name": "recovery_statsbomb_dev",
+  "written_at_utc": "2026-09-10T14:56:40+00:00",
+  "python": "3.12.7",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "numpy": "2.5.3",
+  "git_rev": null,
+  "inputs": {},
+  "payload": {
+    "raw": {
+      "matches": 380,
+      "events": 9908,
+      "events_per_match_mean": 26.073684210526316,
+      "seasons": [
+        2015
+      ],
+      "leagues": [
+        "Premier League"
+      ],
+      "situations": {
+        "open": 9415,
+        "setpiece": 402,
+        "penalty": 91
+      },
+      "goals": 988,
+      "red_cards_known": true,
+      "mean_xg": 0.09804009836178845
+    },
+    "prepared": {
+      "threshold_seconds": 4.0,
+      "n_before": 9908,
+      "n_after": 9399,
+      "removed_fraction": 0.05137262817924915,
+      "max_run_length": 4,
+      "collapsed_events": 482,
+      "collapses_at_half_boundaries": 18,
+      "jitter_seed": 20260910,
+      "remaining_exact_ties": 0
+    },
+    "results": {
+      "joint": {
+        "eta_planted": 0.3,
+        "eta_cross_planted": 0.05,
+        "beta_planted": 0.2,
+        "tau_planted_minutes": 5.0,
+        "n_replicates": 12,
+        "mean_eta_hat_self": 0.2960335128134865,
+        "sd_eta_hat_self": 0.014720502940028983,
+        "bias": -0.00396648718651349,
+        "mean_tau_hat": 4.949456710246156,
+        "tolerance": 0.08,
+        "passed": true
+      }
+    }
+  }
+}

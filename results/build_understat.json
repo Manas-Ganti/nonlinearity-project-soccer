@@ -1,0 +1,43 @@
+{
+  "name": "build_understat",
+  "written_at_utc": "2026-09-17T04:09:38+00:00",
+  "python": "3.12.7",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "numpy": "2.5.3",
+  "git_rev": null,
+  "inputs": {},
+  "payload": {
+    "source": "understat",
+    "matches": 3346,
+    "events": 82736,
+    "events_per_match_mean": 24.726838015540945,
+    "seasons": [
+      2015,
+      2017
+    ],
+    "leagues": [
+      "ENG-Premier League",
+      "ESP-La Liga",
+      "FRA-Ligue 1",
+      "GER-Bundesliga",
+      "ITA-Serie A"
+    ],
+    "situations": {
+      "open": 60846,
+      "setpiece": 20951,
+      "penalty": 939
+    },
+    "goals": 8649,
+    "red_cards_known": false,
+    "mean_xg": 0.10648712191635372,
+    "strata": {
+      "matches_by_source": {
+        "understat": 3346
+      },
+      "matches_by_gender": {
+        "male": 3346
+      },
+      "one_club_matches": 0
+    }
+  }
+}

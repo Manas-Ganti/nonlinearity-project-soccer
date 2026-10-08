@@ -1,0 +1,4 @@
+.venv/bin/python -m src.cli.main -v fit --source pooled --split dev \
+		--bootstrap 500 --cluster-bootstrap 200
+15:25:58 INFO  Slate(matches=4053, events=98848, goals=11207, cards=871) -> Slate(matches=4053, events=94571, goals=11207, cards=871)
+make: *** [fit-dev] Terminated: 15

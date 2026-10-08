@@ -1,0 +1,87 @@
+{
+  "name": "null_synthetic_all",
+  "written_at_utc": "2026-09-10T06:27:32+00:00",
+  "python": "3.12.7",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "numpy": "2.5.3",
+  "git_rev": null,
+  "inputs": {},
+  "payload": {
+    "raw": {
+      "matches": 120,
+      "events": 3983,
+      "events_per_match_mean": 33.19166666666667,
+      "seasons": [
+        2014,
+        2015
+      ],
+      "leagues": [
+        "SYN"
+      ],
+      "situations": {
+        "open": 3983
+      },
+      "goals": 450,
+      "red_cards_known": true,
+      "mean_xg": 0.12011956664409816
+    },
+    "prepared": {
+      "threshold_seconds": 4.0,
+      "n_before": 3983,
+      "n_after": 3930,
+      "removed_fraction": 0.013306552849610798,
+      "max_run_length": 2,
+      "collapsed_events": 53,
+      "collapses_at_half_boundaries": 3,
+      "jitter_seed": 20260910,
+      "remaining_exact_ties": 0
+    },
+    "background": {
+      "theta0": -2.058493574846011,
+      "theta_home": 0.15817634096078,
+      "f_minute": [
+        -0.12920962667172595,
+        4.798919462726813,
+        -8.904168633945819,
+        6.2117621558032985,
+        -2.2587001168326952,
+        0.423229486136002
+      ],
+      "g_score": {
+        "-2": 0.09675225147098304,
+        "-1": -0.020118367291070634,
+        "0": 0.0,
+        "1": -0.14649291015577215,
+        "2": -0.27444605844574693
+      },
+      "h_red": {
+        "-1": -0.3349220776669144,
+        "0": 0.0,
+        "1": 0.16382324132480044
+      },
+      "dropped_terms": [],
+      "n_team_effects": 40,
+      "loglik": -10553.764048293577,
+      "converged": true,
+      "n_iter": 235,
+      "team_ridge": 1.0,
+      "minute_df": 6,
+      "include_score": true,
+      "include_red": true
+    },
+    "time_rescaling": {
+      "n": 3930,
+      "ks_stat": 0.026381297711474017,
+      "ks_stat_subsample": 0.026381297711474017,
+      "ks_pvalue_subsample": 0.008268291361161284,
+      "n_subsample": 3930,
+      "mean_tau": 0.94336771638455,
+      "var_tau": 0.8558640050227059,
+      "n_processes": 230,
+      "frac_reject_05": 0.034782608695652174,
+      "uniformity_ks_stat": 0.08487876272530687,
+      "uniformity_ks_pvalue": 0.06858292865164983
+    },
+    "n_background_params": 94
+  }
+}

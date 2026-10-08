@@ -1,0 +1,97 @@
+{
+  "name": "rounding_bias",
+  "written_at_utc": "2026-09-10T06:03:21+00:00",
+  "python": "3.12.7",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "numpy": "2.5.3",
+  "git_rev": null,
+  "inputs": {},
+  "payload": {
+    "matches": 380,
+    "seasons": [
+      2015
+    ],
+    "second_resolution": {
+      "eta_self": 0.09501353726489256,
+      "eta_cross": 2.1097243344512815e-17,
+      "beta": 0.05000199365596957,
+      "tau_minutes": 19.999202569408215,
+      "spectral_radius": 0.09501353726489259,
+      "loglik": -28109.705882791968,
+      "converged": true,
+      "n_iter": 132,
+      "n_events": 9308,
+      "n_matches": 380,
+      "mu_fit": "joint MLE (mu and the kernel fitted together)",
+      "tau_at_boundary": true,
+      "dedup": {
+        "threshold_seconds": 4.0,
+        "n_before": 9908,
+        "n_after": 9399,
+        "removed_fraction": 0.05137262817924915,
+        "max_run_length": 4,
+        "collapsed_events": 482,
+        "collapses_at_half_boundaries": 18
+      }
+    },
+    "minute_resolution": {
+      "dedup": {
+        "threshold_seconds": 4.0,
+        "n_before": 9908,
+        "n_after": 8857,
+        "removed_fraction": 0.10607589826402908,
+        "max_run_length": 5,
+        "collapsed_events": 955,
+        "collapses_at_half_boundaries": 29
+      },
+      "eta_self_mean": 1.1430775658585672e-06,
+      "eta_self_sd": 2.5360736195728364e-06,
+      "eta_cross_mean": 2.4431614965404005e-07,
+      "tau_mean": 19.947645407760298,
+      "jitter_draws": [
+        {
+          "draw": 0,
+          "seed": 20260910,
+          "eta_self": 5.679719514731925e-06,
+          "eta_cross": 1.2186750171002626e-06,
+          "tau": 19.755398563862325,
+          "n_events": 8857
+        },
+        {
+          "draw": 1,
+          "seed": 20260911,
+          "eta_self": 1.6869851788941645e-08,
+          "eta_cross": 1.4307900466764842e-09,
+          "tau": 19.992495776211808,
+          "n_events": 8857
+        },
+        {
+          "draw": 2,
+          "seed": 20260912,
+          "eta_self": 4.044684177467595e-10,
+          "eta_cross": 1.663355626312697e-11,
+          "tau": 19.99918792919,
+          "n_events": 8857
+        },
+        {
+          "draw": 3,
+          "seed": 20260913,
+          "eta_self": 1.7609261554615058e-08,
+          "eta_cross": 1.4166248792669118e-09,
+          "tau": 19.99243720564458,
+          "n_events": 8857
+        },
+        {
+          "draw": 4,
+          "seed": 20260914,
+          "eta_self": 7.847327996069072e-10,
+          "eta_cross": 4.1682687730948067e-11,
+          "tau": 19.998707563892783,
+          "n_events": 8857
+        }
+      ]
+    },
+    "rounding_bias_eta_self": -0.09501239418732671,
+    "extra_events_removed_by_rounding": 542
+  }
+}
