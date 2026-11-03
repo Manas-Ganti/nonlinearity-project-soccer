@@ -1,0 +1,195 @@
+{
+  "name": "poss_fit_wyscout_dev",
+  "written_at_utc": "2026-11-03T23:04:54+00:00",
+  "python": "3.12.7",
+  "platform": "Linux-5.14.0-687.26.1.el9_8.x86_64-x86_64-with-glibc2.34",
+  "numpy": "2.5.3",
+  "git_rev": "f107dc7",
+  "inputs": {},
+  "payload": {
+    "headline": {
+      "rho_self": 0.19389617799386402,
+      "odds_ratio_self": 1.2139702395876453,
+      "rho_cross": -0.19822521158985082,
+      "odds_ratio_cross": 0.8201851171420647,
+      "tau_minutes": 5.0,
+      "loglik": -185296.88409230602,
+      "ridge_penalty": 6.280387734278986,
+      "converged": true,
+      "n_iter": 975,
+      "theta0": -0.06423255198792413,
+      "theta_home": 0.07642672738982037,
+      "setpiece": 0.41319387761998017,
+      "g_score": {
+        "-2": 0.25598866133246445,
+        "-1": 0.19822685363091805,
+        "0": 0.0,
+        "1": -0.24164072767672548,
+        "2": -0.29980295317423106
+      },
+      "h_red": {
+        "-1": -0.34094144995405967,
+        "0": 0.0,
+        "1": 0.5410513384533511
+      },
+      "n_possessions": 282263,
+      "n_dangerous": 162308,
+      "n_team_effects": 154
+    },
+    "background_only": {
+      "rho_self": 0.0,
+      "odds_ratio_self": 1.0,
+      "rho_cross": 0.0,
+      "odds_ratio_cross": 1.0,
+      "tau_minutes": 5.0,
+      "loglik": -187044.138844874,
+      "ridge_penalty": 9.964654956112259,
+      "converged": true,
+      "n_iter": 530,
+      "theta0": -0.11909900837717258,
+      "theta_home": 0.10136556256372153,
+      "setpiece": 0.40390148830269046,
+      "g_score": {
+        "-2": 0.3331917592900533,
+        "-1": 0.25205471469598933,
+        "0": 0.0,
+        "1": -0.2941928256701922,
+        "2": -0.3759811320853334
+      },
+      "h_red": {
+        "-1": -0.466624156930696,
+        "0": 0.0,
+        "1": 0.6723055210296631
+      },
+      "n_possessions": 282263,
+      "n_dangerous": 162308,
+      "n_team_effects": 154
+    },
+    "lr_vs_background": 3494.5095051359385,
+    "tau_profile": [
+      {
+        "tau_minutes": 2.0,
+        "rho_self": 0.39092955506570204,
+        "rho_cross": -0.4003734470392364,
+        "loglik": -184404.10724767015,
+        "converged": true
+      },
+      {
+        "tau_minutes": 3.0,
+        "rho_self": 0.2853091540707244,
+        "rho_cross": -0.2975122659383443,
+        "loglik": -184818.73353501555,
+        "converged": true
+      },
+      {
+        "tau_minutes": 5.0,
+        "rho_self": 0.19389617799386402,
+        "rho_cross": -0.19822521158985082,
+        "loglik": -185296.88409230602,
+        "converged": true
+      },
+      {
+        "tau_minutes": 8.0,
+        "rho_self": 0.13704889595560063,
+        "rho_cross": -0.1344515870929604,
+        "loglik": -185648.54225342814,
+        "converged": true
+      },
+      {
+        "tau_minutes": 14.0,
+        "rho_self": 0.09160899124670818,
+        "rho_cross": -0.08400707385335018,
+        "loglik": -185969.1249947263,
+        "converged": true
+      },
+      {
+        "tau_minutes": 30.0,
+        "rho_self": 0.05410834532240491,
+        "rho_cross": -0.044565386790615384,
+        "loglik": -186293.13795686042,
+        "converged": true
+      }
+    ],
+    "sensitivities": {
+      "box": {
+        "rho_self": 0.21169369360727472,
+        "rho_cross": -0.09079782082908015,
+        "odds_ratio_self": 1.235769303062956,
+        "converged": true,
+        "n_possessions": 282263
+      },
+      "final_third_x75": {
+        "rho_self": 0.18245228538663413,
+        "rho_cross": -0.11769220967619698,
+        "odds_ratio_self": 1.2001568845656412,
+        "converged": true,
+        "n_possessions": 282263
+      },
+      "no_setpiece_term": {
+        "rho_self": 0.1822596524296208,
+        "rho_cross": -0.20320977092543047,
+        "odds_ratio_self": 1.199925717062042,
+        "converged": true,
+        "n_possessions": 282263
+      },
+      "no_score_state": {
+        "rho_self": 0.217635191269941,
+        "rho_cross": -0.2184169103060618,
+        "odds_ratio_self": 1.2431334789417912,
+        "converged": true,
+        "n_possessions": 282263
+      },
+      "minute_spline_df_3": {
+        "rho_self": 0.2074660824308264,
+        "rho_cross": -0.18578560307772654,
+        "odds_ratio_self": 1.2305559786647393,
+        "converged": true,
+        "n_possessions": 282263
+      },
+      "minute_spline_df_9": {
+        "rho_self": 0.19346768952206575,
+        "rho_cross": -0.19859544370962084,
+        "odds_ratio_self": 1.2134501787628669,
+        "converged": true,
+        "n_possessions": 282263
+      },
+      "strict_possession_rule": {
+        "rho_self": 0.16532216737368696,
+        "rho_cross": -0.15442583754392525,
+        "odds_ratio_self": 1.1797731419072408,
+        "converged": true,
+        "n_possessions": 597449
+      }
+    },
+    "parametric_bootstrap": {
+      "rho_self_observed": 0.19389617799386402,
+      "p_value_upper": 0.001996007984031936,
+      "p_value_lower": 1.0,
+      "null_q05": -0.013045694834100088,
+      "null_q50": -0.005468999232078654,
+      "null_q95": 0.0022496178108401717,
+      "n_replicates": 500,
+      "n_unconverged": 0,
+      "seed": 5694
+    },
+    "cluster_bootstrap": {
+      "rho_self_ci95": [
+        0.17989172798668376,
+        0.19863068633396375
+      ],
+      "odds_ratio_self_ci95": [
+        1.1970877450046618,
+        1.2197314192264574
+      ],
+      "rho_cross_ci95": [
+        -0.20429918506261602,
+        -0.18819859568095718
+      ],
+      "n_replicates": 200,
+      "n_unconverged": 0
+    },
+    "detection_floor": 0.02,
+    "detection_floor_interpolated": 0.013333333333333336,
+    "verdict": "rho_self = 0.1939 is at or above the detection floor of 0.02; read it with the p-value and CI."
+  }
+}

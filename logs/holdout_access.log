@@ -159,3 +159,7 @@
 2026-10-09T00:28:35+00:00	source=wyscout split=dev final_run=False caller=recovery touches_holdout=False matches=1941
 2026-10-09T00:29:19+00:00	source=wyscout split=dev final_run=False caller=power touches_holdout=False matches=1941
 2026-10-09T00:33:00+00:00	source=wyscout split=dev final_run=False caller=fit-dev touches_holdout=False matches=1941
+2026-11-03T22:51:56+00:00	source=wyscout_possessions split=dev final_run=False caller=poss-recovery touches_holdout=False matches=1941
+2026-11-03T22:52:22+00:00	source=wyscout_possessions split=dev final_run=False caller=poss-power touches_holdout=False matches=1941
+2026-11-03T22:55:24+00:00	source=wyscout_possessions split=dev final_run=False caller=poss-fit touches_holdout=False matches=1941
+2026-11-03T22:55:25+00:00	source=wyscout_possessions split=dev final_run=False caller=poss-fit-strict touches_holdout=False matches=1941

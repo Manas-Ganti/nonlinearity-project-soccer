@@ -1,0 +1,31 @@
+{
+  "name": "poss_power_wyscout_dev",
+  "written_at_utc": "2026-11-03T22:55:21+00:00",
+  "python": "3.12.7",
+  "platform": "Linux-5.14.0-687.26.1.el9_8.x86_64-x86_64-with-glibc2.34",
+  "numpy": "2.5.3",
+  "git_rev": "f107dc7",
+  "inputs": {},
+  "payload": {
+    "tau_minutes": 5.0,
+    "critical_value": 0.0027425204194654095,
+    "alpha": 0.05,
+    "target_power": 0.8,
+    "detection_floor": 0.02,
+    "detection_floor_interpolated": 0.013333333333333336,
+    "curve": "   rho_planted  n_replicates  power  ...  sd_rho_hat      bias  frac_converged\n0         0.00           200   0.05  ...    0.005012 -0.005207             1.0\n1         0.01            30   0.70  ...    0.004918 -0.004425             1.0\n2         0.02            30   1.00  ...    0.005349 -0.003560             1.0\n3         0.05            30   1.00  ...    0.005254 -0.004425             1.0\n4         0.10            30   1.00  ...    0.004865 -0.006092             1.0\n5         0.20            30   1.00  ...    0.005188 -0.006120             1.0\n\n[6 rows x 7 columns]",
+    "config": {
+      "grid": [
+        0.0,
+        0.01,
+        0.02,
+        0.05,
+        0.1,
+        0.2
+      ],
+      "replicates": 30,
+      "null_replicates": 200,
+      "seed": 5694
+    }
+  }
+}

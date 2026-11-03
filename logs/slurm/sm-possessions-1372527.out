@@ -1,0 +1,274 @@
+[arc_env] job=1372527 node=owl087 cpus=96 python=/home/manasganti/miniconda3/envs/soccer-momentum/bin/python (Python 3.12.7) commit=f107dc7
+[possessions] === poss-recovery (22:51:39 UTC, workers=95)
+/home/manasganti/miniconda3/envs/soccer-momentum/bin/python -m src.cli.main -v poss-recovery
+17:52:20 INFO    poss recovery 5/10 (10 workers)
+17:52:20 INFO    poss recovery 10/10 (10 workers)
+
+=== possession model A: recovery ===
+{
+  "rho_planted": 0.3,
+  "tau_minutes": 5.0,
+  "n_replicates": 10,
+  "mean_rho_hat_self": 0.2961618287368643,
+  "sd_rho_hat_self": 0.00541831803274906,
+  "mean_rho_hat_cross": 0.00029553756888507394,
+  "bias": -0.0038381712631356812,
+  "n_unconverged": 0,
+  "tolerance": 0.08,
+  "passed": true
+}
+[possessions] === poss-recovery done in 0 min
+[possessions] === poss-power (22:52:20 UTC, workers=95)
+/home/manasganti/miniconda3/envs/soccer-momentum/bin/python -m src.cli.main -v poss-power
+17:53:28 INFO    poss power 20/350 (95 workers)
+17:53:50 INFO    poss power 40/350 (95 workers)
+17:53:50 INFO    poss power 60/350 (95 workers)
+17:53:55 INFO    poss power 80/350 (95 workers)
+17:53:55 INFO    poss power 100/350 (95 workers)
+17:54:28 INFO    poss power 120/350 (95 workers)
+17:54:28 INFO    poss power 140/350 (95 workers)
+17:54:36 INFO    poss power 160/350 (95 workers)
+17:54:45 INFO    poss power 180/350 (95 workers)
+17:54:45 INFO    poss power 200/350 (95 workers)
+17:55:01 INFO    poss power 220/350 (95 workers)
+17:55:08 INFO    poss power 240/350 (95 workers)
+17:55:12 INFO    poss power 260/350 (95 workers)
+17:55:12 INFO    poss power 280/350 (95 workers)
+17:55:13 INFO    poss power 300/350 (95 workers)
+17:55:16 INFO    poss power 320/350 (95 workers)
+17:55:21 INFO    poss power 340/350 (95 workers)
+
+=== possession model A: detection floor ===
+{
+  "tau_minutes": 5.0,
+  "critical_value": 0.0027425204194654095,
+  "alpha": 0.05,
+  "target_power": 0.8,
+  "detection_floor": 0.02,
+  "detection_floor_interpolated": 0.013333333333333336,
+  "config": {
+    "grid": [
+      0.0,
+      0.01,
+      0.02,
+      0.05,
+      0.1,
+      0.2
+    ],
+    "replicates": 30,
+    "null_replicates": 200,
+    "seed": 5694
+  }
+}
+[possessions] === poss-power done in 3 min
+[possessions] === poss-fit (22:55:21 UTC, workers=95)
+/home/manasganti/miniconda3/envs/soccer-momentum/bin/python -m src.cli.main -v poss-fit
+17:55:46 INFO  headline rho_self=0.19390 rho_cross=-0.19823
+18:00:23 INFO    poss null bootstrap 50/500 (95 workers)
+18:00:58 INFO    poss null bootstrap 100/500 (95 workers)
+18:01:25 INFO    poss null bootstrap 150/500 (95 workers)
+18:01:55 INFO    poss null bootstrap 200/500 (95 workers)
+18:02:08 INFO    poss null bootstrap 250/500 (95 workers)
+18:02:41 INFO    poss null bootstrap 300/500 (95 workers)
+18:02:56 INFO    poss null bootstrap 350/500 (95 workers)
+18:03:26 INFO    poss null bootstrap 400/500 (95 workers)
+18:03:35 INFO    poss null bootstrap 450/500 (95 workers)
+18:03:38 INFO    poss null bootstrap 500/500 (95 workers)
+18:04:42 INFO    poss cluster bootstrap 25/200 (95 workers)
+18:04:42 INFO    poss cluster bootstrap 50/200 (95 workers)
+18:04:42 INFO    poss cluster bootstrap 75/200 (95 workers)
+18:04:42 INFO    poss cluster bootstrap 100/200 (95 workers)
+18:04:42 INFO    poss cluster bootstrap 125/200 (95 workers)
+18:04:42 INFO    poss cluster bootstrap 150/200 (95 workers)
+18:04:50 INFO    poss cluster bootstrap 175/200 (95 workers)
+18:04:54 INFO    poss cluster bootstrap 200/200 (95 workers)
+
+=== possession model A: development fit (exploratory) ===
+{
+  "headline": {
+    "rho_self": 0.19389617799386402,
+    "odds_ratio_self": 1.2139702395876453,
+    "rho_cross": -0.19822521158985082,
+    "odds_ratio_cross": 0.8201851171420647,
+    "tau_minutes": 5.0,
+    "loglik": -185296.88409230602,
+    "ridge_penalty": 6.280387734278986,
+    "converged": true,
+    "n_iter": 975,
+    "theta0": -0.06423255198792413,
+    "theta_home": 0.07642672738982037,
+    "setpiece": 0.41319387761998017,
+    "g_score": {
+      "-2": 0.25598866133246445,
+      "-1": 0.19822685363091805,
+      "0": 0.0,
+      "1": -0.24164072767672548,
+      "2": -0.29980295317423106
+    },
+    "h_red": {
+      "-1": -0.34094144995405967,
+      "0": 0.0,
+      "1": 0.5410513384533511
+    },
+    "n_possessions": 282263,
+    "n_dangerous": 162308,
+    "n_team_effects": 154
+  },
+  "background_only": {
+    "rho_self": 0.0,
+    "odds_ratio_self": 1.0,
+    "rho_cross": 0.0,
+    "odds_ratio_cross": 1.0,
+    "tau_minutes": 5.0,
+    "loglik": -187044.138844874,
+    "ridge_penalty": 9.964654956112259,
+    "converged": true,
+    "n_iter": 530,
+    "theta0": -0.11909900837717258,
+    "theta_home": 0.10136556256372153,
+    "setpiece": 0.40390148830269046,
+    "g_score": {
+      "-2": 0.3331917592900533,
+      "-1": 0.25205471469598933,
+      "0": 0.0,
+      "1": -0.2941928256701922,
+      "2": -0.3759811320853334
+    },
+    "h_red": {
+      "-1": -0.466624156930696,
+      "0": 0.0,
+      "1": 0.6723055210296631
+    },
+    "n_possessions": 282263,
+    "n_dangerous": 162308,
+    "n_team_effects": 154
+  },
+  "lr_vs_background": 3494.5095051359385,
+  "tau_profile": [
+    {
+      "tau_minutes": 2.0,
+      "rho_self": 0.39092955506570204,
+      "rho_cross": -0.4003734470392364,
+      "loglik": -184404.10724767015,
+      "converged": true
+    },
+    {
+      "tau_minutes": 3.0,
+      "rho_self": 0.2853091540707244,
+      "rho_cross": -0.2975122659383443,
+      "loglik": -184818.73353501555,
+      "converged": true
+    },
+    {
+      "tau_minutes": 5.0,
+      "rho_self": 0.19389617799386402,
+      "rho_cross": -0.19822521158985082,
+      "loglik": -185296.88409230602,
+      "converged": true
+    },
+    {
+      "tau_minutes": 8.0,
+      "rho_self": 0.13704889595560063,
+      "rho_cross": -0.1344515870929604,
+      "loglik": -185648.54225342814,
+      "converged": true
+    },
+    {
+      "tau_minutes": 14.0,
+      "rho_self": 0.09160899124670818,
+      "rho_cross": -0.08400707385335018,
+      "loglik": -185969.1249947263,
+      "converged": true
+    },
+    {
+      "tau_minutes": 30.0,
+      "rho_self": 0.05410834532240491,
+      "rho_cross": -0.044565386790615384,
+      "loglik": -186293.13795686042,
+      "converged": true
+    }
+  ],
+  "sensitivities": {
+    "box": {
+      "rho_self": 0.21169369360727472,
+      "rho_cross": -0.09079782082908015,
+      "odds_ratio_self": 1.235769303062956,
+      "converged": true,
+      "n_possessions": 282263
+    },
+    "final_third_x75": {
+      "rho_self": 0.18245228538663413,
+      "rho_cross": -0.11769220967619698,
+      "odds_ratio_self": 1.2001568845656412,
+      "converged": true,
+      "n_possessions": 282263
+    },
+    "no_setpiece_term": {
+      "rho_self": 0.1822596524296208,
+      "rho_cross": -0.20320977092543047,
+      "odds_ratio_self": 1.199925717062042,
+      "converged": true,
+      "n_possessions": 282263
+    },
+    "no_score_state": {
+      "rho_self": 0.217635191269941,
+      "rho_cross": -0.2184169103060618,
+      "odds_ratio_self": 1.2431334789417912,
+      "converged": true,
+      "n_possessions": 282263
+    },
+    "minute_spline_df_3": {
+      "rho_self": 0.2074660824308264,
+      "rho_cross": -0.18578560307772654,
+      "odds_ratio_self": 1.2305559786647393,
+      "converged": true,
+      "n_possessions": 282263
+    },
+    "minute_spline_df_9": {
+      "rho_self": 0.19346768952206575,
+      "rho_cross": -0.19859544370962084,
+      "odds_ratio_self": 1.2134501787628669,
+      "converged": true,
+      "n_possessions": 282263
+    },
+    "strict_possession_rule": {
+      "rho_self": 0.16532216737368696,
+      "rho_cross": -0.15442583754392525,
+      "odds_ratio_self": 1.1797731419072408,
+      "converged": true,
+      "n_possessions": 597449
+    }
+  },
+  "parametric_bootstrap": {
+    "rho_self_observed": 0.19389617799386402,
+    "p_value_upper": 0.001996007984031936,
+    "p_value_lower": 1.0,
+    "null_q05": -0.013045694834100088,
+    "null_q50": -0.005468999232078654,
+    "null_q95": 0.0022496178108401717,
+    "n_replicates": 500,
+    "n_unconverged": 0,
+    "seed": 5694
+  },
+  "cluster_bootstrap": {
+    "rho_self_ci95": [
+      0.17989172798668376,
+      0.19863068633396375
+    ],
+    "odds_ratio_self_ci95": [
+      1.1970877450046618,
+      1.2197314192264574
+    ],
+    "rho_cross_ci95": [
+      -0.20429918506261602,
+      -0.18819859568095718
+    ],
+    "n_replicates": 200,
+    "n_unconverged": 0
+  },
+  "detection_floor": 0.02,
+  "detection_floor_interpolated": 0.013333333333333336,
+  "verdict": "rho_self = 0.1939 is at or above the detection floor of 0.02; read it with the p-value and CI."
+}
+[possessions] === poss-fit done in 9 min
+[possessions] all steps done
