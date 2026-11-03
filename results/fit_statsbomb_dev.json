@@ -1,0 +1,276 @@
+{
+  "name": "fit_statsbomb_dev",
+  "written_at_utc": "2026-10-09T00:28:32+00:00",
+  "python": "3.12.7",
+  "platform": "Linux-5.14.0-687.26.1.el9_8.x86_64-x86_64-with-glibc2.34",
+  "numpy": "2.5.3",
+  "git_rev": "3dc94d3",
+  "inputs": {},
+  "payload": {
+    "raw": {
+      "matches": 2112,
+      "events": 52979,
+      "events_per_match_mean": 25.08475378787879,
+      "seasons": [
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018
+      ],
+      "leagues": [
+        "1. Bundesliga",
+        "FA Women's Super League",
+        "La Liga",
+        "Ligue 1",
+        "NWSL",
+        "Premier League",
+        "Serie A"
+      ],
+      "situations": {
+        "open": 49683,
+        "setpiece": 2731,
+        "penalty": 565
+      },
+      "goals": 5793,
+      "red_cards_known": true,
+      "mean_xg": 0.1026076708227845,
+      "strata": {
+        "matches_by_source": {
+          "statsbomb": 2112
+        },
+        "matches_by_gender": {
+          "female": 143,
+          "male": 1969
+        },
+        "one_club_matches": 452
+      }
+    },
+    "prepared": {
+      "threshold_seconds": 4.0,
+      "n_before": 52979,
+      "n_after": 50445,
+      "removed_fraction": 0.047830272372071936,
+      "max_run_length": 4,
+      "collapsed_events": 2372,
+      "collapses_at_half_boundaries": 50,
+      "guard_enforced": true,
+      "jitter_seed": 20260910,
+      "remaining_exact_ties": 0
+    },
+    "headline": {
+      "background": {
+        "theta0": -2.6249488555219194,
+        "theta_home": 0.2344974721091772,
+        "f_minute": [
+          0.8178230913669969,
+          -6.736173062076225,
+          9.919502944741826,
+          -4.892135994848128,
+          1.1000930447627597,
+          -0.024666990570993905
+        ],
+        "g_score": {
+          "-2": 0.1458056593484756,
+          "-1": 0.10484825579122779,
+          "0": 0.0,
+          "1": -0.23034861899652864,
+          "2": -0.31786558648695673
+        },
+        "h_red": {
+          "-1": -0.5078667028115051,
+          "0": 0.0,
+          "1": 0.33543108664766963
+        },
+        "theta_source": {
+          "statsbomb": 0.0
+        },
+        "dropped_terms": [],
+        "n_team_effects": 381,
+        "loglik": -150815.0991891997,
+        "ridge_penalty": 31.99751140592955,
+        "converged": true,
+        "n_iter": 183,
+        "team_ridge": 1.0,
+        "minute_df": 6,
+        "include_score": true,
+        "include_red": true
+      },
+      "hawkes": {
+        "eta_self": 2.7349593215557216e-06,
+        "eta_cross": 6.819589869366356e-08,
+        "beta": 0.13840755499403978,
+        "tau_minutes": 7.225039124801119,
+        "spectral_radius": 2.803155220249385e-06,
+        "loglik": -150815.0991891997,
+        "converged": true,
+        "n_iter": 183,
+        "n_events": 49880,
+        "n_matches": 2112,
+        "mu_fit": "joint MLE (mu and the kernel fitted together)",
+        "tau_at_boundary": false
+      },
+      "em_trace": [
+        {
+          "iter": 183,
+          "loglik": -150815.0991891997,
+          "eta_self": 2.7349593215557216e-06,
+          "eta_cross": 6.819589869366356e-08,
+          "tau": 7.225039124801119
+        }
+      ]
+    },
+    "across_jitter_draws": {
+      "eta_self_mean": 2.7349593215557216e-06,
+      "eta_self_sd": 0.0,
+      "eta_self_min": 2.7349593215557216e-06,
+      "eta_self_max": 2.7349593215557216e-06,
+      "eta_cross_mean": 6.819589869366356e-08,
+      "tau_mean": 7.225039124801119,
+      "n_draws": 5
+    },
+    "goodness_of_fit": {
+      "poisson": {
+        "n": 49880,
+        "ks_stat": 0.03453597912278061,
+        "ks_stat_subsample": 0.03453597912278061,
+        "ks_pvalue_subsample": 4.0003528214707394e-52,
+        "n_subsample": 49880,
+        "mean_tau": 0.9156234246789937,
+        "var_tau": 0.810757376735086,
+        "n_processes": 3382,
+        "frac_reject_05": 0.05588409225310467,
+        "uniformity_ks_stat": 0.012944086395470011,
+        "uniformity_ks_pvalue": 0.6177349759492343
+      },
+      "hawkes": {
+        "n": 49880,
+        "ks_stat": 0.03460075608541502,
+        "ks_stat_subsample": 0.03460075608541502,
+        "ks_pvalue_subsample": 2.5582716019850486e-52,
+        "n_subsample": 49880,
+        "mean_tau": 0.9155101058044287,
+        "var_tau": 0.8105046497763925,
+        "n_processes": 3382,
+        "frac_reject_05": 0.05558840922531047,
+        "uniformity_ks_stat": 0.013171279703396543,
+        "uniformity_ks_pvalue": 0.5955964938965765
+      },
+      "loglik_poisson": -150815.2000866113,
+      "loglik_hawkes": -150815.0991891997,
+      "note": "each model is rescaled by its own fitted compensator"
+    },
+    "sensitivities": {
+      "headline": {
+        "eta_self": 2.7349593215557216e-06,
+        "eta_cross": 6.819589869366356e-08,
+        "tau_minutes": 7.225039124801119
+      },
+      "kernel_box_1_to_20_min": {
+        "eta_self": 2.2817660868469173e-05,
+        "eta_cross": 1.1660815251490417e-06,
+        "tau_minutes": 19.122133013961164,
+        "tau_at_boundary": false,
+        "delta_eta_self": 2.0082701546913453e-05,
+        "loglik": -150815.09695670038
+      },
+      "no_score_state": {
+        "eta_self": 1.3894949813020431e-05,
+        "eta_cross": 5.138678545383473e-07,
+        "tau_minutes": 7.012625851439555,
+        "tau_at_boundary": false,
+        "delta_eta_self": 1.1159990491464709e-05,
+        "loglik": -151219.7776731951
+      },
+      "no_red_cards": {
+        "eta_self": 6.444497156735696e-06,
+        "eta_cross": 1.4102338448574888e-07,
+        "tau_minutes": 7.126995939505263,
+        "tau_at_boundary": false,
+        "delta_eta_self": 3.709537835179974e-06,
+        "loglik": -151073.22524600942
+      },
+      "penalties_kept": {
+        "eta_self": 1.475062119441913e-06,
+        "eta_cross": 3.142178471397152e-08,
+        "tau_minutes": 7.3112419574843,
+        "tau_at_boundary": false,
+        "delta_eta_self": -1.2598972021138086e-06,
+        "loglik": -151909.65337760674
+      },
+      "minute_spline_df_3": {
+        "eta_self": 3.489267293554152e-06,
+        "eta_cross": 9.548981333572081e-08,
+        "tau_minutes": 7.172258019641073,
+        "tau_at_boundary": false,
+        "delta_eta_self": 7.543079719984303e-07,
+        "loglik": -150850.69145472304
+      },
+      "minute_spline_df_5": {
+        "eta_self": 1.2090285898744745e-06,
+        "eta_cross": 2.2359036379189023e-08,
+        "tau_minutes": 7.327051071162673,
+        "tau_at_boundary": false,
+        "delta_eta_self": -1.525930731681247e-06,
+        "loglik": -150822.45377319973
+      },
+      "minute_spline_df_9": {
+        "eta_self": 3.486199249869453e-153,
+        "eta_cross": 0.0,
+        "tau_minutes": 8.0,
+        "tau_at_boundary": true,
+        "delta_eta_self": -2.7349593215557216e-06,
+        "loglik": -150800.35340451857
+      },
+      "minute_spline_df_12": {
+        "eta_self": 1.1664134794494242e-217,
+        "eta_cross": 0.0,
+        "tau_minutes": 8.0,
+        "tau_at_boundary": true,
+        "delta_eta_self": -2.7349593215557216e-06,
+        "loglik": -150795.8124976838
+      }
+    },
+    "asymmetry_check": {
+      "eta_HH": 1.467111028277774e-17,
+      "eta_HA": 2.9634541590489077e-17,
+      "eta_AH": 7.059185693358176e-20,
+      "eta_AA": 1.4887712269492957e-17,
+      "spectral_radius": 1.6229820330647322e-17,
+      "tau_minutes": 5.480310398613143,
+      "loglik": -150815.0985942899,
+      "converged": true,
+      "note": "robustness check on the H/A symmetry reduction; mu is held fixed, so this inherits the two-stage bias and is not a headline estimate"
+    },
+    "parametric_bootstrap": {
+      "eta_self_observed": 2.7349593215557216e-06,
+      "p_value": 0.1217564870259481,
+      "n_replicates": 500,
+      "seed": 5694,
+      "null_median": 1.1089182987188703e-09,
+      "null_q90": 3.2279833118715045e-06,
+      "null_q95": 6.102179830375789e-06,
+      "null_q99": 1.3846783693349037e-05,
+      "n_unconverged": 0
+    },
+    "cluster_bootstrap_ci95": [
+      2.878790360513612e-07,
+      1.0113209062395265e-05
+    ],
+    "cluster_bootstrap_n_unconverged": 0,
+    "detection_floor": 0.02,
+    "detection_floor_interpolated": 0.01764705882352941,
+    "detection_floor_source": "power_statsbomb_dev.json",
+    "verdict": "eta_self = 0.000 sits below the measured detection floor of 0.020: the honest statement is an upper bound, not an estimate."
+  }
+}

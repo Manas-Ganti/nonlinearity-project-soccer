@@ -1,0 +1,161 @@
+{
+  "name": "power_wyscout_dev",
+  "written_at_utc": "2026-10-09T00:32:58+00:00",
+  "python": "3.12.7",
+  "platform": "Linux-5.14.0-687.26.1.el9_8.x86_64-x86_64-with-glibc2.34",
+  "numpy": "2.5.3",
+  "git_rev": "3dc94d3",
+  "inputs": {},
+  "payload": {
+    "raw": {
+      "matches": 1941,
+      "events": 45869,
+      "events_per_match_mean": 23.63163317877383,
+      "seasons": [
+        2016,
+        2017,
+        2018
+      ],
+      "leagues": [
+        "1. Bundesliga",
+        "FIFA World Cup",
+        "La Liga",
+        "Ligue 1",
+        "Premier League",
+        "Serie A",
+        "UEFA Euro"
+      ],
+      "situations": {
+        "open": 43078,
+        "setpiece": 2209,
+        "penalty": 582
+      },
+      "goals": 5052,
+      "red_cards_known": true,
+      "mean_xg": 0.11056091300519943,
+      "strata": {
+        "matches_by_source": {
+          "wyscout": 1941
+        },
+        "matches_by_gender": {
+          "male": 1941
+        },
+        "one_club_matches": 0
+      }
+    },
+    "prepared": {
+      "threshold_seconds": 4.0,
+      "n_before": 45869,
+      "n_after": 44126,
+      "removed_fraction": 0.03799952037323684,
+      "max_run_length": 4,
+      "collapsed_events": 1644,
+      "collapses_at_half_boundaries": 34,
+      "guard_enforced": true,
+      "jitter_seed": 20260910,
+      "remaining_exact_ties": 0
+    },
+    "critical_value": 0.0002503596448297644,
+    "alpha": 0.05,
+    "target_power": 0.8,
+    "detection_floor": 0.02,
+    "detection_floor_interpolated": 0.016363636363636365,
+    "curve": [
+      {
+        "eta_star": 0.0,
+        "n_replicates": 200,
+        "power": 0.05,
+        "mean_eta_hat": 0.00014279983727001754,
+        "median_eta_hat": 1.3614821019395838e-06,
+        "sd_eta_hat": 0.000684778970640299,
+        "bias": 0.00014279983727001754,
+        "mean_n_events": 45710.125,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_star": 0.02,
+        "n_replicates": 30,
+        "power": 0.9666666666666667,
+        "mean_eta_hat": 0.009790244050349192,
+        "median_eta_hat": 0.009604339569887346,
+        "sd_eta_hat": 0.004966956555782452,
+        "bias": -0.010209755949650809,
+        "mean_n_events": 46620.7,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_star": 0.05,
+        "n_replicates": 30,
+        "power": 1.0,
+        "mean_eta_hat": 0.039000668041349204,
+        "median_eta_hat": 0.03924732487946094,
+        "sd_eta_hat": 0.005014214027290698,
+        "bias": -0.010999331958650799,
+        "mean_n_events": 48155.73333333333,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_star": 0.1,
+        "n_replicates": 30,
+        "power": 1.0,
+        "mean_eta_hat": 0.08654631068338466,
+        "median_eta_hat": 0.08714976373813066,
+        "sd_eta_hat": 0.007327181385039628,
+        "bias": -0.01345368931661535,
+        "mean_n_events": 50768.73333333333,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_star": 0.15,
+        "n_replicates": 30,
+        "power": 1.0,
+        "mean_eta_hat": 0.13609550760555042,
+        "median_eta_hat": 0.1363039756642777,
+        "sd_eta_hat": 0.007590824978809694,
+        "bias": -0.013904492394449575,
+        "mean_n_events": 53658.433333333334,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_star": 0.2,
+        "n_replicates": 30,
+        "power": 1.0,
+        "mean_eta_hat": 0.18566616079958828,
+        "median_eta_hat": 0.18719311022861373,
+        "sd_eta_hat": 0.007868134396911478,
+        "bias": -0.01433383920041173,
+        "mean_n_events": 56949.566666666666,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_star": 0.3,
+        "n_replicates": 30,
+        "power": 1.0,
+        "mean_eta_hat": 0.28536052100207865,
+        "median_eta_hat": 0.2849940932315804,
+        "sd_eta_hat": 0.007638663746452309,
+        "bias": -0.01463947899792134,
+        "mean_n_events": 64994.066666666666,
+        "frac_converged": 1.0
+      }
+    ],
+    "config": {
+      "eta_grid": [
+        0.0,
+        0.02,
+        0.05,
+        0.1,
+        0.15,
+        0.2,
+        0.3
+      ],
+      "replicates": 30,
+      "null_replicates": 200,
+      "alpha": 0.05,
+      "target_power": 0.8,
+      "seed": 5694
+    },
+    "minute_clock": false,
+    "clock_note": "simulated slates kept their continuous clock, matching the source"
+  }
+}

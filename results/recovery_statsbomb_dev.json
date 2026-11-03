@@ -1,0 +1,88 @@
+{
+  "name": "recovery_statsbomb_dev",
+  "written_at_utc": "2026-10-09T00:07:06+00:00",
+  "python": "3.12.7",
+  "platform": "Linux-5.14.0-687.26.1.el9_8.x86_64-x86_64-with-glibc2.34",
+  "numpy": "2.5.3",
+  "git_rev": "3dc94d3",
+  "inputs": {},
+  "payload": {
+    "raw": {
+      "matches": 2112,
+      "events": 52979,
+      "events_per_match_mean": 25.08475378787879,
+      "seasons": [
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018
+      ],
+      "leagues": [
+        "1. Bundesliga",
+        "FA Women's Super League",
+        "La Liga",
+        "Ligue 1",
+        "NWSL",
+        "Premier League",
+        "Serie A"
+      ],
+      "situations": {
+        "open": 49683,
+        "setpiece": 2731,
+        "penalty": 565
+      },
+      "goals": 5793,
+      "red_cards_known": true,
+      "mean_xg": 0.1026076708227845,
+      "strata": {
+        "matches_by_source": {
+          "statsbomb": 2112
+        },
+        "matches_by_gender": {
+          "female": 143,
+          "male": 1969
+        },
+        "one_club_matches": 452
+      }
+    },
+    "prepared": {
+      "threshold_seconds": 4.0,
+      "n_before": 52979,
+      "n_after": 50445,
+      "removed_fraction": 0.047830272372071936,
+      "max_run_length": 4,
+      "collapsed_events": 2372,
+      "collapses_at_half_boundaries": 50,
+      "guard_enforced": true,
+      "jitter_seed": 20260910,
+      "remaining_exact_ties": 0
+    },
+    "results": {
+      "joint": {
+        "eta_planted": 0.3,
+        "eta_cross_planted": 0.05,
+        "beta_planted": 0.2,
+        "tau_planted_minutes": 5.0,
+        "n_replicates": 10,
+        "mean_eta_hat_self": 0.2707178482968383,
+        "sd_eta_hat_self": 0.00660996526046937,
+        "bias": -0.029282151703161674,
+        "mean_tau_hat": 4.599394169671713,
+        "n_unconverged": 0,
+        "tolerance": 0.08,
+        "passed": true
+      }
+    }
+  }
+}

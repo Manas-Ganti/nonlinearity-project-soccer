@@ -1,0 +1,263 @@
+{
+  "name": "fit_wyscout_dev",
+  "written_at_utc": "2026-10-09T00:45:12+00:00",
+  "python": "3.12.7",
+  "platform": "Linux-5.14.0-687.26.1.el9_8.x86_64-x86_64-with-glibc2.34",
+  "numpy": "2.5.3",
+  "git_rev": "3dc94d3",
+  "inputs": {},
+  "payload": {
+    "raw": {
+      "matches": 1941,
+      "events": 45869,
+      "events_per_match_mean": 23.63163317877383,
+      "seasons": [
+        2016,
+        2017,
+        2018
+      ],
+      "leagues": [
+        "1. Bundesliga",
+        "FIFA World Cup",
+        "La Liga",
+        "Ligue 1",
+        "Premier League",
+        "Serie A",
+        "UEFA Euro"
+      ],
+      "situations": {
+        "open": 43078,
+        "setpiece": 2209,
+        "penalty": 582
+      },
+      "goals": 5052,
+      "red_cards_known": true,
+      "mean_xg": 0.11056091300519943,
+      "strata": {
+        "matches_by_source": {
+          "wyscout": 1941
+        },
+        "matches_by_gender": {
+          "male": 1941
+        },
+        "one_club_matches": 0
+      }
+    },
+    "prepared": {
+      "threshold_seconds": 4.0,
+      "n_before": 45869,
+      "n_after": 44126,
+      "removed_fraction": 0.03799952037323684,
+      "max_run_length": 4,
+      "collapsed_events": 1644,
+      "collapses_at_half_boundaries": 34,
+      "guard_enforced": true,
+      "jitter_seed": 20260910,
+      "remaining_exact_ties": 0
+    },
+    "headline": {
+      "background": {
+        "theta0": -2.61768913434594,
+        "theta_home": 0.23628280220984643,
+        "f_minute": [
+          0.6997204987083656,
+          -5.358328109313952,
+          7.693536054334319,
+          -3.969132964993204,
+          1.7020771678014068,
+          -0.6905770956057086
+        ],
+        "g_score": {
+          "-2": 0.19255909397099502,
+          "-1": 0.09976868164682781,
+          "0": 0.0,
+          "1": -0.22294634428408533,
+          "2": -0.27725724696998916
+        },
+        "h_red": {
+          "-1": -0.482265987844216,
+          "0": 0.0,
+          "1": 0.4025377129448509
+        },
+        "theta_source": {
+          "wyscout": 0.0
+        },
+        "dropped_terms": [],
+        "n_team_effects": 154,
+        "loglik": -134378.1437812145,
+        "ridge_penalty": 8.598618966347319,
+        "converged": true,
+        "n_iter": 154,
+        "team_ridge": 1.0,
+        "minute_df": 6,
+        "include_score": true,
+        "include_red": true
+      },
+      "hawkes": {
+        "eta_self": 1.1859072955145812e-05,
+        "eta_cross": 3.7143769740300897e-07,
+        "beta": 0.1412507283749839,
+        "tau_minutes": 7.079609510722383,
+        "spectral_radius": 1.223051065254882e-05,
+        "loglik": -134378.1437812145,
+        "converged": true,
+        "n_iter": 154,
+        "n_events": 43544,
+        "n_matches": 1941,
+        "mu_fit": "joint MLE (mu and the kernel fitted together)",
+        "tau_at_boundary": false
+      },
+      "em_trace": [
+        {
+          "iter": 154,
+          "loglik": -134378.1437812145,
+          "eta_self": 1.1859072955145812e-05,
+          "eta_cross": 3.7143769740300897e-07,
+          "tau": 7.079609510722383
+        }
+      ]
+    },
+    "across_jitter_draws": {
+      "eta_self_mean": 1.1859072955145812e-05,
+      "eta_self_sd": 0.0,
+      "eta_self_min": 1.1859072955145812e-05,
+      "eta_self_max": 1.1859072955145812e-05,
+      "eta_cross_mean": 3.7143769740300897e-07,
+      "tau_mean": 7.079609510722383,
+      "n_draws": 5
+    },
+    "goodness_of_fit": {
+      "poisson": {
+        "n": 43544,
+        "ks_stat": 0.03812692882018798,
+        "ks_stat_subsample": 0.03812692882018798,
+        "ks_pvalue_subsample": 1.9601867851081983e-55,
+        "n_subsample": 43544,
+        "mean_tau": 0.9113197450908057,
+        "var_tau": 0.8040343634306031,
+        "n_processes": 3008,
+        "frac_reject_05": 0.06017287234042553,
+        "uniformity_ks_stat": 0.023062112280288483,
+        "uniformity_ks_pvalue": 0.0802898779383533
+      },
+      "hawkes": {
+        "n": 43544,
+        "ks_stat": 0.03816308852284622,
+        "ks_stat_subsample": 0.03816308852284622,
+        "ks_pvalue_subsample": 1.541287699482678e-55,
+        "n_subsample": 43544,
+        "mean_tau": 0.911119619137322,
+        "var_tau": 0.8037220205620558,
+        "n_processes": 3008,
+        "frac_reject_05": 0.06050531914893617,
+        "uniformity_ks_stat": 0.02318541575388719,
+        "uniformity_ks_pvalue": 0.07757582907903737
+      },
+      "loglik_poisson": -134378.06170673532,
+      "loglik_hawkes": -134378.1437812145,
+      "note": "each model is rescaled by its own fitted compensator"
+    },
+    "sensitivities": {
+      "headline": {
+        "eta_self": 1.1859072955145812e-05,
+        "eta_cross": 3.7143769740300897e-07,
+        "tau_minutes": 7.079609510722383
+      },
+      "kernel_box_1_to_20_min": {
+        "eta_self": 0.058472392613305516,
+        "eta_cross": 3.0470576305441304e-07,
+        "tau_minutes": 19.979617201644793,
+        "tau_at_boundary": false,
+        "delta_eta_self": 0.05846053354035037,
+        "loglik": -134363.96397350685
+      },
+      "no_score_state": {
+        "eta_self": 6.108772843364417e-05,
+        "eta_cross": 3.0823340870438884e-06,
+        "tau_minutes": 6.838751761942783,
+        "tau_at_boundary": false,
+        "delta_eta_self": 4.922865547849835e-05,
+        "loglik": -134730.05215905694
+      },
+      "no_red_cards": {
+        "eta_self": 0.00023596673485457741,
+        "eta_cross": 1.7281130520234326e-05,
+        "tau_minutes": 6.554204392459534,
+        "tau_at_boundary": false,
+        "delta_eta_self": 0.00022410766189943161,
+        "loglik": -134586.01564560152
+      },
+      "penalties_kept": {
+        "eta_self": 8.139936069551522e-06,
+        "eta_cross": 2.3146334289113415e-07,
+        "tau_minutes": 7.141170557451961,
+        "tau_at_boundary": false,
+        "delta_eta_self": -3.7191368855942897e-06,
+        "loglik": -135576.68861840907
+      },
+      "minute_spline_df_3": {
+        "eta_self": 3.816858731869095e-05,
+        "eta_cross": 1.8308065217933365e-06,
+        "tau_minutes": 6.8931247657909145,
+        "tau_at_boundary": false,
+        "delta_eta_self": 2.630951436354514e-05,
+        "loglik": -134398.19337400774
+      },
+      "minute_spline_df_5": {
+        "eta_self": 2.003643506044301e-05,
+        "eta_cross": 7.668549351363181e-07,
+        "tau_minutes": 6.993606355476562,
+        "tau_at_boundary": false,
+        "delta_eta_self": 8.177362105297198e-06,
+        "loglik": -134389.7929738575
+      },
+      "minute_spline_df_9": {
+        "eta_self": 1.265197688852569e-119,
+        "eta_cross": 0.0,
+        "tau_minutes": 8.0,
+        "tau_at_boundary": true,
+        "delta_eta_self": -1.1859072955145812e-05,
+        "loglik": -134366.29116034711
+      },
+      "minute_spline_df_12": {
+        "eta_self": 3.187008236487019e-215,
+        "eta_cross": 0.0,
+        "tau_minutes": 8.0,
+        "tau_at_boundary": true,
+        "delta_eta_self": -1.1859072955145812e-05,
+        "loglik": -134351.91637047345
+      }
+    },
+    "asymmetry_check": {
+      "eta_HH": 4.065498759342026e-16,
+      "eta_HA": 8.167537368434233e-16,
+      "eta_AH": 2.509417394149395e-18,
+      "eta_AA": 4.1187185501361306e-16,
+      "spectral_radius": 4.545612447369507e-16,
+      "tau_minutes": 5.483097013022265,
+      "loglik": -134378.14550364605,
+      "converged": true,
+      "note": "robustness check on the H/A symmetry reduction; mu is held fixed, so this inherits the two-stage bias and is not a headline estimate"
+    },
+    "parametric_bootstrap": {
+      "eta_self_observed": 1.1859072955145812e-05,
+      "p_value": 0.1317365269461078,
+      "n_replicates": 500,
+      "seed": 5694,
+      "null_median": 3.777859092391603e-08,
+      "null_q90": 1.7062026633135083e-05,
+      "null_q95": 6.971479182339024e-05,
+      "null_q99": 0.0038522841393132073,
+      "n_unconverged": 0
+    },
+    "cluster_bootstrap_ci95": [
+      4.958030793749305e-08,
+      2.0032720416925538e-05
+    ],
+    "cluster_bootstrap_n_unconverged": 0,
+    "detection_floor": 0.02,
+    "detection_floor_interpolated": 0.016363636363636365,
+    "detection_floor_source": "power_wyscout_dev.json",
+    "verdict": "eta_self = 0.000 sits below the measured detection floor of 0.020: the honest statement is an upper bound, not an estimate."
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "name": "recovery_wyscout_dev",
+  "written_at_utc": "2026-10-09T00:29:17+00:00",
+  "python": "3.12.7",
+  "platform": "Linux-5.14.0-687.26.1.el9_8.x86_64-x86_64-with-glibc2.34",
+  "numpy": "2.5.3",
+  "git_rev": "3dc94d3",
+  "inputs": {},
+  "payload": {
+    "raw": {
+      "matches": 1941,
+      "events": 45869,
+      "events_per_match_mean": 23.63163317877383,
+      "seasons": [
+        2016,
+        2017,
+        2018
+      ],
+      "leagues": [
+        "1. Bundesliga",
+        "FIFA World Cup",
+        "La Liga",
+        "Ligue 1",
+        "Premier League",
+        "Serie A",
+        "UEFA Euro"
+      ],
+      "situations": {
+        "open": 43078,
+        "setpiece": 2209,
+        "penalty": 582
+      },
+      "goals": 5052,
+      "red_cards_known": true,
+      "mean_xg": 0.11056091300519943,
+      "strata": {
+        "matches_by_source": {
+          "wyscout": 1941
+        },
+        "matches_by_gender": {
+          "male": 1941
+        },
+        "one_club_matches": 0
+      }
+    },
+    "prepared": {
+      "threshold_seconds": 4.0,
+      "n_before": 45869,
+      "n_after": 44126,
+      "removed_fraction": 0.03799952037323684,
+      "max_run_length": 4,
+      "collapsed_events": 1644,
+      "collapses_at_half_boundaries": 34,
+      "guard_enforced": true,
+      "jitter_seed": 20260910,
+      "remaining_exact_ties": 0
+    },
+    "results": {
+      "joint": {
+        "eta_planted": 0.3,
+        "eta_cross_planted": 0.05,
+        "beta_planted": 0.2,
+        "tau_planted_minutes": 5.0,
+        "n_replicates": 10,
+        "mean_eta_hat_self": 0.28500663880967875,
+        "sd_eta_hat_self": 0.00516255127858873,
+        "bias": -0.014993361190321242,
+        "mean_tau_hat": 4.760987315676141,
+        "n_unconverged": 0,
+        "tolerance": 0.08,
+        "passed": true
+      }
+    }
+  }
+}
