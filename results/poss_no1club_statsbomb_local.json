@@ -1,0 +1,37 @@
+{
+  "name": "poss_no1club_statsbomb_local",
+  "written_at_utc": "2026-11-04T19:05:55+00:00",
+  "python": "3.12.7",
+  "platform": "macOS-27.2-arm64-arm-64bit",
+  "numpy": "2.5.4",
+  "git_rev": "69d2edd",
+  "inputs": {},
+  "payload": {
+    "post_hoc": true,
+    "note": "docs/spec_possessions.md 9.3 replication without one-club matches. Run locally 2026-11-04 (tau 5, headline point fit + within-half shuffle with 40 shuffles; p 0.024 is the minimum for B=40). With one-club matches: results/poss_fit_statsbomb*_dev.json, poss_shuffle_statsbomb*_dev.json (job 1374830).",
+    "merge0": {
+      "n_matches": 1660,
+      "n_possessions": 295080,
+      "rho_self": 0.21735080277993318,
+      "rho_cross": -0.1607408974381979,
+      "converged": true,
+      "shuffled_mean": 0.07082350772665087,
+      "order_component": 0.14652729505328232,
+      "p_order": 0.024390243902439025,
+      "n_shuffles": 40,
+      "minutes": 2.302621885140737
+    },
+    "merge10": {
+      "n_matches": 1660,
+      "n_possessions": 264771,
+      "rho_self": 0.1819441321174775,
+      "rho_cross": -0.12435616810400262,
+      "converged": true,
+      "shuffled_mean": 0.051704344199174225,
+      "order_component": 0.1302397879183033,
+      "p_order": 0.024390243902439025,
+      "n_shuffles": 40,
+      "minutes": 2.3858668009440103
+    }
+  }
+}

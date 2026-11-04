@@ -966,6 +966,9 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--replicates", type=int, default=3)
     p.set_defaults(func=cmd_estimator_comparison)
 
+    from src.cli.spell_cmds import add_parsers as add_spell_parsers
+
+    add_spell_parsers(sub)
     return ap
 
 

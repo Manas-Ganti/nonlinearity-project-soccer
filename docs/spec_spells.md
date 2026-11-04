@@ -85,6 +85,17 @@ on StatsBomb (0.24 of shots). Both are inside [0.20, 0.40], so **4-of-5 stands o
 both sources**. StatsBomb has fewer dangerous possessions (0.49 against 0.60 after
 the merge), which is why its share is lower.
 
+**Measurement note, 2026-11-04 (prevalence only, before any Model S or G fit).**
+The re-check above measured `Z` over each team's *own* possession time. Measured
+over all match time, as `Z_k(t)` is defined (the opponent's possessions included,
+and time before a half's first possessions counted as `Z = 0`), the shares are
+**0.32** (Wyscout) and **0.19** (StatsBomb); shot shares are unchanged at 0.36 and
+0.24. StatsBomb's 0.19 sits just under the 0.20 edge of the band. 4-of-5 is kept on
+both sources: the recorded re-check passed, the shot share is inside the band, and
+one rule on both sources is what makes section 9 a confirmation of the same model.
+3-of-5 (0.44 of StatsBomb match time) runs as a sensitivity (section 7).
+`src/features/spells.py` implements the all-match-time definition.
+
 ## 4. Model S: spell-modulated Hawkes on shots
 
 ```
