@@ -1,0 +1,31 @@
+{
+  "name": "poss_recovery_wyscout_merged10s_dev",
+  "written_at_utc": "2026-11-04T13:14:16+00:00",
+  "python": "3.12.7",
+  "platform": "Linux-5.14.0-687.26.1.el9_8.x86_64-x86_64-with-glibc2.34",
+  "numpy": "2.5.3",
+  "git_rev": "0fdf6d4",
+  "inputs": {},
+  "payload": {
+    "rho_planted": 0.3,
+    "tau_minutes": 5.0,
+    "n_replicates": 10,
+    "mean_rho_hat_self": 0.29265878639478043,
+    "sd_rho_hat_self": 0.006686358865927071,
+    "mean_rho_hat_cross": 0.0039057595814112264,
+    "bias": -0.007341213605219554,
+    "n_unconverged": 0,
+    "tolerance": 0.08,
+    "passed": true,
+    "merge": {
+      "threshold_s": 10.0,
+      "require_high_restart": true,
+      "n_before": 282263,
+      "n_after": 247762,
+      "possessions_removed_fraction": 0.12222997700725924,
+      "attacks_merged": 15616,
+      "dangerous_share_before": 0.5750240024374431,
+      "dangerous_share_after": 0.5962617350521872
+    }
+  }
+}

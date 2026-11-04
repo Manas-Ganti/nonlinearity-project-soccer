@@ -1,0 +1,41 @@
+{
+  "name": "poss_power_wyscout_merged10s_dev",
+  "written_at_utc": "2026-11-04T13:16:27+00:00",
+  "python": "3.12.7",
+  "platform": "Linux-5.14.0-687.26.1.el9_8.x86_64-x86_64-with-glibc2.34",
+  "numpy": "2.5.3",
+  "git_rev": "0fdf6d4",
+  "inputs": {},
+  "payload": {
+    "tau_minutes": 5.0,
+    "critical_value": 0.00440791956144863,
+    "alpha": 0.05,
+    "target_power": 0.8,
+    "detection_floor": 0.02,
+    "detection_floor_interpolated": 0.017058823529411765,
+    "curve": "   rho_planted  n_replicates     power  ...  sd_rho_hat      bias  frac_converged\n0         0.00           200  0.050000  ...    0.006396 -0.006287             1.0\n1         0.01            30  0.400000  ...    0.005557 -0.006439             1.0\n2         0.02            30  0.966667  ...    0.006058 -0.005054             1.0\n3         0.05            30  1.000000  ...    0.006054 -0.005854             1.0\n4         0.10            30  1.000000  ...    0.004972 -0.006926             1.0\n5         0.20            30  1.000000  ...    0.007103 -0.006737             1.0\n\n[6 rows x 7 columns]",
+    "config": {
+      "grid": [
+        0.0,
+        0.01,
+        0.02,
+        0.05,
+        0.1,
+        0.2
+      ],
+      "replicates": 30,
+      "null_replicates": 200,
+      "seed": 5694
+    },
+    "merge": {
+      "threshold_s": 10.0,
+      "require_high_restart": true,
+      "n_before": 282263,
+      "n_after": 247762,
+      "possessions_removed_fraction": 0.12222997700725924,
+      "attacks_merged": 15616,
+      "dangerous_share_before": 0.5750240024374431,
+      "dangerous_share_after": 0.5962617350521872
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "poss_shuffle_wyscout_dev",
+  "written_at_utc": "2026-11-04T14:00:16+00:00",
+  "python": "3.12.7",
+  "platform": "Linux-5.14.0-687.26.1.el9_8.x86_64-x86_64-with-glibc2.34",
+  "numpy": "2.5.3",
+  "git_rev": "0fdf6d4",
+  "inputs": {},
+  "payload": {
+    "post_hoc": true,
+    "tau_minutes": 5.0,
+    "rho_self_observed": 0.19389617799386402,
+    "rho_cross_observed": -0.19822521158985082,
+    "shuffled_mean_rho_self": 0.07168380374497903,
+    "shuffled_sd_rho_self": 0.0035819828421896935,
+    "shuffled_q05_q95": [
+      0.06600178228888207,
+      0.07684888340135582
+    ],
+    "shuffled_mean_rho_cross": -0.10107514131464779,
+    "order_component": 0.122212374248885,
+    "p_value_order": 0.004975124378109453,
+    "n_shuffles": 200,
+    "n_unconverged": 0,
+    "seed": 5694
+  }
+}

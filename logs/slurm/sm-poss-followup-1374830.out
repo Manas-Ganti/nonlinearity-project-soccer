@@ -1,0 +1,1045 @@
+[arc_env] job=1374830 node=owl124 cpus=96 python=/home/manasganti/miniconda3/envs/soccer-momentum/bin/python (Python 3.12.7) commit=0fdf6d4
+[followup] === wyscout merge=10s poss-recovery (13:13:34 UTC, workers=95)
+08:14:15 INFO    poss recovery 5/10 (10 workers)
+08:14:16 INFO    poss recovery 10/10 (10 workers)
+
+=== possession model A: recovery ===
+{
+  "rho_planted": 0.3,
+  "tau_minutes": 5.0,
+  "n_replicates": 10,
+  "mean_rho_hat_self": 0.29265878639478043,
+  "sd_rho_hat_self": 0.006686358865927071,
+  "mean_rho_hat_cross": 0.0039057595814112264,
+  "bias": -0.007341213605219554,
+  "n_unconverged": 0,
+  "tolerance": 0.08,
+  "passed": true,
+  "merge": {
+    "threshold_s": 10.0,
+    "require_high_restart": true,
+    "n_before": 282263,
+    "n_after": 247762,
+    "possessions_removed_fraction": 0.12222997700725924,
+    "attacks_merged": 15616,
+    "dangerous_share_before": 0.5750240024374431,
+    "dangerous_share_after": 0.5962617350521872
+  }
+}
+[followup] === wyscout merge=10s poss-recovery done in 0 min
+[followup] === wyscout merge=10s poss-power (13:14:16 UTC, workers=95)
+08:15:12 INFO    poss power 20/350 (95 workers)
+08:15:12 INFO    poss power 40/350 (95 workers)
+08:15:14 INFO    poss power 60/350 (95 workers)
+08:15:14 INFO    poss power 80/350 (95 workers)
+08:15:17 INFO    poss power 100/350 (95 workers)
+08:15:41 INFO    poss power 120/350 (95 workers)
+08:15:46 INFO    poss power 140/350 (95 workers)
+08:15:47 INFO    poss power 160/350 (95 workers)
+08:16:12 INFO    poss power 180/350 (95 workers)
+08:16:12 INFO    poss power 200/350 (95 workers)
+08:16:12 INFO    poss power 220/350 (95 workers)
+08:16:17 INFO    poss power 240/350 (95 workers)
+08:16:17 INFO    poss power 260/350 (95 workers)
+08:16:18 INFO    poss power 280/350 (95 workers)
+08:16:20 INFO    poss power 300/350 (95 workers)
+08:16:23 INFO    poss power 320/350 (95 workers)
+08:16:27 INFO    poss power 340/350 (95 workers)
+
+=== possession model A: detection floor ===
+{
+  "tau_minutes": 5.0,
+  "critical_value": 0.00440791956144863,
+  "alpha": 0.05,
+  "target_power": 0.8,
+  "detection_floor": 0.02,
+  "detection_floor_interpolated": 0.017058823529411765,
+  "config": {
+    "grid": [
+      0.0,
+      0.01,
+      0.02,
+      0.05,
+      0.1,
+      0.2
+    ],
+    "replicates": 30,
+    "null_replicates": 200,
+    "seed": 5694
+  },
+  "merge": {
+    "threshold_s": 10.0,
+    "require_high_restart": true,
+    "n_before": 282263,
+    "n_after": 247762,
+    "possessions_removed_fraction": 0.12222997700725924,
+    "attacks_merged": 15616,
+    "dangerous_share_before": 0.5750240024374431,
+    "dangerous_share_after": 0.5962617350521872
+  }
+}
+[followup] === wyscout merge=10s poss-power done in 2 min
+[followup] === wyscout merge=10s poss-fit (13:16:28 UTC, workers=95)
+08:16:48 INFO  headline rho_self=0.13639 rho_cross=-0.15765
+08:20:42 INFO    poss null bootstrap 50/500 (95 workers)
+08:20:52 INFO    poss null bootstrap 100/500 (95 workers)
+08:21:19 INFO    poss null bootstrap 150/500 (95 workers)
+08:21:51 INFO    poss null bootstrap 200/500 (95 workers)
+08:21:55 INFO    poss null bootstrap 250/500 (95 workers)
+08:22:14 INFO    poss null bootstrap 300/500 (95 workers)
+08:22:32 INFO    poss null bootstrap 350/500 (95 workers)
+08:22:53 INFO    poss null bootstrap 400/500 (95 workers)
+08:23:01 INFO    poss null bootstrap 450/500 (95 workers)
+08:23:06 INFO    poss null bootstrap 500/500 (95 workers)
+08:23:51 INFO    poss cluster bootstrap 25/200 (95 workers)
+08:23:54 INFO    poss cluster bootstrap 50/200 (95 workers)
+08:23:54 INFO    poss cluster bootstrap 75/200 (95 workers)
+08:23:54 INFO    poss cluster bootstrap 100/200 (95 workers)
+08:23:54 INFO    poss cluster bootstrap 125/200 (95 workers)
+08:24:00 INFO    poss cluster bootstrap 150/200 (95 workers)
+08:24:02 INFO    poss cluster bootstrap 175/200 (95 workers)
+08:24:05 INFO    poss cluster bootstrap 200/200 (95 workers)
+
+=== possession model A: development fit (exploratory) ===
+{
+  "headline": {
+    "rho_self": 0.13639389323923154,
+    "odds_ratio_self": 1.1461332588360815,
+    "rho_cross": -0.15764859028675712,
+    "odds_ratio_cross": 0.8541498858021286,
+    "tau_minutes": 5.0,
+    "loglik": -161868.73808132822,
+    "ridge_penalty": 7.455234827749937,
+    "converged": true,
+    "n_iter": 758,
+    "theta0": 0.007336984740097894,
+    "theta_home": 0.061764297452939605,
+    "setpiece": 0.4332302489596835,
+    "g_score": {
+      "-2": 0.25849890096528266,
+      "-1": 0.20207144860182719,
+      "0": 0.0,
+      "1": -0.2469901546504349,
+      "2": -0.3201551222780794
+    },
+    "h_red": {
+      "-1": -0.3573905532763803,
+      "0": 0.0,
+      "1": 0.552807400134903
+    },
+    "n_possessions": 247762,
+    "n_dangerous": 147731,
+    "n_team_effects": 154
+  },
+  "background_only": {
+    "rho_self": 0.0,
+    "odds_ratio_self": 1.0,
+    "rho_cross": 0.0,
+    "odds_ratio_cross": 1.0,
+    "tau_minutes": 5.0,
+    "loglik": -162490.60556373443,
+    "ridge_penalty": 9.665625373271002,
+    "converged": true,
+    "n_iter": 528,
+    "theta0": -0.04206260891189503,
+    "theta_home": 0.06910236926582135,
+    "setpiece": 0.4339416728921075,
+    "g_score": {
+      "-2": 0.30440318605001343,
+      "-1": 0.23329063756782603,
+      "0": 0.0,
+      "1": -0.2765694809865125,
+      "2": -0.36438461217706986
+    },
+    "h_red": {
+      "-1": -0.42541636283549983,
+      "0": 0.0,
+      "1": 0.6308177735620157
+    },
+    "n_possessions": 247762,
+    "n_dangerous": 147731,
+    "n_team_effects": 154
+  },
+  "lr_vs_background": 1243.7349648124073,
+  "tau_profile": [
+    {
+      "tau_minutes": 2.0,
+      "rho_self": 0.2361895258435425,
+      "rho_cross": -0.306129196199003,
+      "loglik": -161651.34278130933,
+      "converged": true
+    },
+    {
+      "tau_minutes": 3.0,
+      "rho_self": 0.18523318088499757,
+      "rho_cross": -0.23096078701207598,
+      "loglik": -161748.97389927245,
+      "converged": true
+    },
+    {
+      "tau_minutes": 5.0,
+      "rho_self": 0.13639389323923154,
+      "rho_cross": -0.15764859028675712,
+      "loglik": -161868.73808132822,
+      "converged": true
+    },
+    {
+      "tau_minutes": 8.0,
+      "rho_self": 0.10279183465139816,
+      "rho_cross": -0.11004539290199077,
+      "loglik": -161958.42403884692,
+      "converged": true
+    },
+    {
+      "tau_minutes": 14.0,
+      "rho_self": 0.07342229370260035,
+      "rho_cross": -0.07138526173455641,
+      "loglik": -162044.14615502086,
+      "converged": true
+    },
+    {
+      "tau_minutes": 30.0,
+      "rho_self": 0.046271989253659294,
+      "rho_cross": -0.0396138769014432,
+      "loglik": -162147.77860181546,
+      "converged": true
+    }
+  ],
+  "sensitivities": {
+    "box": {
+      "rho_self": 0.17964504942513213,
+      "rho_cross": -0.062196071530244895,
+      "odds_ratio_self": 1.19679248554026,
+      "converged": true,
+      "n_possessions": 247762
+    },
+    "final_third_x75": {
+      "rho_self": 0.13437819701118756,
+      "rho_cross": -0.07523639429849466,
+      "odds_ratio_self": 1.1438253291734002,
+      "converged": true,
+      "n_possessions": 247762
+    },
+    "no_setpiece_term": {
+      "rho_self": 0.1265596984433344,
+      "rho_cross": -0.16544010123398895,
+      "odds_ratio_self": 1.134917201944013,
+      "converged": true,
+      "n_possessions": 247762
+    },
+    "no_score_state": {
+      "rho_self": 0.16322148574149756,
+      "rho_cross": -0.17983688517697644,
+      "odds_ratio_self": 1.177297415404901,
+      "converged": true,
+      "n_possessions": 247762
+    },
+    "minute_spline_df_3": {
+      "rho_self": 0.1522586225420061,
+      "rho_cross": -0.1431697967760749,
+      "odds_ratio_self": 1.1644613534479065,
+      "converged": true,
+      "n_possessions": 247762
+    },
+    "minute_spline_df_9": {
+      "rho_self": 0.1354519963375148,
+      "rho_cross": -0.15845237337986806,
+      "odds_ratio_self": 1.1450542277184361,
+      "converged": false,
+      "n_possessions": 247762
+    },
+    "strict_possession_rule": {
+      "rho_self": 0.10840815873276846,
+      "rho_cross": -0.1303057075889234,
+      "odds_ratio_self": 1.1145025465116796,
+      "converged": true,
+      "n_possessions": 433048
+    },
+    "merge_5s": {
+      "rho_self": 0.16935289758444375,
+      "rho_cross": -0.1849996623848364,
+      "odds_ratio_self": 1.1845380858025714,
+      "converged": true,
+      "n_possessions": 266735
+    },
+    "merge_20s": {
+      "rho_self": 0.11405438621623341,
+      "rho_cross": -0.13631012616133362,
+      "odds_ratio_self": 1.1208130800091054,
+      "converged": true,
+      "n_possessions": 232933
+    }
+  },
+  "parametric_bootstrap": {
+    "rho_self_observed": 0.13639389323923154,
+    "p_value_upper": 0.001996007984031936,
+    "p_value_lower": 1.0,
+    "null_q05": -0.01568624289803776,
+    "null_q50": -0.006283157246537649,
+    "null_q95": 0.0030339514862916914,
+    "n_replicates": 500,
+    "n_unconverged": 0,
+    "seed": 5694
+  },
+  "cluster_bootstrap": {
+    "rho_self_ci95": [
+      0.11898485615914259,
+      0.14392610583843074
+    ],
+    "odds_ratio_self_ci95": [
+      1.1263528608507216,
+      1.1547987724849609
+    ],
+    "rho_cross_ci95": [
+      -0.16627494209956636,
+      -0.14361581073883126
+    ],
+    "n_replicates": 200,
+    "n_unconverged": 0
+  },
+  "merge": {
+    "threshold_s": 10.0,
+    "require_high_restart": true,
+    "n_before": 282263,
+    "n_after": 247762,
+    "possessions_removed_fraction": 0.12222997700725924,
+    "attacks_merged": 15616,
+    "dangerous_share_before": 0.5750240024374431,
+    "dangerous_share_after": 0.5962617350521872
+  },
+  "detection_floor": 0.02,
+  "detection_floor_interpolated": 0.017058823529411765,
+  "verdict": "rho_self = 0.1364 is at or above the detection floor of 0.02; read it with the p-value and CI."
+}
+[followup] === wyscout merge=10s poss-fit done in 7 min
+[followup] === statsbomb merge=0s poss-recovery (13:24:05 UTC, workers=95)
+08:24:46 INFO    poss recovery 5/10 (10 workers)
+08:24:46 INFO    poss recovery 10/10 (10 workers)
+
+=== possession model A: recovery ===
+{
+  "rho_planted": 0.3,
+  "tau_minutes": 5.0,
+  "n_replicates": 10,
+  "mean_rho_hat_self": 0.28973846003723713,
+  "sd_rho_hat_self": 0.0037656429162628725,
+  "mean_rho_hat_cross": 0.004568612175744279,
+  "bias": -0.010261539962762856,
+  "n_unconverged": 0,
+  "tolerance": 0.08,
+  "passed": true
+}
+[followup] === statsbomb merge=0s poss-recovery done in 0 min
+[followup] === statsbomb merge=0s poss-power (13:24:47 UTC, workers=95)
+08:26:42 INFO    poss power 20/350 (95 workers)
+08:26:42 INFO    poss power 40/350 (95 workers)
+08:26:42 INFO    poss power 60/350 (95 workers)
+08:26:42 INFO    poss power 80/350 (95 workers)
+08:26:45 INFO    poss power 100/350 (95 workers)
+08:26:45 INFO    poss power 120/350 (95 workers)
+08:26:45 INFO    poss power 140/350 (95 workers)
+08:26:45 INFO    poss power 160/350 (95 workers)
+08:27:36 INFO    poss power 180/350 (95 workers)
+08:27:43 INFO    poss power 200/350 (95 workers)
+08:27:43 INFO    poss power 220/350 (95 workers)
+08:27:44 INFO    poss power 240/350 (95 workers)
+08:27:44 INFO    poss power 260/350 (95 workers)
+08:27:45 INFO    poss power 280/350 (95 workers)
+08:27:46 INFO    poss power 300/350 (95 workers)
+08:27:56 INFO    poss power 320/350 (95 workers)
+08:27:57 INFO    poss power 340/350 (95 workers)
+
+=== possession model A: detection floor ===
+{
+  "tau_minutes": 5.0,
+  "critical_value": -0.0031876547671698795,
+  "alpha": 0.05,
+  "target_power": 0.8,
+  "detection_floor": 0.01,
+  "detection_floor_interpolated": 0.009183673469387754,
+  "config": {
+    "grid": [
+      0.0,
+      0.01,
+      0.02,
+      0.05,
+      0.1,
+      0.2
+    ],
+    "replicates": 30,
+    "null_replicates": 200,
+    "seed": 5694
+  }
+}
+[followup] === statsbomb merge=0s poss-power done in 3 min
+[followup] === statsbomb merge=0s poss-fit (13:28:01 UTC, workers=95)
+08:28:28 INFO  headline rho_self=0.21263 rho_cross=-0.16202
+08:35:07 INFO    poss null bootstrap 50/500 (95 workers)
+08:35:35 INFO    poss null bootstrap 100/500 (95 workers)
+08:36:28 INFO    poss null bootstrap 150/500 (95 workers)
+08:36:53 INFO    poss null bootstrap 200/500 (95 workers)
+08:37:42 INFO    poss null bootstrap 250/500 (95 workers)
+08:39:01 INFO    poss null bootstrap 300/500 (95 workers)
+08:39:22 INFO    poss null bootstrap 350/500 (95 workers)
+08:40:17 INFO    poss null bootstrap 400/500 (95 workers)
+08:40:30 INFO    poss null bootstrap 450/500 (95 workers)
+08:40:37 INFO    poss null bootstrap 500/500 (95 workers)
+08:41:08 INFO    poss cluster bootstrap 25/200 (95 workers)
+08:41:08 INFO    poss cluster bootstrap 50/200 (95 workers)
+08:41:08 INFO    poss cluster bootstrap 75/200 (95 workers)
+08:41:22 INFO    poss cluster bootstrap 100/200 (95 workers)
+08:41:26 INFO    poss cluster bootstrap 125/200 (95 workers)
+08:41:27 INFO    poss cluster bootstrap 150/200 (95 workers)
+08:41:27 INFO    poss cluster bootstrap 175/200 (95 workers)
+08:41:39 INFO    poss cluster bootstrap 200/200 (95 workers)
+
+=== possession model A: development fit (exploratory) ===
+{
+  "headline": {
+    "rho_self": 0.2126288337789947,
+    "odds_ratio_self": 1.236925461081879,
+    "rho_cross": -0.16201725602290723,
+    "odds_ratio_cross": 0.8504265294339436,
+    "tau_minutes": 5.0,
+    "loglik": -243561.67695836248,
+    "ridge_penalty": 22.855609334444697,
+    "converged": true,
+    "n_iter": 776,
+    "theta0": -0.6239427658555277,
+    "theta_home": 0.1870633109374102,
+    "setpiece": 0.5610013000046623,
+    "g_score": {
+      "-2": 0.2262554306666385,
+      "-1": 0.17600877580274876,
+      "0": 0.0,
+      "1": -0.2099952207146213,
+      "2": -0.2531279331369629
+    },
+    "h_red": {
+      "-1": -0.28795789429084523,
+      "0": 0.0,
+      "1": 0.44930771155899646
+    },
+    "n_possessions": 371030,
+    "n_dangerous": 177963,
+    "n_team_effects": 381
+  },
+  "background_only": {
+    "rho_self": 0.0,
+    "odds_ratio_self": 1.0,
+    "rho_cross": 0.0,
+    "odds_ratio_cross": 1.0,
+    "tau_minutes": 5.0,
+    "loglik": -246252.48934678163,
+    "ridge_penalty": 40.24167211282709,
+    "converged": true,
+    "n_iter": 533,
+    "theta0": -0.6692864421789848,
+    "theta_home": 0.27873563643685717,
+    "setpiece": 0.5450242829190192,
+    "g_score": {
+      "-2": 0.305077196970763,
+      "-1": 0.23427060848569842,
+      "0": 0.0,
+      "1": -0.2742555570047307,
+      "2": -0.34193719769620473
+    },
+    "h_red": {
+      "-1": -0.4313275652648417,
+      "0": 0.0,
+      "1": 0.5771716695755689
+    },
+    "n_possessions": 371030,
+    "n_dangerous": 177963,
+    "n_team_effects": 381
+  },
+  "lr_vs_background": 5381.624776838289,
+  "tau_profile": [
+    {
+      "tau_minutes": 2.0,
+      "rho_self": 0.4602069267793355,
+      "rho_cross": -0.3368803268946472,
+      "loglik": -242033.8814722331,
+      "converged": true
+    },
+    {
+      "tau_minutes": 3.0,
+      "rho_self": 0.325157153844752,
+      "rho_cross": -0.24754233609803375,
+      "loglik": -242744.61260016143,
+      "converged": true
+    },
+    {
+      "tau_minutes": 5.0,
+      "rho_self": 0.2126288337789947,
+      "rho_cross": -0.16201725602290723,
+      "loglik": -243561.67695836248,
+      "converged": true
+    },
+    {
+      "tau_minutes": 8.0,
+      "rho_self": 0.145367230438028,
+      "rho_cross": -0.10714708103887675,
+      "loglik": -244172.19279701897,
+      "converged": true
+    },
+    {
+      "tau_minutes": 14.0,
+      "rho_self": 0.09355134623270647,
+      "rho_cross": -0.06451409295294937,
+      "loglik": -244718.25700698432,
+      "converged": true
+    },
+    {
+      "tau_minutes": 30.0,
+      "rho_self": 0.05277169243297381,
+      "rho_cross": -0.03260640782733944,
+      "loglik": -245228.59371402103,
+      "converged": true
+    }
+  ],
+  "sensitivities": {
+    "box": {
+      "rho_self": 0.1920864281951297,
+      "rho_cross": -0.08418550126234825,
+      "odds_ratio_self": 1.2117752439863922,
+      "converged": true,
+      "n_possessions": 371030
+    },
+    "final_third_x75": {
+      "rho_self": 0.21940656367035993,
+      "rho_cross": -0.131319871332684,
+      "odds_ratio_self": 1.2453374827558858,
+      "converged": true,
+      "n_possessions": 371030
+    },
+    "no_setpiece_term": {
+      "rho_self": 0.19618678645139184,
+      "rho_cross": -0.16883892336293585,
+      "odds_ratio_self": 1.2167541573011198,
+      "converged": true,
+      "n_possessions": 371030
+    },
+    "no_score_state": {
+      "rho_self": 0.2304332018248725,
+      "rho_cross": -0.1778200009342785,
+      "odds_ratio_self": 1.2591453558644625,
+      "converged": true,
+      "n_possessions": 371030
+    },
+    "minute_spline_df_3": {
+      "rho_self": 0.2205140521404859,
+      "rho_cross": -0.15475342403511053,
+      "odds_ratio_self": 1.246717443663804,
+      "converged": true,
+      "n_possessions": 371030
+    },
+    "minute_spline_df_9": {
+      "rho_self": 0.21076949781001678,
+      "rho_cross": -0.16392040917398165,
+      "odds_ratio_self": 1.2346277378628194,
+      "converged": false,
+      "n_possessions": 371030
+    },
+    "strict_possession_rule": {
+      "rho_self": 0.20547152003931576,
+      "rho_cross": -0.1197961916742524,
+      "odds_ratio_self": 1.2281040041100484,
+      "converged": true,
+      "n_possessions": 632716
+    }
+  },
+  "parametric_bootstrap": {
+    "rho_self_observed": 0.2126288337789947,
+    "p_value_upper": 0.001996007984031936,
+    "p_value_lower": 1.0,
+    "null_q05": -0.016293017823525206,
+    "null_q50": -0.009953584026504845,
+    "null_q95": -0.0034630677945940397,
+    "n_replicates": 500,
+    "n_unconverged": 0,
+    "seed": 5694
+  },
+  "cluster_bootstrap": {
+    "rho_self_ci95": [
+      0.20002459566971828,
+      0.21479813452112362
+    ],
+    "odds_ratio_self_ci95": [
+      1.2214327997484475,
+      1.239611636910773
+    ],
+    "rho_cross_ci95": [
+      -0.1688897873701417,
+      -0.1539268848183866
+    ],
+    "n_replicates": 200,
+    "n_unconverged": 0
+  },
+  "detection_floor": 0.01,
+  "detection_floor_interpolated": 0.009183673469387754,
+  "verdict": "rho_self = 0.2126 is at or above the detection floor of 0.01; read it with the p-value and CI."
+}
+[followup] === statsbomb merge=0s poss-fit done in 13 min
+[followup] === statsbomb merge=10s poss-recovery (13:41:40 UTC, workers=95)
+08:42:17 INFO    poss recovery 5/10 (10 workers)
+08:42:17 INFO    poss recovery 10/10 (10 workers)
+
+=== possession model A: recovery ===
+{
+  "rho_planted": 0.3,
+  "tau_minutes": 5.0,
+  "n_replicates": 10,
+  "mean_rho_hat_self": 0.2866091511537321,
+  "sd_rho_hat_self": 0.003130918197311261,
+  "mean_rho_hat_cross": 0.005693140010878893,
+  "bias": -0.0133908488462679,
+  "n_unconverged": 0,
+  "tolerance": 0.08,
+  "passed": true,
+  "merge": {
+    "threshold_s": 10.0,
+    "require_high_restart": true,
+    "n_before": 371030,
+    "n_after": 333119,
+    "possessions_removed_fraction": 0.1021777214780476,
+    "attacks_merged": 17219,
+    "dangerous_share_before": 0.47964585073983235,
+    "dangerous_share_after": 0.4884890984903293
+  }
+}
+[followup] === statsbomb merge=10s poss-recovery done in 0 min
+[followup] === statsbomb merge=10s poss-power (13:42:17 UTC, workers=95)
+08:43:57 INFO    poss power 20/350 (95 workers)
+08:43:57 INFO    poss power 40/350 (95 workers)
+08:43:59 INFO    poss power 60/350 (95 workers)
+08:43:59 INFO    poss power 80/350 (95 workers)
+08:43:59 INFO    poss power 100/350 (95 workers)
+08:44:51 INFO    poss power 120/350 (95 workers)
+08:45:01 INFO    poss power 140/350 (95 workers)
+08:45:16 INFO    poss power 160/350 (95 workers)
+08:45:16 INFO    poss power 180/350 (95 workers)
+08:45:30 INFO    poss power 200/350 (95 workers)
+08:45:38 INFO    poss power 220/350 (95 workers)
+08:45:55 INFO    poss power 240/350 (95 workers)
+08:46:01 INFO    poss power 260/350 (95 workers)
+08:46:02 INFO    poss power 280/350 (95 workers)
+08:46:05 INFO    poss power 300/350 (95 workers)
+08:46:09 INFO    poss power 320/350 (95 workers)
+08:46:14 INFO    poss power 340/350 (95 workers)
+
+=== possession model A: detection floor ===
+{
+  "tau_minutes": 5.0,
+  "critical_value": -0.004672816722368861,
+  "alpha": 0.05,
+  "target_power": 0.8,
+  "detection_floor": 0.02,
+  "detection_floor_interpolated": 0.012500000000000004,
+  "config": {
+    "grid": [
+      0.0,
+      0.01,
+      0.02,
+      0.05,
+      0.1,
+      0.2
+    ],
+    "replicates": 30,
+    "null_replicates": 200,
+    "seed": 5694
+  },
+  "merge": {
+    "threshold_s": 10.0,
+    "require_high_restart": true,
+    "n_before": 371030,
+    "n_after": 333119,
+    "possessions_removed_fraction": 0.1021777214780476,
+    "attacks_merged": 17219,
+    "dangerous_share_before": 0.47964585073983235,
+    "dangerous_share_after": 0.4884890984903293
+  }
+}
+[followup] === statsbomb merge=10s poss-power done in 3 min
+[followup] === statsbomb merge=10s poss-fit (13:46:14 UTC, workers=95)
+08:46:44 INFO  headline rho_self=0.17484 rho_cross=-0.12374
+08:52:47 INFO    poss null bootstrap 50/500 (95 workers)
+08:52:57 INFO    poss null bootstrap 100/500 (95 workers)
+08:53:55 INFO    poss null bootstrap 150/500 (95 workers)
+08:54:04 INFO    poss null bootstrap 200/500 (95 workers)
+08:54:58 INFO    poss null bootstrap 250/500 (95 workers)
+08:55:25 INFO    poss null bootstrap 300/500 (95 workers)
+08:56:07 INFO    poss null bootstrap 350/500 (95 workers)
+08:56:30 INFO    poss null bootstrap 400/500 (95 workers)
+08:56:51 INFO    poss null bootstrap 450/500 (95 workers)
+08:56:55 INFO    poss null bootstrap 500/500 (95 workers)
+08:57:56 INFO    poss cluster bootstrap 25/200 (95 workers)
+08:57:56 INFO    poss cluster bootstrap 50/200 (95 workers)
+08:57:56 INFO    poss cluster bootstrap 75/200 (95 workers)
+08:57:56 INFO    poss cluster bootstrap 100/200 (95 workers)
+08:57:56 INFO    poss cluster bootstrap 125/200 (95 workers)
+08:58:02 INFO    poss cluster bootstrap 150/200 (95 workers)
+08:58:04 INFO    poss cluster bootstrap 175/200 (95 workers)
+08:58:10 INFO    poss cluster bootstrap 200/200 (95 workers)
+
+=== possession model A: development fit (exploratory) ===
+{
+  "headline": {
+    "rho_self": 0.17483730349110926,
+    "odds_ratio_self": 1.1910524207770663,
+    "rho_cross": -0.12373621526585095,
+    "odds_ratio_cross": 0.8836128937357719,
+    "tau_minutes": 5.0,
+    "loglik": -220075.9215870084,
+    "ridge_penalty": 26.293909413317763,
+    "converged": true,
+    "n_iter": 937,
+    "theta0": -0.6272408946300201,
+    "theta_home": 0.19616249494954935,
+    "setpiece": 0.6074225038146546,
+    "g_score": {
+      "-2": 0.23043170281089068,
+      "-1": 0.17881439034605254,
+      "0": 0.0,
+      "1": -0.21481158673388925,
+      "2": -0.2576406947906873
+    },
+    "h_red": {
+      "-1": -0.319884897647145,
+      "0": 0.0,
+      "1": 0.48063466967880963
+    },
+    "n_possessions": 333119,
+    "n_dangerous": 162725,
+    "n_team_effects": 381
+  },
+  "background_only": {
+    "rho_self": 0.0,
+    "odds_ratio_self": 1.0,
+    "rho_cross": 0.0,
+    "odds_ratio_cross": 1.0,
+    "tau_minutes": 5.0,
+    "loglik": -221223.82199709868,
+    "ridge_penalty": 37.92652831935955,
+    "converged": true,
+    "n_iter": 599,
+    "theta0": -0.6554444005468083,
+    "theta_home": 0.2535873186920898,
+    "setpiece": 0.6003348873859335,
+    "g_score": {
+      "-2": 0.2782715586422762,
+      "-1": 0.21520803032975028,
+      "0": 0.0,
+      "1": -0.2563270190775875,
+      "2": -0.31322874037475856
+    },
+    "h_red": {
+      "-1": -0.4198553235652362,
+      "0": 0.0,
+      "1": 0.5675559843095505
+    },
+    "n_possessions": 333119,
+    "n_dangerous": 162725,
+    "n_team_effects": 381
+  },
+  "lr_vs_background": 2295.800820180564,
+  "tau_profile": [
+    {
+      "tau_minutes": 2.0,
+      "rho_self": 0.34636238652159224,
+      "rho_cross": -0.2521510074530354,
+      "loglik": -219632.58430986115,
+      "converged": true
+    },
+    {
+      "tau_minutes": 3.0,
+      "rho_self": 0.25401604515757353,
+      "rho_cross": -0.18684335120185902,
+      "loglik": -219830.90603695117,
+      "converged": true
+    },
+    {
+      "tau_minutes": 5.0,
+      "rho_self": 0.17483730349110926,
+      "rho_cross": -0.12373621526585095,
+      "loglik": -220075.9215870084,
+      "converged": true
+    },
+    {
+      "tau_minutes": 8.0,
+      "rho_self": 0.12560328948958463,
+      "rho_cross": -0.08288572999976566,
+      "loglik": -220268.23533873307,
+      "converged": true
+    },
+    {
+      "tau_minutes": 14.0,
+      "rho_self": 0.08560201036183597,
+      "rho_cross": -0.05088880451922159,
+      "loglik": -220450.35527449392,
+      "converged": true
+    },
+    {
+      "tau_minutes": 30.0,
+      "rho_self": 0.05138620835508016,
+      "rho_cross": -0.026387146082173855,
+      "loglik": -220648.624345223,
+      "converged": true
+    }
+  ],
+  "sensitivities": {
+    "box": {
+      "rho_self": 0.16013585356262408,
+      "rho_cross": -0.05004418553101983,
+      "odds_ratio_self": 1.173670307454173,
+      "converged": true,
+      "n_possessions": 333119
+    },
+    "final_third_x75": {
+      "rho_self": 0.17908761343395074,
+      "rho_cross": -0.0961066078892511,
+      "odds_ratio_self": 1.1961255362428862,
+      "converged": true,
+      "n_possessions": 333119
+    },
+    "no_setpiece_term": {
+      "rho_self": 0.15883548989606797,
+      "rho_cross": -0.1324754591471196,
+      "odds_ratio_self": 1.1721451011062234,
+      "converged": true,
+      "n_possessions": 333119
+    },
+    "no_score_state": {
+      "rho_self": 0.19440651116780003,
+      "rho_cross": -0.14062558429187094,
+      "odds_ratio_self": 1.2145899269831462,
+      "converged": true,
+      "n_possessions": 333119
+    },
+    "minute_spline_df_3": {
+      "rho_self": 0.18402886393660384,
+      "rho_cross": -0.11544240220298173,
+      "odds_ratio_self": 1.2020505185055368,
+      "converged": true,
+      "n_possessions": 333119
+    },
+    "minute_spline_df_9": {
+      "rho_self": 0.17280033015227853,
+      "rho_cross": -0.12578696456947303,
+      "odds_ratio_self": 1.188628748067177,
+      "converged": false,
+      "n_possessions": 333119
+    },
+    "strict_possession_rule": {
+      "rho_self": 0.18028278622871746,
+      "rho_cross": -0.07364989884944413,
+      "odds_ratio_self": 1.1975559675789647,
+      "converged": true,
+      "n_possessions": 510024
+    },
+    "merge_5s": {
+      "rho_self": 0.1916640416512968,
+      "rho_cross": -0.14255030875066568,
+      "odds_ratio_self": 1.211263514510613,
+      "converged": true,
+      "n_possessions": 348750
+    },
+    "merge_20s": {
+      "rho_self": 0.16739376622569196,
+      "rho_cross": -0.10627677627971334,
+      "odds_ratio_self": 1.1822196918537207,
+      "converged": true,
+      "n_possessions": 321105
+    }
+  },
+  "parametric_bootstrap": {
+    "rho_self_observed": 0.17483730349110926,
+    "p_value_upper": 0.001996007984031936,
+    "p_value_lower": 1.0,
+    "null_q05": -0.01879055788548341,
+    "null_q50": -0.011042151227432708,
+    "null_q95": -0.003227053357426779,
+    "n_replicates": 500,
+    "n_unconverged": 0,
+    "seed": 5694
+  },
+  "cluster_bootstrap": {
+    "rho_self_ci95": [
+      0.15823488257026663,
+      0.17721469312533386
+    ],
+    "odds_ratio_self_ci95": [
+      1.1714413135427364,
+      1.1938873850280882
+    ],
+    "rho_cross_ci95": [
+      -0.13014841209369432,
+      -0.11382486217858974
+    ],
+    "n_replicates": 200,
+    "n_unconverged": 0
+  },
+  "merge": {
+    "threshold_s": 10.0,
+    "require_high_restart": true,
+    "n_before": 371030,
+    "n_after": 333119,
+    "possessions_removed_fraction": 0.1021777214780476,
+    "attacks_merged": 17219,
+    "dangerous_share_before": 0.47964585073983235,
+    "dangerous_share_after": 0.4884890984903293
+  },
+  "detection_floor": 0.02,
+  "detection_floor_interpolated": 0.012500000000000004,
+  "verdict": "rho_self = 0.1748 is at or above the detection floor of 0.02; read it with the p-value and CI."
+}
+[followup] === statsbomb merge=10s poss-fit done in 11 min
+[followup] === wyscout merge=0s poss-shuffle (13:58:11 UTC, workers=95)
+08:59:59 INFO    poss shuffle 20/200 (95 workers)
+08:59:59 INFO    poss shuffle 40/200 (95 workers)
+08:59:59 INFO    poss shuffle 60/200 (95 workers)
+08:59:59 INFO    poss shuffle 80/200 (95 workers)
+08:59:59 INFO    poss shuffle 100/200 (95 workers)
+08:59:59 INFO    poss shuffle 120/200 (95 workers)
+09:00:10 INFO    poss shuffle 140/200 (95 workers)
+09:00:14 INFO    poss shuffle 160/200 (95 workers)
+09:00:14 INFO    poss shuffle 180/200 (95 workers)
+09:00:15 INFO    poss shuffle 200/200 (95 workers)
+
+=== possession model A: within-half shuffle (post hoc) ===
+{
+  "post_hoc": true,
+  "tau_minutes": 5.0,
+  "rho_self_observed": 0.19389617799386402,
+  "rho_cross_observed": -0.19822521158985082,
+  "shuffled_mean_rho_self": 0.07168380374497903,
+  "shuffled_sd_rho_self": 0.0035819828421896935,
+  "shuffled_q05_q95": [
+    0.06600178228888207,
+    0.07684888340135582
+  ],
+  "shuffled_mean_rho_cross": -0.10107514131464779,
+  "order_component": 0.122212374248885,
+  "p_value_order": 0.004975124378109453,
+  "n_shuffles": 200,
+  "n_unconverged": 0,
+  "seed": 5694
+}
+[followup] === wyscout merge=0s poss-shuffle done in 2 min
+[followup] === wyscout merge=10s poss-shuffle (14:00:16 UTC, workers=95)
+09:01:44 INFO    poss shuffle 20/200 (95 workers)
+09:01:48 INFO    poss shuffle 40/200 (95 workers)
+09:01:48 INFO    poss shuffle 60/200 (95 workers)
+09:01:49 INFO    poss shuffle 80/200 (95 workers)
+09:01:49 INFO    poss shuffle 100/200 (95 workers)
+09:01:49 INFO    poss shuffle 120/200 (95 workers)
+09:01:56 INFO    poss shuffle 140/200 (95 workers)
+09:02:00 INFO    poss shuffle 160/200 (95 workers)
+09:02:04 INFO    poss shuffle 180/200 (95 workers)
+09:02:04 INFO    poss shuffle 200/200 (95 workers)
+
+=== possession model A: within-half shuffle (post hoc) ===
+{
+  "post_hoc": true,
+  "tau_minutes": 5.0,
+  "rho_self_observed": 0.13639389323923154,
+  "rho_cross_observed": -0.15764859028675712,
+  "shuffled_mean_rho_self": 0.044393847804711756,
+  "shuffled_sd_rho_self": 0.004458886268550127,
+  "shuffled_q05_q95": [
+    0.03697982049023522,
+    0.05084273174417308
+  ],
+  "shuffled_mean_rho_cross": -0.08042731425575848,
+  "order_component": 0.09200004543451978,
+  "p_value_order": 0.004975124378109453,
+  "n_shuffles": 200,
+  "n_unconverged": 0,
+  "seed": 5694,
+  "merge": {
+    "threshold_s": 10.0,
+    "require_high_restart": true,
+    "n_before": 282263,
+    "n_after": 247762,
+    "possessions_removed_fraction": 0.12222997700725924,
+    "attacks_merged": 15616,
+    "dangerous_share_before": 0.5750240024374431,
+    "dangerous_share_after": 0.5962617350521872
+  }
+}
+[followup] === wyscout merge=10s poss-shuffle done in 1 min
+[followup] === statsbomb merge=0s poss-shuffle (14:02:05 UTC, workers=95)
+09:04:10 INFO    poss shuffle 20/200 (95 workers)
+09:04:10 INFO    poss shuffle 40/200 (95 workers)
+09:04:10 INFO    poss shuffle 60/200 (95 workers)
+09:04:10 INFO    poss shuffle 80/200 (95 workers)
+09:04:10 INFO    poss shuffle 100/200 (95 workers)
+09:04:18 INFO    poss shuffle 120/200 (95 workers)
+09:04:18 INFO    poss shuffle 140/200 (95 workers)
+09:04:18 INFO    poss shuffle 160/200 (95 workers)
+09:04:33 INFO    poss shuffle 180/200 (95 workers)
+09:04:33 INFO    poss shuffle 200/200 (95 workers)
+
+=== possession model A: within-half shuffle (post hoc) ===
+{
+  "post_hoc": true,
+  "tau_minutes": 5.0,
+  "rho_self_observed": 0.2126288337789947,
+  "rho_cross_observed": -0.16201725602290723,
+  "shuffled_mean_rho_self": 0.06237989386179538,
+  "shuffled_sd_rho_self": 0.0026657580005033784,
+  "shuffled_q05_q95": [
+    0.05777954255636089,
+    0.06618900166890737
+  ],
+  "shuffled_mean_rho_cross": -0.09552437172257364,
+  "order_component": 0.15024893991719931,
+  "p_value_order": 0.004975124378109453,
+  "n_shuffles": 200,
+  "n_unconverged": 0,
+  "seed": 5694
+}
+[followup] === statsbomb merge=0s poss-shuffle done in 2 min
+[followup] === statsbomb merge=10s poss-shuffle (14:04:34 UTC, workers=95)
+09:06:48 INFO    poss shuffle 20/200 (95 workers)
+09:06:48 INFO    poss shuffle 40/200 (95 workers)
+09:06:52 INFO    poss shuffle 60/200 (95 workers)
+09:06:52 INFO    poss shuffle 80/200 (95 workers)
+09:06:52 INFO    poss shuffle 100/200 (95 workers)
+09:06:52 INFO    poss shuffle 120/200 (95 workers)
+09:07:00 INFO    poss shuffle 140/200 (95 workers)
+09:07:04 INFO    poss shuffle 160/200 (95 workers)
+09:07:12 INFO    poss shuffle 180/200 (95 workers)
+09:07:12 INFO    poss shuffle 200/200 (95 workers)
+
+=== possession model A: within-half shuffle (post hoc) ===
+{
+  "post_hoc": true,
+  "tau_minutes": 5.0,
+  "rho_self_observed": 0.17483730349110926,
+  "rho_cross_observed": -0.12373621526585095,
+  "shuffled_mean_rho_self": 0.042601377368975867,
+  "shuffled_sd_rho_self": 0.003363588914607497,
+  "shuffled_q05_q95": [
+    0.03715575698933607,
+    0.04789054884228524
+  ],
+  "shuffled_mean_rho_cross": -0.08128122120689386,
+  "order_component": 0.1322359261221334,
+  "p_value_order": 0.004975124378109453,
+  "n_shuffles": 200,
+  "n_unconverged": 0,
+  "seed": 5694,
+  "merge": {
+    "threshold_s": 10.0,
+    "require_high_restart": true,
+    "n_before": 371030,
+    "n_after": 333119,
+    "possessions_removed_fraction": 0.1021777214780476,
+    "attacks_merged": 17219,
+    "dangerous_share_before": 0.47964585073983235,
+    "dangerous_share_after": 0.4884890984903293
+  }
+}
+[followup] === statsbomb merge=10s poss-shuffle done in 2 min
+[followup] all steps done

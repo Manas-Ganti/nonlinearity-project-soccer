@@ -1,0 +1,27 @@
+{
+  "name": "poss_shuffle_statsbomb_dev",
+  "written_at_utc": "2026-11-04T14:04:34+00:00",
+  "python": "3.12.7",
+  "platform": "Linux-5.14.0-687.26.1.el9_8.x86_64-x86_64-with-glibc2.34",
+  "numpy": "2.5.3",
+  "git_rev": "0fdf6d4",
+  "inputs": {},
+  "payload": {
+    "post_hoc": true,
+    "tau_minutes": 5.0,
+    "rho_self_observed": 0.2126288337789947,
+    "rho_cross_observed": -0.16201725602290723,
+    "shuffled_mean_rho_self": 0.06237989386179538,
+    "shuffled_sd_rho_self": 0.0026657580005033784,
+    "shuffled_q05_q95": [
+      0.05777954255636089,
+      0.06618900166890737
+    ],
+    "shuffled_mean_rho_cross": -0.09552437172257364,
+    "order_component": 0.15024893991719931,
+    "p_value_order": 0.004975124378109453,
+    "n_shuffles": 200,
+    "n_unconverged": 0,
+    "seed": 5694
+  }
+}

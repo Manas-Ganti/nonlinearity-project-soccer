@@ -1,0 +1,37 @@
+{
+  "name": "poss_shuffle_wyscout_merged10s_dev",
+  "written_at_utc": "2026-11-04T14:02:05+00:00",
+  "python": "3.12.7",
+  "platform": "Linux-5.14.0-687.26.1.el9_8.x86_64-x86_64-with-glibc2.34",
+  "numpy": "2.5.3",
+  "git_rev": "0fdf6d4",
+  "inputs": {},
+  "payload": {
+    "post_hoc": true,
+    "tau_minutes": 5.0,
+    "rho_self_observed": 0.13639389323923154,
+    "rho_cross_observed": -0.15764859028675712,
+    "shuffled_mean_rho_self": 0.044393847804711756,
+    "shuffled_sd_rho_self": 0.004458886268550127,
+    "shuffled_q05_q95": [
+      0.03697982049023522,
+      0.05084273174417308
+    ],
+    "shuffled_mean_rho_cross": -0.08042731425575848,
+    "order_component": 0.09200004543451978,
+    "p_value_order": 0.004975124378109453,
+    "n_shuffles": 200,
+    "n_unconverged": 0,
+    "seed": 5694,
+    "merge": {
+      "threshold_s": 10.0,
+      "require_high_restart": true,
+      "n_before": 282263,
+      "n_after": 247762,
+      "possessions_removed_fraction": 0.12222997700725924,
+      "attacks_merged": 15616,
+      "dangerous_share_before": 0.5750240024374431,
+      "dangerous_share_after": 0.5962617350521872
+    }
+  }
+}

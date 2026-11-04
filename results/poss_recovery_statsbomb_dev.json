@@ -1,0 +1,21 @@
+{
+  "name": "poss_recovery_statsbomb_dev",
+  "written_at_utc": "2026-11-04T13:24:46+00:00",
+  "python": "3.12.7",
+  "platform": "Linux-5.14.0-687.26.1.el9_8.x86_64-x86_64-with-glibc2.34",
+  "numpy": "2.5.3",
+  "git_rev": "0fdf6d4",
+  "inputs": {},
+  "payload": {
+    "rho_planted": 0.3,
+    "tau_minutes": 5.0,
+    "n_replicates": 10,
+    "mean_rho_hat_self": 0.28973846003723713,
+    "sd_rho_hat_self": 0.0037656429162628725,
+    "mean_rho_hat_cross": 0.004568612175744279,
+    "bias": -0.010261539962762856,
+    "n_unconverged": 0,
+    "tolerance": 0.08,
+    "passed": true
+  }
+}

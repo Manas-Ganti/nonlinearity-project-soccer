@@ -1,0 +1,31 @@
+{
+  "name": "poss_recovery_statsbomb_merged10s_dev",
+  "written_at_utc": "2026-11-04T13:42:17+00:00",
+  "python": "3.12.7",
+  "platform": "Linux-5.14.0-687.26.1.el9_8.x86_64-x86_64-with-glibc2.34",
+  "numpy": "2.5.3",
+  "git_rev": "0fdf6d4",
+  "inputs": {},
+  "payload": {
+    "rho_planted": 0.3,
+    "tau_minutes": 5.0,
+    "n_replicates": 10,
+    "mean_rho_hat_self": 0.2866091511537321,
+    "sd_rho_hat_self": 0.003130918197311261,
+    "mean_rho_hat_cross": 0.005693140010878893,
+    "bias": -0.0133908488462679,
+    "n_unconverged": 0,
+    "tolerance": 0.08,
+    "passed": true,
+    "merge": {
+      "threshold_s": 10.0,
+      "require_high_restart": true,
+      "n_before": 371030,
+      "n_after": 333119,
+      "possessions_removed_fraction": 0.1021777214780476,
+      "attacks_merged": 17219,
+      "dangerous_share_before": 0.47964585073983235,
+      "dangerous_share_after": 0.4884890984903293
+    }
+  }
+}
