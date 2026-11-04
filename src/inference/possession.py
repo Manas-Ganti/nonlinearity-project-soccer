@@ -245,3 +245,39 @@ def fit_dev(
         }
         out["_cluster_detail"] = cb
     return out
+
+
+def shuffle_test(table: pd.DataFrame, *, tau=5.0, n_shuffles=200, seed=5694, workers=None) -> dict:
+    """docs/spec_possessions.md section 9.2 (post hoc): dominance versus order.
+
+    Each replicate permutes danger labels within (match, half, team) and refits
+    Model A. What survives the shuffle is what per-half counts alone produce; the
+    order component is what the observed fit has beyond that."""
+    from src.features.poss_merge import shuffle_danger
+
+    cfg = CONFIG.background
+    obs = pl.fit(pl.build_design(table, cfg), tau=tau)
+
+    def one(b):
+        sh = shuffle_danger(table, np.random.default_rng(seed + 11_000_000 + b))
+        f = pl.fit(pl.build_design(sh, cfg), tau=tau)
+        return {"b": b, "rho_hat_self": f.rho_self, "rho_hat_cross": f.rho_cross, "converged": f.converged}
+
+    detail = pd.DataFrame(pmap(one, list(range(n_shuffles)), workers=workers, label="poss shuffle", every=20))
+    hat = detail["rho_hat_self"].to_numpy()
+    return {
+        "post_hoc": True,
+        "tau_minutes": tau,
+        "rho_self_observed": obs.rho_self,
+        "rho_cross_observed": obs.rho_cross,
+        "shuffled_mean_rho_self": float(hat.mean()),
+        "shuffled_sd_rho_self": float(hat.std(ddof=1)),
+        "shuffled_q05_q95": [float(np.quantile(hat, 0.05)), float(np.quantile(hat, 0.95))],
+        "shuffled_mean_rho_cross": float(detail["rho_hat_cross"].mean()),
+        "order_component": float(obs.rho_self - hat.mean()),
+        "p_value_order": float((1 + np.sum(hat >= obs.rho_self)) / (hat.size + 1)),
+        "n_shuffles": int(hat.size),
+        "n_unconverged": int((~detail["converged"].astype(bool)).sum()),
+        "seed": seed,
+        "_detail": detail,
+    }

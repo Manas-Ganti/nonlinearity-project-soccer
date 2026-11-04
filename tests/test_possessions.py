@@ -164,3 +164,52 @@ def test_rebuilt_game_state_equals_the_shot_slate_at_every_shot():
         )
         mism += int(((sd != s["score_diff"].to_numpy()) | (rd != s["red_diff"].to_numpy())).sum())
     assert mism == 0
+
+
+# ---- the StatsBomb replication table (docs/spec_possessions.md section 9.3)
+
+SB_TABLE = INTERIM / "statsbomb_possessions" / "possessions.parquet"
+needs_sb = pytest.mark.skipif(not SB_TABLE.exists(), reason="StatsBomb possession table not built")
+
+
+def _sb_dev_slate():
+    # Through the loader, not the file: the StatsBomb shot slate also holds holdout
+    # seasons, and the loader is what keeps them out and logs the read.
+    from src.ingest import loader
+
+    return loader.load_slate("statsbomb", split="dev", caller="test-possessions-statsbomb")
+
+
+@needs_sb
+@pytest.mark.parametrize("rule", ["tolerant", "strict"])
+def test_statsbomb_every_shot_lies_in_its_own_teams_possession_time(rule):
+    tab = pd.read_parquet(SB_TABLE)
+    tab = tab[tab["rule"] == rule]
+    shots = _sb_dev_slate().events
+    # StatsBomb's clock is integer seconds, so a shot can share its second with the
+    # opponent's last touch; the tie rule below is the one the Wyscout test uses.
+    eps = 1e-7
+    bad = 0
+    for mid, s in shots.groupby("match_id"):
+        p = tab[tab["match_id"] == mid].sort_values("t_start", kind="stable")
+        starts, sides = p["t_start"].to_numpy(), p["side"].to_numpy()
+        t = s["t"].to_numpy()
+        i = np.searchsorted(starts, t + eps, side="right") - 1
+        ok = (i >= 0) & (t < p["t_next"].to_numpy()[i] + eps)
+        own = sides[i] == s["side"].to_numpy()
+        j = np.clip(i - 1, 0, None)
+        tie = (np.abs(starts[i] - t) <= eps) & (sides[j] == s["side"].to_numpy())
+        bad += int((~(ok & (own | tie))).sum())
+    assert bad == 0
+
+
+@needs_sb
+def test_statsbomb_table_covers_exactly_the_development_shot_slate():
+    from src.config import FIRST_HOLDOUT_SEASON
+
+    tab = pd.read_parquet(SB_TABLE)
+    shots = _sb_dev_slate().events
+    assert set(tab["match_id"]) == set(shots["match_id"])
+    assert (tab["season"] < FIRST_HOLDOUT_SEASON).all()
+    t = tab[tab["rule"] == "tolerant"]
+    assert int(t["n_shots"].sum()) == len(shots)

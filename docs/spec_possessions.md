@@ -135,3 +135,103 @@ S_cross(p) = Σ_{q<p, opponent,  D_q=1} e^{−(t_p − t_q)/τ}
 - Tracking data.
 - Choosing the danger definition from fitted results.
 - Any covariate added to the background after a fit.
+
+## 9. Amendment 1, 2026-11-03: checks added after the Model A result
+
+**Status: approved 2026-11-03 by the author.** Everything in this section was
+designed **after** seeing the development fit (job 1372527). It is labelled
+post hoc wherever it is reported. The Model A result in §3 stays the reported
+headline of this analysis, exactly as fitted:
+
+> `ρ_self = 0.194` (odds ratio 1.21), CI [0.180, 0.199], parametric p = 0.002,
+> floor 0.02; `ρ_cross = −0.198`. The τ profile is best at the shortest τ (2 min,
+> `ρ_self = 0.39`) and falls steadily to 30 min.
+
+**Why amend.** The τ profile falls with τ, which §7 did not anticipate. A raw
+descriptive (no model) shows two components:
+
+- **Fast.** The lift in P(dangerous) after a dangerous own possession is +18 points
+  when the team's previous possession started < 30 s earlier, and +12 at 30–60 s.
+  Of those follow-ups, 32% start already in the final third: the ball was won back
+  high.
+- **Slow.** About +5 points persists at 2–5 min and beyond 5 min, without decaying.
+
+Read as: ball-position carry-over (the possession analogue of rebounds) plus
+match-level dominance. Neither is momentum. Model A, as specified, cannot tell
+them apart.
+
+### 9.1 Quick-regain merge (the possession analogue of the 4 s shot rule)
+
+If team `k`'s possession `q` is followed by **one** opponent possession lasting
+**< 10 s** (first opponent event to `k`'s next first event), and then `k`'s
+possession `p` **starts in the final third** (its first own event is there), then
+`q`, the opponent spell and `p` are **one attack** for `k`:
+
+- merged start = `t_start(q)`
+- dangerous if `q` or `p` was
+- set-piece flag as §2, on the merged attack
+- chains merge transitively
+
+The threshold is fixed at 10 s now. 5 s and 20 s are sensitivities. Report the
+fraction of possessions merged.
+
+**Revision before any merged fit, 2026-11-03.** The first draft had no
+"starts in the final third" condition. Its merge counts on Wyscout, computed
+before any model was fitted on merged data, ruled it out:
+
+| rule | 5 s | 10 s | 20 s |
+| --- | --- | --- | --- |
+| any short opponent spell | 16% of possessions removed | **42%** | 68% |
+| + next possession starts in final third | 5.5% | **12%** | 18% |
+
+The unconditioned rule collapses ordinary midfield turnovers, which is not
+the mechanism in question. The conditioned rule targets the ball being won back
+high, and at 10 s it removes about as much as the shot rebound rule's 15% guard.
+It is the rule. The unconditioned counts are reported only as context.
+
+Model A is then refitted unchanged on the merged table (same background, same
+`τ = 5`, same τ profile, gates 2–4 rerun).
+
+### 9.2 Within-half shuffle test (dominance vs order)
+
+For each (match, half, team), permute the danger labels `D` across that team's
+possessions. Possession times, sides and game-state covariates stay where they
+are. Refit Model A on each shuffled table. B = 200, seeded.
+
+- **Shuffled `ρ̂_self`** is what match-half-level dominance alone produces, because
+  shuffling keeps each team's count of dangerous possessions per half.
+- **The order component** = `ρ̂_self(observed) − mean ρ̂_self(shuffled)`, with a
+  one-sided p-value from the shuffle distribution.
+- Run on both the §3 table and the §9.1 merged table.
+- Caveat: shuffling also scrambles `D` against minute and score within a half,
+  which weakens those background terms slightly. That is reported, not corrected.
+
+**Reading.**
+- An order component that survives the merge (9.1) **and** the shuffle (9.2) is
+  evidence of possession-to-possession dependence beyond ball position and
+  dominance. It is still exploratory until §9.3.
+- An order component that does not survive: Model A's `ρ` is ball position plus
+  dominance, and the possession analysis reports that.
+
+### 9.3 Replication on StatsBomb (approved 2026-11-03)
+
+Wyscout has no holdout, so §9.1–§9.2 and Model A are repeated on an independent
+source: StatsBomb full event files for the **2,112 development matches already in
+the shot slate**. They are pulled into a new cache, `data/raw/statsbomb_events/`.
+The shot cache is untouched, and no holdout match is downloaded.
+
+Possession table, same rules as §2, mapped once and fixed now:
+
+- **On-ball events:** Pass, Shot, Carry, Dribble, Clearance, Miscontrol.
+- **Accurate pass:** a pass with no `outcome`.
+- **Final third:** `x ≥ 80` on StatsBomb's 120 × 80 pitch.
+- **Set pieces:** pass type Corner / Free Kick / Throw-in, shot type Free Kick /
+  Penalty. Goal kicks excluded.
+- **Clock and game state:** from the StatsBomb shot slate, as §2 does for Wyscout.
+- StatsBomb's own `possession` id is a sensitivity, not the headline.
+
+**Replicated** means: on StatsBomb, the same sign and parametric p < 0.05 for the
+quantity in question (Model A `ρ_self` on the merged table, and the §9.2 order
+component), each against its own floor. Reported with and without the one-club
+(Barcelona) matches, which are an extreme of the dominance this amendment is
+about.

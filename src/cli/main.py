@@ -97,19 +97,44 @@ def cmd_ingest_wyscout(args) -> None:
 
 
 def cmd_build_possessions(args) -> None:
-    """Wyscout event streams -> the possession table (docs/spec_possessions.md section 2)."""
-    from src.ingest import possessions
+    """Event streams -> the possession table (docs/spec_possessions.md sections 2 and 9.3)."""
+    mod = _poss_loader(args.source)
+    table, summary = mod.build()
+    mod.save(table)
+    write_manifest(f"build_possessions_{args.source}", summary)
+    _print(f"possession table ({args.source})", summary)
 
-    table, summary = possessions.build()
-    possessions.save(table)
-    write_manifest("build_possessions_wyscout", summary)
-    _print("possession table (wyscout)", summary)
+
+def _poss_loader(source: str):
+    if source == "statsbomb":
+        from src.ingest import statsbomb_possessions as mod
+    else:
+        from src.ingest import possessions as mod
+    return mod
 
 
-def _poss_table(caller: str, rule: str = "tolerant"):
-    from src.ingest import possessions
+def _poss_table(caller: str, rule: str = "tolerant", source: str = "wyscout", merge_s: float = 0.0):
+    """One rule's development possessions, quick-regain merged if asked
+    (docs/spec_possessions.md section 9.1). The merge counts are kept on `.attrs`."""
+    table = _poss_loader(source).load(split="dev", rule=rule, caller=caller)
+    if merge_s:
+        from src.features.poss_merge import merge_quick_regains
 
-    return possessions.load(split="dev", rule=rule, caller=caller)
+        table, stats = merge_quick_regains(table, merge_s)
+        table.attrs["merge"] = stats
+    return table
+
+
+def _poss_tag(args) -> str:
+    """Manifest suffix. Plain Wyscout keeps the names the first Model A run used."""
+    tag = getattr(args, "source", "wyscout")
+    if getattr(args, "merge_regain", 0.0):
+        tag += f"_merged{args.merge_regain:g}s"
+    return f"{tag}_dev"
+
+
+def _args_table(args, caller: str, rule: str = "tolerant"):
+    return _poss_table(caller, rule=rule, source=args.source, merge_s=args.merge_regain)
 
 
 def cmd_poss_recovery(args) -> None:
@@ -117,12 +142,15 @@ def cmd_poss_recovery(args) -> None:
     from src.inference import possession
     from src.models import possession_logit as pl
 
-    design = pl.build_design(_poss_table("poss-recovery"), CONFIG.background)
+    table = _args_table(args, "poss-recovery")
+    design = pl.build_design(table, CONFIG.background)
     out = possession.recovery(
         design, tau=args.tau, n_replicates=args.replicates, seed=args.seed, workers=args.workers
     )
-    out.pop("detail").to_csv(RESULTS / "poss_recovery_detail_wyscout_dev.csv", index=False)
-    write_manifest("poss_recovery_wyscout_dev", out)
+    if "merge" in table.attrs:
+        out["merge"] = table.attrs["merge"]
+    out.pop("detail").to_csv(RESULTS / f"poss_recovery_detail_{_poss_tag(args)}.csv", index=False)
+    write_manifest(f"poss_recovery_{_poss_tag(args)}", out)
     _print("possession model A: recovery", out)
     if not out["passed"]:
         log.error("recovery gate FAILED: nothing downstream of it means anything")
@@ -134,7 +162,8 @@ def cmd_poss_power(args) -> None:
     from src.inference import possession
     from src.models import possession_logit as pl
 
-    design = pl.build_design(_poss_table("poss-power"), CONFIG.background)
+    table = _args_table(args, "poss-power")
+    design = pl.build_design(table, CONFIG.background)
     out = possession.power(
         design,
         tau=args.tau,
@@ -143,8 +172,10 @@ def cmd_poss_power(args) -> None:
         seed=args.seed,
         workers=args.workers,
     )
-    out.pop("sweep").to_csv(RESULTS / "poss_power_sweep_wyscout_dev.csv", index=False)
-    write_manifest("poss_power_wyscout_dev", out)
+    if "merge" in table.attrs:
+        out["merge"] = table.attrs["merge"]
+    out.pop("sweep").to_csv(RESULTS / f"poss_power_sweep_{_poss_tag(args)}.csv", index=False)
+    write_manifest(f"poss_power_{_poss_tag(args)}", out)
     _print("possession model A: detection floor", out)
 
 
@@ -153,8 +184,15 @@ def cmd_poss_fit(args) -> None:
     from src.inference import possession
     from src.runlog import read_manifest
 
-    table = _poss_table("poss-fit")
-    strict = _poss_table("poss-fit-strict", rule="strict")
+    table = _args_table(args, "poss-fit")
+    strict = _args_table(args, "poss-fit-strict", rule="strict")
+    sens_tables = {"strict_possession_rule": strict}
+    if args.merge_regain:
+        # 9.1 sensitivities: the neighbouring thresholds, on the same rule
+        for th in (5.0, 20.0):
+            sens_tables[f"merge_{th:g}s"] = _poss_table(
+                f"poss-fit-merge{th:g}", source=args.source, merge_s=th
+            )
     out = possession.fit_dev(
         table,
         tau=args.tau,
@@ -162,13 +200,15 @@ def cmd_poss_fit(args) -> None:
         cluster_bootstrap=args.cluster_bootstrap,
         seed=args.seed,
         workers=args.workers,
-        sensitivity_tables={"strict_possession_rule": strict},
+        sensitivity_tables=sens_tables,
     )
+    if "merge" in table.attrs:
+        out["merge"] = table.attrs["merge"]
     for key, name in (("_null_detail", "poss_bootstrap_null"), ("_cluster_detail", "poss_cluster_bootstrap")):
         if key in out:
-            out.pop(key).to_csv(RESULTS / f"{name}_wyscout_dev.csv", index=False)
+            out.pop(key).to_csv(RESULTS / f"{name}_{_poss_tag(args)}.csv", index=False)
     try:
-        pw = read_manifest("poss_power_wyscout_dev")["payload"]
+        pw = read_manifest(f"poss_power_{_poss_tag(args)}")["payload"]
         out["detection_floor"] = pw["detection_floor"]
         out["detection_floor_interpolated"] = pw["detection_floor_interpolated"]
         rho = out["headline"]["rho_self"]
@@ -187,8 +227,23 @@ def cmd_poss_fit(args) -> None:
         out["verdict"] = (
             "no detection floor measured (run poss-power first), so rho_self cannot be interpreted"
         )
-    write_manifest("poss_fit_wyscout_dev", out)
+    write_manifest(f"poss_fit_{_poss_tag(args)}", out)
     _print("possession model A: development fit (exploratory)", out)
+
+
+def cmd_poss_shuffle(args) -> None:
+    """Section 9.2 (post hoc): within-half shuffle of danger labels, dominance vs order."""
+    from src.inference import possession
+
+    table = _args_table(args, "poss-shuffle")
+    out = possession.shuffle_test(
+        table, tau=args.tau, n_shuffles=args.shuffles, seed=args.seed, workers=args.workers
+    )
+    if "merge" in table.attrs:
+        out["merge"] = table.attrs["merge"]
+    out.pop("_detail").to_csv(RESULTS / f"poss_shuffle_detail_{_poss_tag(args)}.csv", index=False)
+    write_manifest(f"poss_shuffle_{_poss_tag(args)}", out)
+    _print("possession model A: within-half shuffle (post hoc)", out)
 
 
 def cmd_build(args) -> None:
@@ -813,15 +868,24 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--seed", type=int, default=0)
     p.set_defaults(func=cmd_build)
 
-    p = sub.add_parser("build-possessions", help="richer events: Wyscout possession table")
+    p = sub.add_parser("build-possessions", help="richer events: possession table (wyscout or statsbomb)")
+    p.add_argument("--source", default="wyscout", choices=["wyscout", "statsbomb"])
     p.set_defaults(func=cmd_build_possessions)
 
     for name, fn, helptext in (
         ("poss-recovery", cmd_poss_recovery, "possessions model A, gate 2: plant rho = 0.30. A GATE."),
         ("poss-power", cmd_poss_power, "possessions model A, gate 3: detection floor"),
         ("poss-fit", cmd_poss_fit, "possessions model A, gate 4: development fit (exploratory)"),
+        ("poss-shuffle", cmd_poss_shuffle, "possessions model A, spec section 9.2: within-half shuffle (post hoc)"),
     ):
         p = sub.add_parser(name, help=helptext)
+        p.add_argument("--source", default="wyscout", choices=["wyscout", "statsbomb"])
+        p.add_argument(
+            "--merge-regain",
+            type=float,
+            default=0.0,
+            help="quick-regain merge threshold in seconds (spec section 9.1; 0 = none)",
+        )
         p.add_argument("--tau", type=float, default=5.0)
         p.add_argument("--seed", type=int, default=5694)
         p.add_argument("--workers", type=int, default=None)
@@ -833,6 +897,8 @@ def build_parser() -> argparse.ArgumentParser:
         if name == "poss-fit":
             p.add_argument("--bootstrap", type=int, default=500)
             p.add_argument("--cluster-bootstrap", type=int, default=200)
+        if name == "poss-shuffle":
+            p.add_argument("--shuffles", type=int, default=200)
         p.set_defaults(func=fn)
 
     p = sub.add_parser("calibrate-dedup", help="step 2: threshold from a provider's second-clock gaps")

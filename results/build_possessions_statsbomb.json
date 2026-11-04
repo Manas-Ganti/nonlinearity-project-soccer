@@ -1,0 +1,62 @@
+{
+  "name": "build_possessions_statsbomb",
+  "written_at_utc": "2026-11-04T03:23:26+00:00",
+  "python": "3.12.7",
+  "platform": "macOS-27.2-arm64-arm-64bit",
+  "numpy": "2.5.4",
+  "git_rev": "3eea283",
+  "inputs": {},
+  "payload": {
+    "matches": 2112,
+    "seasons": [
+      2004,
+      2005,
+      2006,
+      2007,
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018
+    ],
+    "strict": {
+      "possessions_per_match": 299.5814393939394,
+      "dangerous_final_third_per_team_match": 56.12949810606061,
+      "dangerous_box_per_team_match": 17.159801136363637,
+      "frac_with_shot": 0.07632650351816612,
+      "shots_in_table": 52979,
+      "own_time_over_match_T_min": 0.9807216130173328,
+      "start_types": {
+        "open": 510797,
+        "throw_in": 62000,
+        "goal_kick": 33041,
+        "free_kick": 20567,
+        "corner": 6293,
+        "penalty": 18
+      }
+    },
+    "tolerant": {
+      "possessions_per_match": 175.67708333333334,
+      "dangerous_final_third_per_team_match": 42.13139204545455,
+      "dangerous_box_per_team_match": 15.058948863636363,
+      "frac_with_shot": 0.12218418995768536,
+      "shots_in_table": 52979,
+      "own_time_over_match_T_min": 0.9807216130173328,
+      "start_types": {
+        "open": 304921,
+        "throw_in": 35235,
+        "goal_kick": 18446,
+        "free_kick": 12109,
+        "corner": 312,
+        "penalty": 7
+      }
+    },
+    "shots_in_slate": 52979
+  }
+}
