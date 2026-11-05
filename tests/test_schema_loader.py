@@ -74,12 +74,12 @@ def test_dev_split_never_touches_holdout_seasons(tmp_path, monkeypatch):
 
 
 def test_holdout_access_is_logged(tmp_path, monkeypatch):
-    from src.config import LOGS
+    from src import runlog
 
     slate = synthetic.make_slate(n_matches=10, n_teams=6, seasons=(2016, 2020), seed=6)
     monkeypatch.setattr(loader, "slate_dir", lambda source: tmp_path)
     slate.save(tmp_path)
-    logfile = LOGS / loader.HOLDOUT_LOG
+    logfile = runlog.LOGS / loader.HOLDOUT_LOG
     before = logfile.read_text() if logfile.exists() else ""
     loader.load_slate("x", split="all", final_run=True, caller="pytest-marker")
     after = logfile.read_text()

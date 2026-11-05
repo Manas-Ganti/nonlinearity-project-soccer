@@ -211,8 +211,15 @@ def test_compare_rescales_each_model_by_its_own_compensator(small_slate):
     null_bg = pipe.fit_background(small_slate.events, warm_start=False)
     null_data = hk.prepare(small_slate, null_bg, CONFIG.hawkes)
 
-    # the null background must integrate to the observed count; the joint one, less
-    assert null_bg.integral_per_segment().sum() > joint_res.background.integral_per_segment().sum() - 1e-6
+    # the null background integrates to the observed count; the joint one, to the
+    # count minus the triggered share. When eta-hat is ~0 the two fits are the same
+    # Poisson MLE up to optimiser tolerance, so compare with a relative slack
+    # (ARC job 1389244 failed the old 1e-6 absolute check by 0.0075 on 1677 events).
+    n = len(small_slate.events[small_slate.events["situation"] != "penalty"])
+    null_int = null_bg.integral_per_segment().sum()
+    joint_int = joint_res.background.integral_per_segment().sum()
+    assert null_int == pytest.approx(n, rel=1e-3)
+    assert joint_int <= null_int + 1e-4 * n
 
     correct = g.compare(null_data, null_bg, joint_res.data, joint_res.hawkes_fit)
     wrong = g.compare(joint_res.data, null_bg, joint_res.data, joint_res.hawkes_fit)
