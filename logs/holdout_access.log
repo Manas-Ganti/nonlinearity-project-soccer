@@ -229,3 +229,10 @@
 2026-11-04T19:06:55+00:00	source=x split=holdout final_run=False caller=test touches_holdout=True matches=10
 2026-11-04T19:06:55+00:00	source=x split=dev final_run=False caller=test touches_holdout=False matches=10
 2026-11-04T19:06:56+00:00	source=x split=all final_run=True caller=pytest-marker touches_holdout=True matches=10
+2026-11-05T12:38:31+00:00	source=statsbomb split=dev final_run=False caller=test-possessions-statsbomb touches_holdout=False matches=2112
+2026-11-05T12:38:35+00:00	source=statsbomb split=dev final_run=False caller=test-possessions-statsbomb touches_holdout=False matches=2112
+2026-11-05T12:38:40+00:00	source=statsbomb split=dev final_run=False caller=test-possessions-statsbomb touches_holdout=False matches=2112
+2026-11-05T12:39:22+00:00	source=x split=all final_run=False caller=test touches_holdout=True matches=20
+2026-11-05T12:39:23+00:00	source=x split=holdout final_run=False caller=test touches_holdout=True matches=10
+2026-11-05T12:39:23+00:00	source=x split=dev final_run=False caller=test touches_holdout=False matches=10
+2026-11-05T12:39:25+00:00	source=x split=all final_run=True caller=pytest-marker touches_holdout=True matches=10
