@@ -1,0 +1,45 @@
+[arc_env] job=1389244 node=owl161 cpus=96 python=/home/manasganti/miniconda3/envs/soccer-momentum/bin/python (Python 3.12.7) commit=68d4967
+[spells] === pytest (12:37:31 UTC)
+(Linux uses --headless by default. To override, use --headed / --gui. For Xvfb mode instead, use --xvfb. Or you can hide this info by using --headless / --headless2 / --uc.)
+................................................F................s...... [ 43%]
+........................................................................ [ 86%]
+.....................s                                                   [100%]
+=================================== FAILURES ===================================
+___________ test_compare_rescales_each_model_by_its_own_compensator ____________
+
+small_slate = Slate(matches=60, events=1677, goals=227, cards=8)
+
+    def test_compare_rescales_each_model_by_its_own_compensator(small_slate):
+        """Regression test for a bug that made the null look worse than it is.
+    
+        The Poisson arm must use the background fitted under the null. Feeding it the
+        joint fit's background with eta = 0 gives an intensity that is too low everywhere,
+        which inflates the rescaled gaps and manufactures a lack of fit.
+        """
+        from src.inference import gof as g
+        from src.inference.pipeline import Pipeline
+        from src.models import hawkes as hk
+    
+        pipe = Pipeline(small_slate, CONFIG)
+        joint_res = pipe.run(small_slate.events, warm_start=False)
+        null_bg = pipe.fit_background(small_slate.events, warm_start=False)
+        null_data = hk.prepare(small_slate, null_bg, CONFIG.hawkes)
+    
+        # the null background must integrate to the observed count; the joint one, less
+>       assert null_bg.integral_per_segment().sum() > joint_res.background.integral_per_segment().sum() - 1e-6
+E       AssertionError: assert np.float64(1676.9869918344295) > (np.float64(1676.9944940106318) - 1e-06)
+E        +  where np.float64(1676.9869918344295) = <built-in method sum of numpy.ndarray object at 0x15553871dad0>()
+E        +    where <built-in method sum of numpy.ndarray object at 0x15553871dad0> = array([14.49934086, 16.36895432, 11.97413648, 14.7105836 , 13.68366783,\n        9.34038592, 16.02619471, 13.03894793, ...484024, 18.57570547,  9.78369647, 10.88396528,\n       16.71107125, 12.13570662, 11.18810572, 10.1702677 , 21.65745213]).sum
+E        +      where array([14.49934086, 16.36895432, 11.97413648, 14.7105836 , 13.68366783,\n        9.34038592, 16.02619471, 13.03894793, ...484024, 18.57570547,  9.78369647, 10.88396528,\n       16.71107125, 12.13570662, 11.18810572, 10.1702677 , 21.65745213]) = integral_per_segment()
+E        +        where integral_per_segment = BackgroundFit(params=array([-2.46696613e+00,  1.83812618e-01,  1.25606178e-01, -8.56959747e-02,\n        1.70477728e-02...ged=True, n_iter=117, message='CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH', ridge_penalty=1.0620300114451238).integral_per_segment
+E        +  and   np.float64(1676.9944940106318) = <built-in method sum of numpy.ndarray object at 0x15553871e430>()
+E        +    where <built-in method sum of numpy.ndarray object at 0x15553871e430> = array([14.49080264, 16.38757517, 11.97261334, 14.71101405, 13.67629019,\n        9.35268795, 16.01307594, 13.04597821, ...295525, 18.57106574,  9.78255915, 10.90091825,\n       16.71600912, 12.12641921, 11.19702043, 10.20013852, 21.6792786 ]).sum
+E        +      where array([14.49080264, 16.38757517, 11.97261334, 14.71101405, 13.67629019,\n        9.35268795, 16.01307594, 13.04597821, ...295525, 18.57106574,  9.78255915, 10.90091825,\n       16.71600912, 12.12641921, 11.19702043, 10.20013852, 21.6792786 ]) = integral_per_segment()
+E        +        where integral_per_segment = BackgroundFit(params=array([-2.40104775e+00,  1.83232007e-01,  1.06369079e-01, -1.04289971e-01,\n       -1.62982148e-03...ged=True, n_iter=222, message='CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH', ridge_penalty=1.0519967091241444).integral_per_segment
+E        +          where BackgroundFit(params=array([-2.40104775e+00,  1.83232007e-01,  1.06369079e-01, -1.04289971e-01,\n       -1.62982148e-03...ged=True, n_iter=222, message='CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH', ridge_penalty=1.0519967091241444) = PipelineResult(background=BackgroundFit(params=array([-2.40104775e+00,  1.83232007e-01,  1.06369079e-01, -1.04289971e-...: -4814.130073498767, 'eta_self': 9.449192695387325e-46, 'eta_cross': 4.427053497340296e-43, 'tau': 7.99987936435326}]).background
+
+tests/test_gof_inference.py:215: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_gof_inference.py::test_compare_rescales_each_model_by_its_own_compensator
+1 failed, 163 passed, 2 skipped in 502.63s (0:08:22)
+[spells] test suite FAILED on ARC: nothing runs
