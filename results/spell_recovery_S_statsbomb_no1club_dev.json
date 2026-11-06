@@ -1,0 +1,85 @@
+{
+  "name": "spell_recovery_S_statsbomb_no1club_dev",
+  "written_at_utc": "2026-11-06T03:05:16+00:00",
+  "python": "3.12.7",
+  "platform": "Linux-5.14.0-687.26.1.el9_8.x86_64-x86_64-with-glibc2.34",
+  "numpy": "2.5.3",
+  "git_rev": "5e9522f",
+  "inputs": {},
+  "payload": {
+    "source": "statsbomb",
+    "exclude_one_club": true,
+    "n_matches": 1660,
+    "n_shots_modelled": 39299,
+    "prep": {
+      "threshold_seconds": 4.0,
+      "n_before": 41745,
+      "n_after": 39730,
+      "removed_fraction": 0.04826925380285063,
+      "max_run_length": 4,
+      "collapsed_events": 1887,
+      "collapses_at_half_boundaries": 44,
+      "guard_enforced": true,
+      "jitter_seed": 20260910,
+      "remaining_exact_ties": 0
+    },
+    "possession_rule": "tolerant",
+    "merge": {
+      "threshold_s": 10.0,
+      "require_high_restart": true,
+      "n_before": 371030,
+      "n_after": 333119,
+      "possessions_removed_fraction": 0.1021777214780476,
+      "attacks_merged": 17219,
+      "dangerous_share_before": 0.47964585073983235,
+      "dangerous_share_after": 0.4884890984903293
+    },
+    "spell_rule": {
+      "need": 4,
+      "window": 5,
+      "danger_col": "t_ft"
+    },
+    "prevalence": {
+      "share_time_z1": 0.1870315830659625,
+      "rule": {
+        "need": 4,
+        "window": 5,
+        "danger_col": "t_ft"
+      },
+      "share_shots_z1": 0.23298302755795314
+    },
+    "model": "S",
+    "planted": {
+      "out": 0.1,
+      "in": 0.3
+    },
+    "eta_cross_planted": 0.05,
+    "tau_planted": 5.0,
+    "gamma_planted": [
+      0.08997285859574917,
+      -0.1246194127188518
+    ],
+    "n_replicates": 10,
+    "tolerance": 0.08,
+    "per_parameter": {
+      "out": {
+        "planted": 0.1,
+        "mean_hat": 0.0908151159872377,
+        "sd_hat": 0.007376228965493704,
+        "bias": -0.00918488401276231,
+        "passed": true
+      },
+      "in": {
+        "planted": 0.3,
+        "mean_hat": 0.28798000856856365,
+        "sd_hat": 0.01565613550211172,
+        "bias": -0.012019991431436339,
+        "passed": true
+      }
+    },
+    "mean_eta_cross_hat": 0.04862455389994609,
+    "mean_tau_hat": 4.626566212351882,
+    "n_unconverged": 0,
+    "passed": true
+  }
+}

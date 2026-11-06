@@ -1,0 +1,2027 @@
+[arc_env] job=1417438 node=owl153 cpus=96 python=/home/manasganti/miniconda3/envs/soccer-momentum/bin/python (Python 3.12.7) commit=5e9522f
+[spells] === pytest (01:10:34 UTC)
+(Linux uses --headless by default. To override, use --headed / --gui. For Xvfb mode instead, use --xvfb. Or you can hide this info by using --headless / --headless2 / --uc.)
+.................................................................s...... [ 43%]
+........................................................................ [ 86%]
+.....................s                                                   [100%]
+164 passed, 2 skipped in 488.00s (0:08:07)
+[spells] === wyscout S spell-recovery (01:18:59 UTC, workers=95)
+20:20:03 INFO    spell recovery 5/10 (10 workers)
+20:20:03 INFO    spell recovery 10/10 (10 workers)
+
+=== spell recovery ===
+{
+  "source": "wyscout",
+  "exclude_one_club": false,
+  "n_matches": 1941,
+  "n_shots_modelled": 43544,
+  "prep": {
+    "threshold_seconds": 4.0,
+    "n_before": 45869,
+    "n_after": 44126,
+    "removed_fraction": 0.03799952037323684,
+    "max_run_length": 4,
+    "collapsed_events": 1644,
+    "collapses_at_half_boundaries": 34,
+    "guard_enforced": true,
+    "jitter_seed": 20260910,
+    "remaining_exact_ties": 0
+  },
+  "possession_rule": "tolerant",
+  "merge": {
+    "threshold_s": 10.0,
+    "require_high_restart": true,
+    "n_before": 282263,
+    "n_after": 247762,
+    "possessions_removed_fraction": 0.12222997700725924,
+    "attacks_merged": 15616,
+    "dangerous_share_before": 0.5750240024374431,
+    "dangerous_share_after": 0.5962617350521872
+  },
+  "spell_rule": {
+    "need": 4,
+    "window": 5,
+    "danger_col": "t_ft"
+  },
+  "prevalence": {
+    "share_time_z1": 0.3165269946218508,
+    "rule": {
+      "need": 4,
+      "window": 5,
+      "danger_col": "t_ft"
+    },
+    "share_shots_z1": 0.3630810214954988
+  },
+  "model": "S",
+  "planted": {
+    "out": 0.1,
+    "in": 0.3
+  },
+  "eta_cross_planted": 0.05,
+  "tau_planted": 5.0,
+  "gamma_planted": [
+    0.04127214813420519,
+    -0.11302908235461809
+  ],
+  "n_replicates": 10,
+  "tolerance": 0.08,
+  "per_parameter": {
+    "out": {
+      "planted": 0.1,
+      "mean_hat": 0.094745769574872,
+      "sd_hat": 0.0061413832833997345,
+      "bias": -0.005254230425128001,
+      "passed": true
+    },
+    "in": {
+      "planted": 0.3,
+      "mean_hat": 0.2897689786826779,
+      "sd_hat": 0.007723124781107513,
+      "bias": -0.010231021317322064,
+      "passed": true
+    }
+  },
+  "mean_eta_cross_hat": 0.05104128984585895,
+  "mean_tau_hat": 4.728330354324447,
+  "n_unconverged": 0,
+  "passed": true
+}
+[spells] === wyscout S spell-recovery done in 1 min
+[spells] === wyscout S spell-power (01:20:04 UTC, workers=95)
+20:22:47 INFO    spell power 20/440 (95 workers)
+20:24:11 INFO    spell power 40/440 (95 workers)
+20:24:11 INFO    spell power 60/440 (95 workers)
+20:24:11 INFO    spell power 80/440 (95 workers)
+20:24:11 INFO    spell power 100/440 (95 workers)
+20:24:11 INFO    spell power 120/440 (95 workers)
+20:24:36 INFO    spell power 140/440 (95 workers)
+20:24:36 INFO    spell power 160/440 (95 workers)
+20:25:40 INFO    spell power 180/440 (95 workers)
+20:25:40 INFO    spell power 200/440 (95 workers)
+20:26:29 INFO    spell power 220/440 (95 workers)
+20:26:29 INFO    spell power 240/440 (95 workers)
+20:26:29 INFO    spell power 260/440 (95 workers)
+20:26:29 INFO    spell power 280/440 (95 workers)
+20:26:36 INFO    spell power 300/440 (95 workers)
+20:26:52 INFO    spell power 320/440 (95 workers)
+20:26:58 INFO    spell power 340/440 (95 workers)
+20:26:58 INFO    spell power 360/440 (95 workers)
+20:26:58 INFO    spell power 380/440 (95 workers)
+20:27:06 INFO    spell power 400/440 (95 workers)
+20:27:09 INFO    spell power 420/440 (95 workers)
+20:27:18 INFO    spell power 440/440 (95 workers)
+
+=== spell detection floors ===
+{
+  "source": "wyscout",
+  "exclude_one_club": false,
+  "n_matches": 1941,
+  "n_shots_modelled": 43544,
+  "prep": {
+    "threshold_seconds": 4.0,
+    "n_before": 45869,
+    "n_after": 44126,
+    "removed_fraction": 0.03799952037323684,
+    "max_run_length": 4,
+    "collapsed_events": 1644,
+    "collapses_at_half_boundaries": 34,
+    "guard_enforced": true,
+    "jitter_seed": 20260910,
+    "remaining_exact_ties": 0
+  },
+  "possession_rule": "tolerant",
+  "merge": {
+    "threshold_s": 10.0,
+    "require_high_restart": true,
+    "n_before": 282263,
+    "n_after": 247762,
+    "possessions_removed_fraction": 0.12222997700725924,
+    "attacks_merged": 15616,
+    "dangerous_share_before": 0.5750240024374431,
+    "dangerous_share_after": 0.5962617350521872
+  },
+  "spell_rule": {
+    "need": 4,
+    "window": 5,
+    "danger_col": "t_ft"
+  },
+  "prevalence": {
+    "share_time_z1": 0.3165269946218508,
+    "rule": {
+      "need": 4,
+      "window": 5,
+      "danger_col": "t_ft"
+    },
+    "share_shots_z1": 0.3630810214954988
+  },
+  "model": "S",
+  "alpha": 0.01,
+  "target_power": 0.8,
+  "grid": [
+    0.0,
+    0.02,
+    0.05,
+    0.1,
+    0.2
+  ],
+  "replicates": 30,
+  "null_replicates": 200,
+  "eta_cross_planted": 0.05,
+  "tau_planted": 5.0,
+  "floors": {
+    "out": {
+      "critical_value": 0.005201280355087456,
+      "detection_floor": 0.05
+    },
+    "in": {
+      "critical_value": 0.014337731476710273,
+      "detection_floor": 0.05
+    }
+  },
+  "curves": {
+    "out": [
+      {
+        "eta_planted": 0.0,
+        "power": 0.01,
+        "mean_hat": 0.00011920727820067078,
+        "bias": NaN,
+        "frac_converged": NaN
+      },
+      {
+        "eta_planted": 0.02,
+        "power": 0.6666666666666666,
+        "mean_hat": 0.009448524427020991,
+        "bias": -0.010551475572979009,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.05,
+        "power": 1.0,
+        "mean_hat": 0.03994705529167318,
+        "bias": -0.010052944708326822,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.1,
+        "power": 1.0,
+        "mean_hat": 0.08860256761103989,
+        "bias": -0.011397432388960113,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.2,
+        "power": 1.0,
+        "mean_hat": 0.18596067199227578,
+        "bias": -0.014039328007724228,
+        "frac_converged": 1.0
+      }
+    ],
+    "in": [
+      {
+        "eta_planted": 0.0,
+        "power": 0.01,
+        "mean_hat": 0.0006397196362933908,
+        "bias": NaN,
+        "frac_converged": NaN
+      },
+      {
+        "eta_planted": 0.02,
+        "power": 0.3333333333333333,
+        "mean_hat": 0.012075527061497336,
+        "bias": -0.007924472938502665,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.05,
+        "power": 1.0,
+        "mean_hat": 0.04109902071354792,
+        "bias": -0.00890097928645208,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.1,
+        "power": 1.0,
+        "mean_hat": 0.09129091651442796,
+        "bias": -0.008709083485572047,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.2,
+        "power": 1.0,
+        "mean_hat": 0.19014971965591979,
+        "bias": -0.009850280344080226,
+        "frac_converged": 1.0
+      }
+    ]
+  },
+  "n_unconverged": 0
+}
+[spells] === wyscout S spell-power done in 7 min
+[spells] === wyscout S spell-fit (01:27:18 UTC, workers=95)
+20:28:08 INFO  headline {'eta_out': 0.00642, 'eta_in': 0.00263, 'eta_cross': 0.0}
+20:30:53 INFO    spell null bootstrap 25/500 (95 workers)
+20:31:40 INFO    spell null bootstrap 50/500 (95 workers)
+20:31:40 INFO    spell null bootstrap 75/500 (95 workers)
+20:32:47 INFO    spell null bootstrap 100/500 (95 workers)
+20:32:47 INFO    spell null bootstrap 125/500 (95 workers)
+20:32:47 INFO    spell null bootstrap 150/500 (95 workers)
+20:34:29 INFO    spell null bootstrap 175/500 (95 workers)
+20:35:04 INFO    spell null bootstrap 200/500 (95 workers)
+20:35:04 INFO    spell null bootstrap 225/500 (95 workers)
+20:35:04 INFO    spell null bootstrap 250/500 (95 workers)
+20:35:04 INFO    spell null bootstrap 275/500 (95 workers)
+20:35:14 INFO    spell null bootstrap 300/500 (95 workers)
+20:35:14 INFO    spell null bootstrap 325/500 (95 workers)
+20:35:14 INFO    spell null bootstrap 350/500 (95 workers)
+20:35:16 INFO    spell null bootstrap 375/500 (95 workers)
+20:35:16 INFO    spell null bootstrap 400/500 (95 workers)
+20:35:16 INFO    spell null bootstrap 425/500 (95 workers)
+20:35:16 INFO    spell null bootstrap 450/500 (95 workers)
+20:35:16 INFO    spell null bootstrap 475/500 (95 workers)
+20:35:49 INFO    spell null bootstrap 500/500 (95 workers)
+20:38:11 INFO    spell cluster bootstrap 25/200 (95 workers)
+20:38:12 INFO    spell cluster bootstrap 50/200 (95 workers)
+20:38:12 INFO    spell cluster bootstrap 75/200 (95 workers)
+20:38:47 INFO    spell cluster bootstrap 100/200 (95 workers)
+20:38:47 INFO    spell cluster bootstrap 125/200 (95 workers)
+20:38:47 INFO    spell cluster bootstrap 150/200 (95 workers)
+20:38:55 INFO    spell cluster bootstrap 175/200 (95 workers)
+20:39:25 INFO    spell cluster bootstrap 200/200 (95 workers)
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/manasganti/ondemand/data/nonlinearity-project-soccer/src/cli/main.py", line 982, in <module>
+    main()
+  File "/home/manasganti/ondemand/data/nonlinearity-project-soccer/src/cli/main.py", line 978, in main
+    args.func(args)
+  File "/home/manasganti/ondemand/data/nonlinearity-project-soccer/src/cli/spell_cmds.py", line 202, in cmd_spell_fit
+    payload["sensitivities"] = _sensitivities(args, slate, spell)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/manasganti/ondemand/data/nonlinearity-project-soccer/src/cli/spell_cmds.py", line 170, in _sensitivities
+    done = dict(pmap(run, jobs, workers=args.workers, label="spell sensitivities", every=1))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/manasganti/ondemand/data/nonlinearity-project-soccer/src/inference/parallel.py", line 54, in pmap
+    for i, r in enumerate(pool.imap(_call, items, chunksize=1), start=1):
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/manasganti/miniconda3/envs/soccer-momentum/lib/python3.12/multiprocessing/pool.py", line 873, in next
+    raise value
+  File "/home/manasganti/miniconda3/envs/soccer-momentum/lib/python3.12/multiprocessing/pool.py", line 540, in _handle_tasks
+    put(task)
+  File "/home/manasganti/miniconda3/envs/soccer-momentum/lib/python3.12/multiprocessing/connection.py", line 206, in send
+    self._send_bytes(_ForkingPickler.dumps(obj))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/manasganti/miniconda3/envs/soccer-momentum/lib/python3.12/multiprocessing/reduction.py", line 51, in dumps
+    cls(buf, protocol).dump(obj)
+AttributeError: Can't get local object '_sensitivities.<locals>.<lambda>'
+[spells] === wyscout S spell-fit FAILED
+[spells] === wyscout G spell-recovery (01:39:25 UTC, workers=95)
+20:40:45 INFO    spell recovery 5/10 (10 workers)
+20:40:45 INFO    spell recovery 10/10 (10 workers)
+
+=== spell recovery ===
+{
+  "source": "wyscout",
+  "exclude_one_club": false,
+  "n_matches": 1941,
+  "n_shots_modelled": 43544,
+  "prep": {
+    "threshold_seconds": 4.0,
+    "n_before": 45869,
+    "n_after": 44126,
+    "removed_fraction": 0.03799952037323684,
+    "max_run_length": 4,
+    "collapsed_events": 1644,
+    "collapses_at_half_boundaries": 34,
+    "guard_enforced": true,
+    "jitter_seed": 20260910,
+    "remaining_exact_ties": 0
+  },
+  "possession_rule": "tolerant",
+  "merge": {
+    "threshold_s": 10.0,
+    "require_high_restart": true,
+    "n_before": 282263,
+    "n_after": 247762,
+    "possessions_removed_fraction": 0.12222997700725924,
+    "attacks_merged": 15616,
+    "dangerous_share_before": 0.5750240024374431,
+    "dangerous_share_after": 0.5962617350521872
+  },
+  "spell_rule": {
+    "need": 4,
+    "window": 5,
+    "danger_col": "t_ft"
+  },
+  "prevalence": {
+    "share_time_z1": 0.3165269946218508,
+    "rule": {
+      "need": 4,
+      "window": 5,
+      "danger_col": "t_ft"
+    },
+    "share_shots_z1": 0.3630810214954988
+  },
+  "model": "G",
+  "planted": {
+    "level": 0.3,
+    "trail": 0.1,
+    "lead": 0.2
+  },
+  "eta_cross_planted": 0.05,
+  "tau_planted": 5.0,
+  "gamma_planted": [
+    0.0,
+    0.0
+  ],
+  "n_replicates": 10,
+  "tolerance": 0.08,
+  "per_parameter": {
+    "level": {
+      "planted": 0.3,
+      "mean_hat": 0.28833886584666163,
+      "sd_hat": 0.008016610794052515,
+      "bias": -0.01166113415333836,
+      "passed": true
+    },
+    "trail": {
+      "planted": 0.1,
+      "mean_hat": 0.08570051934202808,
+      "sd_hat": 0.012237903357690752,
+      "bias": -0.01429948065797193,
+      "passed": true
+    },
+    "lead": {
+      "planted": 0.2,
+      "mean_hat": 0.188733847234923,
+      "sd_hat": 0.009684851193316638,
+      "bias": -0.011266152765077003,
+      "passed": true
+    }
+  },
+  "mean_eta_cross_hat": 0.047878635788193166,
+  "mean_tau_hat": 4.672433129971871,
+  "n_unconverged": 0,
+  "passed": true
+}
+[spells] === wyscout G spell-recovery done in 1 min
+[spells] === wyscout G spell-power (01:40:45 UTC, workers=95)
+20:43:31 INFO    spell power 20/560 (95 workers)
+20:44:33 INFO    spell power 40/560 (95 workers)
+20:44:33 INFO    spell power 60/560 (95 workers)
+20:44:33 INFO    spell power 80/560 (95 workers)
+20:44:33 INFO    spell power 100/560 (95 workers)
+20:44:42 INFO    spell power 120/560 (95 workers)
+20:45:16 INFO    spell power 140/560 (95 workers)
+20:45:54 INFO    spell power 160/560 (95 workers)
+20:45:54 INFO    spell power 180/560 (95 workers)
+20:45:54 INFO    spell power 200/560 (95 workers)
+20:46:26 INFO    spell power 220/560 (95 workers)
+20:49:34 INFO    spell power 240/560 (95 workers)
+20:49:34 INFO    spell power 260/560 (95 workers)
+20:49:34 INFO    spell power 280/560 (95 workers)
+20:49:34 INFO    spell power 300/560 (95 workers)
+20:49:34 INFO    spell power 320/560 (95 workers)
+20:49:34 INFO    spell power 340/560 (95 workers)
+20:49:34 INFO    spell power 360/560 (95 workers)
+20:49:49 INFO    spell power 380/560 (95 workers)
+20:49:49 INFO    spell power 400/560 (95 workers)
+20:49:50 INFO    spell power 420/560 (95 workers)
+20:50:13 INFO    spell power 440/560 (95 workers)
+20:50:38 INFO    spell power 460/560 (95 workers)
+20:50:38 INFO    spell power 480/560 (95 workers)
+20:50:38 INFO    spell power 500/560 (95 workers)
+20:50:38 INFO    spell power 520/560 (95 workers)
+20:50:38 INFO    spell power 540/560 (95 workers)
+20:50:38 INFO    spell power 560/560 (95 workers)
+
+=== spell detection floors ===
+{
+  "source": "wyscout",
+  "exclude_one_club": false,
+  "n_matches": 1941,
+  "n_shots_modelled": 43544,
+  "prep": {
+    "threshold_seconds": 4.0,
+    "n_before": 45869,
+    "n_after": 44126,
+    "removed_fraction": 0.03799952037323684,
+    "max_run_length": 4,
+    "collapsed_events": 1644,
+    "collapses_at_half_boundaries": 34,
+    "guard_enforced": true,
+    "jitter_seed": 20260910,
+    "remaining_exact_ties": 0
+  },
+  "possession_rule": "tolerant",
+  "merge": {
+    "threshold_s": 10.0,
+    "require_high_restart": true,
+    "n_before": 282263,
+    "n_after": 247762,
+    "possessions_removed_fraction": 0.12222997700725924,
+    "attacks_merged": 15616,
+    "dangerous_share_before": 0.5750240024374431,
+    "dangerous_share_after": 0.5962617350521872
+  },
+  "spell_rule": {
+    "need": 4,
+    "window": 5,
+    "danger_col": "t_ft"
+  },
+  "prevalence": {
+    "share_time_z1": 0.3165269946218508,
+    "rule": {
+      "need": 4,
+      "window": 5,
+      "danger_col": "t_ft"
+    },
+    "share_shots_z1": 0.3630810214954988
+  },
+  "model": "G",
+  "alpha": 0.01,
+  "target_power": 0.8,
+  "grid": [
+    0.0,
+    0.02,
+    0.05,
+    0.1,
+    0.2
+  ],
+  "replicates": 30,
+  "null_replicates": 200,
+  "eta_cross_planted": 0.05,
+  "tau_planted": 5.0,
+  "floors": {
+    "level": {
+      "critical_value": 0.005375749758659861,
+      "detection_floor": 0.05
+    },
+    "trail": {
+      "critical_value": 0.01074092478625565,
+      "detection_floor": 0.05
+    },
+    "lead": {
+      "critical_value": 0.015331718496294318,
+      "detection_floor": 0.05
+    }
+  },
+  "curves": {
+    "level": [
+      {
+        "eta_planted": 0.0,
+        "power": 0.01,
+        "mean_hat": 0.00015476249383778134,
+        "bias": NaN,
+        "frac_converged": NaN
+      },
+      {
+        "eta_planted": 0.02,
+        "power": 0.5,
+        "mean_hat": 0.008051795572826556,
+        "bias": -0.011948204427173445,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.05,
+        "power": 1.0,
+        "mean_hat": 0.041315914375162084,
+        "bias": -0.008684085624837919,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.1,
+        "power": 1.0,
+        "mean_hat": 0.0893809658387048,
+        "bias": -0.010619034161295199,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.2,
+        "power": 1.0,
+        "mean_hat": 0.18947828883220275,
+        "bias": -0.010521711167797265,
+        "frac_converged": 1.0
+      }
+    ],
+    "trail": [
+      {
+        "eta_planted": 0.0,
+        "power": 0.01,
+        "mean_hat": 0.0005841098172817533,
+        "bias": NaN,
+        "frac_converged": NaN
+      },
+      {
+        "eta_planted": 0.02,
+        "power": 0.4666666666666667,
+        "mean_hat": 0.01154253973257937,
+        "bias": -0.00845746026742063,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.05,
+        "power": 1.0,
+        "mean_hat": 0.04547570344290054,
+        "bias": -0.004524296557099461,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.1,
+        "power": 1.0,
+        "mean_hat": 0.08699170512090881,
+        "bias": -0.013008294879091192,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.2,
+        "power": 1.0,
+        "mean_hat": 0.1899796430865183,
+        "bias": -0.010020356913481715,
+        "frac_converged": 1.0
+      }
+    ],
+    "lead": [
+      {
+        "eta_planted": 0.0,
+        "power": 0.01,
+        "mean_hat": 0.001589792047535812,
+        "bias": NaN,
+        "frac_converged": NaN
+      },
+      {
+        "eta_planted": 0.02,
+        "power": 0.3333333333333333,
+        "mean_hat": 0.012291470972740932,
+        "bias": -0.007708529027259069,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.05,
+        "power": 1.0,
+        "mean_hat": 0.04166561449940081,
+        "bias": -0.008334385500599194,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.1,
+        "power": 1.0,
+        "mean_hat": 0.0916153418431842,
+        "bias": -0.0083846581568158,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.2,
+        "power": 1.0,
+        "mean_hat": 0.18937947103745964,
+        "bias": -0.010620528962540371,
+        "frac_converged": 1.0
+      }
+    ]
+  },
+  "n_unconverged": 0
+}
+[spells] === wyscout G spell-power done in 9 min
+[spells] === wyscout G spell-fit (01:50:39 UTC, workers=95)
+20:51:27 INFO  headline {'eta_level': 0.00043, 'eta_trail': 0.02279, 'eta_lead': 0.03445, 'eta_cross': 0.0}
+20:54:53 INFO    spell null bootstrap 25/500 (95 workers)
+20:54:58 INFO    spell null bootstrap 50/500 (95 workers)
+20:57:13 INFO    spell null bootstrap 75/500 (95 workers)
+20:57:13 INFO    spell null bootstrap 100/500 (95 workers)
+20:57:36 INFO    spell null bootstrap 125/500 (95 workers)
+20:57:36 INFO    spell null bootstrap 150/500 (95 workers)
+20:57:36 INFO    spell null bootstrap 175/500 (95 workers)
+20:57:36 INFO    spell null bootstrap 200/500 (95 workers)
+20:57:54 INFO    spell null bootstrap 225/500 (95 workers)
+20:58:33 INFO    spell null bootstrap 250/500 (95 workers)
+20:58:33 INFO    spell null bootstrap 275/500 (95 workers)
+20:58:33 INFO    spell null bootstrap 300/500 (95 workers)
+20:58:33 INFO    spell null bootstrap 325/500 (95 workers)
+20:58:33 INFO    spell null bootstrap 350/500 (95 workers)
+20:58:33 INFO    spell null bootstrap 375/500 (95 workers)
+20:58:33 INFO    spell null bootstrap 400/500 (95 workers)
+20:58:57 INFO    spell null bootstrap 425/500 (95 workers)
+20:58:57 INFO    spell null bootstrap 450/500 (95 workers)
+20:58:57 INFO    spell null bootstrap 475/500 (95 workers)
+20:59:14 INFO    spell null bootstrap 500/500 (95 workers)
+21:00:47 INFO    spell cluster bootstrap 25/200 (95 workers)
+21:00:50 INFO    spell cluster bootstrap 50/200 (95 workers)
+21:00:50 INFO    spell cluster bootstrap 75/200 (95 workers)
+21:01:24 INFO    spell cluster bootstrap 100/200 (95 workers)
+21:01:24 INFO    spell cluster bootstrap 125/200 (95 workers)
+21:01:43 INFO    spell cluster bootstrap 150/200 (95 workers)
+21:01:51 INFO    spell cluster bootstrap 175/200 (95 workers)
+21:02:09 INFO    spell cluster bootstrap 200/200 (95 workers)
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/manasganti/ondemand/data/nonlinearity-project-soccer/src/cli/main.py", line 982, in <module>
+    main()
+  File "/home/manasganti/ondemand/data/nonlinearity-project-soccer/src/cli/main.py", line 978, in main
+    args.func(args)
+  File "/home/manasganti/ondemand/data/nonlinearity-project-soccer/src/cli/spell_cmds.py", line 202, in cmd_spell_fit
+    payload["sensitivities"] = _sensitivities(args, slate, spell)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/manasganti/ondemand/data/nonlinearity-project-soccer/src/cli/spell_cmds.py", line 170, in _sensitivities
+    done = dict(pmap(run, jobs, workers=args.workers, label="spell sensitivities", every=1))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/manasganti/ondemand/data/nonlinearity-project-soccer/src/inference/parallel.py", line 54, in pmap
+    for i, r in enumerate(pool.imap(_call, items, chunksize=1), start=1):
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/manasganti/miniconda3/envs/soccer-momentum/lib/python3.12/multiprocessing/pool.py", line 873, in next
+    raise value
+  File "/home/manasganti/miniconda3/envs/soccer-momentum/lib/python3.12/multiprocessing/pool.py", line 540, in _handle_tasks
+    put(task)
+  File "/home/manasganti/miniconda3/envs/soccer-momentum/lib/python3.12/multiprocessing/connection.py", line 206, in send
+    self._send_bytes(_ForkingPickler.dumps(obj))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/manasganti/miniconda3/envs/soccer-momentum/lib/python3.12/multiprocessing/reduction.py", line 51, in dumps
+    cls(buf, protocol).dump(obj)
+AttributeError: Can't get local object '_sensitivities.<locals>.<lambda>'
+[spells] === wyscout G spell-fit FAILED
+[spells] === statsbomb S spell-recovery (02:02:12 UTC, workers=95)
+21:03:41 INFO    spell recovery 5/10 (10 workers)
+21:04:04 INFO    spell recovery 10/10 (10 workers)
+
+=== spell recovery ===
+{
+  "source": "statsbomb",
+  "exclude_one_club": false,
+  "n_matches": 2112,
+  "n_shots_modelled": 49880,
+  "prep": {
+    "threshold_seconds": 4.0,
+    "n_before": 52979,
+    "n_after": 50445,
+    "removed_fraction": 0.047830272372071936,
+    "max_run_length": 4,
+    "collapsed_events": 2372,
+    "collapses_at_half_boundaries": 50,
+    "guard_enforced": true,
+    "jitter_seed": 20260910,
+    "remaining_exact_ties": 0
+  },
+  "possession_rule": "tolerant",
+  "merge": {
+    "threshold_s": 10.0,
+    "require_high_restart": true,
+    "n_before": 371030,
+    "n_after": 333119,
+    "possessions_removed_fraction": 0.1021777214780476,
+    "attacks_merged": 17219,
+    "dangerous_share_before": 0.47964585073983235,
+    "dangerous_share_after": 0.4884890984903293
+  },
+  "spell_rule": {
+    "need": 4,
+    "window": 5,
+    "danger_col": "t_ft"
+  },
+  "prevalence": {
+    "share_time_z1": 0.19427059644721034,
+    "rule": {
+      "need": 4,
+      "window": 5,
+      "danger_col": "t_ft"
+    },
+    "share_shots_z1": 0.24330392943063353
+  },
+  "model": "S",
+  "planted": {
+    "out": 0.1,
+    "in": 0.3
+  },
+  "eta_cross_planted": 0.05,
+  "tau_planted": 5.0,
+  "gamma_planted": [
+    0.07155454397492053,
+    -0.11701042203019929
+  ],
+  "n_replicates": 10,
+  "tolerance": 0.08,
+  "per_parameter": {
+    "out": {
+      "planted": 0.1,
+      "mean_hat": 0.07679483788653253,
+      "sd_hat": 0.008616593664036219,
+      "bias": -0.023205162113467473,
+      "passed": true
+    },
+    "in": {
+      "planted": 0.3,
+      "mean_hat": 0.26866190271202545,
+      "sd_hat": 0.013092710951183818,
+      "bias": -0.03133809728797454,
+      "passed": true
+    }
+  },
+  "mean_eta_cross_hat": 0.04465265377925531,
+  "mean_tau_hat": 4.394035293901011,
+  "n_unconverged": 0,
+  "passed": true
+}
+[spells] === statsbomb S spell-recovery done in 1 min
+[spells] === statsbomb S spell-power (02:04:10 UTC, workers=95)
+21:08:48 INFO    spell power 20/440 (95 workers)
+21:09:27 INFO    spell power 40/440 (95 workers)
+21:10:15 INFO    spell power 60/440 (95 workers)
+21:10:15 INFO    spell power 80/440 (95 workers)
+21:10:15 INFO    spell power 100/440 (95 workers)
+21:10:15 INFO    spell power 120/440 (95 workers)
+21:11:57 INFO    spell power 140/440 (95 workers)
+21:12:04 INFO    spell power 160/440 (95 workers)
+21:14:06 INFO    spell power 180/440 (95 workers)
+21:14:06 INFO    spell power 200/440 (95 workers)
+21:14:54 INFO    spell power 220/440 (95 workers)
+21:14:54 INFO    spell power 240/440 (95 workers)
+21:14:54 INFO    spell power 260/440 (95 workers)
+21:14:54 INFO    spell power 280/440 (95 workers)
+21:14:54 INFO    spell power 300/440 (95 workers)
+21:14:54 INFO    spell power 320/440 (95 workers)
+21:15:01 INFO    spell power 340/440 (95 workers)
+21:15:01 INFO    spell power 360/440 (95 workers)
+21:15:08 INFO    spell power 380/440 (95 workers)
+21:15:19 INFO    spell power 400/440 (95 workers)
+21:15:19 INFO    spell power 420/440 (95 workers)
+21:15:22 INFO    spell power 440/440 (95 workers)
+
+=== spell detection floors ===
+{
+  "source": "statsbomb",
+  "exclude_one_club": false,
+  "n_matches": 2112,
+  "n_shots_modelled": 49880,
+  "prep": {
+    "threshold_seconds": 4.0,
+    "n_before": 52979,
+    "n_after": 50445,
+    "removed_fraction": 0.047830272372071936,
+    "max_run_length": 4,
+    "collapsed_events": 2372,
+    "collapses_at_half_boundaries": 50,
+    "guard_enforced": true,
+    "jitter_seed": 20260910,
+    "remaining_exact_ties": 0
+  },
+  "possession_rule": "tolerant",
+  "merge": {
+    "threshold_s": 10.0,
+    "require_high_restart": true,
+    "n_before": 371030,
+    "n_after": 333119,
+    "possessions_removed_fraction": 0.1021777214780476,
+    "attacks_merged": 17219,
+    "dangerous_share_before": 0.47964585073983235,
+    "dangerous_share_after": 0.4884890984903293
+  },
+  "spell_rule": {
+    "need": 4,
+    "window": 5,
+    "danger_col": "t_ft"
+  },
+  "prevalence": {
+    "share_time_z1": 0.19427059644721034,
+    "rule": {
+      "need": 4,
+      "window": 5,
+      "danger_col": "t_ft"
+    },
+    "share_shots_z1": 0.24330392943063353
+  },
+  "model": "S",
+  "alpha": 0.01,
+  "target_power": 0.8,
+  "grid": [
+    0.0,
+    0.02,
+    0.05,
+    0.1,
+    0.2
+  ],
+  "replicates": 30,
+  "null_replicates": 200,
+  "eta_cross_planted": 0.05,
+  "tau_planted": 5.0,
+  "floors": {
+    "out": {
+      "critical_value": 7.585684745507146e-05,
+      "detection_floor": 0.05
+    },
+    "in": {
+      "critical_value": 0.01114619856008059,
+      "detection_floor": 0.05
+    }
+  },
+  "curves": {
+    "out": [
+      {
+        "eta_planted": 0.0,
+        "power": 0.01,
+        "mean_hat": 2.9485403406756253e-06,
+        "bias": NaN,
+        "frac_converged": NaN
+      },
+      {
+        "eta_planted": 0.02,
+        "power": 0.36666666666666664,
+        "mean_hat": 0.002980261103446949,
+        "bias": -0.01701973889655305,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.05,
+        "power": 1.0,
+        "mean_hat": 0.029645803754750493,
+        "bias": -0.02035419624524951,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.1,
+        "power": 1.0,
+        "mean_hat": 0.0759313320095749,
+        "bias": -0.024068667990425105,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.2,
+        "power": 1.0,
+        "mean_hat": 0.1733025237892247,
+        "bias": -0.02669747621077531,
+        "frac_converged": 1.0
+      }
+    ],
+    "in": [
+      {
+        "eta_planted": 0.0,
+        "power": 0.01,
+        "mean_hat": 0.0005893163517543695,
+        "bias": NaN,
+        "frac_converged": NaN
+      },
+      {
+        "eta_planted": 0.02,
+        "power": 0.2,
+        "mean_hat": 0.005786646224124022,
+        "bias": -0.01421335377587598,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.05,
+        "power": 1.0,
+        "mean_hat": 0.03210588965786179,
+        "bias": -0.01789411034213821,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.1,
+        "power": 1.0,
+        "mean_hat": 0.07741535494730768,
+        "bias": -0.022584645052692323,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.2,
+        "power": 1.0,
+        "mean_hat": 0.1764910027559514,
+        "bias": -0.02350899724404862,
+        "frac_converged": 1.0
+      }
+    ]
+  },
+  "n_unconverged": 0
+}
+[spells] === statsbomb S spell-power done in 11 min
+[spells] === statsbomb S spell-fit (02:15:22 UTC, workers=95)
+21:16:21 INFO  headline {'eta_out': 0.0, 'eta_in': 1e-05, 'eta_cross': 0.0}
+21:19:52 INFO    spell null bootstrap 25/500 (95 workers)
+21:19:56 INFO    spell null bootstrap 50/500 (95 workers)
+21:20:17 INFO    spell null bootstrap 75/500 (95 workers)
+21:21:31 INFO    spell null bootstrap 100/500 (95 workers)
+21:21:31 INFO    spell null bootstrap 125/500 (95 workers)
+21:22:33 INFO    spell null bootstrap 150/500 (95 workers)
+21:22:49 INFO    spell null bootstrap 175/500 (95 workers)
+21:23:10 INFO    spell null bootstrap 200/500 (95 workers)
+21:23:43 INFO    spell null bootstrap 225/500 (95 workers)
+21:24:38 INFO    spell null bootstrap 250/500 (95 workers)
+21:24:38 INFO    spell null bootstrap 275/500 (95 workers)
+21:25:03 INFO    spell null bootstrap 300/500 (95 workers)
+21:26:03 INFO    spell null bootstrap 325/500 (95 workers)
+21:26:33 INFO    spell null bootstrap 350/500 (95 workers)
+21:27:05 INFO    spell null bootstrap 375/500 (95 workers)
+21:27:05 INFO    spell null bootstrap 400/500 (95 workers)
+21:27:22 INFO    spell null bootstrap 425/500 (95 workers)
+21:27:28 INFO    spell null bootstrap 450/500 (95 workers)
+21:27:35 INFO    spell null bootstrap 475/500 (95 workers)
+21:27:48 INFO    spell null bootstrap 500/500 (95 workers)
+21:29:32 INFO    spell cluster bootstrap 25/200 (95 workers)
+21:29:32 INFO    spell cluster bootstrap 50/200 (95 workers)
+21:29:32 INFO    spell cluster bootstrap 75/200 (95 workers)
+21:29:55 INFO    spell cluster bootstrap 100/200 (95 workers)
+21:30:03 INFO    spell cluster bootstrap 125/200 (95 workers)
+21:30:15 INFO    spell cluster bootstrap 150/200 (95 workers)
+21:30:23 INFO    spell cluster bootstrap 175/200 (95 workers)
+21:30:51 INFO    spell cluster bootstrap 200/200 (95 workers)
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/manasganti/ondemand/data/nonlinearity-project-soccer/src/cli/main.py", line 982, in <module>
+    main()
+  File "/home/manasganti/ondemand/data/nonlinearity-project-soccer/src/cli/main.py", line 978, in main
+    args.func(args)
+  File "/home/manasganti/ondemand/data/nonlinearity-project-soccer/src/cli/spell_cmds.py", line 202, in cmd_spell_fit
+    payload["sensitivities"] = _sensitivities(args, slate, spell)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/manasganti/ondemand/data/nonlinearity-project-soccer/src/cli/spell_cmds.py", line 170, in _sensitivities
+    done = dict(pmap(run, jobs, workers=args.workers, label="spell sensitivities", every=1))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/manasganti/ondemand/data/nonlinearity-project-soccer/src/inference/parallel.py", line 54, in pmap
+    for i, r in enumerate(pool.imap(_call, items, chunksize=1), start=1):
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/manasganti/miniconda3/envs/soccer-momentum/lib/python3.12/multiprocessing/pool.py", line 873, in next
+    raise value
+  File "/home/manasganti/miniconda3/envs/soccer-momentum/lib/python3.12/multiprocessing/pool.py", line 540, in _handle_tasks
+    put(task)
+  File "/home/manasganti/miniconda3/envs/soccer-momentum/lib/python3.12/multiprocessing/connection.py", line 206, in send
+    self._send_bytes(_ForkingPickler.dumps(obj))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/manasganti/miniconda3/envs/soccer-momentum/lib/python3.12/multiprocessing/reduction.py", line 51, in dumps
+    cls(buf, protocol).dump(obj)
+AttributeError: Can't get local object '_sensitivities.<locals>.<lambda>'
+[spells] === statsbomb S spell-fit FAILED
+[spells] === statsbomb G spell-recovery (02:30:51 UTC, workers=95)
+21:32:55 INFO    spell recovery 5/10 (10 workers)
+21:32:55 INFO    spell recovery 10/10 (10 workers)
+
+=== spell recovery ===
+{
+  "source": "statsbomb",
+  "exclude_one_club": false,
+  "n_matches": 2112,
+  "n_shots_modelled": 49880,
+  "prep": {
+    "threshold_seconds": 4.0,
+    "n_before": 52979,
+    "n_after": 50445,
+    "removed_fraction": 0.047830272372071936,
+    "max_run_length": 4,
+    "collapsed_events": 2372,
+    "collapses_at_half_boundaries": 50,
+    "guard_enforced": true,
+    "jitter_seed": 20260910,
+    "remaining_exact_ties": 0
+  },
+  "possession_rule": "tolerant",
+  "merge": {
+    "threshold_s": 10.0,
+    "require_high_restart": true,
+    "n_before": 371030,
+    "n_after": 333119,
+    "possessions_removed_fraction": 0.1021777214780476,
+    "attacks_merged": 17219,
+    "dangerous_share_before": 0.47964585073983235,
+    "dangerous_share_after": 0.4884890984903293
+  },
+  "spell_rule": {
+    "need": 4,
+    "window": 5,
+    "danger_col": "t_ft"
+  },
+  "prevalence": {
+    "share_time_z1": 0.19427059644721034,
+    "rule": {
+      "need": 4,
+      "window": 5,
+      "danger_col": "t_ft"
+    },
+    "share_shots_z1": 0.24330392943063353
+  },
+  "model": "G",
+  "planted": {
+    "level": 0.3,
+    "trail": 0.1,
+    "lead": 0.2
+  },
+  "eta_cross_planted": 0.05,
+  "tau_planted": 5.0,
+  "gamma_planted": [
+    0.0,
+    0.0
+  ],
+  "n_replicates": 10,
+  "tolerance": 0.08,
+  "per_parameter": {
+    "level": {
+      "planted": 0.3,
+      "mean_hat": 0.27679007691626706,
+      "sd_hat": 0.007624112929070599,
+      "bias": -0.02320992308373293,
+      "passed": true
+    },
+    "trail": {
+      "planted": 0.1,
+      "mean_hat": 0.06932701050121323,
+      "sd_hat": 0.007493691449317027,
+      "bias": -0.030672989498786773,
+      "passed": true
+    },
+    "lead": {
+      "planted": 0.2,
+      "mean_hat": 0.1709179377370687,
+      "sd_hat": 0.013371996882080421,
+      "bias": -0.029082062262931307,
+      "passed": true
+    }
+  },
+  "mean_eta_cross_hat": 0.045354066124208434,
+  "mean_tau_hat": 4.506555088758885,
+  "n_unconverged": 0,
+  "passed": true
+}
+[spells] === statsbomb G spell-recovery done in 2 min
+[spells] === statsbomb G spell-power (02:32:55 UTC, workers=95)
+21:36:26 INFO    spell power 20/560 (95 workers)
+21:36:55 INFO    spell power 40/560 (95 workers)
+21:36:55 INFO    spell power 60/560 (95 workers)
+21:37:24 INFO    spell power 80/560 (95 workers)
+21:37:24 INFO    spell power 100/560 (95 workers)
+21:39:23 INFO    spell power 120/560 (95 workers)
+21:39:23 INFO    spell power 140/560 (95 workers)
+21:39:52 INFO    spell power 160/560 (95 workers)
+21:40:17 INFO    spell power 180/560 (95 workers)
+21:40:17 INFO    spell power 200/560 (95 workers)
+21:40:52 INFO    spell power 220/560 (95 workers)
+21:40:54 INFO    spell power 240/560 (95 workers)
+21:41:42 INFO    spell power 260/560 (95 workers)
+21:41:42 INFO    spell power 280/560 (95 workers)
+21:43:09 INFO    spell power 300/560 (95 workers)
+21:43:09 INFO    spell power 320/560 (95 workers)
+21:44:06 INFO    spell power 340/560 (95 workers)
+21:44:06 INFO    spell power 360/560 (95 workers)
+21:44:09 INFO    spell power 380/560 (95 workers)
+21:44:34 INFO    spell power 400/560 (95 workers)
+21:45:04 INFO    spell power 420/560 (95 workers)
+21:45:04 INFO    spell power 440/560 (95 workers)
+21:45:17 INFO    spell power 460/560 (95 workers)
+21:45:17 INFO    spell power 480/560 (95 workers)
+21:45:35 INFO    spell power 500/560 (95 workers)
+21:45:35 INFO    spell power 520/560 (95 workers)
+21:45:55 INFO    spell power 540/560 (95 workers)
+21:45:55 INFO    spell power 560/560 (95 workers)
+
+=== spell detection floors ===
+{
+  "source": "statsbomb",
+  "exclude_one_club": false,
+  "n_matches": 2112,
+  "n_shots_modelled": 49880,
+  "prep": {
+    "threshold_seconds": 4.0,
+    "n_before": 52979,
+    "n_after": 50445,
+    "removed_fraction": 0.047830272372071936,
+    "max_run_length": 4,
+    "collapsed_events": 2372,
+    "collapses_at_half_boundaries": 50,
+    "guard_enforced": true,
+    "jitter_seed": 20260910,
+    "remaining_exact_ties": 0
+  },
+  "possession_rule": "tolerant",
+  "merge": {
+    "threshold_s": 10.0,
+    "require_high_restart": true,
+    "n_before": 371030,
+    "n_after": 333119,
+    "possessions_removed_fraction": 0.1021777214780476,
+    "attacks_merged": 17219,
+    "dangerous_share_before": 0.47964585073983235,
+    "dangerous_share_after": 0.4884890984903293
+  },
+  "spell_rule": {
+    "need": 4,
+    "window": 5,
+    "danger_col": "t_ft"
+  },
+  "prevalence": {
+    "share_time_z1": 0.19427059644721034,
+    "rule": {
+      "need": 4,
+      "window": 5,
+      "danger_col": "t_ft"
+    },
+    "share_shots_z1": 0.24330392943063353
+  },
+  "model": "G",
+  "alpha": 0.01,
+  "target_power": 0.8,
+  "grid": [
+    0.0,
+    0.02,
+    0.05,
+    0.1,
+    0.2
+  ],
+  "replicates": 30,
+  "null_replicates": 200,
+  "eta_cross_planted": 0.05,
+  "tau_planted": 5.0,
+  "floors": {
+    "level": {
+      "critical_value": 7.130030294672482e-05,
+      "detection_floor": 0.05
+    },
+    "trail": {
+      "critical_value": 0.00037399388796196257,
+      "detection_floor": 0.05
+    },
+    "lead": {
+      "critical_value": 0.0004054578801946992,
+      "detection_floor": 0.05
+    }
+  },
+  "curves": {
+    "level": [
+      {
+        "eta_planted": 0.0,
+        "power": 0.01,
+        "mean_hat": 6.071891473490408e-05,
+        "bias": NaN,
+        "frac_converged": NaN
+      },
+      {
+        "eta_planted": 0.02,
+        "power": 0.5,
+        "mean_hat": 0.0028804306515189926,
+        "bias": -0.01711956934848101,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.05,
+        "power": 1.0,
+        "mean_hat": 0.033726573955837134,
+        "bias": -0.01627342604416287,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.1,
+        "power": 1.0,
+        "mean_hat": 0.08184058653806238,
+        "bias": -0.018159413461937626,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.2,
+        "power": 1.0,
+        "mean_hat": 0.18030604500133524,
+        "bias": -0.019693954998664776,
+        "frac_converged": 1.0
+      }
+    ],
+    "trail": [
+      {
+        "eta_planted": 0.0,
+        "power": 0.01,
+        "mean_hat": 6.380328004148495e-05,
+        "bias": NaN,
+        "frac_converged": NaN
+      },
+      {
+        "eta_planted": 0.02,
+        "power": 0.43333333333333335,
+        "mean_hat": 0.003251130596343794,
+        "bias": -0.016748869403656205,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.05,
+        "power": 1.0,
+        "mean_hat": 0.02959622423426157,
+        "bias": -0.020403775765738433,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.1,
+        "power": 1.0,
+        "mean_hat": 0.07262817972024369,
+        "bias": -0.02737182027975632,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.2,
+        "power": 1.0,
+        "mean_hat": 0.16951321130439095,
+        "bias": -0.030486788695609057,
+        "frac_converged": 1.0
+      }
+    ],
+    "lead": [
+      {
+        "eta_planted": 0.0,
+        "power": 0.01,
+        "mean_hat": 7.150806328360453e-05,
+        "bias": NaN,
+        "frac_converged": NaN
+      },
+      {
+        "eta_planted": 0.02,
+        "power": 0.5,
+        "mean_hat": 0.0031107640423817706,
+        "bias": -0.01688923595761823,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.05,
+        "power": 1.0,
+        "mean_hat": 0.03149502360791857,
+        "bias": -0.018504976392081436,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.1,
+        "power": 1.0,
+        "mean_hat": 0.07522851629481409,
+        "bias": -0.02477148370518592,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.2,
+        "power": 1.0,
+        "mean_hat": 0.1794204228415593,
+        "bias": -0.02057957715844072,
+        "frac_converged": 1.0
+      }
+    ]
+  },
+  "n_unconverged": 0
+}
+[spells] === statsbomb G spell-power done in 13 min
+[spells] === statsbomb G spell-fit (02:45:55 UTC, workers=95)
+21:47:28 INFO  headline {'eta_level': 2e-05, 'eta_trail': 0.03557, 'eta_lead': 0.00758, 'eta_cross': 0.0}
+21:51:26 INFO    spell null bootstrap 25/500 (95 workers)
+21:51:26 INFO    spell null bootstrap 50/500 (95 workers)
+21:51:57 INFO    spell null bootstrap 75/500 (95 workers)
+21:52:27 INFO    spell null bootstrap 100/500 (95 workers)
+21:52:55 INFO    spell null bootstrap 125/500 (95 workers)
+21:53:37 INFO    spell null bootstrap 150/500 (95 workers)
+21:54:35 INFO    spell null bootstrap 175/500 (95 workers)
+21:54:52 INFO    spell null bootstrap 200/500 (95 workers)
+21:56:09 INFO    spell null bootstrap 225/500 (95 workers)
+21:56:15 INFO    spell null bootstrap 250/500 (95 workers)
+21:56:57 INFO    spell null bootstrap 275/500 (95 workers)
+21:57:43 INFO    spell null bootstrap 300/500 (95 workers)
+21:57:49 INFO    spell null bootstrap 325/500 (95 workers)
+21:57:59 INFO    spell null bootstrap 350/500 (95 workers)
+21:58:32 INFO    spell null bootstrap 375/500 (95 workers)
+21:58:48 INFO    spell null bootstrap 400/500 (95 workers)
+21:59:06 INFO    spell null bootstrap 425/500 (95 workers)
+21:59:20 INFO    spell null bootstrap 450/500 (95 workers)
+21:59:22 INFO    spell null bootstrap 475/500 (95 workers)
+21:59:36 INFO    spell null bootstrap 500/500 (95 workers)
+22:03:55 INFO    spell cluster bootstrap 25/200 (95 workers)
+22:03:55 INFO    spell cluster bootstrap 50/200 (95 workers)
+22:03:55 INFO    spell cluster bootstrap 75/200 (95 workers)
+22:03:55 INFO    spell cluster bootstrap 100/200 (95 workers)
+22:03:55 INFO    spell cluster bootstrap 125/200 (95 workers)
+22:03:55 INFO    spell cluster bootstrap 150/200 (95 workers)
+22:04:20 INFO    spell cluster bootstrap 175/200 (95 workers)
+22:04:25 INFO    spell cluster bootstrap 200/200 (95 workers)
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/manasganti/ondemand/data/nonlinearity-project-soccer/src/cli/main.py", line 982, in <module>
+    main()
+  File "/home/manasganti/ondemand/data/nonlinearity-project-soccer/src/cli/main.py", line 978, in main
+    args.func(args)
+  File "/home/manasganti/ondemand/data/nonlinearity-project-soccer/src/cli/spell_cmds.py", line 202, in cmd_spell_fit
+    payload["sensitivities"] = _sensitivities(args, slate, spell)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/manasganti/ondemand/data/nonlinearity-project-soccer/src/cli/spell_cmds.py", line 170, in _sensitivities
+    done = dict(pmap(run, jobs, workers=args.workers, label="spell sensitivities", every=1))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/manasganti/ondemand/data/nonlinearity-project-soccer/src/inference/parallel.py", line 54, in pmap
+    for i, r in enumerate(pool.imap(_call, items, chunksize=1), start=1):
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/manasganti/miniconda3/envs/soccer-momentum/lib/python3.12/multiprocessing/pool.py", line 873, in next
+    raise value
+  File "/home/manasganti/miniconda3/envs/soccer-momentum/lib/python3.12/multiprocessing/pool.py", line 540, in _handle_tasks
+    put(task)
+  File "/home/manasganti/miniconda3/envs/soccer-momentum/lib/python3.12/multiprocessing/connection.py", line 206, in send
+    self._send_bytes(_ForkingPickler.dumps(obj))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/manasganti/miniconda3/envs/soccer-momentum/lib/python3.12/multiprocessing/reduction.py", line 51, in dumps
+    cls(buf, protocol).dump(obj)
+AttributeError: Can't get local object '_sensitivities.<locals>.<lambda>'
+[spells] === statsbomb G spell-fit FAILED
+[spells] === statsbomb-no1club S spell-recovery (03:04:26 UTC, workers=95)
+22:05:16 INFO    spell recovery 5/10 (10 workers)
+22:05:16 INFO    spell recovery 10/10 (10 workers)
+
+=== spell recovery ===
+{
+  "source": "statsbomb",
+  "exclude_one_club": true,
+  "n_matches": 1660,
+  "n_shots_modelled": 39299,
+  "prep": {
+    "threshold_seconds": 4.0,
+    "n_before": 41745,
+    "n_after": 39730,
+    "removed_fraction": 0.04826925380285063,
+    "max_run_length": 4,
+    "collapsed_events": 1887,
+    "collapses_at_half_boundaries": 44,
+    "guard_enforced": true,
+    "jitter_seed": 20260910,
+    "remaining_exact_ties": 0
+  },
+  "possession_rule": "tolerant",
+  "merge": {
+    "threshold_s": 10.0,
+    "require_high_restart": true,
+    "n_before": 371030,
+    "n_after": 333119,
+    "possessions_removed_fraction": 0.1021777214780476,
+    "attacks_merged": 17219,
+    "dangerous_share_before": 0.47964585073983235,
+    "dangerous_share_after": 0.4884890984903293
+  },
+  "spell_rule": {
+    "need": 4,
+    "window": 5,
+    "danger_col": "t_ft"
+  },
+  "prevalence": {
+    "share_time_z1": 0.1870315830659625,
+    "rule": {
+      "need": 4,
+      "window": 5,
+      "danger_col": "t_ft"
+    },
+    "share_shots_z1": 0.23298302755795314
+  },
+  "model": "S",
+  "planted": {
+    "out": 0.1,
+    "in": 0.3
+  },
+  "eta_cross_planted": 0.05,
+  "tau_planted": 5.0,
+  "gamma_planted": [
+    0.08997285859574917,
+    -0.1246194127188518
+  ],
+  "n_replicates": 10,
+  "tolerance": 0.08,
+  "per_parameter": {
+    "out": {
+      "planted": 0.1,
+      "mean_hat": 0.0908151159872377,
+      "sd_hat": 0.007376228965493704,
+      "bias": -0.00918488401276231,
+      "passed": true
+    },
+    "in": {
+      "planted": 0.3,
+      "mean_hat": 0.28798000856856365,
+      "sd_hat": 0.01565613550211172,
+      "bias": -0.012019991431436339,
+      "passed": true
+    }
+  },
+  "mean_eta_cross_hat": 0.04862455389994609,
+  "mean_tau_hat": 4.626566212351882,
+  "n_unconverged": 0,
+  "passed": true
+}
+[spells] === statsbomb-no1club S spell-recovery done in 0 min
+[spells] === statsbomb-no1club S spell-power (03:05:17 UTC, workers=95)
+22:07:23 INFO    spell power 20/440 (95 workers)
+22:07:23 INFO    spell power 40/440 (95 workers)
+22:07:23 INFO    spell power 60/440 (95 workers)
+22:07:30 INFO    spell power 80/440 (95 workers)
+22:08:07 INFO    spell power 100/440 (95 workers)
+22:08:07 INFO    spell power 120/440 (95 workers)
+22:08:22 INFO    spell power 140/440 (95 workers)
+22:08:36 INFO    spell power 160/440 (95 workers)
+22:08:47 INFO    spell power 180/440 (95 workers)
+22:09:09 INFO    spell power 200/440 (95 workers)
+22:09:16 INFO    spell power 220/440 (95 workers)
+22:09:16 INFO    spell power 240/440 (95 workers)
+22:09:35 INFO    spell power 260/440 (95 workers)
+22:09:56 INFO    spell power 280/440 (95 workers)
+22:10:22 INFO    spell power 300/440 (95 workers)
+22:10:22 INFO    spell power 320/440 (95 workers)
+22:10:22 INFO    spell power 340/440 (95 workers)
+22:10:26 INFO    spell power 360/440 (95 workers)
+22:10:32 INFO    spell power 380/440 (95 workers)
+22:10:37 INFO    spell power 400/440 (95 workers)
+22:10:37 INFO    spell power 420/440 (95 workers)
+22:10:48 INFO    spell power 440/440 (95 workers)
+
+=== spell detection floors ===
+{
+  "source": "statsbomb",
+  "exclude_one_club": true,
+  "n_matches": 1660,
+  "n_shots_modelled": 39299,
+  "prep": {
+    "threshold_seconds": 4.0,
+    "n_before": 41745,
+    "n_after": 39730,
+    "removed_fraction": 0.04826925380285063,
+    "max_run_length": 4,
+    "collapsed_events": 1887,
+    "collapses_at_half_boundaries": 44,
+    "guard_enforced": true,
+    "jitter_seed": 20260910,
+    "remaining_exact_ties": 0
+  },
+  "possession_rule": "tolerant",
+  "merge": {
+    "threshold_s": 10.0,
+    "require_high_restart": true,
+    "n_before": 371030,
+    "n_after": 333119,
+    "possessions_removed_fraction": 0.1021777214780476,
+    "attacks_merged": 17219,
+    "dangerous_share_before": 0.47964585073983235,
+    "dangerous_share_after": 0.4884890984903293
+  },
+  "spell_rule": {
+    "need": 4,
+    "window": 5,
+    "danger_col": "t_ft"
+  },
+  "prevalence": {
+    "share_time_z1": 0.1870315830659625,
+    "rule": {
+      "need": 4,
+      "window": 5,
+      "danger_col": "t_ft"
+    },
+    "share_shots_z1": 0.23298302755795314
+  },
+  "model": "S",
+  "alpha": 0.01,
+  "target_power": 0.8,
+  "grid": [
+    0.0,
+    0.02,
+    0.05,
+    0.1,
+    0.2
+  ],
+  "replicates": 30,
+  "null_replicates": 200,
+  "eta_cross_planted": 0.05,
+  "tau_planted": 5.0,
+  "floors": {
+    "out": {
+      "critical_value": 0.00980705969591422,
+      "detection_floor": 0.05
+    },
+    "in": {
+      "critical_value": 0.02537799536157997,
+      "detection_floor": 0.05
+    }
+  },
+  "curves": {
+    "out": [
+      {
+        "eta_planted": 0.0,
+        "power": 0.01,
+        "mean_hat": 0.00021598884963851934,
+        "bias": NaN,
+        "frac_converged": NaN
+      },
+      {
+        "eta_planted": 0.02,
+        "power": 0.7,
+        "mean_hat": 0.01319358348767166,
+        "bias": -0.00680641651232834,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.05,
+        "power": 1.0,
+        "mean_hat": 0.0429379690122402,
+        "bias": -0.007062030987759801,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.1,
+        "power": 1.0,
+        "mean_hat": 0.09011844173319558,
+        "bias": -0.009881558266804424,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.2,
+        "power": 1.0,
+        "mean_hat": 0.189552046677933,
+        "bias": -0.010447953322067022,
+        "frac_converged": 1.0
+      }
+    ],
+    "in": [
+      {
+        "eta_planted": 0.0,
+        "power": 0.01,
+        "mean_hat": 0.002302738690308932,
+        "bias": NaN,
+        "frac_converged": NaN
+      },
+      {
+        "eta_planted": 0.02,
+        "power": 0.26666666666666666,
+        "mean_hat": 0.01859162224978467,
+        "bias": -0.0014083777502153297,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.05,
+        "power": 0.9,
+        "mean_hat": 0.042574240415812474,
+        "bias": -0.007425759584187529,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.1,
+        "power": 1.0,
+        "mean_hat": 0.09884569446047736,
+        "bias": -0.0011543055395226431,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.2,
+        "power": 1.0,
+        "mean_hat": 0.19166853591910518,
+        "bias": -0.00833146408089483,
+        "frac_converged": 1.0
+      }
+    ]
+  },
+  "n_unconverged": 0
+}
+[spells] === statsbomb-no1club S spell-power done in 5 min
+[spells] === statsbomb-no1club S spell-fit (03:10:48 UTC, workers=95)
+22:11:18 INFO  headline {'eta_out': 0.01234, 'eta_in': 0.00235, 'eta_cross': 0.0}
+22:14:01 INFO    spell null bootstrap 25/500 (95 workers)
+22:14:01 INFO    spell null bootstrap 50/500 (95 workers)
+22:14:26 INFO    spell null bootstrap 75/500 (95 workers)
+22:14:26 INFO    spell null bootstrap 100/500 (95 workers)
+22:14:26 INFO    spell null bootstrap 125/500 (95 workers)
+22:14:26 INFO    spell null bootstrap 150/500 (95 workers)
+22:15:00 INFO    spell null bootstrap 175/500 (95 workers)
+22:15:00 INFO    spell null bootstrap 200/500 (95 workers)
+22:15:01 INFO    spell null bootstrap 225/500 (95 workers)
+22:15:01 INFO    spell null bootstrap 250/500 (95 workers)
+22:15:24 INFO    spell null bootstrap 275/500 (95 workers)
+22:15:24 INFO    spell null bootstrap 300/500 (95 workers)
+22:15:24 INFO    spell null bootstrap 325/500 (95 workers)
+22:15:24 INFO    spell null bootstrap 350/500 (95 workers)
+22:15:24 INFO    spell null bootstrap 375/500 (95 workers)
+22:15:24 INFO    spell null bootstrap 400/500 (95 workers)
+22:15:42 INFO    spell null bootstrap 425/500 (95 workers)
+22:15:50 INFO    spell null bootstrap 450/500 (95 workers)
+22:16:24 INFO    spell null bootstrap 475/500 (95 workers)
+22:16:24 INFO    spell null bootstrap 500/500 (95 workers)
+22:18:17 INFO    spell cluster bootstrap 25/200 (95 workers)
+22:18:17 INFO    spell cluster bootstrap 50/200 (95 workers)
+22:18:17 INFO    spell cluster bootstrap 75/200 (95 workers)
+22:18:17 INFO    spell cluster bootstrap 100/200 (95 workers)
+22:18:17 INFO    spell cluster bootstrap 125/200 (95 workers)
+22:18:17 INFO    spell cluster bootstrap 150/200 (95 workers)
+22:18:17 INFO    spell cluster bootstrap 175/200 (95 workers)
+22:18:28 INFO    spell cluster bootstrap 200/200 (95 workers)
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/manasganti/ondemand/data/nonlinearity-project-soccer/src/cli/main.py", line 982, in <module>
+    main()
+  File "/home/manasganti/ondemand/data/nonlinearity-project-soccer/src/cli/main.py", line 978, in main
+    args.func(args)
+  File "/home/manasganti/ondemand/data/nonlinearity-project-soccer/src/cli/spell_cmds.py", line 202, in cmd_spell_fit
+    payload["sensitivities"] = _sensitivities(args, slate, spell)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/manasganti/ondemand/data/nonlinearity-project-soccer/src/cli/spell_cmds.py", line 170, in _sensitivities
+    done = dict(pmap(run, jobs, workers=args.workers, label="spell sensitivities", every=1))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/manasganti/ondemand/data/nonlinearity-project-soccer/src/inference/parallel.py", line 54, in pmap
+    for i, r in enumerate(pool.imap(_call, items, chunksize=1), start=1):
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/manasganti/miniconda3/envs/soccer-momentum/lib/python3.12/multiprocessing/pool.py", line 873, in next
+    raise value
+  File "/home/manasganti/miniconda3/envs/soccer-momentum/lib/python3.12/multiprocessing/pool.py", line 540, in _handle_tasks
+    put(task)
+  File "/home/manasganti/miniconda3/envs/soccer-momentum/lib/python3.12/multiprocessing/connection.py", line 206, in send
+    self._send_bytes(_ForkingPickler.dumps(obj))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/manasganti/miniconda3/envs/soccer-momentum/lib/python3.12/multiprocessing/reduction.py", line 51, in dumps
+    cls(buf, protocol).dump(obj)
+AttributeError: Can't get local object '_sensitivities.<locals>.<lambda>'
+[spells] === statsbomb-no1club S spell-fit FAILED
+[spells] === statsbomb-no1club G spell-recovery (03:18:29 UTC, workers=95)
+22:19:26 INFO    spell recovery 5/10 (10 workers)
+22:19:28 INFO    spell recovery 10/10 (10 workers)
+
+=== spell recovery ===
+{
+  "source": "statsbomb",
+  "exclude_one_club": true,
+  "n_matches": 1660,
+  "n_shots_modelled": 39299,
+  "prep": {
+    "threshold_seconds": 4.0,
+    "n_before": 41745,
+    "n_after": 39730,
+    "removed_fraction": 0.04826925380285063,
+    "max_run_length": 4,
+    "collapsed_events": 1887,
+    "collapses_at_half_boundaries": 44,
+    "guard_enforced": true,
+    "jitter_seed": 20260910,
+    "remaining_exact_ties": 0
+  },
+  "possession_rule": "tolerant",
+  "merge": {
+    "threshold_s": 10.0,
+    "require_high_restart": true,
+    "n_before": 371030,
+    "n_after": 333119,
+    "possessions_removed_fraction": 0.1021777214780476,
+    "attacks_merged": 17219,
+    "dangerous_share_before": 0.47964585073983235,
+    "dangerous_share_after": 0.4884890984903293
+  },
+  "spell_rule": {
+    "need": 4,
+    "window": 5,
+    "danger_col": "t_ft"
+  },
+  "prevalence": {
+    "share_time_z1": 0.1870315830659625,
+    "rule": {
+      "need": 4,
+      "window": 5,
+      "danger_col": "t_ft"
+    },
+    "share_shots_z1": 0.23298302755795314
+  },
+  "model": "G",
+  "planted": {
+    "level": 0.3,
+    "trail": 0.1,
+    "lead": 0.2
+  },
+  "eta_cross_planted": 0.05,
+  "tau_planted": 5.0,
+  "gamma_planted": [
+    0.0,
+    0.0
+  ],
+  "n_replicates": 10,
+  "tolerance": 0.08,
+  "per_parameter": {
+    "level": {
+      "planted": 0.3,
+      "mean_hat": 0.28879222450212344,
+      "sd_hat": 0.006898308224966732,
+      "bias": -0.011207775497876549,
+      "passed": true
+    },
+    "trail": {
+      "planted": 0.1,
+      "mean_hat": 0.08636364276032246,
+      "sd_hat": 0.010736928713735126,
+      "bias": -0.013636357239677543,
+      "passed": true
+    },
+    "lead": {
+      "planted": 0.2,
+      "mean_hat": 0.19494588261235943,
+      "sd_hat": 0.007811321405343003,
+      "bias": -0.005054117387640583,
+      "passed": true
+    }
+  },
+  "mean_eta_cross_hat": 0.04943656673591075,
+  "mean_tau_hat": 4.839182098712371,
+  "n_unconverged": 0,
+  "passed": true
+}
+[spells] === statsbomb-no1club G spell-recovery done in 1 min
+[spells] === statsbomb-no1club G spell-power (03:19:29 UTC, workers=95)
+22:22:18 INFO    spell power 20/560 (95 workers)
+22:22:18 INFO    spell power 40/560 (95 workers)
+22:22:18 INFO    spell power 60/560 (95 workers)
+22:22:18 INFO    spell power 80/560 (95 workers)
+22:22:18 INFO    spell power 100/560 (95 workers)
+22:23:08 INFO    spell power 120/560 (95 workers)
+22:23:08 INFO    spell power 140/560 (95 workers)
+22:24:19 INFO    spell power 160/560 (95 workers)
+22:24:19 INFO    spell power 180/560 (95 workers)
+22:24:19 INFO    spell power 200/560 (95 workers)
+22:24:19 INFO    spell power 220/560 (95 workers)
+22:24:19 INFO    spell power 240/560 (95 workers)
+22:25:10 INFO    spell power 260/560 (95 workers)
+22:25:10 INFO    spell power 280/560 (95 workers)
+22:25:10 INFO    spell power 300/560 (95 workers)
+22:25:23 INFO    spell power 320/560 (95 workers)
+22:26:03 INFO    spell power 340/560 (95 workers)
+22:26:37 INFO    spell power 360/560 (95 workers)
+22:26:37 INFO    spell power 380/560 (95 workers)
+22:26:37 INFO    spell power 400/560 (95 workers)
+22:26:37 INFO    spell power 420/560 (95 workers)
+22:26:37 INFO    spell power 440/560 (95 workers)
+22:26:42 INFO    spell power 460/560 (95 workers)
+22:26:42 INFO    spell power 480/560 (95 workers)
+22:27:17 INFO    spell power 500/560 (95 workers)
+22:27:17 INFO    spell power 520/560 (95 workers)
+22:27:17 INFO    spell power 540/560 (95 workers)
+22:27:17 INFO    spell power 560/560 (95 workers)
+
+=== spell detection floors ===
+{
+  "source": "statsbomb",
+  "exclude_one_club": true,
+  "n_matches": 1660,
+  "n_shots_modelled": 39299,
+  "prep": {
+    "threshold_seconds": 4.0,
+    "n_before": 41745,
+    "n_after": 39730,
+    "removed_fraction": 0.04826925380285063,
+    "max_run_length": 4,
+    "collapsed_events": 1887,
+    "collapses_at_half_boundaries": 44,
+    "guard_enforced": true,
+    "jitter_seed": 20260910,
+    "remaining_exact_ties": 0
+  },
+  "possession_rule": "tolerant",
+  "merge": {
+    "threshold_s": 10.0,
+    "require_high_restart": true,
+    "n_before": 371030,
+    "n_after": 333119,
+    "possessions_removed_fraction": 0.1021777214780476,
+    "attacks_merged": 17219,
+    "dangerous_share_before": 0.47964585073983235,
+    "dangerous_share_after": 0.4884890984903293
+  },
+  "spell_rule": {
+    "need": 4,
+    "window": 5,
+    "danger_col": "t_ft"
+  },
+  "prevalence": {
+    "share_time_z1": 0.1870315830659625,
+    "rule": {
+      "need": 4,
+      "window": 5,
+      "danger_col": "t_ft"
+    },
+    "share_shots_z1": 0.23298302755795314
+  },
+  "model": "G",
+  "alpha": 0.01,
+  "target_power": 0.8,
+  "grid": [
+    0.0,
+    0.02,
+    0.05,
+    0.1,
+    0.2
+  ],
+  "replicates": 30,
+  "null_replicates": 200,
+  "eta_cross_planted": 0.05,
+  "tau_planted": 5.0,
+  "floors": {
+    "level": {
+      "critical_value": 0.008705210828427384,
+      "detection_floor": 0.05
+    },
+    "trail": {
+      "critical_value": 0.01597333277729262,
+      "detection_floor": 0.05
+    },
+    "lead": {
+      "critical_value": 0.02129805164458149,
+      "detection_floor": 0.05
+    }
+  },
+  "curves": {
+    "level": [
+      {
+        "eta_planted": 0.0,
+        "power": 0.01,
+        "mean_hat": 0.00026978780621545774,
+        "bias": NaN,
+        "frac_converged": NaN
+      },
+      {
+        "eta_planted": 0.02,
+        "power": 0.7,
+        "mean_hat": 0.013266264329655199,
+        "bias": -0.006733735670344802,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.05,
+        "power": 1.0,
+        "mean_hat": 0.04443781984857242,
+        "bias": -0.005562180151427586,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.1,
+        "power": 1.0,
+        "mean_hat": 0.0919270547310125,
+        "bias": -0.00807294526898751,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.2,
+        "power": 1.0,
+        "mean_hat": 0.18893278934757265,
+        "bias": -0.011067210652427356,
+        "frac_converged": 1.0
+      }
+    ],
+    "trail": [
+      {
+        "eta_planted": 0.0,
+        "power": 0.01,
+        "mean_hat": 0.0013298368239940408,
+        "bias": NaN,
+        "frac_converged": NaN
+      },
+      {
+        "eta_planted": 0.02,
+        "power": 0.36666666666666664,
+        "mean_hat": 0.0132029471122683,
+        "bias": -0.0067970528877317,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.05,
+        "power": 1.0,
+        "mean_hat": 0.04380417895339381,
+        "bias": -0.006195821046606195,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.1,
+        "power": 1.0,
+        "mean_hat": 0.09128688018179341,
+        "bias": -0.008713119818206591,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.2,
+        "power": 1.0,
+        "mean_hat": 0.18806961909327427,
+        "bias": -0.01193038090672574,
+        "frac_converged": 1.0
+      }
+    ],
+    "lead": [
+      {
+        "eta_planted": 0.0,
+        "power": 0.01,
+        "mean_hat": 0.0017951515117878081,
+        "bias": NaN,
+        "frac_converged": NaN
+      },
+      {
+        "eta_planted": 0.02,
+        "power": 0.4,
+        "mean_hat": 0.01786325303589673,
+        "bias": -0.0021367469641032713,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.05,
+        "power": 1.0,
+        "mean_hat": 0.04400722164751293,
+        "bias": -0.0059927783524870715,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.1,
+        "power": 1.0,
+        "mean_hat": 0.09593479332880563,
+        "bias": -0.00406520667119438,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.2,
+        "power": 1.0,
+        "mean_hat": 0.19573156330698155,
+        "bias": -0.0042684366930184625,
+        "frac_converged": 1.0
+      }
+    ]
+  },
+  "n_unconverged": 0
+}
+[spells] === statsbomb-no1club G spell-power done in 7 min
+[spells] === statsbomb-no1club G spell-fit (03:27:17 UTC, workers=95)
+22:27:51 INFO  headline {'eta_level': 0.0, 'eta_trail': 0.06102, 'eta_lead': 0.04785, 'eta_cross': 0.0}
+22:31:27 INFO    spell null bootstrap 25/500 (95 workers)
+22:31:27 INFO    spell null bootstrap 50/500 (95 workers)
+22:31:27 INFO    spell null bootstrap 75/500 (95 workers)
+22:31:27 INFO    spell null bootstrap 100/500 (95 workers)
+22:31:27 INFO    spell null bootstrap 125/500 (95 workers)
+22:31:27 INFO    spell null bootstrap 150/500 (95 workers)
+22:31:27 INFO    spell null bootstrap 175/500 (95 workers)
+22:31:27 INFO    spell null bootstrap 200/500 (95 workers)
+22:31:27 INFO    spell null bootstrap 225/500 (95 workers)
+22:31:27 INFO    spell null bootstrap 250/500 (95 workers)
+22:31:27 INFO    spell null bootstrap 275/500 (95 workers)
+22:31:56 INFO    spell null bootstrap 300/500 (95 workers)
+22:31:58 INFO    spell null bootstrap 325/500 (95 workers)
+22:31:58 INFO    spell null bootstrap 350/500 (95 workers)
+22:32:05 INFO    spell null bootstrap 375/500 (95 workers)
+22:32:05 INFO    spell null bootstrap 400/500 (95 workers)
+22:32:12 INFO    spell null bootstrap 425/500 (95 workers)
+22:32:12 INFO    spell null bootstrap 450/500 (95 workers)
+22:32:12 INFO    spell null bootstrap 475/500 (95 workers)
+22:32:17 INFO    spell null bootstrap 500/500 (95 workers)
+22:34:25 INFO    spell cluster bootstrap 25/200 (95 workers)
+22:34:28 INFO    spell cluster bootstrap 50/200 (95 workers)
+22:34:33 INFO    spell cluster bootstrap 75/200 (95 workers)
+22:34:36 INFO    spell cluster bootstrap 100/200 (95 workers)
+22:34:36 INFO    spell cluster bootstrap 125/200 (95 workers)
+22:34:46 INFO    spell cluster bootstrap 150/200 (95 workers)
+22:34:53 INFO    spell cluster bootstrap 175/200 (95 workers)
+22:34:58 INFO    spell cluster bootstrap 200/200 (95 workers)
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/manasganti/ondemand/data/nonlinearity-project-soccer/src/cli/main.py", line 982, in <module>
+    main()
+  File "/home/manasganti/ondemand/data/nonlinearity-project-soccer/src/cli/main.py", line 978, in main
+    args.func(args)
+  File "/home/manasganti/ondemand/data/nonlinearity-project-soccer/src/cli/spell_cmds.py", line 202, in cmd_spell_fit
+    payload["sensitivities"] = _sensitivities(args, slate, spell)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/manasganti/ondemand/data/nonlinearity-project-soccer/src/cli/spell_cmds.py", line 170, in _sensitivities
+    done = dict(pmap(run, jobs, workers=args.workers, label="spell sensitivities", every=1))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/manasganti/ondemand/data/nonlinearity-project-soccer/src/inference/parallel.py", line 54, in pmap
+    for i, r in enumerate(pool.imap(_call, items, chunksize=1), start=1):
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/manasganti/miniconda3/envs/soccer-momentum/lib/python3.12/multiprocessing/pool.py", line 873, in next
+    raise value
+  File "/home/manasganti/miniconda3/envs/soccer-momentum/lib/python3.12/multiprocessing/pool.py", line 540, in _handle_tasks
+    put(task)
+  File "/home/manasganti/miniconda3/envs/soccer-momentum/lib/python3.12/multiprocessing/connection.py", line 206, in send
+    self._send_bytes(_ForkingPickler.dumps(obj))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/manasganti/miniconda3/envs/soccer-momentum/lib/python3.12/multiprocessing/reduction.py", line 51, in dumps
+    cls(buf, protocol).dump(obj)
+AttributeError: Can't get local object '_sensitivities.<locals>.<lambda>'
+[spells] === statsbomb-no1club G spell-fit FAILED
+[spells] failed: wyscout:S:spell-fit wyscout:G:spell-fit statsbomb:S:spell-fit statsbomb:G:spell-fit statsbomb-no1club:S:spell-fit statsbomb-no1club:G:spell-fit

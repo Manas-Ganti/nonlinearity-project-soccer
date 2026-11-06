@@ -1,0 +1,194 @@
+{
+  "name": "spell_power_G_statsbomb_no1club_dev",
+  "written_at_utc": "2026-11-06T03:27:17+00:00",
+  "python": "3.12.7",
+  "platform": "Linux-5.14.0-687.26.1.el9_8.x86_64-x86_64-with-glibc2.34",
+  "numpy": "2.5.3",
+  "git_rev": "5e9522f",
+  "inputs": {},
+  "payload": {
+    "source": "statsbomb",
+    "exclude_one_club": true,
+    "n_matches": 1660,
+    "n_shots_modelled": 39299,
+    "prep": {
+      "threshold_seconds": 4.0,
+      "n_before": 41745,
+      "n_after": 39730,
+      "removed_fraction": 0.04826925380285063,
+      "max_run_length": 4,
+      "collapsed_events": 1887,
+      "collapses_at_half_boundaries": 44,
+      "guard_enforced": true,
+      "jitter_seed": 20260910,
+      "remaining_exact_ties": 0
+    },
+    "possession_rule": "tolerant",
+    "merge": {
+      "threshold_s": 10.0,
+      "require_high_restart": true,
+      "n_before": 371030,
+      "n_after": 333119,
+      "possessions_removed_fraction": 0.1021777214780476,
+      "attacks_merged": 17219,
+      "dangerous_share_before": 0.47964585073983235,
+      "dangerous_share_after": 0.4884890984903293
+    },
+    "spell_rule": {
+      "need": 4,
+      "window": 5,
+      "danger_col": "t_ft"
+    },
+    "prevalence": {
+      "share_time_z1": 0.1870315830659625,
+      "rule": {
+        "need": 4,
+        "window": 5,
+        "danger_col": "t_ft"
+      },
+      "share_shots_z1": 0.23298302755795314
+    },
+    "model": "G",
+    "alpha": 0.01,
+    "target_power": 0.8,
+    "grid": [
+      0.0,
+      0.02,
+      0.05,
+      0.1,
+      0.2
+    ],
+    "replicates": 30,
+    "null_replicates": 200,
+    "eta_cross_planted": 0.05,
+    "tau_planted": 5.0,
+    "floors": {
+      "level": {
+        "critical_value": 0.008705210828427384,
+        "detection_floor": 0.05
+      },
+      "trail": {
+        "critical_value": 0.01597333277729262,
+        "detection_floor": 0.05
+      },
+      "lead": {
+        "critical_value": 0.02129805164458149,
+        "detection_floor": 0.05
+      }
+    },
+    "curves": {
+      "level": [
+        {
+          "eta_planted": 0.0,
+          "power": 0.01,
+          "mean_hat": 0.00026978780621545774,
+          "bias": NaN,
+          "frac_converged": NaN
+        },
+        {
+          "eta_planted": 0.02,
+          "power": 0.7,
+          "mean_hat": 0.013266264329655199,
+          "bias": -0.006733735670344802,
+          "frac_converged": 1.0
+        },
+        {
+          "eta_planted": 0.05,
+          "power": 1.0,
+          "mean_hat": 0.04443781984857242,
+          "bias": -0.005562180151427586,
+          "frac_converged": 1.0
+        },
+        {
+          "eta_planted": 0.1,
+          "power": 1.0,
+          "mean_hat": 0.0919270547310125,
+          "bias": -0.00807294526898751,
+          "frac_converged": 1.0
+        },
+        {
+          "eta_planted": 0.2,
+          "power": 1.0,
+          "mean_hat": 0.18893278934757265,
+          "bias": -0.011067210652427356,
+          "frac_converged": 1.0
+        }
+      ],
+      "trail": [
+        {
+          "eta_planted": 0.0,
+          "power": 0.01,
+          "mean_hat": 0.0013298368239940408,
+          "bias": NaN,
+          "frac_converged": NaN
+        },
+        {
+          "eta_planted": 0.02,
+          "power": 0.36666666666666664,
+          "mean_hat": 0.0132029471122683,
+          "bias": -0.0067970528877317,
+          "frac_converged": 1.0
+        },
+        {
+          "eta_planted": 0.05,
+          "power": 1.0,
+          "mean_hat": 0.04380417895339381,
+          "bias": -0.006195821046606195,
+          "frac_converged": 1.0
+        },
+        {
+          "eta_planted": 0.1,
+          "power": 1.0,
+          "mean_hat": 0.09128688018179341,
+          "bias": -0.008713119818206591,
+          "frac_converged": 1.0
+        },
+        {
+          "eta_planted": 0.2,
+          "power": 1.0,
+          "mean_hat": 0.18806961909327427,
+          "bias": -0.01193038090672574,
+          "frac_converged": 1.0
+        }
+      ],
+      "lead": [
+        {
+          "eta_planted": 0.0,
+          "power": 0.01,
+          "mean_hat": 0.0017951515117878081,
+          "bias": NaN,
+          "frac_converged": NaN
+        },
+        {
+          "eta_planted": 0.02,
+          "power": 0.4,
+          "mean_hat": 0.01786325303589673,
+          "bias": -0.0021367469641032713,
+          "frac_converged": 1.0
+        },
+        {
+          "eta_planted": 0.05,
+          "power": 1.0,
+          "mean_hat": 0.04400722164751293,
+          "bias": -0.0059927783524870715,
+          "frac_converged": 1.0
+        },
+        {
+          "eta_planted": 0.1,
+          "power": 1.0,
+          "mean_hat": 0.09593479332880563,
+          "bias": -0.00406520667119438,
+          "frac_converged": 1.0
+        },
+        {
+          "eta_planted": 0.2,
+          "power": 1.0,
+          "mean_hat": 0.19573156330698155,
+          "bias": -0.0042684366930184625,
+          "frac_converged": 1.0
+        }
+      ]
+    },
+    "n_unconverged": 0
+  }
+}

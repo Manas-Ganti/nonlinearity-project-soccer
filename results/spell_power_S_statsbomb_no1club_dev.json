@@ -1,0 +1,153 @@
+{
+  "name": "spell_power_S_statsbomb_no1club_dev",
+  "written_at_utc": "2026-11-06T03:10:48+00:00",
+  "python": "3.12.7",
+  "platform": "Linux-5.14.0-687.26.1.el9_8.x86_64-x86_64-with-glibc2.34",
+  "numpy": "2.5.3",
+  "git_rev": "5e9522f",
+  "inputs": {},
+  "payload": {
+    "source": "statsbomb",
+    "exclude_one_club": true,
+    "n_matches": 1660,
+    "n_shots_modelled": 39299,
+    "prep": {
+      "threshold_seconds": 4.0,
+      "n_before": 41745,
+      "n_after": 39730,
+      "removed_fraction": 0.04826925380285063,
+      "max_run_length": 4,
+      "collapsed_events": 1887,
+      "collapses_at_half_boundaries": 44,
+      "guard_enforced": true,
+      "jitter_seed": 20260910,
+      "remaining_exact_ties": 0
+    },
+    "possession_rule": "tolerant",
+    "merge": {
+      "threshold_s": 10.0,
+      "require_high_restart": true,
+      "n_before": 371030,
+      "n_after": 333119,
+      "possessions_removed_fraction": 0.1021777214780476,
+      "attacks_merged": 17219,
+      "dangerous_share_before": 0.47964585073983235,
+      "dangerous_share_after": 0.4884890984903293
+    },
+    "spell_rule": {
+      "need": 4,
+      "window": 5,
+      "danger_col": "t_ft"
+    },
+    "prevalence": {
+      "share_time_z1": 0.1870315830659625,
+      "rule": {
+        "need": 4,
+        "window": 5,
+        "danger_col": "t_ft"
+      },
+      "share_shots_z1": 0.23298302755795314
+    },
+    "model": "S",
+    "alpha": 0.01,
+    "target_power": 0.8,
+    "grid": [
+      0.0,
+      0.02,
+      0.05,
+      0.1,
+      0.2
+    ],
+    "replicates": 30,
+    "null_replicates": 200,
+    "eta_cross_planted": 0.05,
+    "tau_planted": 5.0,
+    "floors": {
+      "out": {
+        "critical_value": 0.00980705969591422,
+        "detection_floor": 0.05
+      },
+      "in": {
+        "critical_value": 0.02537799536157997,
+        "detection_floor": 0.05
+      }
+    },
+    "curves": {
+      "out": [
+        {
+          "eta_planted": 0.0,
+          "power": 0.01,
+          "mean_hat": 0.00021598884963851934,
+          "bias": NaN,
+          "frac_converged": NaN
+        },
+        {
+          "eta_planted": 0.02,
+          "power": 0.7,
+          "mean_hat": 0.01319358348767166,
+          "bias": -0.00680641651232834,
+          "frac_converged": 1.0
+        },
+        {
+          "eta_planted": 0.05,
+          "power": 1.0,
+          "mean_hat": 0.0429379690122402,
+          "bias": -0.007062030987759801,
+          "frac_converged": 1.0
+        },
+        {
+          "eta_planted": 0.1,
+          "power": 1.0,
+          "mean_hat": 0.09011844173319558,
+          "bias": -0.009881558266804424,
+          "frac_converged": 1.0
+        },
+        {
+          "eta_planted": 0.2,
+          "power": 1.0,
+          "mean_hat": 0.189552046677933,
+          "bias": -0.010447953322067022,
+          "frac_converged": 1.0
+        }
+      ],
+      "in": [
+        {
+          "eta_planted": 0.0,
+          "power": 0.01,
+          "mean_hat": 0.002302738690308932,
+          "bias": NaN,
+          "frac_converged": NaN
+        },
+        {
+          "eta_planted": 0.02,
+          "power": 0.26666666666666666,
+          "mean_hat": 0.01859162224978467,
+          "bias": -0.0014083777502153297,
+          "frac_converged": 1.0
+        },
+        {
+          "eta_planted": 0.05,
+          "power": 0.9,
+          "mean_hat": 0.042574240415812474,
+          "bias": -0.007425759584187529,
+          "frac_converged": 1.0
+        },
+        {
+          "eta_planted": 0.1,
+          "power": 1.0,
+          "mean_hat": 0.09884569446047736,
+          "bias": -0.0011543055395226431,
+          "frac_converged": 1.0
+        },
+        {
+          "eta_planted": 0.2,
+          "power": 1.0,
+          "mean_hat": 0.19166853591910518,
+          "bias": -0.00833146408089483,
+          "frac_converged": 1.0
+        }
+      ]
+    },
+    "n_unconverged": 0
+  }
+}
