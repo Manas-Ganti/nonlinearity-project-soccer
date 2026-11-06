@@ -426,6 +426,9 @@ def build() -> str:
         add(_table(rows, ["state", "n_matches", "n_events", "eta_self", "tau_minutes"]))
         add(f"\n> {p['state_dependent_eta']['note']}\n")
 
+    _possessions(add)
+    _spells(add)
+
     add("\n## Reproducing\n")
     add(
         "```\nmake venv && make check\nmake ingest-statsbomb ingest-wyscout build-pooled\nmake pipeline\n```\n"
@@ -435,6 +438,176 @@ def build() -> str:
         "`make pipeline`. Holdout numbers come from `make fit-holdout`, which is run once.\n"
     )
     return "\n".join(out)
+
+
+def _possessions(add) -> None:
+    """Model A (docs/spec_possessions.md) and its post-hoc follow-up (section 9)."""
+    rows = []
+    for src in ("wyscout", "statsbomb"):
+        for merged in ("", "_merged10s"):
+            fit = _load(f"poss_fit_{src}{merged}_dev")
+            if not fit:
+                continue
+            p = fit["payload"]
+            h, cb = p["headline"], p["cluster_bootstrap"]
+            sh = _load(f"poss_shuffle_{src}{merged}_dev")
+            s = sh["payload"] if sh else {}
+            best = max(p["tau_profile"], key=lambda t: t["loglik"])
+            rows.append(
+                {
+                    "source": src,
+                    "quick regains": "merged (10 s)" if merged else "as recorded",
+                    "possessions": h["n_possessions"],
+                    "rho_self": h["rho_self"],
+                    "cluster CI": f"[{cb['rho_self_ci95'][0]:.3f}, {cb['rho_self_ci95'][1]:.3f}]",
+                    "bootstrap p": p["parametric_bootstrap"]["p_value_upper"],
+                    "floor": p["detection_floor"],
+                    "left after shuffle": s.get("shuffled_mean_rho_self"),
+                    "order component": s.get("order_component"),
+                    "shuffle p": s.get("p_value_order"),
+                    "best tau (min)": best["tau_minutes"],
+                }
+            )
+    if not rows:
+        return
+    add("\n## D. Possessions: does a dangerous possession raise the odds the next one is dangerous?\n")
+    add(
+        "Model A, `docs/spec_possessions.md`. rho_self is the log-odds lift from an own dangerous "
+        "possession, decaying with tau = 5 min; the background carries the same game-state terms as the "
+        "shot model. Merging quick regains and the within-half shuffle are **post hoc** (section 9), "
+        "added after the first fit.\n"
+    )
+    add(
+        _table(
+            rows,
+            [
+                "source",
+                "quick regains",
+                "possessions",
+                "rho_self",
+                "cluster CI",
+                "bootstrap p",
+                "floor",
+                "left after shuffle",
+                "order component",
+                "shuffle p",
+                "best tau (min)",
+            ],
+        )
+    )
+    loc = _load("poss_no1club_statsbomb_local")
+    if loc:
+        m = loc["payload"]["merge10"]
+        add(
+            f"\nStatsBomb without the one-club matches ({m['n_matches']} matches, merged, run locally): "
+            f"rho_self {m['rho_self']:.3f}, order component {m['order_component']:.3f}, "
+            f"p {m['p_order']:.3f} (the minimum for {m['n_shuffles']} shuffles).\n"
+        )
+    add(
+        "\n> Reading. The lift is real, replicates across providers and survives the merge, but about a "
+        "third of it is match-level dominance (what the shuffle leaves) and the rest is order. The tau "
+        "profile is best at the *shortest* timescale tried, so the order effect is fast: field position "
+        "carried from one possession to the next, the possession analogue of a rebound, rather than a "
+        "spell lasting minutes.\n"
+    )
+
+
+def _spells(add) -> None:
+    """Models S and G (docs/spec_spells.md): the shot kernel split by spell or score state."""
+    arms = [("wyscout", ""), ("statsbomb", ""), ("statsbomb", "_no1club")]
+    labels = {"S": ("out", "in"), "G": ("level", "trail", "lead")}
+    fits = {(m, s, x): _load(f"spell_fit_{m}_{s}{x}_dev") for m in labels for s, x in arms}
+    if not any(fits.values()):
+        return
+    name = {"": "", "_no1club": " (no one-club)"}
+    add("\n## E. Spells and score state: is excitation conditional?\n")
+    add(
+        "`docs/spec_spells.md`, exploratory. Model S splits the own-team kernel by whether the shooting "
+        "team is in a spell (4 of its last 5 possessions dangerous) and puts the spell itself in the "
+        "background (gamma_own, gamma_opp). Model G splits it by the shooting team's score state. "
+        "Five primary tests, Holm-adjusted at 0.05. Floors are the smallest grid value with 80% power "
+        "at alpha 0.01; the grid is {0, 0.02, 0.05, 0.10, 0.20}, so a floor of 0.05 means power was "
+        "below 80% at 0.02.\n"
+    )
+    for m, labs in labels.items():
+        rows = []
+        for s, x in arms:
+            f = fits[(m, s, x)]
+            if not f:
+                continue
+            p = f["payload"]
+            h, ci = p["headline"], p["cluster_bootstrap"]["ci95"]
+            holm = _load(f"spell_holm_SG_{s}{x}_dev")
+            adj = holm["payload"]["adjusted"] if holm else {}
+            for lab in labs:
+                rows.append(
+                    {
+                        "source": s + name[x],
+                        "state": lab,
+                        "eta": h[f"eta_{lab}"],
+                        "cluster CI": f"[{ci[lab][0]:.4f}, {ci[lab][1]:.4f}]",
+                        "p": p["parametric_bootstrap"]["p_value"][lab],
+                        "Holm p": adj.get(f"eta_{lab}"),
+                        "floor": p["floors"][lab],
+                        "tau (min)": h["tau_minutes"],
+                    }
+                )
+        title = "Model S: in a spell or not" if m == "S" else "Model G: level, trailing, leading"
+        add(f"\n### {title}\n")
+        add(_table(rows, ["source", "state", "eta", "cluster CI", "p", "Holm p", "floor", "tau (min)"]))
+        if m == "S":
+            grow = []
+            for s, x in arms:
+                f = fits[("S", s, x)]
+                if not f:
+                    continue
+                p = f["payload"]
+                ng = p.get("sensitivities", {}).get("no_gamma_confounded", {})
+                grow.append(
+                    {
+                        "source": s + name[x],
+                        "gamma_own": p["headline"]["gamma_own"],
+                        "gamma_opp": p["headline"]["gamma_opp"],
+                        "in - out CI": "[{:.4f}, {:.4f}]".format(
+                            *p["cluster_bootstrap"]["ci95"]["in_minus_out"]
+                        ),
+                        "eta_in without gamma": ng.get("eta_in"),
+                    }
+                )
+            add("\n**Where the spell effect lives.**\n")
+            add(_table(grow, ["source", "gamma_own", "gamma_opp", "in - out CI", "eta_in without gamma"]))
+    rows = []
+    for s, x in arms:
+        f = fits[("G", s, x)]
+        if f:
+            for t in f["payload"]["sensitivities"]["tau_profile"]:
+                rows.append(
+                    {
+                        "source": s + name[x],
+                        "tau (min)": t["tau_minutes"],
+                        "eta_trail": t["eta_trail"],
+                        "eta_lead": t["eta_lead"],
+                        "loglik": t["loglik"],
+                    }
+                )
+    if rows:
+        add("\n**Model G across fixed timescales.** The headline box is 3-8 min.\n")
+        add(_table(rows, ["source", "tau (min)", "eta_trail", "eta_lead", "loglik"]))
+    add(
+        "\n> Reading. Spells do not amplify excitation: eta_in is never significant and the in-minus-out "
+        "contrast is centred on zero on every source. What a spell does is shift the *rate*: a team in a "
+        "spell shoots about 4-9% more and its opponent about 11% less, and leaving that out of the "
+        "background (`eta_in without gamma`) manufactures an apparent spell effect in the kernel. Score "
+        "state is different: eta_trail and eta_lead reject after Holm on all three arms while eta_level is essentially "
+        "zero. But every fit puts tau at or next to the 8-minute edge of its box and the likelihood keeps improving "
+        "out to 30 minutes, which is the signature of a slow trend the background does not carry, not of "
+        "chances triggering chances within minutes. The obvious candidate is a trailing team's pressure "
+        "rising as time runs out, which a time-constant score term cannot absorb. The bootstrap tests "
+        "the exact fitted Poisson null, so it rejects on any such misfit; a rejection here says the null "
+        "is incomplete, not that momentum exists. Full StatsBomb has null critical values about 100x "
+        "smaller than the other arms and twice their estimation bias, for reasons not yet understood; "
+        "the no-one-club arm is the cleaner StatsBomb read.\n"
+    )
 
 
 def main() -> None:
