@@ -1,10 +1,10 @@
 {
   "name": "spell_power_G_wyscout_dev",
-  "written_at_utc": "2026-11-06T01:50:38+00:00",
+  "written_at_utc": "2026-11-06T06:41:17+00:00",
   "python": "3.12.7",
   "platform": "Linux-5.14.0-687.26.1.el9_8.x86_64-x86_64-with-glibc2.34",
   "numpy": "2.5.3",
-  "git_rev": "5e9522f",
+  "git_rev": "6bc9fee",
   "inputs": {},
   "payload": {
     "source": "wyscout",
@@ -64,15 +64,15 @@
     "tau_planted": 5.0,
     "floors": {
       "level": {
-        "critical_value": 0.005375749758659861,
+        "critical_value": 0.005376426202871263,
         "detection_floor": 0.05
       },
       "trail": {
-        "critical_value": 0.01074092478625565,
+        "critical_value": 0.010159042714440172,
         "detection_floor": 0.05
       },
       "lead": {
-        "critical_value": 0.015331718496294318,
+        "critical_value": 0.015924708324999693,
         "detection_floor": 0.05
       }
     },
@@ -81,36 +81,36 @@
         {
           "eta_planted": 0.0,
           "power": 0.01,
-          "mean_hat": 0.00015476249383778134,
+          "mean_hat": 0.00013571763427299612,
           "bias": NaN,
           "frac_converged": NaN
         },
         {
           "eta_planted": 0.02,
-          "power": 0.5,
-          "mean_hat": 0.008051795572826556,
-          "bias": -0.011948204427173445,
+          "power": 0.43333333333333335,
+          "mean_hat": 0.007392950814212534,
+          "bias": -0.012607049185787467,
           "frac_converged": 1.0
         },
         {
           "eta_planted": 0.05,
           "power": 1.0,
-          "mean_hat": 0.041315914375162084,
-          "bias": -0.008684085624837919,
+          "mean_hat": 0.04133438064351576,
+          "bias": -0.008665619356484244,
           "frac_converged": 1.0
         },
         {
           "eta_planted": 0.1,
           "power": 1.0,
-          "mean_hat": 0.0893809658387048,
-          "bias": -0.010619034161295199,
+          "mean_hat": 0.0893742412692873,
+          "bias": -0.010625758730712712,
           "frac_converged": 1.0
         },
         {
           "eta_planted": 0.2,
           "power": 1.0,
-          "mean_hat": 0.18947828883220275,
-          "bias": -0.010521711167797265,
+          "mean_hat": 0.18947614887660305,
+          "bias": -0.01052385112339696,
           "frac_converged": 1.0
         }
       ],
@@ -118,36 +118,36 @@
         {
           "eta_planted": 0.0,
           "power": 0.01,
-          "mean_hat": 0.0005841098172817533,
+          "mean_hat": 0.0005900509071072612,
           "bias": NaN,
           "frac_converged": NaN
         },
         {
           "eta_planted": 0.02,
-          "power": 0.4666666666666667,
-          "mean_hat": 0.01154253973257937,
-          "bias": -0.00845746026742063,
+          "power": 0.5666666666666667,
+          "mean_hat": 0.011931747766090723,
+          "bias": -0.008068252233909277,
           "frac_converged": 1.0
         },
         {
           "eta_planted": 0.05,
           "power": 1.0,
-          "mean_hat": 0.04547570344290054,
-          "bias": -0.004524296557099461,
+          "mean_hat": 0.0454516458224356,
+          "bias": -0.004548354177564405,
           "frac_converged": 1.0
         },
         {
           "eta_planted": 0.1,
           "power": 1.0,
-          "mean_hat": 0.08699170512090881,
-          "bias": -0.013008294879091192,
+          "mean_hat": 0.08702344510454998,
+          "bias": -0.012976554895450021,
           "frac_converged": 1.0
         },
         {
           "eta_planted": 0.2,
           "power": 1.0,
-          "mean_hat": 0.1899796430865183,
-          "bias": -0.010020356913481715,
+          "mean_hat": 0.18996689582608683,
+          "bias": -0.010033104173913177,
           "frac_converged": 1.0
         }
       ],
@@ -155,36 +155,36 @@
         {
           "eta_planted": 0.0,
           "power": 0.01,
-          "mean_hat": 0.001589792047535812,
+          "mean_hat": 0.0016132685818292932,
           "bias": NaN,
           "frac_converged": NaN
         },
         {
           "eta_planted": 0.02,
-          "power": 0.3333333333333333,
-          "mean_hat": 0.012291470972740932,
-          "bias": -0.007708529027259069,
+          "power": 0.3,
+          "mean_hat": 0.01258044603901601,
+          "bias": -0.007419553960983991,
           "frac_converged": 1.0
         },
         {
           "eta_planted": 0.05,
           "power": 1.0,
-          "mean_hat": 0.04166561449940081,
-          "bias": -0.008334385500599194,
+          "mean_hat": 0.041682811109299986,
+          "bias": -0.008317188890700017,
           "frac_converged": 1.0
         },
         {
           "eta_planted": 0.1,
           "power": 1.0,
-          "mean_hat": 0.0916153418431842,
-          "bias": -0.0083846581568158,
+          "mean_hat": 0.09156607693791571,
+          "bias": -0.008433923062084292,
           "frac_converged": 1.0
         },
         {
           "eta_planted": 0.2,
           "power": 1.0,
-          "mean_hat": 0.18937947103745964,
-          "bias": -0.010620528962540371,
+          "mean_hat": 0.1893756510139682,
+          "bias": -0.010624348986031817,
           "frac_converged": 1.0
         }
       ]

@@ -1,0 +1,3824 @@
+[arc_env] job=1424015 node=owl157 cpus=96 python=/home/manasganti/miniconda3/envs/soccer-momentum/bin/python (Python 3.12.7) commit=6bc9fee
+[spells] === pytest (05:58:23 UTC)
+(Linux uses --headless by default. To override, use --headed / --gui. For Xvfb mode instead, use --xvfb. Or you can hide this info by using --headless / --headless2 / --uc.)
+.................................................................s...... [ 42%]
+........................................................................ [ 84%]
+.........................s                                               [100%]
+168 passed, 2 skipped in 546.53s (0:09:06)
+[spells] === wyscout S spell-recovery (06:07:44 UTC, workers=95)
+01:08:48 INFO    spell recovery 5/10 (10 workers)
+01:08:49 INFO    spell recovery 10/10 (10 workers)
+
+=== spell recovery ===
+{
+  "source": "wyscout",
+  "exclude_one_club": false,
+  "n_matches": 1941,
+  "n_shots_modelled": 43544,
+  "prep": {
+    "threshold_seconds": 4.0,
+    "n_before": 45869,
+    "n_after": 44126,
+    "removed_fraction": 0.03799952037323684,
+    "max_run_length": 4,
+    "collapsed_events": 1644,
+    "collapses_at_half_boundaries": 34,
+    "guard_enforced": true,
+    "jitter_seed": 20260910,
+    "remaining_exact_ties": 0
+  },
+  "possession_rule": "tolerant",
+  "merge": {
+    "threshold_s": 10.0,
+    "require_high_restart": true,
+    "n_before": 282263,
+    "n_after": 247762,
+    "possessions_removed_fraction": 0.12222997700725924,
+    "attacks_merged": 15616,
+    "dangerous_share_before": 0.5750240024374431,
+    "dangerous_share_after": 0.5962617350521872
+  },
+  "spell_rule": {
+    "need": 4,
+    "window": 5,
+    "danger_col": "t_ft"
+  },
+  "prevalence": {
+    "share_time_z1": 0.3165269946218508,
+    "rule": {
+      "need": 4,
+      "window": 5,
+      "danger_col": "t_ft"
+    },
+    "share_shots_z1": 0.3630810214954988
+  },
+  "model": "S",
+  "planted": {
+    "out": 0.1,
+    "in": 0.3
+  },
+  "eta_cross_planted": 0.05,
+  "tau_planted": 5.0,
+  "gamma_planted": [
+    0.04127214813420519,
+    -0.11302908235461809
+  ],
+  "n_replicates": 10,
+  "tolerance": 0.08,
+  "per_parameter": {
+    "out": {
+      "planted": 0.1,
+      "mean_hat": 0.094745769574872,
+      "sd_hat": 0.0061413832833997345,
+      "bias": -0.005254230425128001,
+      "passed": true
+    },
+    "in": {
+      "planted": 0.3,
+      "mean_hat": 0.2897689786826779,
+      "sd_hat": 0.007723124781107513,
+      "bias": -0.010231021317322064,
+      "passed": true
+    }
+  },
+  "mean_eta_cross_hat": 0.05104128984585895,
+  "mean_tau_hat": 4.728330354324447,
+  "n_unconverged": 0,
+  "passed": true
+}
+[spells] === wyscout S spell-recovery done in 1 min
+[spells] === wyscout S spell-power (06:08:49 UTC, workers=95)
+01:11:24 INFO    spell power 20/440 (95 workers)
+01:11:25 INFO    spell power 40/440 (95 workers)
+01:11:49 INFO    spell power 60/440 (95 workers)
+01:11:49 INFO    spell power 80/440 (95 workers)
+01:11:49 INFO    spell power 100/440 (95 workers)
+01:12:39 INFO    spell power 120/440 (95 workers)
+01:13:00 INFO    spell power 140/440 (95 workers)
+01:13:00 INFO    spell power 160/440 (95 workers)
+01:13:14 INFO    spell power 180/440 (95 workers)
+01:13:55 INFO    spell power 200/440 (95 workers)
+01:14:36 INFO    spell power 220/440 (95 workers)
+01:14:36 INFO    spell power 240/440 (95 workers)
+01:14:36 INFO    spell power 260/440 (95 workers)
+01:14:36 INFO    spell power 280/440 (95 workers)
+01:14:36 INFO    spell power 300/440 (95 workers)
+01:14:40 INFO    spell power 320/440 (95 workers)
+01:15:09 INFO    spell power 340/440 (95 workers)
+01:15:09 INFO    spell power 360/440 (95 workers)
+01:15:09 INFO    spell power 380/440 (95 workers)
+01:15:09 INFO    spell power 400/440 (95 workers)
+01:15:27 INFO    spell power 420/440 (95 workers)
+01:15:27 INFO    spell power 440/440 (95 workers)
+
+=== spell detection floors ===
+{
+  "source": "wyscout",
+  "exclude_one_club": false,
+  "n_matches": 1941,
+  "n_shots_modelled": 43544,
+  "prep": {
+    "threshold_seconds": 4.0,
+    "n_before": 45869,
+    "n_after": 44126,
+    "removed_fraction": 0.03799952037323684,
+    "max_run_length": 4,
+    "collapsed_events": 1644,
+    "collapses_at_half_boundaries": 34,
+    "guard_enforced": true,
+    "jitter_seed": 20260910,
+    "remaining_exact_ties": 0
+  },
+  "possession_rule": "tolerant",
+  "merge": {
+    "threshold_s": 10.0,
+    "require_high_restart": true,
+    "n_before": 282263,
+    "n_after": 247762,
+    "possessions_removed_fraction": 0.12222997700725924,
+    "attacks_merged": 15616,
+    "dangerous_share_before": 0.5750240024374431,
+    "dangerous_share_after": 0.5962617350521872
+  },
+  "spell_rule": {
+    "need": 4,
+    "window": 5,
+    "danger_col": "t_ft"
+  },
+  "prevalence": {
+    "share_time_z1": 0.3165269946218508,
+    "rule": {
+      "need": 4,
+      "window": 5,
+      "danger_col": "t_ft"
+    },
+    "share_shots_z1": 0.3630810214954988
+  },
+  "model": "S",
+  "alpha": 0.01,
+  "target_power": 0.8,
+  "grid": [
+    0.0,
+    0.02,
+    0.05,
+    0.1,
+    0.2
+  ],
+  "replicates": 30,
+  "null_replicates": 200,
+  "eta_cross_planted": 0.05,
+  "tau_planted": 5.0,
+  "floors": {
+    "out": {
+      "critical_value": 0.0052944705245835996,
+      "detection_floor": 0.05
+    },
+    "in": {
+      "critical_value": 0.01413279491801686,
+      "detection_floor": 0.05
+    }
+  },
+  "curves": {
+    "out": [
+      {
+        "eta_planted": 0.0,
+        "power": 0.01,
+        "mean_hat": 0.0001377511811626585,
+        "bias": NaN,
+        "frac_converged": NaN
+      },
+      {
+        "eta_planted": 0.02,
+        "power": 0.6333333333333333,
+        "mean_hat": 0.009226060604363852,
+        "bias": -0.010773939395636149,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.05,
+        "power": 1.0,
+        "mean_hat": 0.03995433335321779,
+        "bias": -0.010045666646782213,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.1,
+        "power": 1.0,
+        "mean_hat": 0.08859641573253955,
+        "bias": -0.011403584267460451,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.2,
+        "power": 1.0,
+        "mean_hat": 0.18596535630182676,
+        "bias": -0.014034643698173255,
+        "frac_converged": 1.0
+      }
+    ],
+    "in": [
+      {
+        "eta_planted": 0.0,
+        "power": 0.01,
+        "mean_hat": 0.0006642826380417717,
+        "bias": NaN,
+        "frac_converged": NaN
+      },
+      {
+        "eta_planted": 0.02,
+        "power": 0.36666666666666664,
+        "mean_hat": 0.012152897575084774,
+        "bias": -0.007847102424915226,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.05,
+        "power": 1.0,
+        "mean_hat": 0.04108451520582564,
+        "bias": -0.00891548479417436,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.1,
+        "power": 1.0,
+        "mean_hat": 0.09132958188728976,
+        "bias": -0.008670418112710243,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.2,
+        "power": 1.0,
+        "mean_hat": 0.19012897878597146,
+        "bias": -0.009871021214028552,
+        "frac_converged": 1.0
+      }
+    ]
+  },
+  "n_unconverged": 0
+}
+[spells] === wyscout S spell-power done in 6 min
+[spells] === wyscout S spell-fit (06:15:28 UTC, workers=95)
+01:16:17 INFO  headline {'eta_out': 0.00642, 'eta_in': 0.00263, 'eta_cross': 0.0}
+01:18:28 INFO    spell null bootstrap 25/500 (95 workers)
+01:20:42 INFO    spell null bootstrap 50/500 (95 workers)
+01:20:42 INFO    spell null bootstrap 75/500 (95 workers)
+01:20:42 INFO    spell null bootstrap 100/500 (95 workers)
+01:20:42 INFO    spell null bootstrap 125/500 (95 workers)
+01:20:42 INFO    spell null bootstrap 150/500 (95 workers)
+01:21:47 INFO    spell null bootstrap 175/500 (95 workers)
+01:21:47 INFO    spell null bootstrap 200/500 (95 workers)
+01:21:47 INFO    spell null bootstrap 225/500 (95 workers)
+01:21:47 INFO    spell null bootstrap 250/500 (95 workers)
+01:22:33 INFO    spell null bootstrap 275/500 (95 workers)
+01:23:01 INFO    spell null bootstrap 300/500 (95 workers)
+01:23:01 INFO    spell null bootstrap 325/500 (95 workers)
+01:23:18 INFO    spell null bootstrap 350/500 (95 workers)
+01:23:27 INFO    spell null bootstrap 375/500 (95 workers)
+01:23:27 INFO    spell null bootstrap 400/500 (95 workers)
+01:23:30 INFO    spell null bootstrap 425/500 (95 workers)
+01:23:30 INFO    spell null bootstrap 450/500 (95 workers)
+01:23:30 INFO    spell null bootstrap 475/500 (95 workers)
+01:23:45 INFO    spell null bootstrap 500/500 (95 workers)
+01:25:27 INFO    spell cluster bootstrap 25/200 (95 workers)
+01:25:43 INFO    spell cluster bootstrap 50/200 (95 workers)
+01:25:43 INFO    spell cluster bootstrap 75/200 (95 workers)
+01:25:45 INFO    spell cluster bootstrap 100/200 (95 workers)
+01:26:07 INFO    spell cluster bootstrap 125/200 (95 workers)
+01:26:44 INFO    spell cluster bootstrap 150/200 (95 workers)
+01:26:44 INFO    spell cluster bootstrap 175/200 (95 workers)
+01:27:11 INFO    spell cluster bootstrap 200/200 (95 workers)
+01:27:57 INFO    spell sensitivities 1/15 (15 workers)
+01:29:01 INFO    spell sensitivities 2/15 (15 workers)
+01:31:41 INFO    spell sensitivities 3/15 (15 workers)
+01:31:41 INFO    spell sensitivities 4/15 (15 workers)
+01:31:41 INFO    spell sensitivities 5/15 (15 workers)
+01:31:41 INFO    spell sensitivities 6/15 (15 workers)
+01:31:41 INFO    spell sensitivities 7/15 (15 workers)
+01:31:41 INFO    spell sensitivities 8/15 (15 workers)
+01:31:41 INFO    spell sensitivities 9/15 (15 workers)
+01:31:41 INFO    spell sensitivities 10/15 (15 workers)
+01:31:41 INFO    spell sensitivities 11/15 (15 workers)
+01:31:41 INFO    spell sensitivities 12/15 (15 workers)
+01:31:41 INFO    spell sensitivities 13/15 (15 workers)
+01:31:41 INFO    spell sensitivities 14/15 (15 workers)
+01:31:41 INFO    spell sensitivities 15/15 (15 workers)
+
+=== spell model development fit ===
+{
+  "source": "wyscout",
+  "exclude_one_club": false,
+  "n_matches": 1941,
+  "n_shots_modelled": 43544,
+  "prep": {
+    "threshold_seconds": 4.0,
+    "n_before": 45869,
+    "n_after": 44126,
+    "removed_fraction": 0.03799952037323684,
+    "max_run_length": 4,
+    "collapsed_events": 1644,
+    "collapses_at_half_boundaries": 34,
+    "guard_enforced": true,
+    "jitter_seed": 20260910,
+    "remaining_exact_ties": 0
+  },
+  "possession_rule": "tolerant",
+  "merge": {
+    "threshold_s": 10.0,
+    "require_high_restart": true,
+    "n_before": 282263,
+    "n_after": 247762,
+    "possessions_removed_fraction": 0.12222997700725924,
+    "attacks_merged": 15616,
+    "dangerous_share_before": 0.5750240024374431,
+    "dangerous_share_after": 0.5962617350521872
+  },
+  "spell_rule": {
+    "need": 4,
+    "window": 5,
+    "danger_col": "t_ft"
+  },
+  "prevalence": {
+    "share_time_z1": 0.3165269946218508,
+    "rule": {
+      "need": 4,
+      "window": 5,
+      "danger_col": "t_ft"
+    },
+    "share_shots_z1": 0.3630810214954988
+  },
+  "headline": {
+    "eta_out": 0.006419079817552737,
+    "eta_in": 0.0026316777734929466,
+    "eta_cross": 9.320856608978415e-09,
+    "tau_minutes": 7.922814629271839,
+    "gamma_own": 0.04139122713375777,
+    "gamma_opp": -0.11302668554520588,
+    "loglik": -134315.7690825867,
+    "converged": true,
+    "n_iter": 398,
+    "n_events": 43544,
+    "n_matches": 1941,
+    "kernel": true,
+    "contrast_in_minus_out": -0.00378740204405979
+  },
+  "background_only": {
+    "eta_out": 0.0,
+    "eta_in": 0.0,
+    "eta_cross": 0.0,
+    "tau_minutes": 5.0,
+    "gamma_own": 0.04127214813420519,
+    "gamma_opp": -0.11302908235461809,
+    "loglik": -134316.12057755672,
+    "converged": true,
+    "n_iter": 294,
+    "n_events": 43544,
+    "n_matches": 1941,
+    "kernel": false,
+    "contrast_in_minus_out": 0.0
+  },
+  "lr_vs_background": 0.7029899400658906,
+  "parametric_bootstrap": {
+    "n_replicates": 500,
+    "n_unconverged": 0,
+    "p_value": {
+      "out": 0.013972055888223553,
+      "in": 0.07584830339321358
+    },
+    "null_q95": {
+      "out": 9.531283124960359e-05,
+      "in": 0.005512426305069491
+    }
+  },
+  "cluster_bootstrap": {
+    "ci95": {
+      "out": [
+        4.0779620187816425e-10,
+        0.01306655500611391
+      ],
+      "in": [
+        5.61004239227275e-08,
+        0.0152137205663091
+      ],
+      "cross": [
+        1.9856653013141583e-33,
+        2.5769226050299507e-09
+      ],
+      "in_minus_out": [
+        -0.012971909248967845,
+        0.013542362823073415
+      ]
+    },
+    "n_replicates": 200,
+    "n_unconverged": 0
+  },
+  "floors": {
+    "out": 0.05,
+    "in": 0.05
+  },
+  "verdict": {
+    "out": "0.0064 is below the floor of 0.05: an upper bound, not an estimate",
+    "in": "0.0026 is below the floor of 0.05: an upper bound, not an estimate"
+  },
+  "label": "exploratory (docs/spec_spells.md section 1)",
+  "sensitivities": {
+    "box_1_20": {
+      "eta_out": 0.02762632140014246,
+      "eta_in": 0.07310379214313895,
+      "eta_cross": 1.0410534325493665e-09,
+      "tau_minutes": 19.999796033770835,
+      "gamma_own": 0.028774515905134027,
+      "gamma_opp": -0.11371016023908037,
+      "loglik": -134305.515941245,
+      "converged": true,
+      "n_iter": 457,
+      "n_events": 43544,
+      "n_matches": 1941,
+      "kernel": true,
+      "contrast_in_minus_out": 0.04547747074299649
+    },
+    "minute_spline_df_9": {
+      "eta_out": 0.0033201652813076806,
+      "eta_in": 7.71864226320939e-05,
+      "eta_cross": 5.0535042160004946e-17,
+      "tau_minutes": 7.9999240097558255,
+      "gamma_own": 0.04294469067511021,
+      "gamma_opp": -0.11193359670948552,
+      "loglik": -134304.67661163284,
+      "converged": true,
+      "n_iter": 1173,
+      "n_events": 43544,
+      "n_matches": 1941,
+      "kernel": true,
+      "contrast_in_minus_out": -0.003242978858675587
+    },
+    "minute_spline_df_12": {
+      "eta_out": 7.484550559825373e-10,
+      "eta_in": 1.5418321719664655e-08,
+      "eta_cross": 1.711858934866065e-44,
+      "tau_minutes": 7.999999999992818,
+      "gamma_own": 0.04013963825139066,
+      "gamma_opp": -0.11382201383062657,
+      "loglik": -134290.9593121288,
+      "converged": false,
+      "n_iter": 3000,
+      "n_events": 43544,
+      "n_matches": 1941,
+      "kernel": true,
+      "contrast_in_minus_out": 1.4669866663682118e-08
+    },
+    "no_gamma_confounded": {
+      "eta_out": 0.009258898125807886,
+      "eta_in": 0.026442054355480065,
+      "eta_cross": 1.18703411506515e-11,
+      "tau_minutes": 7.998829828071874,
+      "gamma_own": 0.0,
+      "gamma_opp": 0.0,
+      "loglik": -134374.5059005262,
+      "converged": true,
+      "n_iter": 574,
+      "n_events": 43544,
+      "n_matches": 1941,
+      "kernel": true,
+      "contrast_in_minus_out": 0.01718315622967218
+    },
+    "rule_3_of_5": {
+      "eta_out": 0.0126133563980098,
+      "eta_in": 0.0024211918776393167,
+      "eta_cross": 5.2497838224185546e-08,
+      "tau_minutes": 7.848322203832495,
+      "gamma_own": 0.05296003300691454,
+      "gamma_opp": -0.07819939919947269,
+      "loglik": -134336.79694818452,
+      "converged": true,
+      "n_iter": 368,
+      "n_events": 43544,
+      "n_matches": 1941,
+      "kernel": true,
+      "contrast_in_minus_out": -0.010192164520370483,
+      "prevalence": {
+        "share_time_z1": 0.5947682011687866,
+        "rule": {
+          "need": 3,
+          "window": 5,
+          "danger_col": "t_ft"
+        },
+        "share_shots_z1": 0.6412134852103619
+      }
+    },
+    "rule_5_of_5": {
+      "eta_out": 0.011677381587456511,
+      "eta_in": 1.4894401851423389e-06,
+      "eta_cross": 8.984193877981501e-14,
+      "tau_minutes": 7.99971597594521,
+      "gamma_own": 0.04954623697535941,
+      "gamma_opp": -0.11048738921838776,
+      "loglik": -134353.40154275502,
+      "converged": true,
+      "n_iter": 677,
+      "n_events": 43544,
+      "n_matches": 1941,
+      "kernel": true,
+      "contrast_in_minus_out": -0.011675892147271369,
+      "prevalence": {
+        "share_time_z1": 0.09257563909569129,
+        "rule": {
+          "need": 5,
+          "window": 5,
+          "danger_col": "t_ft"
+        },
+        "share_shots_z1": 0.1154464449751975
+      }
+    },
+    "rule_6_of_8": {
+      "eta_out": 0.001459124685259868,
+      "eta_in": 0.02033595189278373,
+      "eta_cross": 1.19673731110298e-09,
+      "tau_minutes": 7.968012109922925,
+      "gamma_own": 0.015088250348686664,
+      "gamma_opp": -0.09998923659635867,
+      "loglik": -134337.5047561716,
+      "converged": true,
+      "n_iter": 424,
+      "n_events": 43544,
+      "n_matches": 1941,
+      "kernel": true,
+      "contrast_in_minus_out": 0.01887682720752386,
+      "prevalence": {
+        "share_time_z1": 0.27412980437777984,
+        "rule": {
+          "need": 6,
+          "window": 8,
+          "danger_col": "t_ft"
+        },
+        "share_shots_z1": 0.3193321697593239
+      }
+    },
+    "danger_x75": {
+      "eta_out": 0.007711381180401553,
+      "eta_in": 0.01249067152964486,
+      "eta_cross": 8.782504362556688e-09,
+      "tau_minutes": 7.9897453012620545,
+      "gamma_own": 0.04157799338805968,
+      "gamma_opp": -0.12770799806457528,
+      "loglik": -134333.3771747326,
+      "converged": true,
+      "n_iter": 855,
+      "n_events": 43544,
+      "n_matches": 1941,
+      "kernel": true,
+      "contrast_in_minus_out": 0.004779290349243306,
+      "prevalence": {
+        "share_time_z1": 0.1496716121232303,
+        "rule": {
+          "need": 4,
+          "window": 5,
+          "danger_col": "t_ft75"
+        },
+        "share_shots_z1": 0.18204574683079183
+      }
+    },
+    "strict_possession_rule": {
+      "eta_out": 2.699058138065075e-08,
+      "eta_in": 3.77901029468868e-06,
+      "eta_cross": 3.759516713161938e-25,
+      "tau_minutes": 7.999999280863242,
+      "gamma_own": 0.11419616097497455,
+      "gamma_opp": -0.23079573694617844,
+      "loglik": -134177.450962314,
+      "converged": true,
+      "n_iter": 358,
+      "n_events": 43544,
+      "n_matches": 1941,
+      "kernel": true,
+      "contrast_in_minus_out": 3.7520197133080295e-06,
+      "prevalence": {
+        "share_time_z1": 0.18064250068641688,
+        "rule": {
+          "need": 4,
+          "window": 5,
+          "danger_col": "t_ft"
+        },
+        "share_shots_z1": 0.22721844571008634
+      }
+    },
+    "tau_profile": [
+      {
+        "tau_minutes": 3.0,
+        "eta_out": 3.081449949299284e-09,
+        "eta_in": 6.472688438485069e-08,
+        "eta_cross": 2.389236346049842e-31,
+        "gamma_own": 0.04124555423853806,
+        "loglik": -134316.12927335803,
+        "converged": true
+      },
+      {
+        "tau_minutes": 5.0,
+        "eta_out": 1.979749083716089e-09,
+        "eta_in": 3.9445232350236055e-08,
+        "eta_cross": 5.022794252807932e-38,
+        "gamma_own": 0.041234731046634464,
+        "loglik": -134316.1032586925,
+        "converged": true
+      },
+      {
+        "tau_minutes": 8.0,
+        "eta_out": 0.006617296178139421,
+        "eta_in": 0.004292088873217835,
+        "eta_cross": 5.879487986901669e-09,
+        "gamma_own": 0.040816499329041654,
+        "loglik": -134315.7348208157,
+        "converged": true
+      },
+      {
+        "tau_minutes": 14.0,
+        "eta_out": 0.01924021302932347,
+        "eta_in": 0.04366114443998321,
+        "eta_cross": 7.819410234424532e-07,
+        "gamma_own": 0.031823641897615766,
+        "loglik": -134310.49444333647,
+        "converged": true
+      },
+      {
+        "tau_minutes": 20.0,
+        "eta_out": 0.02742047410391734,
+        "eta_in": 0.07312817583497612,
+        "eta_cross": 9.492902898766665e-08,
+        "gamma_own": 0.028778946851156485,
+        "loglik": -134305.53305683684,
+        "converged": true
+      },
+      {
+        "tau_minutes": 30.0,
+        "eta_out": 0.036134666975900155,
+        "eta_in": 0.11088258989601281,
+        "eta_cross": 5.530011921202194e-09,
+        "gamma_own": 0.027423093637567474,
+        "loglik": -134300.8292155842,
+        "converged": true
+      }
+    ]
+  }
+}
+[spells] === wyscout S spell-fit done in 16 min
+[spells] === wyscout G spell-recovery (06:31:41 UTC, workers=95)
+01:33:02 INFO    spell recovery 5/10 (10 workers)
+01:33:02 INFO    spell recovery 10/10 (10 workers)
+
+=== spell recovery ===
+{
+  "source": "wyscout",
+  "exclude_one_club": false,
+  "n_matches": 1941,
+  "n_shots_modelled": 43544,
+  "prep": {
+    "threshold_seconds": 4.0,
+    "n_before": 45869,
+    "n_after": 44126,
+    "removed_fraction": 0.03799952037323684,
+    "max_run_length": 4,
+    "collapsed_events": 1644,
+    "collapses_at_half_boundaries": 34,
+    "guard_enforced": true,
+    "jitter_seed": 20260910,
+    "remaining_exact_ties": 0
+  },
+  "possession_rule": "tolerant",
+  "merge": {
+    "threshold_s": 10.0,
+    "require_high_restart": true,
+    "n_before": 282263,
+    "n_after": 247762,
+    "possessions_removed_fraction": 0.12222997700725924,
+    "attacks_merged": 15616,
+    "dangerous_share_before": 0.5750240024374431,
+    "dangerous_share_after": 0.5962617350521872
+  },
+  "spell_rule": {
+    "need": 4,
+    "window": 5,
+    "danger_col": "t_ft"
+  },
+  "prevalence": {
+    "share_time_z1": 0.3165269946218508,
+    "rule": {
+      "need": 4,
+      "window": 5,
+      "danger_col": "t_ft"
+    },
+    "share_shots_z1": 0.3630810214954988
+  },
+  "model": "G",
+  "planted": {
+    "level": 0.3,
+    "trail": 0.1,
+    "lead": 0.2
+  },
+  "eta_cross_planted": 0.05,
+  "tau_planted": 5.0,
+  "gamma_planted": [
+    0.0,
+    0.0
+  ],
+  "n_replicates": 10,
+  "tolerance": 0.08,
+  "per_parameter": {
+    "level": {
+      "planted": 0.3,
+      "mean_hat": 0.28833886584666163,
+      "sd_hat": 0.008016610794052515,
+      "bias": -0.01166113415333836,
+      "passed": true
+    },
+    "trail": {
+      "planted": 0.1,
+      "mean_hat": 0.08570051934202808,
+      "sd_hat": 0.012237903357690752,
+      "bias": -0.01429948065797193,
+      "passed": true
+    },
+    "lead": {
+      "planted": 0.2,
+      "mean_hat": 0.188733847234923,
+      "sd_hat": 0.009684851193316638,
+      "bias": -0.011266152765077003,
+      "passed": true
+    }
+  },
+  "mean_eta_cross_hat": 0.047878635788193166,
+  "mean_tau_hat": 4.672433129971871,
+  "n_unconverged": 0,
+  "passed": true
+}
+[spells] === wyscout G spell-recovery done in 1 min
+[spells] === wyscout G spell-power (06:33:04 UTC, workers=95)
+01:35:46 INFO    spell power 20/560 (95 workers)
+01:35:46 INFO    spell power 40/560 (95 workers)
+01:36:36 INFO    spell power 60/560 (95 workers)
+01:36:36 INFO    spell power 80/560 (95 workers)
+01:36:36 INFO    spell power 100/560 (95 workers)
+01:36:36 INFO    spell power 120/560 (95 workers)
+01:37:46 INFO    spell power 140/560 (95 workers)
+01:37:50 INFO    spell power 160/560 (95 workers)
+01:37:50 INFO    spell power 180/560 (95 workers)
+01:37:50 INFO    spell power 200/560 (95 workers)
+01:38:17 INFO    spell power 220/560 (95 workers)
+01:39:05 INFO    spell power 240/560 (95 workers)
+01:39:05 INFO    spell power 260/560 (95 workers)
+01:39:05 INFO    spell power 280/560 (95 workers)
+01:39:05 INFO    spell power 300/560 (95 workers)
+01:39:14 INFO    spell power 320/560 (95 workers)
+01:39:38 INFO    spell power 340/560 (95 workers)
+01:39:38 INFO    spell power 360/560 (95 workers)
+01:39:45 INFO    spell power 380/560 (95 workers)
+01:40:06 INFO    spell power 400/560 (95 workers)
+01:40:52 INFO    spell power 420/560 (95 workers)
+01:40:52 INFO    spell power 440/560 (95 workers)
+01:40:53 INFO    spell power 460/560 (95 workers)
+01:40:53 INFO    spell power 480/560 (95 workers)
+01:40:53 INFO    spell power 500/560 (95 workers)
+01:40:57 INFO    spell power 520/560 (95 workers)
+01:41:02 INFO    spell power 540/560 (95 workers)
+01:41:17 INFO    spell power 560/560 (95 workers)
+
+=== spell detection floors ===
+{
+  "source": "wyscout",
+  "exclude_one_club": false,
+  "n_matches": 1941,
+  "n_shots_modelled": 43544,
+  "prep": {
+    "threshold_seconds": 4.0,
+    "n_before": 45869,
+    "n_after": 44126,
+    "removed_fraction": 0.03799952037323684,
+    "max_run_length": 4,
+    "collapsed_events": 1644,
+    "collapses_at_half_boundaries": 34,
+    "guard_enforced": true,
+    "jitter_seed": 20260910,
+    "remaining_exact_ties": 0
+  },
+  "possession_rule": "tolerant",
+  "merge": {
+    "threshold_s": 10.0,
+    "require_high_restart": true,
+    "n_before": 282263,
+    "n_after": 247762,
+    "possessions_removed_fraction": 0.12222997700725924,
+    "attacks_merged": 15616,
+    "dangerous_share_before": 0.5750240024374431,
+    "dangerous_share_after": 0.5962617350521872
+  },
+  "spell_rule": {
+    "need": 4,
+    "window": 5,
+    "danger_col": "t_ft"
+  },
+  "prevalence": {
+    "share_time_z1": 0.3165269946218508,
+    "rule": {
+      "need": 4,
+      "window": 5,
+      "danger_col": "t_ft"
+    },
+    "share_shots_z1": 0.3630810214954988
+  },
+  "model": "G",
+  "alpha": 0.01,
+  "target_power": 0.8,
+  "grid": [
+    0.0,
+    0.02,
+    0.05,
+    0.1,
+    0.2
+  ],
+  "replicates": 30,
+  "null_replicates": 200,
+  "eta_cross_planted": 0.05,
+  "tau_planted": 5.0,
+  "floors": {
+    "level": {
+      "critical_value": 0.005376426202871263,
+      "detection_floor": 0.05
+    },
+    "trail": {
+      "critical_value": 0.010159042714440172,
+      "detection_floor": 0.05
+    },
+    "lead": {
+      "critical_value": 0.015924708324999693,
+      "detection_floor": 0.05
+    }
+  },
+  "curves": {
+    "level": [
+      {
+        "eta_planted": 0.0,
+        "power": 0.01,
+        "mean_hat": 0.00013571763427299612,
+        "bias": NaN,
+        "frac_converged": NaN
+      },
+      {
+        "eta_planted": 0.02,
+        "power": 0.43333333333333335,
+        "mean_hat": 0.007392950814212534,
+        "bias": -0.012607049185787467,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.05,
+        "power": 1.0,
+        "mean_hat": 0.04133438064351576,
+        "bias": -0.008665619356484244,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.1,
+        "power": 1.0,
+        "mean_hat": 0.0893742412692873,
+        "bias": -0.010625758730712712,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.2,
+        "power": 1.0,
+        "mean_hat": 0.18947614887660305,
+        "bias": -0.01052385112339696,
+        "frac_converged": 1.0
+      }
+    ],
+    "trail": [
+      {
+        "eta_planted": 0.0,
+        "power": 0.01,
+        "mean_hat": 0.0005900509071072612,
+        "bias": NaN,
+        "frac_converged": NaN
+      },
+      {
+        "eta_planted": 0.02,
+        "power": 0.5666666666666667,
+        "mean_hat": 0.011931747766090723,
+        "bias": -0.008068252233909277,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.05,
+        "power": 1.0,
+        "mean_hat": 0.0454516458224356,
+        "bias": -0.004548354177564405,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.1,
+        "power": 1.0,
+        "mean_hat": 0.08702344510454998,
+        "bias": -0.012976554895450021,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.2,
+        "power": 1.0,
+        "mean_hat": 0.18996689582608683,
+        "bias": -0.010033104173913177,
+        "frac_converged": 1.0
+      }
+    ],
+    "lead": [
+      {
+        "eta_planted": 0.0,
+        "power": 0.01,
+        "mean_hat": 0.0016132685818292932,
+        "bias": NaN,
+        "frac_converged": NaN
+      },
+      {
+        "eta_planted": 0.02,
+        "power": 0.3,
+        "mean_hat": 0.01258044603901601,
+        "bias": -0.007419553960983991,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.05,
+        "power": 1.0,
+        "mean_hat": 0.041682811109299986,
+        "bias": -0.008317188890700017,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.1,
+        "power": 1.0,
+        "mean_hat": 0.09156607693791571,
+        "bias": -0.008433923062084292,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.2,
+        "power": 1.0,
+        "mean_hat": 0.1893756510139682,
+        "bias": -0.010624348986031817,
+        "frac_converged": 1.0
+      }
+    ]
+  },
+  "n_unconverged": 0
+}
+[spells] === wyscout G spell-power done in 8 min
+[spells] === wyscout G spell-fit (06:41:17 UTC, workers=95)
+01:42:06 INFO  headline {'eta_level': 0.00043, 'eta_trail': 0.02279, 'eta_lead': 0.03445, 'eta_cross': 0.0}
+01:44:37 INFO    spell null bootstrap 25/500 (95 workers)
+01:44:37 INFO    spell null bootstrap 50/500 (95 workers)
+01:44:48 INFO    spell null bootstrap 75/500 (95 workers)
+01:44:48 INFO    spell null bootstrap 100/500 (95 workers)
+01:46:04 INFO    spell null bootstrap 125/500 (95 workers)
+01:46:04 INFO    spell null bootstrap 150/500 (95 workers)
+01:46:04 INFO    spell null bootstrap 175/500 (95 workers)
+01:46:04 INFO    spell null bootstrap 200/500 (95 workers)
+01:46:04 INFO    spell null bootstrap 225/500 (95 workers)
+01:46:04 INFO    spell null bootstrap 250/500 (95 workers)
+01:46:04 INFO    spell null bootstrap 275/500 (95 workers)
+01:46:04 INFO    spell null bootstrap 300/500 (95 workers)
+01:46:34 INFO    spell null bootstrap 325/500 (95 workers)
+01:46:34 INFO    spell null bootstrap 350/500 (95 workers)
+01:47:09 INFO    spell null bootstrap 375/500 (95 workers)
+01:47:09 INFO    spell null bootstrap 400/500 (95 workers)
+01:47:09 INFO    spell null bootstrap 425/500 (95 workers)
+01:47:14 INFO    spell null bootstrap 450/500 (95 workers)
+01:47:14 INFO    spell null bootstrap 475/500 (95 workers)
+01:47:33 INFO    spell null bootstrap 500/500 (95 workers)
+01:50:10 INFO    spell cluster bootstrap 25/200 (95 workers)
+01:50:10 INFO    spell cluster bootstrap 50/200 (95 workers)
+01:50:10 INFO    spell cluster bootstrap 75/200 (95 workers)
+01:50:12 INFO    spell cluster bootstrap 100/200 (95 workers)
+01:50:12 INFO    spell cluster bootstrap 125/200 (95 workers)
+01:50:47 INFO    spell cluster bootstrap 150/200 (95 workers)
+01:51:00 INFO    spell cluster bootstrap 175/200 (95 workers)
+01:51:10 INFO    spell cluster bootstrap 200/200 (95 workers)
+01:51:57 INFO    spell sensitivities 1/9 (9 workers)
+01:53:09 INFO    spell sensitivities 2/9 (9 workers)
+01:56:20 INFO    spell sensitivities 3/9 (9 workers)
+01:56:20 INFO    spell sensitivities 4/9 (9 workers)
+01:56:20 INFO    spell sensitivities 5/9 (9 workers)
+01:56:20 INFO    spell sensitivities 6/9 (9 workers)
+01:56:20 INFO    spell sensitivities 7/9 (9 workers)
+01:56:20 INFO    spell sensitivities 8/9 (9 workers)
+01:56:20 INFO    spell sensitivities 9/9 (9 workers)
+
+=== spell model development fit ===
+{
+  "source": "wyscout",
+  "exclude_one_club": false,
+  "n_matches": 1941,
+  "n_shots_modelled": 43544,
+  "prep": {
+    "threshold_seconds": 4.0,
+    "n_before": 45869,
+    "n_after": 44126,
+    "removed_fraction": 0.03799952037323684,
+    "max_run_length": 4,
+    "collapsed_events": 1644,
+    "collapses_at_half_boundaries": 34,
+    "guard_enforced": true,
+    "jitter_seed": 20260910,
+    "remaining_exact_ties": 0
+  },
+  "possession_rule": "tolerant",
+  "merge": {
+    "threshold_s": 10.0,
+    "require_high_restart": true,
+    "n_before": 282263,
+    "n_after": 247762,
+    "possessions_removed_fraction": 0.12222997700725924,
+    "attacks_merged": 15616,
+    "dangerous_share_before": 0.5750240024374431,
+    "dangerous_share_after": 0.5962617350521872
+  },
+  "spell_rule": {
+    "need": 4,
+    "window": 5,
+    "danger_col": "t_ft"
+  },
+  "prevalence": {
+    "share_time_z1": 0.3165269946218508,
+    "rule": {
+      "need": 4,
+      "window": 5,
+      "danger_col": "t_ft"
+    },
+    "share_shots_z1": 0.3630810214954988
+  },
+  "headline": {
+    "eta_level": 0.00042781949295762895,
+    "eta_trail": 0.02279292135874257,
+    "eta_lead": 0.03444888289222683,
+    "eta_cross": 1.3166866449667344e-12,
+    "tau_minutes": 7.994174764192242,
+    "gamma_own": 0.0,
+    "gamma_opp": 0.0,
+    "loglik": -134373.03737893995,
+    "converged": true,
+    "n_iter": 354,
+    "n_events": 43544,
+    "n_matches": 1941,
+    "kernel": true
+  },
+  "background_only": {
+    "eta_level": 0.0,
+    "eta_trail": 0.0,
+    "eta_lead": 0.0,
+    "eta_cross": 0.0,
+    "tau_minutes": 5.0,
+    "gamma_own": 0.0,
+    "gamma_opp": 0.0,
+    "loglik": -134378.15412275272,
+    "converged": true,
+    "n_iter": 132,
+    "n_events": 43544,
+    "n_matches": 1941,
+    "kernel": false
+  },
+  "lr_vs_background": 10.23348762554815,
+  "parametric_bootstrap": {
+    "n_replicates": 500,
+    "n_unconverged": 0,
+    "p_value": {
+      "level": 0.00998003992015968,
+      "trail": 0.001996007984031936,
+      "lead": 0.001996007984031936
+    },
+    "null_q95": {
+      "level": 7.686252774163273e-05,
+      "trail": 0.010183286395801298,
+      "lead": 0.010452376217452066
+    }
+  },
+  "cluster_bootstrap": {
+    "ci95": {
+      "level": [
+        6.407877295938459e-07,
+        0.006458539430726082
+      ],
+      "trail": [
+        2.60096167413829e-05,
+        0.034316192152336514
+      ],
+      "lead": [
+        0.00011255466282607378,
+        0.053226391766008595
+      ],
+      "cross": [
+        1.4043945559460958e-23,
+        8.314637770698964e-10
+      ]
+    },
+    "n_replicates": 200,
+    "n_unconverged": 0
+  },
+  "floors": {
+    "level": 0.05,
+    "trail": 0.05,
+    "lead": 0.05
+  },
+  "verdict": {
+    "level": "0.0004 is below the floor of 0.05: an upper bound, not an estimate",
+    "trail": "0.0228 is below the floor of 0.05: an upper bound, not an estimate",
+    "lead": "0.0344 is below the floor of 0.05: an upper bound, not an estimate"
+  },
+  "label": "exploratory (docs/spec_spells.md section 1)",
+  "sensitivities": {
+    "box_1_20": {
+      "eta_level": 0.03625278828985402,
+      "eta_trail": 0.08744376733158535,
+      "eta_lead": 0.07479118213632335,
+      "eta_cross": 1.3779788605143047e-07,
+      "tau_minutes": 19.99347573550432,
+      "gamma_own": 0.0,
+      "gamma_opp": 0.0,
+      "loglik": -134360.4933161148,
+      "converged": true,
+      "n_iter": 411,
+      "n_events": 43544,
+      "n_matches": 1941,
+      "kernel": true
+    },
+    "minute_spline_df_9": {
+      "eta_level": 1.4325610105314674e-29,
+      "eta_trail": 0.023036272776360642,
+      "eta_lead": 0.03520073591493313,
+      "eta_cross": 1.2470410148791583e-126,
+      "tau_minutes": 8.0,
+      "gamma_own": 0.0,
+      "gamma_opp": 0.0,
+      "loglik": -134360.9649877663,
+      "converged": true,
+      "n_iter": 1086,
+      "n_events": 43544,
+      "n_matches": 1941,
+      "kernel": true
+    },
+    "minute_spline_df_12": {
+      "eta_level": 1.9824730554814198e-20,
+      "eta_trail": 0.021485119768675783,
+      "eta_lead": 0.03610734361956039,
+      "eta_cross": 1.973163669339463e-90,
+      "tau_minutes": 8.0,
+      "gamma_own": 0.0,
+      "gamma_opp": 0.0,
+      "loglik": -134345.85177275902,
+      "converged": false,
+      "n_iter": 3000,
+      "n_events": 43544,
+      "n_matches": 1941,
+      "kernel": true
+    },
+    "tau_profile": [
+      {
+        "tau_minutes": 3.0,
+        "eta_level": 1.4147626424605716e-07,
+        "eta_trail": 2.708417731901876e-05,
+        "eta_lead": 0.00019589497705367945,
+        "eta_cross": 4.741048692862105e-26,
+        "gamma_own": 0.0,
+        "loglik": -134378.16942913714,
+        "converged": true
+      },
+      {
+        "tau_minutes": 5.0,
+        "eta_level": 1.4737655116079761e-05,
+        "eta_trail": 0.000435985935779516,
+        "eta_lead": 0.017803614314894058,
+        "eta_cross": 7.129671473320264e-18,
+        "gamma_own": 0.0,
+        "loglik": -134376.65717790584,
+        "converged": true
+      },
+      {
+        "tau_minutes": 8.0,
+        "eta_level": 0.003132298732918871,
+        "eta_trail": 0.022856022466359417,
+        "eta_lead": 0.034958489582961105,
+        "eta_cross": 3.3138939103719127e-09,
+        "gamma_own": 0.0,
+        "loglik": -134373.01554236194,
+        "converged": true
+      },
+      {
+        "tau_minutes": 14.0,
+        "eta_level": 0.021557464126782905,
+        "eta_trail": 0.0599040641450345,
+        "eta_lead": 0.05911785959227455,
+        "eta_cross": 4.601139577770826e-06,
+        "gamma_own": 0.0,
+        "loglik": -134365.2156169088,
+        "converged": true
+      },
+      {
+        "tau_minutes": 20.0,
+        "eta_level": 0.036446491202033006,
+        "eta_trail": 0.08748768558361061,
+        "eta_lead": 0.07482341690722423,
+        "eta_cross": 1.325003723781143e-06,
+        "gamma_own": 0.0,
+        "loglik": -134360.48976654533,
+        "converged": true
+      },
+      {
+        "tau_minutes": 30.0,
+        "eta_level": 0.05418910804775326,
+        "eta_trail": 0.1224518195672682,
+        "eta_lead": 0.09379816903327667,
+        "eta_cross": 4.940886141973291e-06,
+        "gamma_own": 0.0,
+        "loglik": -134357.07173636646,
+        "converged": true
+      }
+    ]
+  }
+}
+[spells] === wyscout G spell-fit done in 15 min
+[spells] === wyscout spell-holm (06:56:21 UTC, workers=95)
+
+=== Holm over the five primary tests ===
+{
+  "alpha": 0.05,
+  "m": 5,
+  "raw": {
+    "eta_out": 0.013972055888223553,
+    "eta_in": 0.07584830339321358,
+    "eta_level": 0.00998003992015968,
+    "eta_trail": 0.001996007984031936,
+    "eta_lead": 0.001996007984031936
+  },
+  "adjusted": {
+    "eta_trail": 0.00998003992015968,
+    "eta_lead": 0.00998003992015968,
+    "eta_level": 0.029940119760479042,
+    "eta_out": 0.029940119760479042,
+    "eta_in": 0.07584830339321358
+  },
+  "reject": {
+    "eta_out": true,
+    "eta_in": false,
+    "eta_level": true,
+    "eta_trail": true,
+    "eta_lead": true
+  },
+  "estimates": {
+    "eta_out": 0.006419079817552737,
+    "eta_in": 0.0026316777734929466,
+    "eta_level": 0.00042781949295762895,
+    "eta_trail": 0.02279292135874257,
+    "eta_lead": 0.03444888289222683
+  },
+  "source": "wyscout",
+  "exclude_one_club": false
+}
+[spells] === wyscout spell-holm done in 0 min
+[spells] === statsbomb S spell-recovery (06:56:23 UTC, workers=95)
+01:57:50 INFO    spell recovery 5/10 (10 workers)
+01:58:14 INFO    spell recovery 10/10 (10 workers)
+
+=== spell recovery ===
+{
+  "source": "statsbomb",
+  "exclude_one_club": false,
+  "n_matches": 2112,
+  "n_shots_modelled": 49880,
+  "prep": {
+    "threshold_seconds": 4.0,
+    "n_before": 52979,
+    "n_after": 50445,
+    "removed_fraction": 0.047830272372071936,
+    "max_run_length": 4,
+    "collapsed_events": 2372,
+    "collapses_at_half_boundaries": 50,
+    "guard_enforced": true,
+    "jitter_seed": 20260910,
+    "remaining_exact_ties": 0
+  },
+  "possession_rule": "tolerant",
+  "merge": {
+    "threshold_s": 10.0,
+    "require_high_restart": true,
+    "n_before": 371030,
+    "n_after": 333119,
+    "possessions_removed_fraction": 0.1021777214780476,
+    "attacks_merged": 17219,
+    "dangerous_share_before": 0.47964585073983235,
+    "dangerous_share_after": 0.4884890984903293
+  },
+  "spell_rule": {
+    "need": 4,
+    "window": 5,
+    "danger_col": "t_ft"
+  },
+  "prevalence": {
+    "share_time_z1": 0.19427059644721034,
+    "rule": {
+      "need": 4,
+      "window": 5,
+      "danger_col": "t_ft"
+    },
+    "share_shots_z1": 0.24330392943063353
+  },
+  "model": "S",
+  "planted": {
+    "out": 0.1,
+    "in": 0.3
+  },
+  "eta_cross_planted": 0.05,
+  "tau_planted": 5.0,
+  "gamma_planted": [
+    0.07155454397492053,
+    -0.11701042203019929
+  ],
+  "n_replicates": 10,
+  "tolerance": 0.08,
+  "per_parameter": {
+    "out": {
+      "planted": 0.1,
+      "mean_hat": 0.07679483788653253,
+      "sd_hat": 0.008616593664036219,
+      "bias": -0.023205162113467473,
+      "passed": true
+    },
+    "in": {
+      "planted": 0.3,
+      "mean_hat": 0.26866190271202545,
+      "sd_hat": 0.013092710951183818,
+      "bias": -0.03133809728797454,
+      "passed": true
+    }
+  },
+  "mean_eta_cross_hat": 0.04465265377925531,
+  "mean_tau_hat": 4.394035293901011,
+  "n_unconverged": 0,
+  "passed": true
+}
+[spells] === statsbomb S spell-recovery done in 1 min
+[spells] === statsbomb S spell-power (06:58:19 UTC, workers=95)
+02:01:48 INFO    spell power 20/440 (95 workers)
+02:01:48 INFO    spell power 40/440 (95 workers)
+02:02:29 INFO    spell power 60/440 (95 workers)
+02:02:29 INFO    spell power 80/440 (95 workers)
+02:02:29 INFO    spell power 100/440 (95 workers)
+02:03:36 INFO    spell power 120/440 (95 workers)
+02:03:50 INFO    spell power 140/440 (95 workers)
+02:05:26 INFO    spell power 160/440 (95 workers)
+02:05:26 INFO    spell power 180/440 (95 workers)
+02:05:26 INFO    spell power 200/440 (95 workers)
+02:06:14 INFO    spell power 220/440 (95 workers)
+02:06:14 INFO    spell power 240/440 (95 workers)
+02:06:14 INFO    spell power 260/440 (95 workers)
+02:06:14 INFO    spell power 280/440 (95 workers)
+02:06:27 INFO    spell power 300/440 (95 workers)
+02:06:39 INFO    spell power 320/440 (95 workers)
+02:06:45 INFO    spell power 340/440 (95 workers)
+02:06:45 INFO    spell power 360/440 (95 workers)
+02:06:59 INFO    spell power 380/440 (95 workers)
+02:07:07 INFO    spell power 400/440 (95 workers)
+02:07:27 INFO    spell power 420/440 (95 workers)
+02:07:30 INFO    spell power 440/440 (95 workers)
+
+=== spell detection floors ===
+{
+  "source": "statsbomb",
+  "exclude_one_club": false,
+  "n_matches": 2112,
+  "n_shots_modelled": 49880,
+  "prep": {
+    "threshold_seconds": 4.0,
+    "n_before": 52979,
+    "n_after": 50445,
+    "removed_fraction": 0.047830272372071936,
+    "max_run_length": 4,
+    "collapsed_events": 2372,
+    "collapses_at_half_boundaries": 50,
+    "guard_enforced": true,
+    "jitter_seed": 20260910,
+    "remaining_exact_ties": 0
+  },
+  "possession_rule": "tolerant",
+  "merge": {
+    "threshold_s": 10.0,
+    "require_high_restart": true,
+    "n_before": 371030,
+    "n_after": 333119,
+    "possessions_removed_fraction": 0.1021777214780476,
+    "attacks_merged": 17219,
+    "dangerous_share_before": 0.47964585073983235,
+    "dangerous_share_after": 0.4884890984903293
+  },
+  "spell_rule": {
+    "need": 4,
+    "window": 5,
+    "danger_col": "t_ft"
+  },
+  "prevalence": {
+    "share_time_z1": 0.19427059644721034,
+    "rule": {
+      "need": 4,
+      "window": 5,
+      "danger_col": "t_ft"
+    },
+    "share_shots_z1": 0.24330392943063353
+  },
+  "model": "S",
+  "alpha": 0.01,
+  "target_power": 0.8,
+  "grid": [
+    0.0,
+    0.02,
+    0.05,
+    0.1,
+    0.2
+  ],
+  "replicates": 30,
+  "null_replicates": 200,
+  "eta_cross_planted": 0.05,
+  "tau_planted": 5.0,
+  "floors": {
+    "out": {
+      "critical_value": 4.904696007252571e-05,
+      "detection_floor": 0.05
+    },
+    "in": {
+      "critical_value": 0.01114619856008059,
+      "detection_floor": 0.05
+    }
+  },
+  "curves": {
+    "out": [
+      {
+        "eta_planted": 0.0,
+        "power": 0.01,
+        "mean_hat": 2.615173427197048e-06,
+        "bias": NaN,
+        "frac_converged": NaN
+      },
+      {
+        "eta_planted": 0.02,
+        "power": 0.3333333333333333,
+        "mean_hat": 0.002705887409006834,
+        "bias": -0.017294112590993165,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.05,
+        "power": 1.0,
+        "mean_hat": 0.02964487064837332,
+        "bias": -0.020355129351626682,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.1,
+        "power": 1.0,
+        "mean_hat": 0.07593089305802994,
+        "bias": -0.024069106941970064,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.2,
+        "power": 1.0,
+        "mean_hat": 0.17330150471147945,
+        "bias": -0.026698495288520557,
+        "frac_converged": 1.0
+      }
+    ],
+    "in": [
+      {
+        "eta_planted": 0.0,
+        "power": 0.01,
+        "mean_hat": 0.0005938508300640633,
+        "bias": NaN,
+        "frac_converged": NaN
+      },
+      {
+        "eta_planted": 0.02,
+        "power": 0.2,
+        "mean_hat": 0.005729036411392553,
+        "bias": -0.014270963588607449,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.05,
+        "power": 1.0,
+        "mean_hat": 0.03207846078161141,
+        "bias": -0.017921539218388592,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.1,
+        "power": 1.0,
+        "mean_hat": 0.0774163001960227,
+        "bias": -0.0225836998039773,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.2,
+        "power": 1.0,
+        "mean_hat": 0.1764653981441323,
+        "bias": -0.0235346018558677,
+        "frac_converged": 1.0
+      }
+    ]
+  },
+  "n_unconverged": 0
+}
+[spells] === statsbomb S spell-power done in 9 min
+[spells] === statsbomb S spell-fit (07:07:30 UTC, workers=95)
+02:08:29 INFO  headline {'eta_out': 0.0, 'eta_in': 1e-05, 'eta_cross': 0.0}
+02:11:42 INFO    spell null bootstrap 25/500 (95 workers)
+02:11:47 INFO    spell null bootstrap 50/500 (95 workers)
+02:11:50 INFO    spell null bootstrap 75/500 (95 workers)
+02:11:50 INFO    spell null bootstrap 100/500 (95 workers)
+02:13:14 INFO    spell null bootstrap 125/500 (95 workers)
+02:13:14 INFO    spell null bootstrap 150/500 (95 workers)
+02:14:06 INFO    spell null bootstrap 175/500 (95 workers)
+02:14:13 INFO    spell null bootstrap 200/500 (95 workers)
+02:14:42 INFO    spell null bootstrap 225/500 (95 workers)
+02:15:30 INFO    spell null bootstrap 250/500 (95 workers)
+02:15:42 INFO    spell null bootstrap 275/500 (95 workers)
+02:16:34 INFO    spell null bootstrap 300/500 (95 workers)
+02:17:34 INFO    spell null bootstrap 325/500 (95 workers)
+02:18:08 INFO    spell null bootstrap 350/500 (95 workers)
+02:18:08 INFO    spell null bootstrap 375/500 (95 workers)
+02:18:08 INFO    spell null bootstrap 400/500 (95 workers)
+02:18:13 INFO    spell null bootstrap 425/500 (95 workers)
+02:18:16 INFO    spell null bootstrap 450/500 (95 workers)
+02:18:21 INFO    spell null bootstrap 475/500 (95 workers)
+02:18:35 INFO    spell null bootstrap 500/500 (95 workers)
+02:21:14 INFO    spell cluster bootstrap 25/200 (95 workers)
+02:21:17 INFO    spell cluster bootstrap 50/200 (95 workers)
+02:21:20 INFO    spell cluster bootstrap 75/200 (95 workers)
+02:21:20 INFO    spell cluster bootstrap 100/200 (95 workers)
+02:21:36 INFO    spell cluster bootstrap 125/200 (95 workers)
+02:21:41 INFO    spell cluster bootstrap 150/200 (95 workers)
+02:21:54 INFO    spell cluster bootstrap 175/200 (95 workers)
+02:22:11 INFO    spell cluster bootstrap 200/200 (95 workers)
+02:23:07 INFO    spell sensitivities 1/15 (15 workers)
+02:24:54 INFO    spell sensitivities 2/15 (15 workers)
+02:27:00 INFO    spell sensitivities 3/15 (15 workers)
+02:27:00 INFO    spell sensitivities 4/15 (15 workers)
+02:27:00 INFO    spell sensitivities 5/15 (15 workers)
+02:27:00 INFO    spell sensitivities 6/15 (15 workers)
+02:27:00 INFO    spell sensitivities 7/15 (15 workers)
+02:27:00 INFO    spell sensitivities 8/15 (15 workers)
+02:27:00 INFO    spell sensitivities 9/15 (15 workers)
+02:27:00 INFO    spell sensitivities 10/15 (15 workers)
+02:27:00 INFO    spell sensitivities 11/15 (15 workers)
+02:27:00 INFO    spell sensitivities 12/15 (15 workers)
+02:27:00 INFO    spell sensitivities 13/15 (15 workers)
+02:27:00 INFO    spell sensitivities 14/15 (15 workers)
+02:27:00 INFO    spell sensitivities 15/15 (15 workers)
+
+=== spell model development fit ===
+{
+  "source": "statsbomb",
+  "exclude_one_club": false,
+  "n_matches": 2112,
+  "n_shots_modelled": 49880,
+  "prep": {
+    "threshold_seconds": 4.0,
+    "n_before": 52979,
+    "n_after": 50445,
+    "removed_fraction": 0.047830272372071936,
+    "max_run_length": 4,
+    "collapsed_events": 2372,
+    "collapses_at_half_boundaries": 50,
+    "guard_enforced": true,
+    "jitter_seed": 20260910,
+    "remaining_exact_ties": 0
+  },
+  "possession_rule": "tolerant",
+  "merge": {
+    "threshold_s": 10.0,
+    "require_high_restart": true,
+    "n_before": 371030,
+    "n_after": 333119,
+    "possessions_removed_fraction": 0.1021777214780476,
+    "attacks_merged": 17219,
+    "dangerous_share_before": 0.47964585073983235,
+    "dangerous_share_after": 0.4884890984903293
+  },
+  "spell_rule": {
+    "need": 4,
+    "window": 5,
+    "danger_col": "t_ft"
+  },
+  "prevalence": {
+    "share_time_z1": 0.19427059644721034,
+    "rule": {
+      "need": 4,
+      "window": 5,
+      "danger_col": "t_ft"
+    },
+    "share_shots_z1": 0.24330392943063353
+  },
+  "headline": {
+    "eta_out": 4.42836979780135e-09,
+    "eta_in": 9.68543068988867e-06,
+    "eta_cross": 8.013655243707622e-28,
+    "tau_minutes": 7.99999943870888,
+    "gamma_own": 0.07160598568390171,
+    "gamma_opp": -0.11696166769232452,
+    "loglik": -150748.88141035338,
+    "converged": true,
+    "n_iter": 444,
+    "n_events": 49880,
+    "n_matches": 2112,
+    "kernel": true,
+    "contrast_in_minus_out": 9.681002320090869e-06
+  },
+  "background_only": {
+    "eta_out": 0.0,
+    "eta_in": 0.0,
+    "eta_cross": 0.0,
+    "tau_minutes": 5.0,
+    "gamma_own": 0.07155454397492053,
+    "gamma_opp": -0.11701042203019929,
+    "loglik": -150748.88187871638,
+    "converged": true,
+    "n_iter": 198,
+    "n_events": 49880,
+    "n_matches": 2112,
+    "kernel": false,
+    "contrast_in_minus_out": 0.0
+  },
+  "lr_vs_background": 0.0009367259917780757,
+  "parametric_bootstrap": {
+    "n_replicates": 500,
+    "n_unconverged": 0,
+    "p_value": {
+      "out": 0.13972055888223553,
+      "in": 0.48502994011976047
+    },
+    "null_q95": {
+      "out": 3.6308023092969774e-08,
+      "in": 0.00019118108865569242
+    }
+  },
+  "cluster_bootstrap": {
+    "ci95": {
+      "out": [
+        1.775990223637789e-10,
+        2.0284201543619503e-07
+      ],
+      "in": [
+        3.2220185858822426e-06,
+        4.778864537952273e-05
+      ],
+      "cross": [
+        8.775664648879613e-27,
+        1.5994578963695944e-20
+      ],
+      "in_minus_out": [
+        3.1863070609016455e-06,
+        4.778019132583738e-05
+      ]
+    },
+    "n_replicates": 200,
+    "n_unconverged": 0
+  },
+  "floors": {
+    "out": 0.05,
+    "in": 0.05
+  },
+  "verdict": {
+    "out": "0.0000 is below the floor of 0.05: an upper bound, not an estimate",
+    "in": "0.0000 is below the floor of 0.05: an upper bound, not an estimate"
+  },
+  "label": "exploratory (docs/spec_spells.md section 1)",
+  "sensitivities": {
+    "box_1_20": {
+      "eta_out": 5.074178114329006e-05,
+      "eta_in": 0.01881146930860289,
+      "eta_cross": 3.837618282901628e-12,
+      "tau_minutes": 19.999994431757923,
+      "gamma_own": 0.06834137438152552,
+      "gamma_opp": -0.11706361644896474,
+      "loglik": -150748.48723783664,
+      "converged": true,
+      "n_iter": 501,
+      "n_events": 49880,
+      "n_matches": 2112,
+      "kernel": true,
+      "contrast_in_minus_out": 0.0187607275274596
+    },
+    "minute_spline_df_9": {
+      "eta_out": 4.725739404599681e-91,
+      "eta_in": 9.969272109690149e-50,
+      "eta_cross": 0.0,
+      "tau_minutes": 8.0,
+      "gamma_own": 0.06757349768152673,
+      "gamma_opp": -0.12066207821454472,
+      "loglik": -150733.88771134388,
+      "converged": true,
+      "n_iter": 1668,
+      "n_events": 49880,
+      "n_matches": 2112,
+      "kernel": true,
+      "contrast_in_minus_out": 9.969272109690149e-50
+    },
+    "minute_spline_df_12": {
+      "eta_out": 2.7663552316172064e-129,
+      "eta_in": 7.360790289698331e-72,
+      "eta_cross": 0.0,
+      "tau_minutes": 8.0,
+      "gamma_own": 0.06812611770932979,
+      "gamma_opp": -0.11990304710794981,
+      "loglik": -150730.00416706855,
+      "converged": false,
+      "n_iter": 3000,
+      "n_events": 49880,
+      "n_matches": 2112,
+      "kernel": true,
+      "contrast_in_minus_out": 7.360790289698331e-72
+    },
+    "no_gamma_confounded": {
+      "eta_out": 0.00013954225275234465,
+      "eta_in": 0.016861240362310632,
+      "eta_cross": 1.0822452917827618e-10,
+      "tau_minutes": 7.967497766550988,
+      "gamma_own": 0.0,
+      "gamma_opp": 0.0,
+      "loglik": -150814.13761630157,
+      "converged": true,
+      "n_iter": 592,
+      "n_events": 49880,
+      "n_matches": 2112,
+      "kernel": true,
+      "contrast_in_minus_out": 0.016721698109558286
+    },
+    "rule_3_of_5": {
+      "eta_out": 5.590755910195253e-06,
+      "eta_in": 1.9333950190297184e-06,
+      "eta_cross": 6.62700259195327e-23,
+      "tau_minutes": 7.999981593726722,
+      "gamma_own": 0.060587879092547016,
+      "gamma_opp": -0.0728324697126825,
+      "loglik": -150763.0491428418,
+      "converged": true,
+      "n_iter": 494,
+      "n_events": 49880,
+      "n_matches": 2112,
+      "kernel": true,
+      "contrast_in_minus_out": -3.657360891165535e-06,
+      "prevalence": {
+        "share_time_z1": 0.4427093282896554,
+        "rule": {
+          "need": 3,
+          "window": 5,
+          "danger_col": "t_ft"
+        },
+        "share_shots_z1": 0.5056335204490778
+      }
+    },
+    "rule_5_of_5": {
+      "eta_out": 1.5259080740988787e-06,
+      "eta_in": 0.0082297229556129,
+      "eta_cross": 4.79662385820818e-15,
+      "tau_minutes": 7.998041107929126,
+      "gamma_own": 0.07091295492046032,
+      "gamma_opp": -0.19081613351706556,
+      "loglik": -150779.41174997622,
+      "converged": true,
+      "n_iter": 371,
+      "n_events": 49880,
+      "n_matches": 2112,
+      "kernel": true,
+      "contrast_in_minus_out": 0.0082281970475388,
+      "prevalence": {
+        "share_time_z1": 0.04718854620955074,
+        "rule": {
+          "need": 5,
+          "window": 5,
+          "danger_col": "t_ft"
+        },
+        "share_shots_z1": 0.0646952686447474
+      }
+    },
+    "rule_6_of_8": {
+      "eta_out": 4.797044078977306e-10,
+      "eta_in": 8.020163867328169e-06,
+      "eta_cross": 7.012330141089454e-31,
+      "tau_minutes": 7.999999902615396,
+      "gamma_own": 0.06712864152303069,
+      "gamma_opp": -0.10281184184639726,
+      "loglik": -150772.7955690954,
+      "converged": true,
+      "n_iter": 400,
+      "n_events": 49880,
+      "n_matches": 2112,
+      "kernel": true,
+      "contrast_in_minus_out": 8.01968416292027e-06,
+      "prevalence": {
+        "share_time_z1": 0.15407816781080722,
+        "rule": {
+          "need": 6,
+          "window": 8,
+          "danger_col": "t_ft"
+        },
+        "share_shots_z1": 0.19987971130713714
+      }
+    },
+    "danger_x75": {
+      "eta_out": 6.389342363859424e-09,
+      "eta_in": 0.0003630984667304428,
+      "eta_cross": 4.6408010393037123e-23,
+      "tau_minutes": 7.999990581063553,
+      "gamma_own": 0.0739123544328179,
+      "gamma_opp": -0.15284052201199386,
+      "loglik": -150760.15029226308,
+      "converged": true,
+      "n_iter": 437,
+      "n_events": 49880,
+      "n_matches": 2112,
+      "kernel": true,
+      "contrast_in_minus_out": 0.000363092077388079,
+      "prevalence": {
+        "share_time_z1": 0.10269963385053597,
+        "rule": {
+          "need": 4,
+          "window": 5,
+          "danger_col": "t_ft75"
+        },
+        "share_shots_z1": 0.13608660785886126
+      }
+    },
+    "strict_possession_rule": {
+      "eta_out": 2.865429802986465e-10,
+      "eta_in": 2.464986984837439e-05,
+      "eta_cross": 9.11708124405527e-27,
+      "tau_minutes": 7.999999410980979,
+      "gamma_own": 0.11189312628093193,
+      "gamma_opp": -0.20974945429790912,
+      "loglik": -150703.85384110347,
+      "converged": true,
+      "n_iter": 429,
+      "n_events": 49880,
+      "n_matches": 2112,
+      "kernel": true,
+      "contrast_in_minus_out": 2.4649583305394092e-05,
+      "prevalence": {
+        "share_time_z1": 0.10215016878888941,
+        "rule": {
+          "need": 4,
+          "window": 5,
+          "danger_col": "t_ft"
+        },
+        "share_shots_z1": 0.13769045709703287
+      }
+    },
+    "tau_profile": [
+      {
+        "tau_minutes": 3.0,
+        "eta_out": 1.9747636190458053e-11,
+        "eta_in": 7.271226038158657e-07,
+        "eta_cross": 1.1326715266349903e-32,
+        "gamma_own": 0.07156405304356696,
+        "loglik": -150748.9243309534,
+        "converged": true
+      },
+      {
+        "tau_minutes": 5.0,
+        "eta_out": 2.9965865748299458e-09,
+        "eta_in": 5.113052858392327e-06,
+        "eta_cross": 3.2887043078107348e-28,
+        "gamma_own": 0.0716279629385445,
+        "loglik": -150748.93396554873,
+        "converged": true
+      },
+      {
+        "tau_minutes": 8.0,
+        "eta_out": 4.1480468461851486e-08,
+        "eta_in": 2.0029938523827736e-05,
+        "eta_cross": 1.722767835809873e-24,
+        "gamma_own": 0.07149442452280969,
+        "loglik": -150748.93584780695,
+        "converged": true
+      },
+      {
+        "tau_minutes": 14.0,
+        "eta_out": 1.4032057096234511e-05,
+        "eta_in": 0.001678588157962916,
+        "eta_cross": 5.0605000394669226e-15,
+        "gamma_own": 0.07120016553460004,
+        "loglik": -150748.9228761084,
+        "converged": true
+      },
+      {
+        "tau_minutes": 20.0,
+        "eta_out": 5.4962636014924815e-05,
+        "eta_in": 0.018495367683014536,
+        "eta_cross": 4.3563028759481824e-12,
+        "gamma_own": 0.06842980121896117,
+        "loglik": -150748.4537623798,
+        "converged": true
+      },
+      {
+        "tau_minutes": 30.0,
+        "eta_out": 5.3089636220577794e-05,
+        "eta_in": 0.041439154509871574,
+        "eta_cross": 1.847112169084767e-11,
+        "gamma_own": 0.06659457049136736,
+        "loglik": -150747.55175323188,
+        "converged": true
+      }
+    ]
+  }
+}
+[spells] === statsbomb S spell-fit done in 19 min
+[spells] === statsbomb G spell-recovery (07:27:00 UTC, workers=95)
+02:29:07 INFO    spell recovery 5/10 (10 workers)
+02:29:07 INFO    spell recovery 10/10 (10 workers)
+
+=== spell recovery ===
+{
+  "source": "statsbomb",
+  "exclude_one_club": false,
+  "n_matches": 2112,
+  "n_shots_modelled": 49880,
+  "prep": {
+    "threshold_seconds": 4.0,
+    "n_before": 52979,
+    "n_after": 50445,
+    "removed_fraction": 0.047830272372071936,
+    "max_run_length": 4,
+    "collapsed_events": 2372,
+    "collapses_at_half_boundaries": 50,
+    "guard_enforced": true,
+    "jitter_seed": 20260910,
+    "remaining_exact_ties": 0
+  },
+  "possession_rule": "tolerant",
+  "merge": {
+    "threshold_s": 10.0,
+    "require_high_restart": true,
+    "n_before": 371030,
+    "n_after": 333119,
+    "possessions_removed_fraction": 0.1021777214780476,
+    "attacks_merged": 17219,
+    "dangerous_share_before": 0.47964585073983235,
+    "dangerous_share_after": 0.4884890984903293
+  },
+  "spell_rule": {
+    "need": 4,
+    "window": 5,
+    "danger_col": "t_ft"
+  },
+  "prevalence": {
+    "share_time_z1": 0.19427059644721034,
+    "rule": {
+      "need": 4,
+      "window": 5,
+      "danger_col": "t_ft"
+    },
+    "share_shots_z1": 0.24330392943063353
+  },
+  "model": "G",
+  "planted": {
+    "level": 0.3,
+    "trail": 0.1,
+    "lead": 0.2
+  },
+  "eta_cross_planted": 0.05,
+  "tau_planted": 5.0,
+  "gamma_planted": [
+    0.0,
+    0.0
+  ],
+  "n_replicates": 10,
+  "tolerance": 0.08,
+  "per_parameter": {
+    "level": {
+      "planted": 0.3,
+      "mean_hat": 0.27679007691626706,
+      "sd_hat": 0.007624112929070599,
+      "bias": -0.02320992308373293,
+      "passed": true
+    },
+    "trail": {
+      "planted": 0.1,
+      "mean_hat": 0.06932701050121323,
+      "sd_hat": 0.007493691449317027,
+      "bias": -0.030672989498786773,
+      "passed": true
+    },
+    "lead": {
+      "planted": 0.2,
+      "mean_hat": 0.1709179377370687,
+      "sd_hat": 0.013371996882080421,
+      "bias": -0.029082062262931307,
+      "passed": true
+    }
+  },
+  "mean_eta_cross_hat": 0.045354066124208434,
+  "mean_tau_hat": 4.506555088758885,
+  "n_unconverged": 0,
+  "passed": true
+}
+[spells] === statsbomb G spell-recovery done in 2 min
+[spells] === statsbomb G spell-power (07:29:07 UTC, workers=95)
+02:32:38 INFO    spell power 20/560 (95 workers)
+02:33:08 INFO    spell power 40/560 (95 workers)
+02:33:08 INFO    spell power 60/560 (95 workers)
+02:33:08 INFO    spell power 80/560 (95 workers)
+02:33:08 INFO    spell power 100/560 (95 workers)
+02:33:20 INFO    spell power 120/560 (95 workers)
+02:33:50 INFO    spell power 140/560 (95 workers)
+02:34:33 INFO    spell power 160/560 (95 workers)
+02:35:05 INFO    spell power 180/560 (95 workers)
+02:35:05 INFO    spell power 200/560 (95 workers)
+02:35:28 INFO    spell power 220/560 (95 workers)
+02:36:09 INFO    spell power 240/560 (95 workers)
+02:36:39 INFO    spell power 260/560 (95 workers)
+02:37:24 INFO    spell power 280/560 (95 workers)
+02:37:24 INFO    spell power 300/560 (95 workers)
+02:37:41 INFO    spell power 320/560 (95 workers)
+02:38:05 INFO    spell power 340/560 (95 workers)
+02:38:05 INFO    spell power 360/560 (95 workers)
+02:38:18 INFO    spell power 380/560 (95 workers)
+02:38:35 INFO    spell power 400/560 (95 workers)
+02:39:32 INFO    spell power 420/560 (95 workers)
+02:39:56 INFO    spell power 440/560 (95 workers)
+02:40:44 INFO    spell power 460/560 (95 workers)
+02:40:44 INFO    spell power 480/560 (95 workers)
+02:40:44 INFO    spell power 500/560 (95 workers)
+02:40:44 INFO    spell power 520/560 (95 workers)
+02:40:49 INFO    spell power 540/560 (95 workers)
+02:40:49 INFO    spell power 560/560 (95 workers)
+
+=== spell detection floors ===
+{
+  "source": "statsbomb",
+  "exclude_one_club": false,
+  "n_matches": 2112,
+  "n_shots_modelled": 49880,
+  "prep": {
+    "threshold_seconds": 4.0,
+    "n_before": 52979,
+    "n_after": 50445,
+    "removed_fraction": 0.047830272372071936,
+    "max_run_length": 4,
+    "collapsed_events": 2372,
+    "collapses_at_half_boundaries": 50,
+    "guard_enforced": true,
+    "jitter_seed": 20260910,
+    "remaining_exact_ties": 0
+  },
+  "possession_rule": "tolerant",
+  "merge": {
+    "threshold_s": 10.0,
+    "require_high_restart": true,
+    "n_before": 371030,
+    "n_after": 333119,
+    "possessions_removed_fraction": 0.1021777214780476,
+    "attacks_merged": 17219,
+    "dangerous_share_before": 0.47964585073983235,
+    "dangerous_share_after": 0.4884890984903293
+  },
+  "spell_rule": {
+    "need": 4,
+    "window": 5,
+    "danger_col": "t_ft"
+  },
+  "prevalence": {
+    "share_time_z1": 0.19427059644721034,
+    "rule": {
+      "need": 4,
+      "window": 5,
+      "danger_col": "t_ft"
+    },
+    "share_shots_z1": 0.24330392943063353
+  },
+  "model": "G",
+  "alpha": 0.01,
+  "target_power": 0.8,
+  "grid": [
+    0.0,
+    0.02,
+    0.05,
+    0.1,
+    0.2
+  ],
+  "replicates": 30,
+  "null_replicates": 200,
+  "eta_cross_planted": 0.05,
+  "tau_planted": 5.0,
+  "floors": {
+    "level": {
+      "critical_value": 7.026914749380372e-05,
+      "detection_floor": 0.05
+    },
+    "trail": {
+      "critical_value": 0.000550691310434107,
+      "detection_floor": 0.05
+    },
+    "lead": {
+      "critical_value": 0.0006094595702266735,
+      "detection_floor": 0.05
+    }
+  },
+  "curves": {
+    "level": [
+      {
+        "eta_planted": 0.0,
+        "power": 0.01,
+        "mean_hat": 6.0060909933153305e-05,
+        "bias": NaN,
+        "frac_converged": NaN
+      },
+      {
+        "eta_planted": 0.02,
+        "power": 0.6,
+        "mean_hat": 0.0028592625232665577,
+        "bias": -0.017140737476733444,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.05,
+        "power": 1.0,
+        "mean_hat": 0.03374306147415384,
+        "bias": -0.016256938525846164,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.1,
+        "power": 1.0,
+        "mean_hat": 0.08182185358537206,
+        "bias": -0.01817814641462795,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.2,
+        "power": 1.0,
+        "mean_hat": 0.18030653677144418,
+        "bias": -0.019693463228555835,
+        "frac_converged": 1.0
+      }
+    ],
+    "trail": [
+      {
+        "eta_planted": 0.0,
+        "power": 0.01,
+        "mean_hat": 6.614174618050907e-05,
+        "bias": NaN,
+        "frac_converged": NaN
+      },
+      {
+        "eta_planted": 0.02,
+        "power": 0.36666666666666664,
+        "mean_hat": 0.003236839437239536,
+        "bias": -0.016763160562760466,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.05,
+        "power": 1.0,
+        "mean_hat": 0.02966216065021103,
+        "bias": -0.020337839349788972,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.1,
+        "power": 1.0,
+        "mean_hat": 0.07261833398115489,
+        "bias": -0.02738166601884512,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.2,
+        "power": 1.0,
+        "mean_hat": 0.1695062305092033,
+        "bias": -0.030493769490796713,
+        "frac_converged": 1.0
+      }
+    ],
+    "lead": [
+      {
+        "eta_planted": 0.0,
+        "power": 0.01,
+        "mean_hat": 7.268569647395461e-05,
+        "bias": NaN,
+        "frac_converged": NaN
+      },
+      {
+        "eta_planted": 0.02,
+        "power": 0.4666666666666667,
+        "mean_hat": 0.003661331521434008,
+        "bias": -0.016338668478565993,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.05,
+        "power": 1.0,
+        "mean_hat": 0.031496974261352936,
+        "bias": -0.018503025738647066,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.1,
+        "power": 1.0,
+        "mean_hat": 0.07522502009690198,
+        "bias": -0.02477497990309803,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.2,
+        "power": 1.0,
+        "mean_hat": 0.1793571312422993,
+        "bias": -0.020642868757700716,
+        "frac_converged": 1.0
+      }
+    ]
+  },
+  "n_unconverged": 0
+}
+[spells] === statsbomb G spell-power done in 11 min
+[spells] === statsbomb G spell-fit (07:40:50 UTC, workers=95)
+02:42:21 INFO  headline {'eta_level': 2e-05, 'eta_trail': 0.03557, 'eta_lead': 0.00758, 'eta_cross': 0.0}
+02:45:30 INFO    spell null bootstrap 25/500 (95 workers)
+02:45:44 INFO    spell null bootstrap 50/500 (95 workers)
+02:45:44 INFO    spell null bootstrap 75/500 (95 workers)
+02:45:44 INFO    spell null bootstrap 100/500 (95 workers)
+02:46:47 INFO    spell null bootstrap 125/500 (95 workers)
+02:47:08 INFO    spell null bootstrap 150/500 (95 workers)
+02:48:05 INFO    spell null bootstrap 175/500 (95 workers)
+02:49:00 INFO    spell null bootstrap 200/500 (95 workers)
+02:49:11 INFO    spell null bootstrap 225/500 (95 workers)
+02:50:30 INFO    spell null bootstrap 250/500 (95 workers)
+02:50:30 INFO    spell null bootstrap 275/500 (95 workers)
+02:50:34 INFO    spell null bootstrap 300/500 (95 workers)
+02:51:14 INFO    spell null bootstrap 325/500 (95 workers)
+02:51:56 INFO    spell null bootstrap 350/500 (95 workers)
+02:52:01 INFO    spell null bootstrap 375/500 (95 workers)
+02:52:17 INFO    spell null bootstrap 400/500 (95 workers)
+02:52:17 INFO    spell null bootstrap 425/500 (95 workers)
+02:52:25 INFO    spell null bootstrap 450/500 (95 workers)
+02:52:39 INFO    spell null bootstrap 475/500 (95 workers)
+02:52:55 INFO    spell null bootstrap 500/500 (95 workers)
+02:56:07 INFO    spell cluster bootstrap 25/200 (95 workers)
+02:56:11 INFO    spell cluster bootstrap 50/200 (95 workers)
+02:56:11 INFO    spell cluster bootstrap 75/200 (95 workers)
+02:56:11 INFO    spell cluster bootstrap 100/200 (95 workers)
+02:56:18 INFO    spell cluster bootstrap 125/200 (95 workers)
+02:56:50 INFO    spell cluster bootstrap 150/200 (95 workers)
+02:57:03 INFO    spell cluster bootstrap 175/200 (95 workers)
+02:57:09 INFO    spell cluster bootstrap 200/200 (95 workers)
+02:58:09 INFO    spell sensitivities 1/9 (9 workers)
+03:00:59 INFO    spell sensitivities 2/9 (9 workers)
+03:02:50 INFO    spell sensitivities 3/9 (9 workers)
+03:02:50 INFO    spell sensitivities 4/9 (9 workers)
+03:02:50 INFO    spell sensitivities 5/9 (9 workers)
+03:02:50 INFO    spell sensitivities 6/9 (9 workers)
+03:02:50 INFO    spell sensitivities 7/9 (9 workers)
+03:02:50 INFO    spell sensitivities 8/9 (9 workers)
+03:02:50 INFO    spell sensitivities 9/9 (9 workers)
+
+=== spell model development fit ===
+{
+  "source": "statsbomb",
+  "exclude_one_club": false,
+  "n_matches": 2112,
+  "n_shots_modelled": 49880,
+  "prep": {
+    "threshold_seconds": 4.0,
+    "n_before": 52979,
+    "n_after": 50445,
+    "removed_fraction": 0.047830272372071936,
+    "max_run_length": 4,
+    "collapsed_events": 2372,
+    "collapses_at_half_boundaries": 50,
+    "guard_enforced": true,
+    "jitter_seed": 20260910,
+    "remaining_exact_ties": 0
+  },
+  "possession_rule": "tolerant",
+  "merge": {
+    "threshold_s": 10.0,
+    "require_high_restart": true,
+    "n_before": 371030,
+    "n_after": 333119,
+    "possessions_removed_fraction": 0.1021777214780476,
+    "attacks_merged": 17219,
+    "dangerous_share_before": 0.47964585073983235,
+    "dangerous_share_after": 0.4884890984903293
+  },
+  "spell_rule": {
+    "need": 4,
+    "window": 5,
+    "danger_col": "t_ft"
+  },
+  "prevalence": {
+    "share_time_z1": 0.19427059644721034,
+    "rule": {
+      "need": 4,
+      "window": 5,
+      "danger_col": "t_ft"
+    },
+    "share_shots_z1": 0.24330392943063353
+  },
+  "headline": {
+    "eta_level": 2.0480691135797678e-05,
+    "eta_trail": 0.035573014262345735,
+    "eta_lead": 0.0075772852816001325,
+    "eta_cross": 2.6417131382924265e-15,
+    "tau_minutes": 7.99786296674552,
+    "gamma_own": 0.0,
+    "gamma_opp": 0.0,
+    "loglik": -150810.5916389366,
+    "converged": true,
+    "n_iter": 697,
+    "n_events": 49880,
+    "n_matches": 2112,
+    "kernel": true
+  },
+  "background_only": {
+    "eta_level": 0.0,
+    "eta_trail": 0.0,
+    "eta_lead": 0.0,
+    "eta_cross": 0.0,
+    "tau_minutes": 5.0,
+    "gamma_own": 0.0,
+    "gamma_opp": 0.0,
+    "loglik": -150815.0885800202,
+    "converged": true,
+    "n_iter": 156,
+    "n_events": 49880,
+    "n_matches": 2112,
+    "kernel": false
+  },
+  "lr_vs_background": 8.993882167211268,
+  "parametric_bootstrap": {
+    "n_replicates": 500,
+    "n_unconverged": 0,
+    "p_value": {
+      "level": 0.001996007984031936,
+      "trail": 0.001996007984031936,
+      "lead": 0.001996007984031936
+    },
+    "null_q95": {
+      "level": 1.4958619463202055e-06,
+      "trail": 2.764121716279622e-05,
+      "lead": 3.8647600172208804e-05
+    }
+  },
+  "cluster_bootstrap": {
+    "ci95": {
+      "level": [
+        1.1292968083356003e-08,
+        5.4395688433556815e-05
+      ],
+      "trail": [
+        7.36900573661385e-05,
+        0.0462331992627756
+      ],
+      "lead": [
+        1.4938251151830144e-05,
+        0.019044296632377243
+      ],
+      "cross": [
+        9.724792401254838e-27,
+        1.2249483177473696e-12
+      ]
+    },
+    "n_replicates": 200,
+    "n_unconverged": 0
+  },
+  "floors": {
+    "level": 0.05,
+    "trail": 0.05,
+    "lead": 0.05
+  },
+  "verdict": {
+    "level": "0.0000 is below the floor of 0.05: an upper bound, not an estimate",
+    "trail": "0.0356 is below the floor of 0.05: an upper bound, not an estimate",
+    "lead": "0.0076 is below the floor of 0.05: an upper bound, not an estimate"
+  },
+  "label": "exploratory (docs/spec_spells.md section 1)",
+  "sensitivities": {
+    "box_1_20": {
+      "eta_level": 0.00012119414909231401,
+      "eta_trail": 0.07819117941163997,
+      "eta_lead": 0.016339613702099593,
+      "eta_cross": 1.169153575145832e-12,
+      "tau_minutes": 19.999989665508192,
+      "gamma_own": 0.0,
+      "gamma_opp": 0.0,
+      "loglik": -150805.0819941252,
+      "converged": true,
+      "n_iter": 449,
+      "n_events": 49880,
+      "n_matches": 2112,
+      "kernel": true
+    },
+    "minute_spline_df_9": {
+      "eta_level": 1.5708645723684495e-37,
+      "eta_trail": 0.03573195326156144,
+      "eta_lead": 1.0495671368869722e-15,
+      "eta_cross": 2.388824747163402e-142,
+      "tau_minutes": 8.0,
+      "gamma_own": 0.0,
+      "gamma_opp": 0.0,
+      "loglik": -150796.03142104408,
+      "converged": true,
+      "n_iter": 1999,
+      "n_events": 49880,
+      "n_matches": 2112,
+      "kernel": true
+    },
+    "minute_spline_df_12": {
+      "eta_level": 3.972675050778444e-90,
+      "eta_trail": 0.03542743375545611,
+      "eta_lead": 6.363404251790843e-37,
+      "eta_cross": 0.0,
+      "tau_minutes": 8.0,
+      "gamma_own": 0.0,
+      "gamma_opp": 0.0,
+      "loglik": -150791.91104612214,
+      "converged": false,
+      "n_iter": 3000,
+      "n_events": 49880,
+      "n_matches": 2112,
+      "kernel": true
+    },
+    "tau_profile": [
+      {
+        "tau_minutes": 3.0,
+        "eta_level": 2.169762038087803e-06,
+        "eta_trail": 0.0012298352904309535,
+        "eta_lead": 0.0003077639984152966,
+        "eta_cross": 6.657058166686671e-20,
+        "gamma_own": 0.0,
+        "loglik": -150815.09873858,
+        "converged": true
+      },
+      {
+        "tau_minutes": 5.0,
+        "eta_level": 2.1562002877341426e-06,
+        "eta_trail": 0.018653562373148885,
+        "eta_lead": 0.0004672282400624941,
+        "eta_cross": 1.2640303882005463e-19,
+        "gamma_own": 0.0,
+        "loglik": -150813.36005710944,
+        "converged": true
+      },
+      {
+        "tau_minutes": 8.0,
+        "eta_level": 3.7204896036612805e-05,
+        "eta_trail": 0.03553929437660236,
+        "eta_lead": 0.005669494466791756,
+        "eta_cross": 3.452251296747521e-14,
+        "gamma_own": 0.0,
+        "loglik": -150810.5849227436,
+        "converged": true
+      },
+      {
+        "tau_minutes": 14.0,
+        "eta_level": 3.937135548381314e-05,
+        "eta_trail": 0.06051621695116147,
+        "eta_lead": 0.012838443992291552,
+        "eta_cross": 2.4906328706199406e-13,
+        "gamma_own": 0.0,
+        "loglik": -150806.93276503246,
+        "converged": true
+      },
+      {
+        "tau_minutes": 20.0,
+        "eta_level": 7.227115604629877e-05,
+        "eta_trail": 0.07810933376276984,
+        "eta_lead": 0.01576630151926503,
+        "eta_cross": 3.690960722981421e-11,
+        "gamma_own": 0.0,
+        "loglik": -150805.01020327123,
+        "converged": true
+      },
+      {
+        "tau_minutes": 30.0,
+        "eta_level": 9.368612899299905e-05,
+        "eta_trail": 0.10049379158231576,
+        "eta_lead": 0.019170350034390767,
+        "eta_cross": 8.341320980423983e-10,
+        "gamma_own": 0.0,
+        "loglik": -150803.66124336782,
+        "converged": true
+      }
+    ]
+  }
+}
+[spells] === statsbomb G spell-fit done in 22 min
+[spells] === statsbomb spell-holm (08:02:50 UTC, workers=95)
+
+=== Holm over the five primary tests ===
+{
+  "alpha": 0.05,
+  "m": 5,
+  "raw": {
+    "eta_out": 0.13972055888223553,
+    "eta_in": 0.48502994011976047,
+    "eta_level": 0.001996007984031936,
+    "eta_trail": 0.001996007984031936,
+    "eta_lead": 0.001996007984031936
+  },
+  "adjusted": {
+    "eta_level": 0.00998003992015968,
+    "eta_trail": 0.00998003992015968,
+    "eta_lead": 0.00998003992015968,
+    "eta_out": 0.27944111776447106,
+    "eta_in": 0.48502994011976047
+  },
+  "reject": {
+    "eta_out": false,
+    "eta_in": false,
+    "eta_level": true,
+    "eta_trail": true,
+    "eta_lead": true
+  },
+  "estimates": {
+    "eta_out": 4.42836979780135e-09,
+    "eta_in": 9.68543068988867e-06,
+    "eta_level": 2.0480691135797678e-05,
+    "eta_trail": 0.035573014262345735,
+    "eta_lead": 0.0075772852816001325
+  },
+  "source": "statsbomb",
+  "exclude_one_club": false
+}
+[spells] === statsbomb spell-holm done in 0 min
+[spells] === statsbomb-no1club S spell-recovery (08:02:54 UTC, workers=95)
+03:03:42 INFO    spell recovery 5/10 (10 workers)
+03:03:42 INFO    spell recovery 10/10 (10 workers)
+
+=== spell recovery ===
+{
+  "source": "statsbomb",
+  "exclude_one_club": true,
+  "n_matches": 1660,
+  "n_shots_modelled": 39299,
+  "prep": {
+    "threshold_seconds": 4.0,
+    "n_before": 41745,
+    "n_after": 39730,
+    "removed_fraction": 0.04826925380285063,
+    "max_run_length": 4,
+    "collapsed_events": 1887,
+    "collapses_at_half_boundaries": 44,
+    "guard_enforced": true,
+    "jitter_seed": 20260910,
+    "remaining_exact_ties": 0
+  },
+  "possession_rule": "tolerant",
+  "merge": {
+    "threshold_s": 10.0,
+    "require_high_restart": true,
+    "n_before": 371030,
+    "n_after": 333119,
+    "possessions_removed_fraction": 0.1021777214780476,
+    "attacks_merged": 17219,
+    "dangerous_share_before": 0.47964585073983235,
+    "dangerous_share_after": 0.4884890984903293
+  },
+  "spell_rule": {
+    "need": 4,
+    "window": 5,
+    "danger_col": "t_ft"
+  },
+  "prevalence": {
+    "share_time_z1": 0.1870315830659625,
+    "rule": {
+      "need": 4,
+      "window": 5,
+      "danger_col": "t_ft"
+    },
+    "share_shots_z1": 0.23298302755795314
+  },
+  "model": "S",
+  "planted": {
+    "out": 0.1,
+    "in": 0.3
+  },
+  "eta_cross_planted": 0.05,
+  "tau_planted": 5.0,
+  "gamma_planted": [
+    0.08997285859574917,
+    -0.1246194127188518
+  ],
+  "n_replicates": 10,
+  "tolerance": 0.08,
+  "per_parameter": {
+    "out": {
+      "planted": 0.1,
+      "mean_hat": 0.0908151159872377,
+      "sd_hat": 0.007376228965493704,
+      "bias": -0.00918488401276231,
+      "passed": true
+    },
+    "in": {
+      "planted": 0.3,
+      "mean_hat": 0.28798000856856365,
+      "sd_hat": 0.01565613550211172,
+      "bias": -0.012019991431436339,
+      "passed": true
+    }
+  },
+  "mean_eta_cross_hat": 0.04862455389994609,
+  "mean_tau_hat": 4.626566212351882,
+  "n_unconverged": 0,
+  "passed": true
+}
+[spells] === statsbomb-no1club S spell-recovery done in 0 min
+[spells] === statsbomb-no1club S spell-power (08:03:42 UTC, workers=95)
+03:05:29 INFO    spell power 20/440 (95 workers)
+03:05:35 INFO    spell power 40/440 (95 workers)
+03:05:35 INFO    spell power 60/440 (95 workers)
+03:05:35 INFO    spell power 80/440 (95 workers)
+03:05:35 INFO    spell power 100/440 (95 workers)
+03:05:48 INFO    spell power 120/440 (95 workers)
+03:06:12 INFO    spell power 140/440 (95 workers)
+03:06:30 INFO    spell power 160/440 (95 workers)
+03:06:35 INFO    spell power 180/440 (95 workers)
+03:06:35 INFO    spell power 200/440 (95 workers)
+03:06:57 INFO    spell power 220/440 (95 workers)
+03:06:57 INFO    spell power 240/440 (95 workers)
+03:06:57 INFO    spell power 260/440 (95 workers)
+03:07:02 INFO    spell power 280/440 (95 workers)
+03:07:09 INFO    spell power 300/440 (95 workers)
+03:07:15 INFO    spell power 320/440 (95 workers)
+03:07:26 INFO    spell power 340/440 (95 workers)
+03:07:38 INFO    spell power 360/440 (95 workers)
+03:07:42 INFO    spell power 380/440 (95 workers)
+03:07:42 INFO    spell power 400/440 (95 workers)
+03:07:43 INFO    spell power 420/440 (95 workers)
+03:07:46 INFO    spell power 440/440 (95 workers)
+
+=== spell detection floors ===
+{
+  "source": "statsbomb",
+  "exclude_one_club": true,
+  "n_matches": 1660,
+  "n_shots_modelled": 39299,
+  "prep": {
+    "threshold_seconds": 4.0,
+    "n_before": 41745,
+    "n_after": 39730,
+    "removed_fraction": 0.04826925380285063,
+    "max_run_length": 4,
+    "collapsed_events": 1887,
+    "collapses_at_half_boundaries": 44,
+    "guard_enforced": true,
+    "jitter_seed": 20260910,
+    "remaining_exact_ties": 0
+  },
+  "possession_rule": "tolerant",
+  "merge": {
+    "threshold_s": 10.0,
+    "require_high_restart": true,
+    "n_before": 371030,
+    "n_after": 333119,
+    "possessions_removed_fraction": 0.1021777214780476,
+    "attacks_merged": 17219,
+    "dangerous_share_before": 0.47964585073983235,
+    "dangerous_share_after": 0.4884890984903293
+  },
+  "spell_rule": {
+    "need": 4,
+    "window": 5,
+    "danger_col": "t_ft"
+  },
+  "prevalence": {
+    "share_time_z1": 0.1870315830659625,
+    "rule": {
+      "need": 4,
+      "window": 5,
+      "danger_col": "t_ft"
+    },
+    "share_shots_z1": 0.23298302755795314
+  },
+  "model": "S",
+  "alpha": 0.01,
+  "target_power": 0.8,
+  "grid": [
+    0.0,
+    0.02,
+    0.05,
+    0.1,
+    0.2
+  ],
+  "replicates": 30,
+  "null_replicates": 200,
+  "eta_cross_planted": 0.05,
+  "tau_planted": 5.0,
+  "floors": {
+    "out": {
+      "critical_value": 0.00980056452741264,
+      "detection_floor": 0.05
+    },
+    "in": {
+      "critical_value": 0.025309380839576907,
+      "detection_floor": 0.05
+    }
+  },
+  "curves": {
+    "out": [
+      {
+        "eta_planted": 0.0,
+        "power": 0.01,
+        "mean_hat": 0.00021394193396374954,
+        "bias": NaN,
+        "frac_converged": NaN
+      },
+      {
+        "eta_planted": 0.02,
+        "power": 0.6666666666666666,
+        "mean_hat": 0.012092601356371588,
+        "bias": -0.007907398643628412,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.05,
+        "power": 1.0,
+        "mean_hat": 0.04278368200768011,
+        "bias": -0.007216317992319893,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.1,
+        "power": 1.0,
+        "mean_hat": 0.09013296932847072,
+        "bias": -0.00986703067152929,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.2,
+        "power": 1.0,
+        "mean_hat": 0.1895534469925711,
+        "bias": -0.010446553007428916,
+        "frac_converged": 1.0
+      }
+    ],
+    "in": [
+      {
+        "eta_planted": 0.0,
+        "power": 0.01,
+        "mean_hat": 0.002398157676437032,
+        "bias": NaN,
+        "frac_converged": NaN
+      },
+      {
+        "eta_planted": 0.02,
+        "power": 0.3,
+        "mean_hat": 0.018118823680182663,
+        "bias": -0.0018811763198173376,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.05,
+        "power": 0.9,
+        "mean_hat": 0.04262303546534783,
+        "bias": -0.0073769645346521695,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.1,
+        "power": 1.0,
+        "mean_hat": 0.09879288900372735,
+        "bias": -0.001207110996272659,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.2,
+        "power": 1.0,
+        "mean_hat": 0.19166073244116807,
+        "bias": -0.008339267558831936,
+        "frac_converged": 1.0
+      }
+    ]
+  },
+  "n_unconverged": 0
+}
+[spells] === statsbomb-no1club S spell-power done in 4 min
+[spells] === statsbomb-no1club S spell-fit (08:07:46 UTC, workers=95)
+03:08:16 INFO  headline {'eta_out': 0.01234, 'eta_in': 0.00235, 'eta_cross': 0.0}
+03:10:35 INFO    spell null bootstrap 25/500 (95 workers)
+03:10:35 INFO    spell null bootstrap 50/500 (95 workers)
+03:10:51 INFO    spell null bootstrap 75/500 (95 workers)
+03:10:51 INFO    spell null bootstrap 100/500 (95 workers)
+03:10:51 INFO    spell null bootstrap 125/500 (95 workers)
+03:10:51 INFO    spell null bootstrap 150/500 (95 workers)
+03:11:31 INFO    spell null bootstrap 175/500 (95 workers)
+03:11:31 INFO    spell null bootstrap 200/500 (95 workers)
+03:11:31 INFO    spell null bootstrap 225/500 (95 workers)
+03:11:31 INFO    spell null bootstrap 250/500 (95 workers)
+03:11:31 INFO    spell null bootstrap 275/500 (95 workers)
+03:11:31 INFO    spell null bootstrap 300/500 (95 workers)
+03:11:31 INFO    spell null bootstrap 325/500 (95 workers)
+03:11:31 INFO    spell null bootstrap 350/500 (95 workers)
+03:11:31 INFO    spell null bootstrap 375/500 (95 workers)
+03:11:31 INFO    spell null bootstrap 400/500 (95 workers)
+03:11:50 INFO    spell null bootstrap 425/500 (95 workers)
+03:11:50 INFO    spell null bootstrap 450/500 (95 workers)
+03:12:03 INFO    spell null bootstrap 475/500 (95 workers)
+03:12:03 INFO    spell null bootstrap 500/500 (95 workers)
+03:13:28 INFO    spell cluster bootstrap 25/200 (95 workers)
+03:13:28 INFO    spell cluster bootstrap 50/200 (95 workers)
+03:13:28 INFO    spell cluster bootstrap 75/200 (95 workers)
+03:13:28 INFO    spell cluster bootstrap 100/200 (95 workers)
+03:13:28 INFO    spell cluster bootstrap 125/200 (95 workers)
+03:13:28 INFO    spell cluster bootstrap 150/200 (95 workers)
+03:13:30 INFO    spell cluster bootstrap 175/200 (95 workers)
+03:13:46 INFO    spell cluster bootstrap 200/200 (95 workers)
+03:14:17 INFO    spell sensitivities 1/15 (15 workers)
+03:15:12 INFO    spell sensitivities 2/15 (15 workers)
+03:17:35 INFO    spell sensitivities 3/15 (15 workers)
+03:17:35 INFO    spell sensitivities 4/15 (15 workers)
+03:17:35 INFO    spell sensitivities 5/15 (15 workers)
+03:17:35 INFO    spell sensitivities 6/15 (15 workers)
+03:17:35 INFO    spell sensitivities 7/15 (15 workers)
+03:17:35 INFO    spell sensitivities 8/15 (15 workers)
+03:17:35 INFO    spell sensitivities 9/15 (15 workers)
+03:17:35 INFO    spell sensitivities 10/15 (15 workers)
+03:17:35 INFO    spell sensitivities 11/15 (15 workers)
+03:17:35 INFO    spell sensitivities 12/15 (15 workers)
+03:17:35 INFO    spell sensitivities 13/15 (15 workers)
+03:17:35 INFO    spell sensitivities 14/15 (15 workers)
+03:17:35 INFO    spell sensitivities 15/15 (15 workers)
+
+=== spell model development fit ===
+{
+  "source": "statsbomb",
+  "exclude_one_club": true,
+  "n_matches": 1660,
+  "n_shots_modelled": 39299,
+  "prep": {
+    "threshold_seconds": 4.0,
+    "n_before": 41745,
+    "n_after": 39730,
+    "removed_fraction": 0.04826925380285063,
+    "max_run_length": 4,
+    "collapsed_events": 1887,
+    "collapses_at_half_boundaries": 44,
+    "guard_enforced": true,
+    "jitter_seed": 20260910,
+    "remaining_exact_ties": 0
+  },
+  "possession_rule": "tolerant",
+  "merge": {
+    "threshold_s": 10.0,
+    "require_high_restart": true,
+    "n_before": 371030,
+    "n_after": 333119,
+    "possessions_removed_fraction": 0.1021777214780476,
+    "attacks_merged": 17219,
+    "dangerous_share_before": 0.47964585073983235,
+    "dangerous_share_after": 0.4884890984903293
+  },
+  "spell_rule": {
+    "need": 4,
+    "window": 5,
+    "danger_col": "t_ft"
+  },
+  "prevalence": {
+    "share_time_z1": 0.1870315830659625,
+    "rule": {
+      "need": 4,
+      "window": 5,
+      "danger_col": "t_ft"
+    },
+    "share_shots_z1": 0.23298302755795314
+  },
+  "headline": {
+    "eta_out": 0.01233791465013394,
+    "eta_in": 0.0023459870534547713,
+    "eta_cross": 8.429382247609302e-08,
+    "tau_minutes": 7.869432149510639,
+    "gamma_own": 0.09095472635889079,
+    "gamma_opp": -0.1243594064881605,
+    "loglik": -119212.50559426566,
+    "converged": true,
+    "n_iter": 267,
+    "n_events": 39299,
+    "n_matches": 1660,
+    "kernel": true,
+    "contrast_in_minus_out": -0.009991927596679169
+  },
+  "background_only": {
+    "eta_out": 0.0,
+    "eta_in": 0.0,
+    "eta_cross": 0.0,
+    "tau_minutes": 5.0,
+    "gamma_own": 0.08997285859574917,
+    "gamma_opp": -0.1246194127188518,
+    "loglik": -119213.70079095199,
+    "converged": true,
+    "n_iter": 89,
+    "n_events": 39299,
+    "n_matches": 1660,
+    "kernel": false,
+    "contrast_in_minus_out": 0.0
+  },
+  "lr_vs_background": 2.3903933726542164,
+  "parametric_bootstrap": {
+    "n_replicates": 500,
+    "n_unconverged": 0,
+    "p_value": {
+      "out": 0.001996007984031936,
+      "in": 0.16766467065868262
+    },
+    "null_q95": {
+      "out": 9.50478015185063e-05,
+      "in": 0.016176028481272312
+    }
+  },
+  "cluster_bootstrap": {
+    "ci95": {
+      "out": [
+        6.153401528611494e-12,
+        0.01925930722504875
+      ],
+      "in": [
+        3.085801941091566e-07,
+        0.023510793068899714
+      ],
+      "cross": [
+        4.7452036309978915e-37,
+        1.1609343147106298e-08
+      ],
+      "in_minus_out": [
+        -0.01527783493968824,
+        0.017238731019312066
+      ]
+    },
+    "n_replicates": 200,
+    "n_unconverged": 0
+  },
+  "floors": {
+    "out": 0.05,
+    "in": 0.05
+  },
+  "verdict": {
+    "out": "0.0123 is below the floor of 0.05: an upper bound, not an estimate",
+    "in": "0.0023 is below the floor of 0.05: an upper bound, not an estimate"
+  },
+  "label": "exploratory (docs/spec_spells.md section 1)",
+  "sensitivities": {
+    "box_1_20": {
+      "eta_out": 0.03840986629846906,
+      "eta_in": 0.06768774234458765,
+      "eta_cross": 6.704716993279013e-08,
+      "tau_minutes": 19.996476373740297,
+      "gamma_own": 0.08094918547951926,
+      "gamma_opp": -0.12566543672739286,
+      "loglik": -119205.66170384409,
+      "converged": true,
+      "n_iter": 352,
+      "n_events": 39299,
+      "n_matches": 1660,
+      "kernel": true,
+      "contrast_in_minus_out": 0.029277876046118582
+    },
+    "minute_spline_df_9": {
+      "eta_out": 0.010658757364435905,
+      "eta_in": 1.8576093219909649e-25,
+      "eta_cross": 2.7412612577875095e-66,
+      "tau_minutes": 8.0,
+      "gamma_own": 0.08716687771575295,
+      "gamma_opp": -0.12849181815695207,
+      "loglik": -119198.79307341715,
+      "converged": true,
+      "n_iter": 1101,
+      "n_events": 39299,
+      "n_matches": 1660,
+      "kernel": true,
+      "contrast_in_minus_out": -0.010658757364435905
+    },
+    "minute_spline_df_12": {
+      "eta_out": 5.150353702625768e-16,
+      "eta_in": 1.5948871534647538e-10,
+      "eta_cross": 2.5854790611648887e-74,
+      "tau_minutes": 8.0,
+      "gamma_own": 0.08745401595505767,
+      "gamma_opp": -0.12704887989649882,
+      "loglik": -119194.47916715269,
+      "converged": false,
+      "n_iter": 3000,
+      "n_events": 39299,
+      "n_matches": 1660,
+      "kernel": true,
+      "contrast_in_minus_out": 1.5948820031110511e-10
+    },
+    "no_gamma_confounded": {
+      "eta_out": 0.01733396367734275,
+      "eta_in": 0.04913027524192159,
+      "eta_cross": 2.727771631248318e-10,
+      "tau_minutes": 7.992680978797341,
+      "gamma_own": 0.0,
+      "gamma_opp": 0.0,
+      "loglik": -119274.2563841986,
+      "converged": true,
+      "n_iter": 263,
+      "n_events": 39299,
+      "n_matches": 1660,
+      "kernel": true,
+      "contrast_in_minus_out": 0.031796311564578836
+    },
+    "rule_3_of_5": {
+      "eta_out": 0.004016470464401909,
+      "eta_in": 0.01537239836287868,
+      "eta_cross": 2.118139555704184e-08,
+      "tau_minutes": 7.89315762385403,
+      "gamma_own": 0.059120898167953025,
+      "gamma_opp": -0.07785864108905632,
+      "loglik": -119231.84424214017,
+      "converged": true,
+      "n_iter": 194,
+      "n_events": 39299,
+      "n_matches": 1660,
+      "kernel": true,
+      "contrast_in_minus_out": 0.01135592789847677,
+      "prevalence": {
+        "share_time_z1": 0.43677009754571916,
+        "rule": {
+          "need": 3,
+          "window": 5,
+          "danger_col": "t_ft"
+        },
+        "share_shots_z1": 0.4937021298251864
+      }
+    },
+    "rule_5_of_5": {
+      "eta_out": 0.019918754565698898,
+      "eta_in": 0.033379580360917455,
+      "eta_cross": 1.9904679825997134e-10,
+      "tau_minutes": 7.997521967323278,
+      "gamma_own": 0.07068479695278813,
+      "gamma_opp": -0.19162439198472342,
+      "loglik": -119249.51339940734,
+      "converged": true,
+      "n_iter": 412,
+      "n_events": 39299,
+      "n_matches": 1660,
+      "kernel": true,
+      "contrast_in_minus_out": 0.013460825795218557,
+      "prevalence": {
+        "share_time_z1": 0.042952718843326985,
+        "rule": {
+          "need": 5,
+          "window": 5,
+          "danger_col": "t_ft"
+        },
+        "share_shots_z1": 0.05755871650678134
+      }
+    },
+    "rule_6_of_8": {
+      "eta_out": 0.01778988050049972,
+      "eta_in": 0.00010811657999724387,
+      "eta_cross": 1.8035652875871543e-11,
+      "tau_minutes": 7.991731515514338,
+      "gamma_own": 0.07457696429478985,
+      "gamma_opp": -0.1090866171469352,
+      "loglik": -119241.18549132546,
+      "converged": true,
+      "n_iter": 285,
+      "n_events": 39299,
+      "n_matches": 1660,
+      "kernel": true,
+      "contrast_in_minus_out": -0.017681763920502476,
+      "prevalence": {
+        "share_time_z1": 0.14539670064985827,
+        "rule": {
+          "need": 6,
+          "window": 8,
+          "danger_col": "t_ft"
+        },
+        "share_shots_z1": 0.18527188986997126
+      }
+    },
+    "danger_x75": {
+      "eta_out": 0.013088654360676574,
+      "eta_in": 0.019115900610611334,
+      "eta_cross": 2.9587590397776454e-10,
+      "tau_minutes": 7.997715558271415,
+      "gamma_own": 0.09143151110542838,
+      "gamma_opp": -0.1593677384641737,
+      "loglik": -119225.08351830214,
+      "converged": true,
+      "n_iter": 471,
+      "n_events": 39299,
+      "n_matches": 1660,
+      "kernel": true,
+      "contrast_in_minus_out": 0.00602724624993476,
+      "prevalence": {
+        "share_time_z1": 0.09761945142377429,
+        "rule": {
+          "need": 4,
+          "window": 5,
+          "danger_col": "t_ft75"
+        },
+        "share_shots_z1": 0.1287310109672002
+      }
+    },
+    "strict_possession_rule": {
+      "eta_out": 4.03274606517008e-06,
+      "eta_in": 0.00034496995219879755,
+      "eta_cross": 5.873720079380102e-20,
+      "tau_minutes": 7.999961474439061,
+      "gamma_own": 0.14029352105322768,
+      "gamma_opp": -0.2055565223425448,
+      "loglik": -119183.43605400992,
+      "converged": true,
+      "n_iter": 197,
+      "n_events": 39299,
+      "n_matches": 1660,
+      "kernel": true,
+      "contrast_in_minus_out": 0.00034093720613362745,
+      "prevalence": {
+        "share_time_z1": 0.09466924756362301,
+        "rule": {
+          "need": 4,
+          "window": 5,
+          "danger_col": "t_ft"
+        },
+        "share_shots_z1": 0.12832387592559608
+      }
+    },
+    "tau_profile": [
+      {
+        "tau_minutes": 3.0,
+        "eta_out": 1.8207516971326073e-15,
+        "eta_in": 9.995867213477467e-09,
+        "eta_cross": 1.685600851332693e-51,
+        "gamma_own": 0.0899955693688873,
+        "loglik": -119213.70246592289,
+        "converged": true
+      },
+      {
+        "tau_minutes": 5.0,
+        "eta_out": 4.160125859388378e-09,
+        "eta_in": 5.067803061238817e-06,
+        "eta_cross": 7.053489114169202e-35,
+        "gamma_own": 0.0899599581153542,
+        "loglik": -119213.70419501145,
+        "converged": true
+      },
+      {
+        "tau_minutes": 8.0,
+        "eta_out": 0.012474748842786315,
+        "eta_in": 0.0037001654735870078,
+        "eta_cross": 3.8102901824045306e-08,
+        "gamma_own": 0.09041929546364731,
+        "loglik": -119212.44787107463,
+        "converged": true
+      },
+      {
+        "tau_minutes": 14.0,
+        "eta_out": 0.02658619044604026,
+        "eta_in": 0.03881657412769377,
+        "eta_cross": 1.2525092336829952e-05,
+        "gamma_own": 0.0833802004932985,
+        "loglik": -119208.91399093784,
+        "converged": true
+      },
+      {
+        "tau_minutes": 20.0,
+        "eta_out": 0.03821625042819185,
+        "eta_in": 0.06823067959579217,
+        "eta_cross": 2.95988298681794e-06,
+        "gamma_own": 0.0807497708716296,
+        "loglik": -119205.66443538255,
+        "converged": true
+      },
+      {
+        "tau_minutes": 30.0,
+        "eta_out": 0.05516675537417273,
+        "eta_in": 0.10592779963172998,
+        "eta_cross": 3.99793869329776e-07,
+        "gamma_own": 0.07993532924118385,
+        "loglik": -119202.23407389452,
+        "converged": true
+      }
+    ]
+  }
+}
+[spells] === statsbomb-no1club S spell-fit done in 9 min
+[spells] === statsbomb-no1club G spell-recovery (08:17:35 UTC, workers=95)
+03:18:33 INFO    spell recovery 5/10 (10 workers)
+03:18:35 INFO    spell recovery 10/10 (10 workers)
+
+=== spell recovery ===
+{
+  "source": "statsbomb",
+  "exclude_one_club": true,
+  "n_matches": 1660,
+  "n_shots_modelled": 39299,
+  "prep": {
+    "threshold_seconds": 4.0,
+    "n_before": 41745,
+    "n_after": 39730,
+    "removed_fraction": 0.04826925380285063,
+    "max_run_length": 4,
+    "collapsed_events": 1887,
+    "collapses_at_half_boundaries": 44,
+    "guard_enforced": true,
+    "jitter_seed": 20260910,
+    "remaining_exact_ties": 0
+  },
+  "possession_rule": "tolerant",
+  "merge": {
+    "threshold_s": 10.0,
+    "require_high_restart": true,
+    "n_before": 371030,
+    "n_after": 333119,
+    "possessions_removed_fraction": 0.1021777214780476,
+    "attacks_merged": 17219,
+    "dangerous_share_before": 0.47964585073983235,
+    "dangerous_share_after": 0.4884890984903293
+  },
+  "spell_rule": {
+    "need": 4,
+    "window": 5,
+    "danger_col": "t_ft"
+  },
+  "prevalence": {
+    "share_time_z1": 0.1870315830659625,
+    "rule": {
+      "need": 4,
+      "window": 5,
+      "danger_col": "t_ft"
+    },
+    "share_shots_z1": 0.23298302755795314
+  },
+  "model": "G",
+  "planted": {
+    "level": 0.3,
+    "trail": 0.1,
+    "lead": 0.2
+  },
+  "eta_cross_planted": 0.05,
+  "tau_planted": 5.0,
+  "gamma_planted": [
+    0.0,
+    0.0
+  ],
+  "n_replicates": 10,
+  "tolerance": 0.08,
+  "per_parameter": {
+    "level": {
+      "planted": 0.3,
+      "mean_hat": 0.28879222450212344,
+      "sd_hat": 0.006898308224966732,
+      "bias": -0.011207775497876549,
+      "passed": true
+    },
+    "trail": {
+      "planted": 0.1,
+      "mean_hat": 0.08636364276032246,
+      "sd_hat": 0.010736928713735126,
+      "bias": -0.013636357239677543,
+      "passed": true
+    },
+    "lead": {
+      "planted": 0.2,
+      "mean_hat": 0.19494588261235943,
+      "sd_hat": 0.007811321405343003,
+      "bias": -0.005054117387640583,
+      "passed": true
+    }
+  },
+  "mean_eta_cross_hat": 0.04943656673591075,
+  "mean_tau_hat": 4.839182098712371,
+  "n_unconverged": 0,
+  "passed": true
+}
+[spells] === statsbomb-no1club G spell-recovery done in 1 min
+[spells] === statsbomb-no1club G spell-power (08:18:35 UTC, workers=95)
+03:21:16 INFO    spell power 20/560 (95 workers)
+03:21:16 INFO    spell power 40/560 (95 workers)
+03:21:16 INFO    spell power 60/560 (95 workers)
+03:21:16 INFO    spell power 80/560 (95 workers)
+03:21:16 INFO    spell power 100/560 (95 workers)
+03:21:31 INFO    spell power 120/560 (95 workers)
+03:21:31 INFO    spell power 140/560 (95 workers)
+03:21:32 INFO    spell power 160/560 (95 workers)
+03:21:51 INFO    spell power 180/560 (95 workers)
+03:22:07 INFO    spell power 200/560 (95 workers)
+03:23:01 INFO    spell power 220/560 (95 workers)
+03:23:01 INFO    spell power 240/560 (95 workers)
+03:23:03 INFO    spell power 260/560 (95 workers)
+03:23:29 INFO    spell power 280/560 (95 workers)
+03:23:29 INFO    spell power 300/560 (95 workers)
+03:23:29 INFO    spell power 320/560 (95 workers)
+03:24:05 INFO    spell power 340/560 (95 workers)
+03:24:27 INFO    spell power 360/560 (95 workers)
+03:24:27 INFO    spell power 380/560 (95 workers)
+03:24:27 INFO    spell power 400/560 (95 workers)
+03:24:27 INFO    spell power 420/560 (95 workers)
+03:24:35 INFO    spell power 440/560 (95 workers)
+03:24:35 INFO    spell power 460/560 (95 workers)
+03:24:56 INFO    spell power 480/560 (95 workers)
+03:24:59 INFO    spell power 500/560 (95 workers)
+03:24:59 INFO    spell power 520/560 (95 workers)
+03:24:59 INFO    spell power 540/560 (95 workers)
+03:25:11 INFO    spell power 560/560 (95 workers)
+
+=== spell detection floors ===
+{
+  "source": "statsbomb",
+  "exclude_one_club": true,
+  "n_matches": 1660,
+  "n_shots_modelled": 39299,
+  "prep": {
+    "threshold_seconds": 4.0,
+    "n_before": 41745,
+    "n_after": 39730,
+    "removed_fraction": 0.04826925380285063,
+    "max_run_length": 4,
+    "collapsed_events": 1887,
+    "collapses_at_half_boundaries": 44,
+    "guard_enforced": true,
+    "jitter_seed": 20260910,
+    "remaining_exact_ties": 0
+  },
+  "possession_rule": "tolerant",
+  "merge": {
+    "threshold_s": 10.0,
+    "require_high_restart": true,
+    "n_before": 371030,
+    "n_after": 333119,
+    "possessions_removed_fraction": 0.1021777214780476,
+    "attacks_merged": 17219,
+    "dangerous_share_before": 0.47964585073983235,
+    "dangerous_share_after": 0.4884890984903293
+  },
+  "spell_rule": {
+    "need": 4,
+    "window": 5,
+    "danger_col": "t_ft"
+  },
+  "prevalence": {
+    "share_time_z1": 0.1870315830659625,
+    "rule": {
+      "need": 4,
+      "window": 5,
+      "danger_col": "t_ft"
+    },
+    "share_shots_z1": 0.23298302755795314
+  },
+  "model": "G",
+  "alpha": 0.01,
+  "target_power": 0.8,
+  "grid": [
+    0.0,
+    0.02,
+    0.05,
+    0.1,
+    0.2
+  ],
+  "replicates": 30,
+  "null_replicates": 200,
+  "eta_cross_planted": 0.05,
+  "tau_planted": 5.0,
+  "floors": {
+    "level": {
+      "critical_value": 0.008705210828427384,
+      "detection_floor": 0.05
+    },
+    "trail": {
+      "critical_value": 0.016263235592133506,
+      "detection_floor": 0.05
+    },
+    "lead": {
+      "critical_value": 0.021508492522388522,
+      "detection_floor": 0.05
+    }
+  },
+  "curves": {
+    "level": [
+      {
+        "eta_planted": 0.0,
+        "power": 0.01,
+        "mean_hat": 0.0002960215896374019,
+        "bias": NaN,
+        "frac_converged": NaN
+      },
+      {
+        "eta_planted": 0.02,
+        "power": 0.7,
+        "mean_hat": 0.013481067845450525,
+        "bias": -0.0065189321545494755,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.05,
+        "power": 1.0,
+        "mean_hat": 0.044543318825463585,
+        "bias": -0.005456681174536418,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.1,
+        "power": 1.0,
+        "mean_hat": 0.0918956023702984,
+        "bias": -0.00810439762970161,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.2,
+        "power": 1.0,
+        "mean_hat": 0.1889464349000983,
+        "bias": -0.011053565099901713,
+        "frac_converged": 1.0
+      }
+    ],
+    "trail": [
+      {
+        "eta_planted": 0.0,
+        "power": 0.01,
+        "mean_hat": 0.0013288445083508153,
+        "bias": NaN,
+        "frac_converged": NaN
+      },
+      {
+        "eta_planted": 0.02,
+        "power": 0.3333333333333333,
+        "mean_hat": 0.0135130318894355,
+        "bias": -0.006486968110564501,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.05,
+        "power": 1.0,
+        "mean_hat": 0.04364303233682855,
+        "bias": -0.006356967663171453,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.1,
+        "power": 1.0,
+        "mean_hat": 0.09130554811793981,
+        "bias": -0.008694451882060195,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.2,
+        "power": 1.0,
+        "mean_hat": 0.18806146452438716,
+        "bias": -0.011938535475612855,
+        "frac_converged": 1.0
+      }
+    ],
+    "lead": [
+      {
+        "eta_planted": 0.0,
+        "power": 0.01,
+        "mean_hat": 0.001787517652571386,
+        "bias": NaN,
+        "frac_converged": NaN
+      },
+      {
+        "eta_planted": 0.02,
+        "power": 0.4,
+        "mean_hat": 0.017607669460566595,
+        "bias": -0.0023923305394334057,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.05,
+        "power": 1.0,
+        "mean_hat": 0.04420860926077215,
+        "bias": -0.005791390739227853,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.1,
+        "power": 1.0,
+        "mean_hat": 0.0959248881932618,
+        "bias": -0.00407511180673821,
+        "frac_converged": 1.0
+      },
+      {
+        "eta_planted": 0.2,
+        "power": 1.0,
+        "mean_hat": 0.19571288547461604,
+        "bias": -0.004287114525383967,
+        "frac_converged": 1.0
+      }
+    ]
+  },
+  "n_unconverged": 0
+}
+[spells] === statsbomb-no1club G spell-power done in 6 min
+[spells] === statsbomb-no1club G spell-fit (08:25:12 UTC, workers=95)
+03:25:46 INFO  headline {'eta_level': 0.0, 'eta_trail': 0.06102, 'eta_lead': 0.04785, 'eta_cross': 0.0}
+03:28:16 INFO    spell null bootstrap 25/500 (95 workers)
+03:28:16 INFO    spell null bootstrap 50/500 (95 workers)
+03:28:16 INFO    spell null bootstrap 75/500 (95 workers)
+03:28:16 INFO    spell null bootstrap 100/500 (95 workers)
+03:29:33 INFO    spell null bootstrap 125/500 (95 workers)
+03:29:33 INFO    spell null bootstrap 150/500 (95 workers)
+03:29:33 INFO    spell null bootstrap 175/500 (95 workers)
+03:29:55 INFO    spell null bootstrap 200/500 (95 workers)
+03:29:55 INFO    spell null bootstrap 225/500 (95 workers)
+03:29:55 INFO    spell null bootstrap 250/500 (95 workers)
+03:29:55 INFO    spell null bootstrap 275/500 (95 workers)
+03:29:55 INFO    spell null bootstrap 300/500 (95 workers)
+03:29:56 INFO    spell null bootstrap 325/500 (95 workers)
+03:29:56 INFO    spell null bootstrap 350/500 (95 workers)
+03:30:00 INFO    spell null bootstrap 375/500 (95 workers)
+03:30:22 INFO    spell null bootstrap 400/500 (95 workers)
+03:30:22 INFO    spell null bootstrap 425/500 (95 workers)
+03:30:22 INFO    spell null bootstrap 450/500 (95 workers)
+03:30:23 INFO    spell null bootstrap 475/500 (95 workers)
+03:30:23 INFO    spell null bootstrap 500/500 (95 workers)
+03:31:34 INFO    spell cluster bootstrap 25/200 (95 workers)
+03:31:34 INFO    spell cluster bootstrap 50/200 (95 workers)
+03:31:45 INFO    spell cluster bootstrap 75/200 (95 workers)
+03:31:45 INFO    spell cluster bootstrap 100/200 (95 workers)
+03:31:58 INFO    spell cluster bootstrap 125/200 (95 workers)
+03:32:05 INFO    spell cluster bootstrap 150/200 (95 workers)
+03:32:16 INFO    spell cluster bootstrap 175/200 (95 workers)
+03:32:23 INFO    spell cluster bootstrap 200/200 (95 workers)
+03:32:59 INFO    spell sensitivities 1/9 (9 workers)
+03:33:55 INFO    spell sensitivities 2/9 (9 workers)
+03:36:48 INFO    spell sensitivities 3/9 (9 workers)
+03:36:48 INFO    spell sensitivities 4/9 (9 workers)
+03:36:48 INFO    spell sensitivities 5/9 (9 workers)
+03:36:48 INFO    spell sensitivities 6/9 (9 workers)
+03:36:48 INFO    spell sensitivities 7/9 (9 workers)
+03:36:48 INFO    spell sensitivities 8/9 (9 workers)
+03:36:48 INFO    spell sensitivities 9/9 (9 workers)
+
+=== spell model development fit ===
+{
+  "source": "statsbomb",
+  "exclude_one_club": true,
+  "n_matches": 1660,
+  "n_shots_modelled": 39299,
+  "prep": {
+    "threshold_seconds": 4.0,
+    "n_before": 41745,
+    "n_after": 39730,
+    "removed_fraction": 0.04826925380285063,
+    "max_run_length": 4,
+    "collapsed_events": 1887,
+    "collapses_at_half_boundaries": 44,
+    "guard_enforced": true,
+    "jitter_seed": 20260910,
+    "remaining_exact_ties": 0
+  },
+  "possession_rule": "tolerant",
+  "merge": {
+    "threshold_s": 10.0,
+    "require_high_restart": true,
+    "n_before": 371030,
+    "n_after": 333119,
+    "possessions_removed_fraction": 0.1021777214780476,
+    "attacks_merged": 17219,
+    "dangerous_share_before": 0.47964585073983235,
+    "dangerous_share_after": 0.4884890984903293
+  },
+  "spell_rule": {
+    "need": 4,
+    "window": 5,
+    "danger_col": "t_ft"
+  },
+  "prevalence": {
+    "share_time_z1": 0.1870315830659625,
+    "rule": {
+      "need": 4,
+      "window": 5,
+      "danger_col": "t_ft"
+    },
+    "share_shots_z1": 0.23298302755795314
+  },
+  "headline": {
+    "eta_level": 5.604346804670423e-07,
+    "eta_trail": 0.06102277679436649,
+    "eta_lead": 0.04785230748391011,
+    "eta_cross": 1.5785678839763181e-25,
+    "tau_minutes": 7.999996739757492,
+    "gamma_own": 0.0,
+    "gamma_opp": 0.0,
+    "loglik": -119266.14756900433,
+    "converged": true,
+    "n_iter": 293,
+    "n_events": 39299,
+    "n_matches": 1660,
+    "kernel": true
+  },
+  "background_only": {
+    "eta_level": 0.0,
+    "eta_trail": 0.0,
+    "eta_lead": 0.0,
+    "eta_cross": 0.0,
+    "tau_minutes": 5.0,
+    "gamma_own": 0.0,
+    "gamma_opp": 0.0,
+    "loglik": -119282.6162634606,
+    "converged": true,
+    "n_iter": 82,
+    "n_events": 39299,
+    "n_matches": 1660,
+    "kernel": false
+  },
+  "lr_vs_background": 32.93738891254179,
+  "parametric_bootstrap": {
+    "n_replicates": 500,
+    "n_unconverged": 0,
+    "p_value": {
+      "level": 0.2634730538922156,
+      "trail": 0.001996007984031936,
+      "lead": 0.001996007984031936
+    },
+    "null_q95": {
+      "level": 0.0002935444303661296,
+      "trail": 0.011530991870499762,
+      "lead": 0.014319341150569485
+    }
+  },
+  "cluster_bootstrap": {
+    "ci95": {
+      "level": [
+        1.9252334416936835e-07,
+        0.00037378275081204065
+      ],
+      "trail": [
+        0.021560323983181227,
+        0.07838688884050064
+      ],
+      "lead": [
+        0.004134403219191054,
+        0.06612299999234167
+      ],
+      "cross": [
+        3.753113155859805e-24,
+        6.093193683315286e-13
+      ]
+    },
+    "n_replicates": 200,
+    "n_unconverged": 0
+  },
+  "floors": {
+    "level": 0.05,
+    "trail": 0.05,
+    "lead": 0.05
+  },
+  "verdict": {
+    "level": "0.0000 is below the floor of 0.05: an upper bound, not an estimate",
+    "trail": "0.0610 is at or above the floor of 0.05: read with the Holm-adjusted p",
+    "lead": "0.0479 is below the floor of 0.05: an upper bound, not an estimate"
+  },
+  "label": "exploratory (docs/spec_spells.md section 1)",
+  "sensitivities": {
+    "box_1_20": {
+      "eta_level": 0.021232934940642732,
+      "eta_trail": 0.1340293060023868,
+      "eta_lead": 0.07890275484938224,
+      "eta_cross": 1.7914385522475437e-08,
+      "tau_minutes": 19.997662721708487,
+      "gamma_own": 0.0,
+      "gamma_opp": 0.0,
+      "loglik": -119253.75591037111,
+      "converged": true,
+      "n_iter": 372,
+      "n_events": 39299,
+      "n_matches": 1660,
+      "kernel": true
+    },
+    "minute_spline_df_9": {
+      "eta_level": 6.514097665276052e-51,
+      "eta_trail": 0.060832701270348614,
+      "eta_lead": 0.04809370720253022,
+      "eta_cross": 9.827955937694528e-235,
+      "tau_minutes": 8.0,
+      "gamma_own": 0.0,
+      "gamma_opp": 0.0,
+      "loglik": -119252.16832807768,
+      "converged": true,
+      "n_iter": 1010,
+      "n_events": 39299,
+      "n_matches": 1660,
+      "kernel": true
+    },
+    "minute_spline_df_12": {
+      "eta_level": 1.7816415370003363e-33,
+      "eta_trail": 0.05999840412919017,
+      "eta_lead": 0.0530672338726341,
+      "eta_cross": 4.595107322059812e-155,
+      "tau_minutes": 8.0,
+      "gamma_own": 0.0,
+      "gamma_opp": 0.0,
+      "loglik": -119246.24401780125,
+      "converged": false,
+      "n_iter": 3000,
+      "n_events": 39299,
+      "n_matches": 1660,
+      "kernel": true
+    },
+    "tau_profile": [
+      {
+        "tau_minutes": 3.0,
+        "eta_level": 1.1974416533621625e-05,
+        "eta_trail": 0.013963891786150798,
+        "eta_lead": 0.014084360638058109,
+        "eta_cross": 3.016267311765411e-16,
+        "gamma_own": 0.0,
+        "loglik": -119280.05009562982,
+        "converged": true
+      },
+      {
+        "tau_minutes": 5.0,
+        "eta_level": 1.965763208138074e-06,
+        "eta_trail": 0.034581628156628366,
+        "eta_lead": 0.031885446031198444,
+        "eta_cross": 1.9386490290781542e-21,
+        "gamma_own": 0.0,
+        "loglik": -119273.39912498859,
+        "converged": true
+      },
+      {
+        "tau_minutes": 8.0,
+        "eta_level": 1.1579298904182325e-05,
+        "eta_trail": 0.060970044301158745,
+        "eta_lead": 0.047887572102511836,
+        "eta_cross": 4.0129910212019926e-18,
+        "gamma_own": 0.0,
+        "loglik": -119266.14707828374,
+        "converged": true
+      },
+      {
+        "tau_minutes": 14.0,
+        "eta_level": 0.008658271410470202,
+        "eta_trail": 0.10172228296590577,
+        "eta_lead": 0.0657178638093784,
+        "eta_cross": 2.6010617531144803e-06,
+        "gamma_own": 0.0,
+        "loglik": -119258.15997851283,
+        "converged": true
+      },
+      {
+        "tau_minutes": 20.0,
+        "eta_level": 0.02127845642529718,
+        "eta_trail": 0.1338073044471515,
+        "eta_lead": 0.07883009896308525,
+        "eta_cross": 1.2335766836199122e-06,
+        "gamma_own": 0.0,
+        "loglik": -119253.75496439777,
+        "converged": true
+      },
+      {
+        "tau_minutes": 30.0,
+        "eta_level": 0.04026552719981005,
+        "eta_trail": 0.17765992401723835,
+        "eta_lead": 0.09891594762335461,
+        "eta_cross": 2.3104746264548446e-06,
+        "gamma_own": 0.0,
+        "loglik": -119250.00798876192,
+        "converged": true
+      }
+    ]
+  }
+}
+[spells] === statsbomb-no1club G spell-fit done in 11 min
+[spells] === statsbomb-no1club spell-holm (08:36:48 UTC, workers=95)
+
+=== Holm over the five primary tests ===
+{
+  "alpha": 0.05,
+  "m": 5,
+  "raw": {
+    "eta_out": 0.001996007984031936,
+    "eta_in": 0.16766467065868262,
+    "eta_level": 0.2634730538922156,
+    "eta_trail": 0.001996007984031936,
+    "eta_lead": 0.001996007984031936
+  },
+  "adjusted": {
+    "eta_out": 0.00998003992015968,
+    "eta_trail": 0.00998003992015968,
+    "eta_lead": 0.00998003992015968,
+    "eta_in": 0.33532934131736525,
+    "eta_level": 0.33532934131736525
+  },
+  "reject": {
+    "eta_out": true,
+    "eta_in": false,
+    "eta_level": false,
+    "eta_trail": true,
+    "eta_lead": true
+  },
+  "estimates": {
+    "eta_out": 0.01233791465013394,
+    "eta_in": 0.0023459870534547713,
+    "eta_level": 5.604346804670423e-07,
+    "eta_trail": 0.06102277679436649,
+    "eta_lead": 0.04785230748391011
+  },
+  "source": "statsbomb",
+  "exclude_one_club": true
+}
+[spells] === statsbomb-no1club spell-holm done in 0 min
+[spells] all steps done

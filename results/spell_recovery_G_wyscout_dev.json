@@ -1,10 +1,10 @@
 {
   "name": "spell_recovery_G_wyscout_dev",
-  "written_at_utc": "2026-11-06T01:40:45+00:00",
+  "written_at_utc": "2026-11-06T06:33:04+00:00",
   "python": "3.12.7",
   "platform": "Linux-5.14.0-687.26.1.el9_8.x86_64-x86_64-with-glibc2.34",
   "numpy": "2.5.3",
-  "git_rev": "5e9522f",
+  "git_rev": "6bc9fee",
   "inputs": {},
   "payload": {
     "source": "wyscout",

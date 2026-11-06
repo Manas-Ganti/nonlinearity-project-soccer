@@ -1,0 +1,43 @@
+{
+  "name": "spell_holm_SG_statsbomb_dev",
+  "written_at_utc": "2026-11-06T08:02:54+00:00",
+  "python": "3.12.7",
+  "platform": "Linux-5.14.0-687.26.1.el9_8.x86_64-x86_64-with-glibc2.34",
+  "numpy": "2.5.3",
+  "git_rev": "6bc9fee",
+  "inputs": {},
+  "payload": {
+    "alpha": 0.05,
+    "m": 5,
+    "raw": {
+      "eta_out": 0.13972055888223553,
+      "eta_in": 0.48502994011976047,
+      "eta_level": 0.001996007984031936,
+      "eta_trail": 0.001996007984031936,
+      "eta_lead": 0.001996007984031936
+    },
+    "adjusted": {
+      "eta_level": 0.00998003992015968,
+      "eta_trail": 0.00998003992015968,
+      "eta_lead": 0.00998003992015968,
+      "eta_out": 0.27944111776447106,
+      "eta_in": 0.48502994011976047
+    },
+    "reject": {
+      "eta_out": false,
+      "eta_in": false,
+      "eta_level": true,
+      "eta_trail": true,
+      "eta_lead": true
+    },
+    "estimates": {
+      "eta_out": 4.42836979780135e-09,
+      "eta_in": 9.68543068988867e-06,
+      "eta_level": 2.0480691135797678e-05,
+      "eta_trail": 0.035573014262345735,
+      "eta_lead": 0.0075772852816001325
+    },
+    "source": "statsbomb",
+    "exclude_one_club": false
+  }
+}

@@ -1,0 +1,239 @@
+{
+  "name": "spell_fit_G_statsbomb_no1club_dev",
+  "written_at_utc": "2026-11-06T08:36:48+00:00",
+  "python": "3.12.7",
+  "platform": "Linux-5.14.0-687.26.1.el9_8.x86_64-x86_64-with-glibc2.34",
+  "numpy": "2.5.3",
+  "git_rev": "6bc9fee",
+  "inputs": {},
+  "payload": {
+    "source": "statsbomb",
+    "exclude_one_club": true,
+    "n_matches": 1660,
+    "n_shots_modelled": 39299,
+    "prep": {
+      "threshold_seconds": 4.0,
+      "n_before": 41745,
+      "n_after": 39730,
+      "removed_fraction": 0.04826925380285063,
+      "max_run_length": 4,
+      "collapsed_events": 1887,
+      "collapses_at_half_boundaries": 44,
+      "guard_enforced": true,
+      "jitter_seed": 20260910,
+      "remaining_exact_ties": 0
+    },
+    "possession_rule": "tolerant",
+    "merge": {
+      "threshold_s": 10.0,
+      "require_high_restart": true,
+      "n_before": 371030,
+      "n_after": 333119,
+      "possessions_removed_fraction": 0.1021777214780476,
+      "attacks_merged": 17219,
+      "dangerous_share_before": 0.47964585073983235,
+      "dangerous_share_after": 0.4884890984903293
+    },
+    "spell_rule": {
+      "need": 4,
+      "window": 5,
+      "danger_col": "t_ft"
+    },
+    "prevalence": {
+      "share_time_z1": 0.1870315830659625,
+      "rule": {
+        "need": 4,
+        "window": 5,
+        "danger_col": "t_ft"
+      },
+      "share_shots_z1": 0.23298302755795314
+    },
+    "headline": {
+      "eta_level": 5.604346804670423e-07,
+      "eta_trail": 0.06102277679436649,
+      "eta_lead": 0.04785230748391011,
+      "eta_cross": 1.5785678839763181e-25,
+      "tau_minutes": 7.999996739757492,
+      "gamma_own": 0.0,
+      "gamma_opp": 0.0,
+      "loglik": -119266.14756900433,
+      "converged": true,
+      "n_iter": 293,
+      "n_events": 39299,
+      "n_matches": 1660,
+      "kernel": true
+    },
+    "background_only": {
+      "eta_level": 0.0,
+      "eta_trail": 0.0,
+      "eta_lead": 0.0,
+      "eta_cross": 0.0,
+      "tau_minutes": 5.0,
+      "gamma_own": 0.0,
+      "gamma_opp": 0.0,
+      "loglik": -119282.6162634606,
+      "converged": true,
+      "n_iter": 82,
+      "n_events": 39299,
+      "n_matches": 1660,
+      "kernel": false
+    },
+    "lr_vs_background": 32.93738891254179,
+    "parametric_bootstrap": {
+      "n_replicates": 500,
+      "n_unconverged": 0,
+      "p_value": {
+        "level": 0.2634730538922156,
+        "trail": 0.001996007984031936,
+        "lead": 0.001996007984031936
+      },
+      "null_q95": {
+        "level": 0.0002935444303661296,
+        "trail": 0.011530991870499762,
+        "lead": 0.014319341150569485
+      }
+    },
+    "cluster_bootstrap": {
+      "ci95": {
+        "level": [
+          1.9252334416936835e-07,
+          0.00037378275081204065
+        ],
+        "trail": [
+          0.021560323983181227,
+          0.07838688884050064
+        ],
+        "lead": [
+          0.004134403219191054,
+          0.06612299999234167
+        ],
+        "cross": [
+          3.753113155859805e-24,
+          6.093193683315286e-13
+        ]
+      },
+      "n_replicates": 200,
+      "n_unconverged": 0
+    },
+    "floors": {
+      "level": 0.05,
+      "trail": 0.05,
+      "lead": 0.05
+    },
+    "verdict": {
+      "level": "0.0000 is below the floor of 0.05: an upper bound, not an estimate",
+      "trail": "0.0610 is at or above the floor of 0.05: read with the Holm-adjusted p",
+      "lead": "0.0479 is below the floor of 0.05: an upper bound, not an estimate"
+    },
+    "label": "exploratory (docs/spec_spells.md section 1)",
+    "sensitivities": {
+      "box_1_20": {
+        "eta_level": 0.021232934940642732,
+        "eta_trail": 0.1340293060023868,
+        "eta_lead": 0.07890275484938224,
+        "eta_cross": 1.7914385522475437e-08,
+        "tau_minutes": 19.997662721708487,
+        "gamma_own": 0.0,
+        "gamma_opp": 0.0,
+        "loglik": -119253.75591037111,
+        "converged": true,
+        "n_iter": 372,
+        "n_events": 39299,
+        "n_matches": 1660,
+        "kernel": true
+      },
+      "minute_spline_df_9": {
+        "eta_level": 6.514097665276052e-51,
+        "eta_trail": 0.060832701270348614,
+        "eta_lead": 0.04809370720253022,
+        "eta_cross": 9.827955937694528e-235,
+        "tau_minutes": 8.0,
+        "gamma_own": 0.0,
+        "gamma_opp": 0.0,
+        "loglik": -119252.16832807768,
+        "converged": true,
+        "n_iter": 1010,
+        "n_events": 39299,
+        "n_matches": 1660,
+        "kernel": true
+      },
+      "minute_spline_df_12": {
+        "eta_level": 1.7816415370003363e-33,
+        "eta_trail": 0.05999840412919017,
+        "eta_lead": 0.0530672338726341,
+        "eta_cross": 4.595107322059812e-155,
+        "tau_minutes": 8.0,
+        "gamma_own": 0.0,
+        "gamma_opp": 0.0,
+        "loglik": -119246.24401780125,
+        "converged": false,
+        "n_iter": 3000,
+        "n_events": 39299,
+        "n_matches": 1660,
+        "kernel": true
+      },
+      "tau_profile": [
+        {
+          "tau_minutes": 3.0,
+          "eta_level": 1.1974416533621625e-05,
+          "eta_trail": 0.013963891786150798,
+          "eta_lead": 0.014084360638058109,
+          "eta_cross": 3.016267311765411e-16,
+          "gamma_own": 0.0,
+          "loglik": -119280.05009562982,
+          "converged": true
+        },
+        {
+          "tau_minutes": 5.0,
+          "eta_level": 1.965763208138074e-06,
+          "eta_trail": 0.034581628156628366,
+          "eta_lead": 0.031885446031198444,
+          "eta_cross": 1.9386490290781542e-21,
+          "gamma_own": 0.0,
+          "loglik": -119273.39912498859,
+          "converged": true
+        },
+        {
+          "tau_minutes": 8.0,
+          "eta_level": 1.1579298904182325e-05,
+          "eta_trail": 0.060970044301158745,
+          "eta_lead": 0.047887572102511836,
+          "eta_cross": 4.0129910212019926e-18,
+          "gamma_own": 0.0,
+          "loglik": -119266.14707828374,
+          "converged": true
+        },
+        {
+          "tau_minutes": 14.0,
+          "eta_level": 0.008658271410470202,
+          "eta_trail": 0.10172228296590577,
+          "eta_lead": 0.0657178638093784,
+          "eta_cross": 2.6010617531144803e-06,
+          "gamma_own": 0.0,
+          "loglik": -119258.15997851283,
+          "converged": true
+        },
+        {
+          "tau_minutes": 20.0,
+          "eta_level": 0.02127845642529718,
+          "eta_trail": 0.1338073044471515,
+          "eta_lead": 0.07883009896308525,
+          "eta_cross": 1.2335766836199122e-06,
+          "gamma_own": 0.0,
+          "loglik": -119253.75496439777,
+          "converged": true
+        },
+        {
+          "tau_minutes": 30.0,
+          "eta_level": 0.04026552719981005,
+          "eta_trail": 0.17765992401723835,
+          "eta_lead": 0.09891594762335461,
+          "eta_cross": 2.3104746264548446e-06,
+          "gamma_own": 0.0,
+          "loglik": -119250.00798876192,
+          "converged": true
+        }
+      ]
+    }
+  }
+}

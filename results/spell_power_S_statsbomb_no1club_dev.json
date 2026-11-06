@@ -1,10 +1,10 @@
 {
   "name": "spell_power_S_statsbomb_no1club_dev",
-  "written_at_utc": "2026-11-06T03:10:48+00:00",
+  "written_at_utc": "2026-11-06T08:07:46+00:00",
   "python": "3.12.7",
   "platform": "Linux-5.14.0-687.26.1.el9_8.x86_64-x86_64-with-glibc2.34",
   "numpy": "2.5.3",
-  "git_rev": "5e9522f",
+  "git_rev": "6bc9fee",
   "inputs": {},
   "payload": {
     "source": "statsbomb",
@@ -64,11 +64,11 @@
     "tau_planted": 5.0,
     "floors": {
       "out": {
-        "critical_value": 0.00980705969591422,
+        "critical_value": 0.00980056452741264,
         "detection_floor": 0.05
       },
       "in": {
-        "critical_value": 0.02537799536157997,
+        "critical_value": 0.025309380839576907,
         "detection_floor": 0.05
       }
     },
@@ -77,36 +77,36 @@
         {
           "eta_planted": 0.0,
           "power": 0.01,
-          "mean_hat": 0.00021598884963851934,
+          "mean_hat": 0.00021394193396374954,
           "bias": NaN,
           "frac_converged": NaN
         },
         {
           "eta_planted": 0.02,
-          "power": 0.7,
-          "mean_hat": 0.01319358348767166,
-          "bias": -0.00680641651232834,
+          "power": 0.6666666666666666,
+          "mean_hat": 0.012092601356371588,
+          "bias": -0.007907398643628412,
           "frac_converged": 1.0
         },
         {
           "eta_planted": 0.05,
           "power": 1.0,
-          "mean_hat": 0.0429379690122402,
-          "bias": -0.007062030987759801,
+          "mean_hat": 0.04278368200768011,
+          "bias": -0.007216317992319893,
           "frac_converged": 1.0
         },
         {
           "eta_planted": 0.1,
           "power": 1.0,
-          "mean_hat": 0.09011844173319558,
-          "bias": -0.009881558266804424,
+          "mean_hat": 0.09013296932847072,
+          "bias": -0.00986703067152929,
           "frac_converged": 1.0
         },
         {
           "eta_planted": 0.2,
           "power": 1.0,
-          "mean_hat": 0.189552046677933,
-          "bias": -0.010447953322067022,
+          "mean_hat": 0.1895534469925711,
+          "bias": -0.010446553007428916,
           "frac_converged": 1.0
         }
       ],
@@ -114,36 +114,36 @@
         {
           "eta_planted": 0.0,
           "power": 0.01,
-          "mean_hat": 0.002302738690308932,
+          "mean_hat": 0.002398157676437032,
           "bias": NaN,
           "frac_converged": NaN
         },
         {
           "eta_planted": 0.02,
-          "power": 0.26666666666666666,
-          "mean_hat": 0.01859162224978467,
-          "bias": -0.0014083777502153297,
+          "power": 0.3,
+          "mean_hat": 0.018118823680182663,
+          "bias": -0.0018811763198173376,
           "frac_converged": 1.0
         },
         {
           "eta_planted": 0.05,
           "power": 0.9,
-          "mean_hat": 0.042574240415812474,
-          "bias": -0.007425759584187529,
+          "mean_hat": 0.04262303546534783,
+          "bias": -0.0073769645346521695,
           "frac_converged": 1.0
         },
         {
           "eta_planted": 0.1,
           "power": 1.0,
-          "mean_hat": 0.09884569446047736,
-          "bias": -0.0011543055395226431,
+          "mean_hat": 0.09879288900372735,
+          "bias": -0.001207110996272659,
           "frac_converged": 1.0
         },
         {
           "eta_planted": 0.2,
           "power": 1.0,
-          "mean_hat": 0.19166853591910518,
-          "bias": -0.00833146408089483,
+          "mean_hat": 0.19166073244116807,
+          "bias": -0.008339267558831936,
           "frac_converged": 1.0
         }
       ]
