@@ -1,6 +1,8 @@
 """Models S and G (docs/spec_spells.md section 6.1): the spell indicator, the split
 recursion, the gamma background, the simulator, and the recovery gate in miniature."""
 
+import sys
+
 import numpy as np
 import pandas as pd
 import pytest
@@ -296,3 +298,26 @@ def test_cli_end_to_end_on_a_synthetic_slate(tmp_path, monkeypatch):
     spell_cmds.cmd_spell_holm(types.SimpleNamespace(source="wyscout", exclude_one_club=False))
     h = runlog.read_manifest("spell_holm_SG_wyscout_dev")["payload"]
     assert set(h["adjusted"]) == {"eta_out", "eta_in", "eta_level", "eta_trail", "eta_lead"}
+
+
+@pytest.mark.skipif(
+    sys.platform == "darwin",
+    reason="Accelerate BLAS segfaults in forked children on macOS; runs at ARC's pytest gate",
+)
+def test_sensitivities_run_across_forked_workers(monkeypatch):
+    """ARC job for 5e9522f: every spell-fit died in `_sensitivities` with workers > 1,
+    because the (name, closure) jobs were pickled. workers=1 runs inline and hid it."""
+    import types
+
+    from src.cli import spell_cmds
+
+    slate = synthetic.make_slate(n_matches=60, n_teams=8, seed=21)
+    st = spells.build(synthetic_possessions(slate, seed=8))
+    monkeypatch.setattr(spell_cmds, "_inputs", lambda args, caller, **kw: (slate, st, {"prevalence": {}}))
+    a = types.SimpleNamespace(source="wyscout", exclude_one_club=False, model="S", workers=2)
+    out = spell_cmds._sensitivities(a, slate, st)
+    assert len(out["tau_profile"]) == len(sp_inf.TAU_PROFILE)
+    errors = {k: v["error"] for k, v in out.items() if isinstance(v, dict) and "error" in v}
+    errors |= {f"tau[{i}]": v["error"] for i, v in enumerate(out["tau_profile"]) if "error" in v}
+    assert not errors, errors
+    assert {"box_1_20", "no_gamma_confounded", "rule_3_of_5", "strict_possession_rule"} <= set(out)

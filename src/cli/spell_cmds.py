@@ -159,15 +159,17 @@ def _sensitivities(args, slate, spell) -> dict:
             )
         )
 
-    def run(job):
-        name, fn = job
+    def run(i):
+        # only the index crosses the process boundary: the jobs are closures, which
+        # cannot be pickled, and a forked worker inherits the list as it stands
+        name, fn = jobs[i]
         try:
             return name, fn()
         except Exception as exc:  # a sensitivity failing must not lose the headline
             log.exception("sensitivity %s failed", name)
             return name, {"error": repr(exc)}
 
-    done = dict(pmap(run, jobs, workers=args.workers, label="spell sensitivities", every=1))
+    done = dict(pmap(run, range(len(jobs)), workers=args.workers, label="spell sensitivities", every=1))
     out = {k: v for k, v in done.items() if not k.startswith("tau_")}
     out["tau_profile"] = [done[f"tau_{t:g}"] for t in inf.TAU_PROFILE]
     return out
@@ -198,9 +200,16 @@ def cmd_spell_fit(args) -> None:
         )
         cb.pop("_detail").to_csv(RESULTS / f"spell_cluster_bootstrap_{_tag(args)}.csv", index=False)
         payload["cluster_bootstrap"] = cb
+    _verdict(args, payload, h)
     if not args.no_sensitivities:
+        # checkpoint first: the headline and bootstraps are hours of work
+        write_manifest(f"spell_fit_{_tag(args)}", {**payload, "sensitivities": "pending"})
         payload["sensitivities"] = _sensitivities(args, slate, spell)
+    write_manifest(f"spell_fit_{_tag(args)}", payload)
+    _show("spell model development fit", payload)
 
+
+def _verdict(args, payload, h) -> None:
     try:
         pw = read_manifest(f"spell_power_{_tag(args)}")["payload"]
         payload["floors"] = {k: v["detection_floor"] for k, v in pw["floors"].items()}
@@ -219,8 +228,6 @@ def cmd_spell_fit(args) -> None:
             "no detection floor measured (run spell-power first): the estimates cannot be read"
         )
     payload["label"] = "exploratory (docs/spec_spells.md section 1)"
-    write_manifest(f"spell_fit_{_tag(args)}", payload)
-    _show("spell model development fit", payload)
 
 
 def cmd_spell_holm(args) -> None:

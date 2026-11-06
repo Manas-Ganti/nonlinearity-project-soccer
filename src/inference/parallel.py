@@ -14,6 +14,7 @@ import logging
 import multiprocessing as mp
 import os
 from collections.abc import Callable, Iterable
+from concurrent.futures import ProcessPoolExecutor
 
 log = logging.getLogger(__name__)
 
@@ -48,10 +49,13 @@ def pmap(
         return out
     _FN = fn
     try:
+        # ProcessPoolExecutor, not multiprocessing.Pool: if a worker dies (OOM kill,
+        # segfault) Pool silently replaces it and waits forever for the lost result;
+        # the executor raises BrokenProcessPool instead, so the job fails loudly.
         ctx = mp.get_context("fork")
         out = []
-        with ctx.Pool(processes=workers) as pool:
-            for i, r in enumerate(pool.imap(_call, items, chunksize=1), start=1):
+        with ProcessPoolExecutor(max_workers=workers, mp_context=ctx) as pool:
+            for i, r in enumerate(pool.map(_call, items, chunksize=1), start=1):
                 out.append(r)
                 if every and label and i % every == 0:
                     log.info("  %s %d/%d (%d workers)", label, i, len(items), workers)
